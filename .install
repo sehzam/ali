@@ -14,23 +14,23 @@ mkdir -p ~/.aliases/.dir
 echo ..~/.aliases/ directory created successfully
 echo ..~/.aliases/.bin directory created successfully
 echo ..~/.aliases/.dir directory created successfully
-echo ·_________________________________· |grep -E "_"  
-echo "| copying files to directory:     |" ~/.aliases/ |grep -E "|"
-echo ·_________________________________· |grep -E "·"  
+echo ·________________________________· |grep -E "_"  
+echo "| copying files to directory:    |" ~/.aliases/ |grep -E "\|"
+echo ·________________________________· |grep -E "·"  
 cp -Rp ./ali-main/.aliases/.ali.aliases ~/.aliases/
 cp ./ali-main/.uninstall ~/.aliases/.uninstall
 echo ...............ali commands : ~/.aliases/.ali.aliases
 echo .....deinstall link created : ~/.aliases/.uninstall
-echo ·_________________________________· |grep -E "_" 
-echo "| copying files to directory:     |" ~/.aliases/.bin/ |grep -E "|"
+echo ·________________________________· |grep -E "_" 
+echo "| copying files to directory:    |" ~/.aliases/.bin/ |grep -E "\|"
+echo ·________________________________· |grep -E "·"  
 cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
-echo ·_________________________________· |grep -E "·"  
 echo ......Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
 cp -Rp ./ali-main/.aliases/.bin/.ali.list.aliases ~/.aliases/.bin/
 echo ..........Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
-echo ·_________________________________· |grep -E "_" 
-echo "| copying files to directory:     |" ~/.aliases/.dir/ |grep -E "|"
-echo ·_________________________________· |grep -E "·"  
+echo ·________________________________· |grep -E "_" 
+echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
+echo ·________________________________· |grep -E "·"  
 cp -Rp ./ali-main/.aliases/.dir/.dir.aliases ~/.aliases/.dir/
 echo .........Directory commands : ~/.aliases/.dir/.dir.aliases
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
