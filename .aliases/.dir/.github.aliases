@@ -22,7 +22,7 @@ alias '.ccf'='function copy_create_folder() {
 
   mkdir -p "$destination"
   cp -r "$@" "$destination"
-}'
+}; copy_create_folder'
 update_login(){
   echo ...................................................
   echo Please create a GitHub API Token in your GitHub Account
