@@ -37,7 +37,7 @@ fi
 curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys"
 }
 alias ".gh.ssh"="add_ssh_github"
-echo ·_________________________________· |grep -E "_"  # ·f·
+echo ·_____________________________________________________________________________· |grep -E "_"  # ·f·
 echo "Usage:( .gh.ssh ) <ssh_title>" to create or add SSH Key to GitHub| grep -E "<|>|\.|:"
 
 
@@ -167,5 +167,4 @@ alias ".gh.s"="git_setup_and_push"
 echo "Usage:( .gh.s ) <repository_name>" to create GitHub repo| grep -E "<|>|\.|:"
 echo "with $ GITHUB_USERNAME" and $ GITHUB_TOKEN| grep -E "<|>|\.|:"
 echo "in ~/.config/.github/.login"| grep -E "<|>|\.|:"
-echo ·_________________________________· |grep -E "_"  # ·f·
-s
+echo ·_____________________________________________________________________________· |grep -E "_"  # ·f·
