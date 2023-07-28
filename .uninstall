@@ -57,11 +57,12 @@ echo from ~/.bashrc file
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 remove_string_from_file "$ss_10" "$bashrc_path"
 
-echo " #-#-#" >> ~/.bashrc
-echo "# Aliases Loader #-#-#" >> ~/.bashrc
-echo 'alias ".ali.setup"="cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip* && source ~/ali-main/.setup && source ~/.bashrc" #-#-#' >> ~/.bashrc
-echo 'alias ".as"=".ali.setup" #-#-#' >> ~/.bashrc
-echo " #-#-#" >> ~/.bashrc
+echo "
+#-#-#
+# Aliases Loader #-#-#
+alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip* && source ~/ali-main/.setup && source ~/.bashrc' #-#-#
+alias '.as'='.ali.setup' #-#-#
+#-#-#" >> ~/.bashrc
 
 echo - - - NESTED: universal entry points added
 echo from ~/.bashrc file
