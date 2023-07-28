@@ -1,19 +1,22 @@
 #
+#
 # ( A ) ( L ) ( I ) 
 # Alias Lists Injection: 
----
+#
+#
 
+---
 > __Alias Listing System__: 
 
   - For evolving workflow speed.
   - To become super cow power.
   - Because other alias naming systems don't offer the features what ali do.
 
- ## Features
+  ---
+## Features
 
 > __Self explaining__ alias entry point
 
-  ---
 > Various __seperated__ alias lists such as 
   
   - __Directories__
@@ -23,10 +26,10 @@
   - __System Control__
   - __Compression Commands__
   - __Personal Commands__ 
-  ---
 > Several time saving __logical alias__ es
 
-> ##  Installation
+---
+##  Installation
 
 > For the first __Installation :__ 
  
@@ -40,39 +43,25 @@
     rm main.zip && 
     source ./ali-main/.setup
 ```
-
-##
-
-> #### __Reinstallation__ 
-
+> #### __Deinstallation__ __&__                     __Update__  
 
 | alias                          |
 |--------------------------------|
-| __`. a l i . s e t u p`__  |
-  | __`. a s`__  |
+| __`. a l i . s e t u p`__  |     
+ __`. a s`__  |                    
 
-> #### __Deinstallation__ 
+> #### 
 
 
-| alias                          |
-|--------------------------------|
-| __`. a l i . s e t u p`__  |
-  | __`. a s`__  |
-
-> #### __Update__ 
-
-| alias                          |
-|--------------------------------|
-| __`. a l i . s e t u p`__  |
-  | __`. a s`__  |
-
-##
-> > ## Usage
+---
+## Usage
 
 > __HINT:__ _Self explaining code has been created._ Read you in on __entry point__.
 
 __*__ ____DON'T__ copy / paste the aliases because it have spaces between for better readability of Markdown file_._
-#
+
+---
+
 > #### Entry Points
 |        Entry Point         |         Explaination                   |
 |----------------------------|----------------------------------------|
@@ -100,13 +89,13 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 | __`. " * " . a`__          | cat ~/.aliases/." * ".aliases (only alias)  |
 | __`. " * " . e`__          | cat ~/.aliases/." * ".aliases (explaination)|
 | __`. " * " . f`__          | cat ~/.aliases/." * ".aliases (functions)   |
-##
-#
-#
+
+---
 ## Licence
 
 > M  I  T
-
+---
 ## Contributors & Authors
 
 > sehzam · 2023
+---
