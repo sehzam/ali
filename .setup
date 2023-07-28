@@ -35,5 +35,5 @@ if ! [ -d ~/.aliases ]; then
     bash
 elif [ -d ~/.aliases ]; then
     prompt 
+rm -r ~/ali-main/
 fi
-rm -r ali-main/
