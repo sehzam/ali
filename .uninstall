@@ -7,30 +7,18 @@ echo ·
 echo · · · · · · · · · · I · njection
 echo ·
 echo ______________________________________________________
-echo .
 echo · · · Uninstallation started !
-echo .
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo .
+echo ______________________________________________________
 echo · · · .. searching installed files
-echo .
 if [ -d ~/.aliases ]; then
-    echo ______________________________________________________
-    echo .
+    echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
     echo · · · · · · · · · alias folder detected
-    echo .
     echo · · · ~/.aliases/
         rm -r  ~/.aliases/
-    echo -
-    echo .
     echo · · · · · · · · · folder deleted
-    echo .
-
 fi
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo .
 echo · · · ...cleanup installation files
-echo .
 remove_string_from_file() {
     local search_string=$1
     local file_path=$2
@@ -64,13 +52,9 @@ if grep -q "$ss_1" "$bashrc_path"; then
     srem
 fi
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo .
 echo · · · UNNESTED: universal entry points removed
-echo .              
 echo from ~/.bashrc file
-echo .              
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo .
 remove_string_from_file "$ss_10" "$bashrc_path"
 
 echo " #·#·#" >> ~/.bashrc
@@ -80,18 +64,12 @@ echo 'alias ".as"=".ali.setup" #·#·#' >> ~/.bashrc
 echo " #·#·#" >> ~/.bashrc
 
 echo · · · NESTED: universal entry points added
-echo .              
 echo from ~/.bashrc file
-echo .              
 echo ______________________________________________________
-echo .
 echo · · · ... Uninstallation complete !
-echo .
 echo ______________________________________________________
-echo ·
 echo · · · · · · · · U S A G E: Reinstall
-echo · 
+echo - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 echo - - - - - - - - - - - - - - - : "( .ali.setup )" 
 echo - - - - - - - - - - - - - - - : "( .as )"  
-echo ·
 echo ______________________________________________________
