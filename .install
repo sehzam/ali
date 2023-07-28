@@ -15,47 +15,47 @@ echo - ~/.aliases/ directory created successfully
 echo - ~/.aliases/.bin directory created successfully
 echo - ~/.aliases/.dir directory created successfully
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo ..."( " copying files to directory " )": ~/.aliases/
+echo "("copying files to directory")": ~/.aliases/
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.ali.aliases ~/.aliases/
-echo - - - ali commands : ~/.aliases/.ali.aliases
+echo - - - - - - - -ali commands : ~/.aliases/.ali.aliases
 echo ______________________________________________________
 cp ./ali-main/.uninstall ~/.aliases/.uninstall
-echo - deinstallation link created ~/.aliases/.uninstall
+echo - - -deinstall link created : ~/.aliases/.uninstall
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo ..."( "copying files to directory " )": ~/.aliases/.bin/
+echo "("copying files to directory " )": ~/.aliases/.bin/
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
 echo - - - Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
 echo ______________________________________________________
 cp -Rp ./ali-main/.aliases/.bin/.ali.list.aliases ~/.aliases/.bin/
-echo - - - Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
+echo - - - - - Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo ... "( "copying files to directory " )": ~/.aliases/.dir/
+echo "("copying files to directory")": ~/.aliases/.dir/
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.dir.aliases ~/.aliases/.dir/
-echo - - - Directory commands : ~/.aliases/.dir/.dir.aliases
+echo - - - - -Directory commands : ~/.aliases/.dir/.dir.aliases
 echo ______________________________________________________
 cp -Rp ./ali-main/.aliases/.dir/.fsc.aliases ~/.aliases/.dir/
-echo - - - Filesystem commands : ~/.aliases/.dir/.fsc.aliases 
+echo - - - - Filesystem commands : ~/.aliases/.dir/.fsc.aliases 
 echo ______________________________________________________
 cp -Rp ./ali-main/.aliases/.dir/.git.aliases ~/.aliases/.dir/
-echo - - - Git commands : ~/.aliases/.dir/.git.aliases
+echo - - - - - - - -Git commands : ~/.aliases/.dir/.git.aliases
 echo ______________________________________________________
 cp -Rp ./ali-main/.aliases/.dir/.own.aliases ~/.aliases/.dir/
-echo - - - List commands : ~/.aliases/.dir/.own.aliases 
+echo - - - - - - - List commands : ~/.aliases/.dir/.own.aliases 
 echo ______________________________________________________
 cp -Rp ./ali-main/.aliases/.dir/.net.aliases ~/.aliases/.dir/
-echo - - Network commands : ~/.aliases/.dir/.net.aliases
+echo - - - - - -Network commands : ~/.aliases/.dir/.net.aliases
 echo ______________________________________________________
 cp -Rp ./ali-main/.aliases/.dir/.sys.aliases ~/.aliases/.dir/
-echo - - - System commands : ~/.aliases/.dir/.sys.aliases 
+echo - - - - - - System commands : ~/.aliases/.dir/.sys.aliases 
 echo ______________________________________________________
 cp -Rp ./ali-main/.aliases/.dir/.zip.aliases ~/.aliases/.dir/
-echo - - - Compression commands  : ~/.aliases/.dir/.zip.aliases
+echo - - - -Compression commands : ~/.aliases/.dir/.zip.aliases
 echo ______________________________________________________
 cp -Rp ./ali-main/.aliases/.dir/.github.aliases ~/.aliases/.dir/
-echo - - - GitHub commands  : ~/.aliases/.dir/.github.aliases
+echo - - - - - - GitHub commands : ~/.aliases/.dir/.github.aliases
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo - - - - - - ...alias lists loaded
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
@@ -88,19 +88,22 @@ remove_string_from_file() {
 }
 bashrc_path="$HOME/.bashrc"
 ss_1="#-#-#"
+insert_entry(){
+    echo " #-#-#
+    # Aliases Loader #-#-#
+    alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip && source ~/ali-main/.setup && source ~/.bashrc' #-#-#
+    alias '.as'='.ali.setup' #-#-#
+     #-#-# 
+    #Alias Entry Point #-#-#
+    if [ -f ~/.aliases/.ali.aliases ]; then #-#-#
+    source  ~/.aliases/.ali.aliases #-#-# 
+    fi #-#-#
+     #-#-#
+    # Grep Custom Color #-#-#
+    export GREP_COLORS='sl=1;96:cx=91:mt=1;90:ms=1;92:fn=1;93:ln=91:se=0;90:ms=91' #-#-#
+     #-#-#" >> ~/.bashrc
+}
 remove_string_from_file "$ss_1" "$bashrc_path"
 if ! grep -q "$ss_1" "$bashrc_path"; then
-echo " #-#-#" >> ~/.bashrc
-echo "# Aliases Loader #-#-#" >> ~/.bashrc
-echo 'alias ".ali.setup"="cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip && source ~/ali-main/.setup && source ~/.bashrc" #-#-#' >> ~/.bashrc
-echo 'alias ".as"=".ali.setup" #-#-#' >> ~/.bashrc
-echo " #-#-#" >> ~/.bashrc 
-echo "#Alias Entry Point #-#-#" >> ~/.bashrc
-echo "if [ -f ~/.aliases/.ali.aliases ]; then #-#-#" >> ~/.bashrc
-echo "source  ~/.aliases/.ali.aliases #-#-#" >> ~/.bashrc 
-echo "fi #-#-#" >> ~/.bashrc
-echo " #-#-#" >> ~/.bashrc
-echo "# Grep Custom Color #-#-#" >> ~/.bashrc
-echo "export GREP_COLORS='sl=1;96:cx=91:mt=1;90:ms=1;92:fn=1;93:ln=91:se=0;90:ms=91' #-#-#" >> ~/.bashrc
-echo " #-#-#" >> ~/.bashrc
+    ${insert_entry}
 fi
