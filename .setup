@@ -15,13 +15,14 @@ fi
         echo "REMOVING Alias Listing System A L I"
         echo "$name""o. Let's remove this now"
         clear && source ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
+        rm -r ~/ali-main/
         bash
-    fi
-    if [ "$name" = "y" ] || [ "$name" = "Y" ]; then
+    elif [ "$name" = "y" ] || [ "$name" = "Y" ]; then
         echo "UPDATING Alias Listing System A L I"
         echo "$name""es. Let's do the job done"
         clear && source ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
         source ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
+        rm -r ~/ali-main/
         bash
     elif ! [ "$name" = "Y" ] && ! [ "$name" = "y" ] && ! [ "$name" = "N" ] && ! [ "$name" = "n" ]; then
         clear && source ~/ali-main/.setup|grep -E ':|·|~|\.|-|__'
@@ -36,5 +37,4 @@ if ! [ -d ~/.aliases ]; then
     bash
 elif [ -d ~/.aliases ]; then
     prompt 
-    rm -r ~/ali-main/
 fi

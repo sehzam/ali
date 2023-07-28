@@ -129,15 +129,6 @@ echo " #·#·#" >> ~/.bashrc
 fi
 echo ______________________________________________________
 echo · 
-echo · · · ...setup folder deleted
-rm -r ~/ali-main/
-echo · 
-echo · · · ... Installation complete !
-echo ·
-echo ______________________________________________________ 
-echo · 
-echo · · · ...setup folder deleted
-echo · 
 echo · · · ... Installation complete !
 echo ·
 echo ______________________________________________________ 
