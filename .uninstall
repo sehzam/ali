@@ -10,7 +10,7 @@ echo ______________________________________________________
 echo .
 echo · · · Uninstallation started !
 echo .
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo .
 echo · · · .. searching installed files
 echo .
@@ -27,6 +27,7 @@ if [ -d ~/.aliases ]; then
     echo .
 
 fi
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo .
 echo · · · ...cleanup installation files
 echo .
@@ -62,12 +63,13 @@ remove_string_from_file "$ss_9" "$bashrc_path"
 if grep -q "$ss_1" "$bashrc_path"; then
     srem
 fi
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo .
 echo · · · UNNESTED: universal entry points removed
 echo .              
 echo from ~/.bashrc file
 echo .              
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo .
 remove_string_from_file "$ss_10" "$bashrc_path"
 

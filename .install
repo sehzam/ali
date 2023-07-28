@@ -18,11 +18,11 @@ echo · ~/.aliases/ directory created successfully
 echo · ~/.aliases/.bin directory created successfully
 echo · ~/.aliases/.dir directory created successfully
 echo ·
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo ·
-echo · copying files to directory : ~/.aliases/
+echo ..."( " copying files to directory " )": ~/.aliases/
 echo ·
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.ali.aliases ~/.aliases/
 echo ·
 echo · · · ali commands : ~/.aliases/.ali.aliases
@@ -32,11 +32,11 @@ cp ./ali-main/.uninstall ~/.aliases/.uninstall
 echo ·
 echo · deinstallation link created ~/.aliases/.uninstall
 echo ·
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo ·
-echo · copying files to directory : ~/.aliases/.bin/
+echo ..."( "copying files to directory " )": ~/.aliases/.bin/
 echo ·
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
 echo ·
 echo · · · Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
@@ -46,11 +46,11 @@ cp -Rp ./ali-main/.aliases/.bin/.ali.list.aliases ~/.aliases/.bin/
 echo ·
 echo · · · Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
 echo ·
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo ·
-echo · Copying files to directory : ~/.aliases/.dir/
+echo ... "( "copying files to directory " )": ~/.aliases/.dir/
 echo ·
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.dir.aliases ~/.aliases/.dir/
 echo ·
 echo · · · Directory commands : ~/.aliases/.dir/.dir.aliases
@@ -90,11 +90,11 @@ cp -Rp ./ali-main/.aliases/.dir/.github.aliases ~/.aliases/.dir/
 echo ·
 echo · · · GitHub commands  : ~/.aliases/.dir/.github.aliases
 echo ·
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo ·
 echo · · · · · · ...alias lists loaded
 echo ·
-echo ______________________________________________________
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 
 remove_string_from_file() {
     local search_string=$1
@@ -138,11 +138,7 @@ echo ·
 echo - - - - - - - - - - - - - - - : "( .ali.setup )" 
 echo - - - - - - - - - - - - - - - : "( .as )" 
 echo ·
-echo ______________________________________________________ 
-# # # 
-xdg-open https://github.com/sehzam/ali  
-# # # 
-echo ______________________________________________________ 
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo ·
 echo · · · · · · ·U S A G E: Alias Listing System
 echo ·
@@ -153,3 +149,7 @@ echo - - - - - - - - - explaination: "( .ali.e )"
 echo - - - - - - - - - - -functions: "( .ali.f )" 
 echo ·
 echo ______________________________________________________ 
+
+# # # 
+xdg-open https://github.com/sehzam/ali  
+# # # 

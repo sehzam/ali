@@ -1,9 +1,7 @@
 #
-#
+---
 # ( A ) ( L ) ( I ) 
 # Alias Lists Injection: 
-#
-#
 
 ---
 > __Alias Listing System__: 
@@ -60,6 +58,7 @@
 
 __*__ ____DON'T__ copy / paste the aliases because it have spaces between for better readability of Markdown file_._
 
+
 ---
 
 > #### Entry Points
@@ -74,7 +73,9 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 | __`. a l l . a`__          | prints all aliases (only alias)        |
 | __`. a l l . e`__          | prints all aliases (explaination)      |
 | __`. a l l . f`__          | prints all aliases (functions)         |
-         
+
+---
+
 > #### Alias Lists
 |        Lists               |            Explaination                  |
 |----------------------------|------------------------------------------|
