@@ -37,7 +37,9 @@ fi
 curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys"
 }
 alias ".gh.ssh"="add_ssh_github"
-echo "Usage: .gh.ssh <ssh_title>" | grep -E "<|>|\.|:"
+echo ·_________________________________· |grep -E "_"  # ·f·
+echo "Usage:( .gh.ssh ) <ssh_title>" to create or add SSH Key to GitHub| grep -E "<|>|\.|:"
+
 
 
 # Define the function to delete a GitHub repository
@@ -53,7 +55,7 @@ repo_delete() {
 }
 
 alias ".gh.d"="repo_delete"
-echo "Usage: .gh.d <repository_name>" | grep -E "<|>|\.|:"
+echo "Usage:( .gh.d ) <repository_name>" to delete GitHub repo| grep -E "<|>|\.|:"
 
 # Define the function 
 # to initialize a new Git repository, 
@@ -162,5 +164,8 @@ EOF
 }
 
 alias ".gh.s"="git_setup_and_push"
-echo "Usage: .gh.s <repository_name>" | grep -E "<|>|\.|:"
-echo "<UPDATE>" | grep -E "<|>|\.|:"
+echo "Usage:( .gh.s ) <repository_name>" to create GitHub repo| grep -E "<|>|\.|:"
+echo "with $ GITHUB_USERNAME" and $ GITHUB_TOKEN| grep -E "<|>|\.|:"
+echo "in ~/.config/.github/.login"| grep -E "<|>|\.|:"
+echo ·_________________________________· |grep -E "_"  # ·f·
+s
