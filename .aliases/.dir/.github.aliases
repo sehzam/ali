@@ -26,7 +26,7 @@ update_login(){
   if ! [ "$username" = "" ]; then
     if ! [ "$token" = "" ]; then
       echo "GITHUB_USERNAME='$username'
-      GITHUB_TOKEN='$token'" >> ~/.config/.github/.login
+GITHUB_TOKEN='$token'" >> ~/.config/.github/.login
     fi
   fi
 }
