@@ -12,9 +12,11 @@ alias ".r"="sudo rm -r"
 
 
 update_login(){
-  echo "Please create a GitHub API Token (classic) in your GitHub Account"
-  echo "Settings -> Developer Settings -> Personal access tokens -> Tokens(classic) -> Generate new token"
-  echo "in https://github.com/settings/tokens"
+  echo ...................................................
+  echo Please create a GitHub API Token in your GitHub Account
+  echo Settings -> Developer Settings -> Personal access tokens -> Tokens -> Generate new token
+  echo in https://github.com/settings/tokens
+  echo ...................................................
   read -p "Please enter your GitHub USERNAME =  " username
   read -p "Please enter your GitHub TOKEN =  " token
   if [ "$username" = "" ]; then
