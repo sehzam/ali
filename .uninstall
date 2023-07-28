@@ -1,15 +1,15 @@
 echo ______________________________________________________
 echo -
-echo ....................A ..lias
+echo ....................A..lias
 echo -
-echo ....................L ..ists
+echo ....................L..ists
 echo -
-echo ....................I ..njection
+echo ....................I..njection
 echo -
 echo ______________________________________________________
-echo ......Uninstallation started !
+echo ......"Uninstallation started !"
 echo ______________________________________________________
-echo ........ searching installed files
+echo ........"searching installed files"
 if [ -d ~/.aliases ]; then
     echo ______________________________________________________
     echo ..................alias folder detected
@@ -18,7 +18,7 @@ if [ -d ~/.aliases ]; then
     echo ..................folder deleted
 fi
 echo ______________________________________________________
-echo .........cleanup installation files
+echo ........."cleanup installation files"
 remove_string_from_file() {
     local search_string=$1
     local file_path=$2
@@ -52,7 +52,7 @@ if grep -q "$ss_1" "$bashrc_path"; then
     srem
 fi
 echo ______________________________________________________
-echo ......UNNESTED: universal entry points removed
+echo ......"UNNESTED: universal entry points removed"
 echo from ~/.bashrc file
 echo ______________________________________________________
 remove_string_from_file "$ss_10" "$bashrc_path"
@@ -63,13 +63,13 @@ alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/head
 alias '.as'='.ali.setup' #-#-#
 #-#-#" >> ~/.bashrc
 
-echo ......NESTED: universal entry points added
+echo ......"NESTED: universal entry points added"
 echo from ~/.bashrc file
 echo ______________________________________________________
-echo ......... Uninstallation complete !
+echo ........."Uninstallation complete !"
 echo ______________________________________________________
-echo ................U S A G E: Reinstall
+echo ................"U S A G E: Reinstall"
 echo ...................................................... 
-echo ..............................: "( .ali.setup )" 
-echo ..............................: "( .as )"  
+echo ..............................":" "( .ali.setup )" 
+echo ..............................":" "( .as )"  
 echo ______________________________________________________
