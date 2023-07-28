@@ -36,3 +36,4 @@ if ! [ -d ~/.aliases ]; then
 elif [ -d ~/.aliases ]; then
     prompt 
 fi
+rm -r ali-main/
