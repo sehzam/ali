@@ -88,7 +88,8 @@ remove_string_from_file() {
 }
 bashrc_path="$HOME/.bashrc"
 ss_1="#-#-#"
-insert_entry(){
+remove_string_from_file "$ss_1" "$bashrc_path"
+if ! grep -q "$ss_1" "$bashrc_path"; then
     echo " #-#-#
     # Aliases Loader #-#-#
     alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip && source ~/ali-main/.setup && source ~/.bashrc' #-#-#
@@ -102,8 +103,4 @@ insert_entry(){
     # Grep Custom Color #-#-#
     export GREP_COLORS='sl=1;96:cx=91:mt=1;90:ms=1;92:fn=1;93:ln=91:se=0;90:ms=91' #-#-#
      #-#-#" >> ~/.bashrc
-}
-remove_string_from_file "$ss_1" "$bashrc_path"
-if ! grep -q "$ss_1" "$bashrc_path"; then
-    ${insert_entry}
 fi
