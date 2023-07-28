@@ -9,14 +9,14 @@
 # ( .gh.login )
 source ~/.config/.github/.login
 alias ".r"="sudo rm -r"
-
 copy_create_folder() {
   local destination="$1"
-  shift # Das erste Argument ($1) wird verschoben, sodass $2 zu $1, $3 zu $2 usw. wird.
+  shift # The first argument ($1) is shifted, so $2 becomes $1, $3 becomes $2, and so on.
 
-  mkdir -p $destination
-  cp -r $@ $destination
+  mkdir -p "$destination"
+  cp -r "$@" "$destination"
 }
+
 # Die Zeile shift wird verwendet, 
 # um das erste Argument ($1) zu entfernen und 
 # die Position aller weiteren Argumente 
