@@ -1,86 +1,78 @@
 echo ______________________________________________________
 echo -
-echo - - - - - - - - - - A - lias
+echo ....................A ..lias
 echo -
-echo - - - - - - - - - - L - ists
+echo ....................L ..ists
 echo -
-echo - - - - - - - - - - I - njection
+echo ....................I ..njection
 echo -
 echo ______________________________________________________
-echo - - - - - - - Installation started !
+echo ..............Installation started !
 echo ______________________________________________________
 mkdir -p ~/.aliases/.bin
 mkdir -p ~/.aliases/.dir
-echo - ~/.aliases/ directory created successfully
-echo - ~/.aliases/.bin directory created successfully
-echo - ~/.aliases/.dir directory created successfully
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
+echo ..~/.aliases/ directory created successfully
+echo ..~/.aliases/.bin directory created successfully
+echo ..~/.aliases/.dir directory created successfully
 echo ·_________________________________· |grep -E "_"  
-echo "|" copying files to directory:     "|" ~/.aliases/ |grep -E "\||~|\/"
+echo "|" copying files to directory:         "|" ~/.aliases/ |grep -E "\||~|\/"
 echo ·_________________________________· |grep -E "·"  
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.ali.aliases ~/.aliases/
-echo - - - - - - - -ali commands : ~/.aliases/.ali.aliases
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp ./ali-main/.uninstall ~/.aliases/.uninstall
-echo - - -deinstall link created : ~/.aliases/.uninstall
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
+echo ...............ali commands : ~/.aliases/.ali.aliases
+echo .....deinstall link created : ~/.aliases/.uninstall
 echo ·_________________________________· |grep -E "_" 
-echo "|" copying files to directory:     "|" ~/.aliases/.bin/ |grep -E "\||~|\/"
-echo ·_________________________________· |grep -E "·"  
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
+echo "|" copying files to directory:         "|" ~/.aliases/.bin/ |grep -E "\||~|\/"
 cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
-echo - - - Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-cp -Rp ./ali-main/.aliases/.bin/.ali.list.aliases ~/.aliases/.bin/
-echo - - - - - Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo ·_________________________________· |grep -E "_" 
-echo "|" copying files to directory:     "|" ~/.aliases/.dir/ |grep -E "\||~|\/"
 echo ·_________________________________· |grep -E "·"  
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
+echo ......Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
+cp -Rp ./ali-main/.aliases/.bin/.ali.list.aliases ~/.aliases/.bin/
+echo ..........Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
+echo ·_________________________________· |grep -E "_" 
+echo "|" copying files to directory:         "|" ~/.aliases/.dir/ |grep -E "\||~|\/"
+echo ·_________________________________· |grep -E "·"  
 cp -Rp ./ali-main/.aliases/.dir/.dir.aliases ~/.aliases/.dir/
-echo - - - - -Directory commands : ~/.aliases/.dir/.dir.aliases
+echo .........Directory commands : ~/.aliases/.dir/.dir.aliases
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.fsc.aliases ~/.aliases/.dir/
-echo - - - - Filesystem commands : ~/.aliases/.dir/.fsc.aliases 
+echo ........Filesystem commands : ~/.aliases/.dir/.fsc.aliases 
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.git.aliases ~/.aliases/.dir/
-echo - - - - - - - -Git commands : ~/.aliases/.dir/.git.aliases
+echo ...............Git commands : ~/.aliases/.dir/.git.aliases
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.own.aliases ~/.aliases/.dir/
-echo - - - - - - - List commands : ~/.aliases/.dir/.own.aliases 
+echo ..............List commands : ~/.aliases/.dir/.own.aliases 
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.net.aliases ~/.aliases/.dir/
-echo - - - - - -Network commands : ~/.aliases/.dir/.net.aliases
+echo ...........Network commands : ~/.aliases/.dir/.net.aliases
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.sys.aliases ~/.aliases/.dir/
-echo - - - - - - System commands : ~/.aliases/.dir/.sys.aliases 
+echo ............System commands : ~/.aliases/.dir/.sys.aliases 
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.zip.aliases ~/.aliases/.dir/
-echo - - - -Compression commands : ~/.aliases/.dir/.zip.aliases
+echo .......Compression commands : ~/.aliases/.dir/.zip.aliases
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.github.aliases ~/.aliases/.dir/
-echo - - - - - - GitHub commands : ~/.aliases/.dir/.github.aliases
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
+echo ............GitHub commands : ~/.aliases/.dir/.github.aliases
 echo ·_________________________________· |grep -E "_|·" 
-echo "|"       alias lists loaded        "|" |grep -E "\|"
+echo "|"       alias lists loaded            "|" |grep -E "|"
 echo ·_________________________________· |grep -E "_|·"  
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo ______________________________________________________
-echo - - - ... Installation complete !
+echo ......... Installation complete !
 echo ______________________________________________________ 
-echo - - - - - - - U S A G E: Uninstall & Update:
-echo - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-echo - - - - - - - - - - - - - - - : "( .ali.setup )" 
-echo - - - - - - - - - - - - - - - : "( .as )" 
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo - - - - - - -U S A G E: Alias Listing System
-echo - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-echo - - - - -'(' R A W ')' entry point: "( .ali )" 
-echo - - - - - - - - - - - - - -aliases: "( .ali.a )" 
-echo - - - - - - - - - - - explaination: "( .ali.e )" 
-echo - - - - - - - - - - - - -functions: "( .ali.f )" 
+echo ...................................................... 
+echo ..............U S A G E: Uninstall & Update:
+echo ...................................................... 
+echo ..............................: "( .ali.setup )" 
+echo ..............................: "( .as )" 
+echo ...................................................... 
+echo .............-U S A G E: Alias Listing System
+echo ...................................................... 
+echo ...................... entry point: "( .ali )" 
+echo ...........................aliases: "( .ali.a )" 
+echo ......................explaination: "( .ali.e )" 
+echo .........................functions: "( .ali.f )" 
+echo ...................................................... 
 echo ______________________________________________________ 
 # # # 
 # xdg-open https://github.com/sehzam/ali  

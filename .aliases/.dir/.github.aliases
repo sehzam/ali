@@ -5,6 +5,8 @@
 # i.e.
 # GITHUB_USERNAME="...username..."
 # GITHUB_TOKEN="...token..."
+# or run alias
+# ( .gh.login )
 source ~/.config/.github/.login
 alias ".r"="sudo rm -r"
 
@@ -31,9 +33,9 @@ GITHUB_TOKEN="$token"
   fi
 }
 
-alias ".gh.update"="add_ssh_github"
+alias ".gh.login"="update_login"
 echo ·_____________________________________________________________________________· |grep -E "_"  # ·f·
-echo "Usage:( .gh.update ) to create or add SSH Key to GitHub"| grep -E "<|>|\.|:"
+echo "Usage:( .gh.login ) asks and saves GitHub USERNAME and API TOKEN"| grep -E "<|>|\.|:"
 
 
 
