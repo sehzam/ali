@@ -140,7 +140,7 @@ echo - - - - - - - - - - - - - - - : "( .as )"
 echo ·
 echo ______________________________________________________ 
 # # # 
-# xdg-open https://github.com/sehzam/ali  
+xdg-open https://github.com/sehzam/ali  
 # # # 
 echo ______________________________________________________ 
 echo ·
