@@ -1,0 +1,164 @@
+echo ______________________________________________________
+echo ·
+echo · · · · · · · · · · A · lias
+echo ·
+echo · · · · · · · · · · L · ists
+echo ·
+echo · · · · · · · · · · I · njection
+echo ·
+echo ______________________________________________________
+echo · 
+echo · · · · · · · Installation started !
+echo · 
+echo ______________________________________________________
+mkdir -p ~/.aliases/.bin
+mkdir -p ~/.aliases/.dir
+echo ·
+echo · ~/.aliases/ directory created successfully
+echo · ~/.aliases/.bin directory created successfully
+echo · ~/.aliases/.dir directory created successfully
+echo ·
+echo ______________________________________________________
+echo ·
+echo · copying files to directory : ~/.aliases/
+echo ·
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.ali.aliases ~/.aliases/
+echo ·
+echo · · · ali commands : ~/.aliases/.ali.aliases
+echo ·
+echo ______________________________________________________
+cp ./ali-main/.uninstall ~/.aliases/.uninstall
+echo ·
+echo · deinstallation link created ~/.aliases/.uninstall
+echo ·
+echo ______________________________________________________
+echo ·
+echo · copying files to directory : ~/.aliases/.bin/
+echo ·
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
+echo ·
+echo · · · Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
+echo ·
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.bin/.ali.list.aliases ~/.aliases/.bin/
+echo ·
+echo · · · Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
+echo ·
+echo ______________________________________________________
+echo ·
+echo · Copying files to directory : ~/.aliases/.dir/
+echo ·
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.dir/.dir.aliases ~/.aliases/.dir/
+echo ·
+echo · · · Directory commands : ~/.aliases/.dir/.dir.aliases
+echo ·
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.dir/.fsc.aliases ~/.aliases/.dir/
+echo · 
+echo · · · Filesystem commands : ~/.aliases/.dir/.fsc.aliases 
+echo · 
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.dir/.git.aliases ~/.aliases/.dir/
+echo · 
+echo · · · Git commands : ~/.aliases/.dir/.git.aliases
+echo · 
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.dir/.own.aliases ~/.aliases/.dir/
+echo · 
+echo · · · List commands : ~/.aliases/.dir/.own.aliases 
+echo · 
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.dir/.net.aliases ~/.aliases/.dir/
+echo ·  
+echo · · Network commands : ~/.aliases/.dir/.net.aliases
+echo ·
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.dir/.sys.aliases ~/.aliases/.dir/
+echo ·
+echo · · · System commands : ~/.aliases/.dir/.sys.aliases 
+echo ·
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.dir/.zip.aliases ~/.aliases/.dir/
+echo ·
+echo · · · Compression commands  : ~/.aliases/.dir/.zip.aliases
+echo ·
+echo ______________________________________________________
+cp -Rp ./ali-main/.aliases/.dir/.github.aliases ~/.aliases/.dir/
+echo ·
+echo · · · GitHub commands  : ~/.aliases/.dir/.github.aliases
+echo ·
+echo ______________________________________________________
+echo ·
+echo · · · · · · ...alias lists loaded
+echo ·
+echo ______________________________________________________
+
+remove_string_from_file() {
+    local search_string=$1
+    local file_path=$2
+    if grep -q "$search_string" "$file_path"; then
+        sed -i "/$search_string/d" "$file_path"
+    fi
+}
+
+bashrc_path="$HOME/.bashrc"
+ss_1="#·#·#"
+remove_string_from_file "$ss_1" "$profile_path"
+
+if ! grep -q "$ss_1" "$bashrc_path"; then
+
+echo " #·#·#" >> ~/.bashrc
+echo "# Aliases Loader #·#·#" >> ~/.bashrc
+echo 'alias ".ali.setup"="cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip && source ~/ali-main/.setup && source ~/.bashrc" #·#·#' >> ~/.bashrc
+echo 'alias ".as"=".ali.setup" #·#·#' >> ~/.bashrc
+echo " #·#·#" >> ~/.bashrc 
+
+echo "#Alias Entry Point #·#·#" >> ~/.bashrc
+echo "if [ -f ~/.aliases/.ali.aliases ]; then #·#·#" >> ~/.bashrc
+    echo "source  ~/.aliases/.ali.aliases #·#·#" >> ~/.bashrc 
+echo "fi #·#·#" >> ~/.bashrc
+echo " #·#·#" >> ~/.bashrc
+
+echo "# Grep Custom Color #·#·#" >> ~/.bashrc
+echo "export GREP_COLORS='sl=1;96:cx=91:mt=1;90:ms=1;92:fn=1;93:ln=91:se=0;90:ms=91' #·#·#" >> ~/.bashrc
+echo " #·#·#" >> ~/.bashrc
+
+fi
+echo ______________________________________________________
+echo · 
+echo · · · ...setup folder deleted
+rm -r ./ali-main
+echo · 
+echo · · · ... Installation complete !
+echo ·
+echo ______________________________________________________ 
+echo · 
+echo · · · ...setup folder deleted
+echo · 
+echo · · · ... Installation complete !
+echo ·
+echo ______________________________________________________ 
+echo ·
+echo · · · · · · · U S A G E: Uninstall & Update:
+echo · 
+echo - - - - - - - - - - - - - - - : "( .ali.setup )" 
+echo - - - - - - - - - - - - - - - : "( .as )" 
+echo ·
+echo ______________________________________________________ 
+# # # 
+# xdg-open https://github.com/sehzam/ali  
+# # # 
+echo ______________________________________________________ 
+echo ·
+echo · · · · · · ·U S A G E: Alias Listing System
+echo ·
+echo - - - - -'(' R A W ')' entry point: "( .ali )" 
+echo ·
+echo - - - - - - - - - - - -aliases: "( .ali.a )" 
+echo - - - - - - - - - explaination: "( .ali.e )" 
+echo - - - - - - - - - - -functions: "( .ali.f )" 
+echo ·
+echo ______________________________________________________ 

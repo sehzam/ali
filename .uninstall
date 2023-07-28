@@ -1,0 +1,95 @@
+echo ______________________________________________________
+echo ·
+echo · · · · · · · · · · A · lias
+echo ·
+echo · · · · · · · · · · L · ists
+echo ·
+echo · · · · · · · · · · I · njection
+echo ·
+echo ______________________________________________________
+echo .
+echo · · · Uninstallation started !
+echo .
+echo ______________________________________________________
+echo .
+echo · · · .. searching installed files
+echo .
+if [ -d ~/.aliases ]; then
+    echo ______________________________________________________
+    echo .
+    echo · · · · · · · · · alias folder detected
+    echo .
+    echo · · · ~/.aliases/
+        rm -r  ~/.aliases/
+    echo -
+    echo .
+    echo · · · · · · · · · folder deleted
+    echo .
+
+fi
+echo .
+echo · · · ...cleanup installation files
+echo .
+remove_string_from_file() {
+    local search_string=$1
+    local file_path=$2
+    if grep -q "$search_string" "$file_path"; then
+        sed -i "/$search_string/d" "$file_path"
+    fi
+}
+bashrc_path="$HOME/.bashrc"
+ss_1="Aliases Loader"
+ss_2=".ali.install"
+ss_3=".ali.remove"
+ss_4=".ali.setup"
+ss_5=".ali.remove"
+ss_6="Grep Custom Color"
+ss_7="GREP_COLORS"
+ss_8="goali"
+ss_9="comeali"
+ss_10="#·#·#"
+srem(){
+remove_string_from_file "$ss_1" "$bashrc_path"
+remove_string_from_file "$ss_2" "$bashrc_path"
+remove_string_from_file "$ss_3" "$bashrc_path"
+remove_string_from_file "$ss_4" "$bashrc_path"
+remove_string_from_file "$ss_5" "$bashrc_path"
+remove_string_from_file "$ss_6" "$bashrc_path"
+remove_string_from_file "$ss_7" "$bashrc_path"
+remove_string_from_file "$ss_8" "$bashrc_path"
+remove_string_from_file "$ss_9" "$bashrc_path"
+}
+if grep -q "$ss_1" "$bashrc_path"; then
+    srem
+fi
+echo .
+echo · · · UNNESTED: universal entry points removed
+echo .              
+echo from ~/.bashrc file
+echo .              
+echo ______________________________________________________
+echo .
+remove_string_from_file "$ss_10" "$bashrc_path"
+
+echo " #·#·#" >> ~/.bashrc
+echo "# Aliases Loader #·#·#" >> ~/.bashrc
+echo 'alias ".ali.setup"="cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip && source ~/ali-main/.setup && source ~/.bashrc" #·#·#' >> ~/.bashrc
+echo 'alias ".as"=".ali.setup" #·#·#' >> ~/.bashrc
+echo " #·#·#" >> ~/.bashrc
+
+echo · · · NESTED: universal entry points added
+echo .              
+echo from ~/.bashrc file
+echo .              
+echo ______________________________________________________
+echo .
+echo · · · ... Uninstallation complete !
+echo .
+echo ______________________________________________________
+echo ·
+echo · · · · · · · · U S A G E: Reinstall
+echo · 
+echo - - - - - - - - - - - - - - - : "( .ali.setup )" 
+echo - - - - - - - - - - - - - - - : "( .as )"  
+echo ·
+echo ______________________________________________________

@@ -1,0 +1,128 @@
+# : =           __________________________              : 
+# :   ________________ Directory= _____________________ = Directory Control System
+# : =           __________________________              : 
+# : = _________________________________________________ : # ·o· 
+# :                    Functions=                       = Directory Control System # ·o·
+# : = _________________________________________________ : # ·o·
+
+# ·o· ·· START ·· = { make a backup of file given as parameter with timestamp }
+# ·o·
+bk() { # ·o·
+  # ·o·
+  # ·o· = alias = .bk
+  # ·o·
+  cp "$1" "$1_$(date '+%Y%m%d%H%M%S').bak" # ·o· 
+} # ·o· 
+# ·o·
+# ·o· ··  END  ·· = { make... }
+# ·o·
+
+# ·o· ·· START ·· = { create folder recursively and enter them }
+# ·o·
+cf() { # ·o·
+  # ·o·
+  # ·o· = alias = .cf
+  # ·o·
+  mkdir -p "$1" && cd "$1" # ·o·
+} # ·o· 
+# ·o· ··  END  ·· = { create... }
+# ·o·
+
+# ·o· ·· START ·· = { searchs for string and replace the in file }
+# ·o·
+sr() { # ·o·
+  # ·o·
+  # ·o· = alias = .sr
+  # ·o·
+  sed -i "s/$1/$2/g" "$3" # ·o· 
+} # ·o· 
+# ·o·
+# ·o· ··  END  ·· = { searchs... }
+# ·o·
+
+# : = _________________________________________________ : # ·o·
+# :                    Functions=                       = Directory Control System # ·o·
+# : = _________________________________________________ : # ·o·
+# : =
+# : = _________________________________________________ : 
+# :                       System=                       = System
+# : = _________________________________________________ :
+# : =
+#
+# : c : clears the terminal
+alias c='clear; ls'
+#
+# : .bk : create a backup of a file with timestamp by giving the path
+alias '.bk'='bk'
+#
+# : .cf : create recursively folders 
+#       : by give one string parameter with path and enter
+alias '.cf'='cf'
+#
+# : .dd : delete folder or file recursively
+alias '.dd'='rm -r'
+#
+# : .sr : search replace sed command capsulated in a function call
+alias '.sr'='sr'
+#
+# : ... : open current directory in Linux GUI
+alias '...'='xdg-open .'
+#
+# : h : changes the directory to the user's home directory and lists its contents
+alias h='cd ~ && ls'
+#
+# : pr : changes the directory to the previous one and lists its contents
+alias pr='cd - && ls'
+#
+# : r : changes the directory to the parent directory and lists its contents
+alias r='cd .. && ls'
+#
+# : rr : changes the directory to the grandparent directory and lists its contents
+alias rr='cd ../.. && ls'
+#
+# : rrr : changes the directory to the great-grandparent directory and lists its contents
+alias rrr='cd ../../.. && ls'
+#
+# : rrrr : changes the directory to the great-great-greatparent directory and lists its contents
+alias rrrr='cd ../../../.. && ls'
+#
+# : l : lists files and diredctories in long format, 
+#     : sorted by modification time
+alias l='ls -lrt '
+#
+# : ll : lists all files and directories in long format 
+#      : with human-readable sizes
+# : lll : lists all files and directories in long format 
+alias ll='ls -alh '
+#
+#       : with human-readable sizes, 
+#       : and opens the output in a pager (less)
+alias lll='ls -alh|less '
+#
+# : t : shows the last lines of a file and continues 
+#     : to display new lines as they are added
+alias t='tail -f '
+#
+# : tt : shows the last n lines of a file
+alias tt='tail -n'
+#
+# : ttt : shows the last 10 lines of a file
+alias ttt='tail -n 10'
+#
+# : tttt : shows the last 100 lines of a file
+alias tttt='tail -n 100'
+#
+# : terr : shows the last lines of the error log file
+alias terr='tail -f /var/log/error.log'
+#
+# : tsys : shows the last lines of the system log file
+alias tsys='tail -f /var/log/syslog'
+#
+# : =
+# : = _________________________________________________ : 
+# :                       System=                       = System
+# : = _________________________________________________ :
+# : =
+# : =           __________________________              : 
+# :   ________________ Directory= _____________________ = Directory Control System
+# : =           __________________________              : 

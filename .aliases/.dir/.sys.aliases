@@ -1,0 +1,89 @@
+# _SYS__________________________________________________ : = : System Control
+# _______________________________________ : = Reboot options :
+#
+# : s.r : initiates a system reboot
+alias 's.r'='sudo reboot now'
+#
+# : s.rr : initiates a system shutdown
+alias 's.rr'='sudo shutdown now'
+# _______________________________________ : = Reboot options :
+# ___________________________________ : = System information :
+#
+# : neo : displays system information using the neofetch command
+alias neo='neofetch '
+#
+# : calc : invokes the calculator (bc) in interactive mode
+alias calc='bc -l'
+#
+# : now : displays the current date and time
+alias now='date +"%Y-%m-%d %H:%M:%S"'
+#
+# : exe : adds executable permissions to a file
+alias exe='chmod +x '
+#
+# : ssh.rsa : displays the contents of the public ED SSH key
+alias 'ssh.rsa'='cat ~/.ssh/id_rsa.pub'
+#
+# : ssh.ed : displays the contents of the public ED SSH key
+alias 'ssh.ed'='cat ~/.ssh/id_ed25519.pub'
+#
+# : ssh.rsa.create : creates the contents of the public RSA SSH key
+alias 'ssh.rsa.create'='ssh-keygen -t rsa -b 2048'
+#
+# : ssh.ed.create : creates the contents of the public ED SSH key
+alias 'ssh.ed.create'='ssh-keygen -t ed25519'
+# ___________________________________ : = System information :
+# ________________________________________ : = System update :
+#
+#
+# : pi : pip install
+alias pi='pip install '
+#
+# : pp : run python3
+alias pp='python3 '
+#
+# : s.i : installs a package using apt-get
+alias 's.i'='sudo apt-get install '
+#
+# : s.pi : install a pyhon package
+alias 's.pi'='sudo pipx install '
+#
+# : s.si : installs a package using snap
+alias 's.si'='sudo snap install '
+#
+# : s.ud : updates the package lists
+alias 's.ud'='sudo apt-get update'
+#
+# : s.ug : upgrades installed packages
+alias 's.ug'='sudo apt-get upgrade'
+#
+# : s.arc : removes automatically installed packages 
+#         : that are no longer needed 
+#         : and cleans the package cache
+alias 's.arc'='sudo apt-get autoremove && sudo apt-get clean'
+# ________________________________________ : = System update :
+# ______________________________________ : = System commands :
+#
+#
+# : hg : searches the command history for a specific keyword
+alias hg='history|grep'
+#
+# : eco : displays the value of the PATH environment variable
+alias eco='echo $PATH'
+#
+# : cpu : lists running processes sorted by CPU usage
+alias cpu='ps aux --sort=-%cpu | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, substr(\$10, 1, 20)}" | head'
+alias cpus='ps aux --sort=-%cpu|head'
+#
+# : mem : dispay processes consuming the most memory
+alias mem='ps aux --sort=-%mem | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, \$10, substr(\$11, 1, 50)}" | head'
+alias mems='ps aux --sort=-%mem|head'
+#
+# : df : shows disk usage in human-readable format
+alias df='df -h '
+#
+# : du : shows disk usage for files and directories, 
+#      : sorted in decending order
+alias du='du -sh *|sort -rh '
+# ______________________________________ : = System commands :
+# _SYS__________________________________________________ : = : System Control

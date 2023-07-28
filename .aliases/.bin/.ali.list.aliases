@@ -1,0 +1,96 @@
+# ·o· _______________________________________________ ·o· 
+# ·o· ------------- All Aliases --------------------- ·o· All Aliases
+# ·o· _______________________________________________ ·o· 
+#
+# ( aliases ): lists all defined aliases in sorted order # ·e·
+#
+
+alias aliases='alias|sort|grep -E "="' # ·a·
+
+# ( .all ): lists all defined aliases in sorted order # ·e·
+#
+
+alias ".all"='aliases;' # ·a·
+
+# ·o· _______________________________________________ ·o· 
+# ·o·               -----------                       ·o· All Aliases
+# ·o· _______________________________________________ ·o·
+
+# ·o· _______________________________________________ ·o· 
+# ·o· --------------- Alias Lists ------------------- ·o· LISTS
+# ·o· _______________________________________________ ·o· 
+# ·o·                                                 ·o·  
+# ·o· _______________________________________________ ·o· 
+# ·o· ----------------- Directories ----------------- ·o· Directories
+# ·o· _______________________________________________ ·o· 
+#
+
+# ( .dir ): raw output · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir"='cat ~/.aliases/.dir/.dir.aliases' # ·a·
+#
+
+#
+# ( .dir.s ): search and highlight string · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.s"='custom_dir_search' # ·a·
+
+#
+# ( .dir.a ): lists aliases(only) · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.a"='dir_a' # ·a·
+
+#
+# ( .dir.aa ): (short) lists aliases(only) · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.aa"='dir_aa' # ·a·
+
+#
+# ( .dir.e ): lists explaination · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.e"='dir_e' # ·a·
+
+#
+# ( .dir.ee ): (short) lists explaination · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.ee"='dir_ee' # ·a·
+
+#
+# ( .dir.f ) : functions · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.f"='dir_f' # ·a·
+
+#
+# ( .dir.f.info ) : (only info) functions · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.f.info"='dir_f_info' # ·a·
+
+#
+# ( .dir.f.code ) : (only code) functions · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.f.code"='dir_f_code' # ·a·
+
+#
+# ( .dir.f.combine ) : (conmbined) functions · ~/.aliases/.dir/.dir.aliases # ·e·
+#
+
+alias ".dir.f.combine"='dir_f_combine' # ·a·
+
+#
+# ·o· _______________________________________________ ·o· 
+# ·o·                   ---------                     ·o· Directories
+# ·o· _______________________________________________ ·o· 
+# ·o· _______________________________________________ ·o· 
+# ·o·                 -----------                     ·o· LISTS
+# ·o· _______________________________________________ ·o· 
+
+

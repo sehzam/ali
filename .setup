@@ -1,0 +1,38 @@
+prompt () {
+if ! [ -d ~/ali-main ]; then
+    wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && 
+    unzip main.zip && 
+    rm main.zip 
+fi
+
+    echo ______________________________________________________ |grep -E "_"
+    echo If you want to UPDATE or REMOVE_________A_L_I_________ |grep -E "UPDATE|REMOVE|A_L_I" 
+    echo _______________________________ Alias Listing System ? |grep -E "_"
+    echo ______________________________________________________ |grep -E "_"
+    read -p "UPDATE: ( Y/y ) | REMOVE: ( N/n ) ? : " name 
+    echo ______________________________________________________ |grep -E "_"
+    if [ "$name" = "n" ] || [ "$name" = "N" ]; then
+        echo "REMOVING Alias Listing System A L I"
+        echo "$name""o. Let's remove this now"
+        clear && source ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
+        bash
+    fi
+    if [ "$name" = "y" ] || [ "$name" = "Y" ]; then
+        echo "UPDATING Alias Listing System A L I"
+        echo "$name""es. Let's do the job done"
+        clear && source ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
+        source ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
+        bash
+    elif ! [ "$name" = "Y" ] && ! [ "$name" = "y" ] && ! [ "$name" = "N" ] && ! [ "$name" = "n" ]; then
+        clear && source ~/ali-main/.setup|grep -E ':|·|~|\.|-|__'
+    fi
+    echo ______________________________________________________ |grep -E "_"
+}
+
+if ! [ -d ~/.aliases ]; then
+    echo "INSTALLING Alias Listing System A L I"
+    clear && source ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
+    bash
+elif [ -d ~/.aliases ]; then
+    prompt 
+fi
