@@ -89,8 +89,7 @@ bashrc_path="$HOME/.bashrc"
 ss_1="#-#-#"
 remove_string_from_file "$ss_1" "$bashrc_path"
 if ! grep -q "$ss_1" "$bashrc_path"; then
-echo "
-#-#-#
+echo "#-#-#
 # Aliases Loader #-#-#
 alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip && source ~/ali-main/.setup && source ~/.bashrc' #-#-#
 alias '.as'='.ali.setup' #-#-#
