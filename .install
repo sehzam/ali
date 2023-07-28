@@ -106,7 +106,7 @@ remove_string_from_file() {
 
 bashrc_path="$HOME/.bashrc"
 ss_1="#·#·#"
-remove_string_from_file "$ss_1" "$profile_path"
+remove_string_from_file "$ss_1" "$bashrc_path"
 
 if ! grep -q "$ss_1" "$bashrc_path"; then
 
