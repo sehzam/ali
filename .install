@@ -35,8 +35,8 @@ echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.list/ ~/.aliases/
 echo ..........Listing Directory : ~/.aliases/.dir/.list/
 ##
-cp -Rp ./ali-main/.aliases/.list/._list.template ~/.aliases/.list/
-echo .......... Listing Template : ~/.aliases/.list/._list.template
+cp -Rp ./ali-main/.aliases/.list/.lists.template ~/.aliases/.list/
+echo .......... Listing Template : ~/.aliases/.list/._lists.template
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 #
 cp -Rp ./ali-main/.aliases/.etc/.ali.list ~/.aliases/.etc/
