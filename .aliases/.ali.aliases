@@ -13,7 +13,7 @@ echo ·_________________________________· |grep -E "_"  # ·f·
 # ·o· ______________________________________________ ·o· 
 #
 # ( c ): clears the terminal # ·e· 
-alias c='clear; ls -a' # ·a· 
+alias c='clear; ls -alh' # ·a· 
 #
 . ~/.aliases/.bin/.ali.function.aliases
 #
