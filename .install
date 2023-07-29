@@ -66,6 +66,7 @@ fi # ·c·
 #
 for file in ~/.aliases/.dir/*; do
     if [ -f "$file" ]; then
+        echo $directory_to_save$filename
         # Dateiname ohne Pfad extrahieren
         filename=$(basename "$file")
 
