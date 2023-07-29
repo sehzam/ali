@@ -87,7 +87,7 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 echo "$directory_to_save.$alias_file.aliases"
 # ·e· Check, if file exist and if its a regular file
     if [ -f "$directory_to_save.$alias_file.aliases" ]; then # ·c· 
-      echo "$alias_file is sourced"
+      echo "$alias_file is sourced" 
       echo "ACCESS: ( .$alias_file.e )"
       source $directory_to_save.$alias_file.aliases # ·c· 
     fi # ·c· 
