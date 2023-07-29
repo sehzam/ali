@@ -19,14 +19,7 @@ else
     echo "File $output_file_var not exists or is empty."
     exit 1
 fi
-#
-# Example: Output of Content of: $output_file_data and $output_file_var_data
-echo "Content:  \$output_file_data:"
-echo "$output_file_data"
-#
-echo "Content: \$output_file_var_data:"
-echo "$output_file_var_data"
-#
+
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r alias_file; do # ·c· 
 # ·e· Debugging: list all loaded *.aliases files
@@ -52,11 +45,11 @@ alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ·f· ______________________________________________ ·f· 
 #
 ${alias_file}_a() { # ·c·
-  .$alias_file | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' | grep -E '# ·o|# ·a·|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·|--' # ·c·
+  .$alias_file | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' | grep -E '# ·o|# ·a·|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·' # ·c·
 } # ·c·
 #
 ${alias_file}_e() { # ·c·
-  .$alias_file | grep -E '·o|·e' | grep -v '# ·a' | grep -v '# ·c' | grep -E '# ·o|# ·e·|\(|\)|echo|__|·o·|# ·o·|# |--' # ·c·
+  .$alias_file | grep -E '·o|·e' | grep -v '# ·a' | grep -v '# ·c' | grep -E '# ·o|# ·e·|\(|\)|echo|__|·o·|# ·o·|# ' # ·c·
 } # ·c·
 #
 ${alias_file}_f() { # ·c· 
