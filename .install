@@ -56,7 +56,7 @@ echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
           echo "$output_file_var"
 
-directory_to_search="$HOME/.aliases/.dir/"
+directory_to_search="~/ali-main/.aliases/.dir/"
 directory_to_save="$HOME/.aliases/.list/"
 output_file="$HOME/.aliases/.etc/.ali.list"
 output_file_var="$HOME/.aliases/.etc/.ali.list.names"
