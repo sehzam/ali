@@ -3,55 +3,55 @@
 # ·o· ______________________________________________ ·o· 
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.n ) finds files with a specific name
-# = (ex) = .f.n myfile.txt
-alias '.f.n'='find . -type f -name'
+# ( .f.n ) finds files with a specific name # ·e·
+# = (ex) = .f.n myfile.txt # ·e·
+alias '.f.n'='find . -type f -name' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.s ) finds directories with a specific name
-# (i.e.) = .f.s mydir
-alias '.f.s'='find . -type d -name'
+# ( .f.s ) finds directories with a specific name # ·e·
+# (i.e.) = .f.s mydir # ·e·
+alias '.f.s'='find . -type d -name' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.x ) finds files with a specific extension
-# (i.e.) = .f.x *.jpg
-alias '.f.x'='find . -type f -name'
+# ( .f.x ) finds files with a specific extension # ·e·
+# (i.e.) = .f.x *.jpg # ·e·
+alias '.f.x'='find . -type f -name' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.s ) finds files with a specific size
-# (i.e.) = .f.s +1M
-alias '.f.s'='find . -type f -size'
+# ( .f.s ) finds files with a specific size # ·e·
+# (i.e.) = .f.s +1M # ·e·
+alias '.f.s'='find . -type f -size' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.m ) finds files modified after a specific date and time
-# (i.e.) = .f.m "2023-01-01 00:00:00"
-alias '.f.m'='find . -type f -newermt'
+# ( .f.m ) finds files modified after a specific date and time # ·e·
+# (i.e.) = .f.m "2023-01-01 00:00:00" # ·e·
+alias '.f.m'='find . -type f -newermt' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.min ) finds files modified within a specific number of minutes
-# (i.e.) = .f.min -60
-alias '.f.min'='find . -type f -mmin'
+# ( .f.min ) finds files modified within a specific number of minutes # ·e·
+# (i.e.) = .f.min -60 # ·e·
+alias '.f.min'='find . -type f -mmin' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.str ) finds files containing a specific string
-# ( i.e.) = .f.str 'search_string'
-alias '.f.str'='grep -r'
+# ( .f.str ) finds files containing a specific string # ·e·
+# ( i.e.) = .f.str 'search_string' # ·e·
+alias '.f.str'='grep -r' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.user ) finds files owned by a specific user
-# ( i.e.) = .f.user username
-alias '.f.user'='find . -type f -user'
+# ( .f.user ) finds files owned by a specific user # ·e·
+# ( i.e.) = .f.user username # ·e·
+alias '.f.user'='find . -type f -user' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.perm ) finds files with specific permissions
-# ( i.e.) = .f.user 644
-alias '.f.user'='find . -type f -perm'
+# ( .f.perm ) finds files with specific permissions # ·e·
+# ( i.e.) = .f.user 644 # ·e·
+alias '.f.user'='find . -type f -perm' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .f.user ) finds empty directories
-# (i.e.) = .f.user
-alias '.f.user'='find . -type d -empty'
+# ( .f.user ) finds empty directories # ·e·
+# (i.e.) = .f.user # ·e·
+alias '.f.user'='find . -type d -empty' # ·a·
 #
-# ·o· ______________________________________________ ·o· 
+# ·a· ______________________________________________ ·o· 
 # ·o· ---------- File System Control --------------- ·o· File System Control
 # ·o· ______________________________________________ ·o· 

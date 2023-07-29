@@ -5,117 +5,117 @@
 # ·o· -------------- Reboot Options ---------------- ·o· Reboot Options 
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.r ) initiates a system reboot
-alias 's.r'='sudo reboot now'
+# ( s.r ) initiates a system reboot # ·o·
+alias 's.r'='sudo reboot now' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.rr ) initiates a system shutdown
-alias 's.rr'='sudo shutdown now'
+# ( s.rr ) initiates a system shutdown # ·o·
+alias 's.rr'='sudo shutdown now' # ·o·
 #
 # ·o· -------------- Reboot Options ---------------- ·o· Reboot Options 
 #
 # ·o· ------------- System Information ------------- ·o· Sytem Information
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( neo ) displays system information using the neofetch command
-alias neo='neofetch '
+# ( neo ) displays system information using the neofetch command # ·o·
+alias neo='neofetch ' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( calc ) invokes the calculator (bc) in interactive mode
-alias calc='bc -l'
+# ( calc ) invokes the calculator (bc) in interactive mode # ·o·
+alias calc='bc -l' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( now ) displays the current date and time
-alias now='date +"%Y-%m-%d %H:%M:%S"'
+# ( now ) displays the current date and time # ·o·
+alias now='date +"%Y-%m-%d %H:%M:%S"' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( exe ) adds executable permissions to a file
-alias exe='chmod +x '
+# ( exe ) adds executable permissions to a file # ·o·
+alias exe='chmod +x ' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .ssh.rsa ) displays the contents of the public ED SSH key
-alias '.ssh.rsa'='cat ~/.ssh/id_rsa.pub'
+# ( .ssh.rsa ) displays the contents of the public ED SSH key # ·o·
+alias '.ssh.rsa'='cat ~/.ssh/id_rsa.pub' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .ssh.ed ) displays the contents of the public ED SSH key
-alias '.ssh.ed'='cat ~/.ssh/id_ed25519.pub'
+# ( .ssh.ed ) displays the contents of the public ED SSH key # ·o·
+alias '.ssh.ed'='cat ~/.ssh/id_ed25519.pub' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .ssh.rsa.create ) creates the contents of the public RSA SSH key
-alias '.ssh.rsa.create'='ssh-keygen -t rsa -b 2048'
+# ( .ssh.rsa.create ) creates the contents of the public RSA SSH key # ·o·
+alias '.ssh.rsa.create'='ssh-keygen -t rsa -b 2048' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .ssh.ed.create ) creates the contents of the public ED SSH key
-alias '.ssh.ed.create'='ssh-keygen -t ed25519'
+# ( .ssh.ed.create ) creates the contents of the public ED SSH key # ·o·
+alias '.ssh.ed.create'='ssh-keygen -t ed25519' # ·o·
 #
 # ·o· ------------- System Information ------------- ·o· Sytem Information
 #
 # ·o· --------------- Sytem Update ----------------- ·o· Sytem Update
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( pi ) pip install
-alias pi='pip install '
+# ( pi ) pip install # ·o·
+alias pi='pip install' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( pp ) run python3
-alias pp='python3 '
+# ( pp ) run python3 # ·o·
+alias pp='python3' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.i ) installs a package using apt-get
-alias 's.i'='sudo apt-get install '
+# ( s.i ) installs a package using apt-get # ·o·
+alias 's.i'='sudo apt-get install' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.pi ) install a pyhon package
-alias 's.pi'='sudo pipx install '
+# ( s.pi ) install a pyhon package # ·o·
+alias 's.pi'='sudo pipx install' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.si ) installs a package using snap
-alias 's.si'='sudo snap install '
+# ( s.si ) installs a package using snap # ·o·
+alias 's.si'='sudo snap install' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.ud ) updates the package lists
-alias 's.ud'='sudo apt-get update'
+# ( s.ud ) updates the package lists # ·o·
+alias 's.ud'='sudo apt-get update' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.ug ) upgrades installed packages
-alias 's.ug'='sudo apt-get upgrade'
+# ( s.ug ) upgrades installed packages # ·o·
+alias 's.ug'='sudo apt-get upgrade' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.arc ) removes automatically installed packages 
-#          : that are no longer needed 
-#          : and cleans the package cache
-alias 's.arc'='sudo apt-get autoremove && sudo apt-get clean'
+# ( s.arc ) removes automatically installed packages # ·o·
+#          : that are no longer needed # ·o·
+#          : and cleans the package cache # ·o·
+alias 's.arc'='sudo apt-get autoremove && sudo apt-get clean' # ·o·
 #
 # ·o· --------------- Sytem Update ----------------- ·o· Sytem Update
 #
 # ·o· -------------- System Commands --------------- ·o· System Commands
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( hg ) searches the command history for a specific keyword
-alias hg='history|grep'
+# ( hg ) searches the command history for a specific keyword # ·o·
+alias hg='history|grep' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( eco ) displays the value of the PATH environment variable
-alias eco='echo $PATH'
+# ( eco ) displays the value of the PATH environment variable # ·o·
+alias eco='echo $PATH' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( cpu ) lists running processes sorted by CPU usage
-alias cpu='ps aux --sort=-%cpu | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, substr(\$10, 1, 20)}" | head'
-alias cpus='ps aux --sort=-%cpu|head'
+# ( cpu ) lists running processes sorted by CPU usage # ·o·
+alias cpu='ps aux --sort=-%cpu | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, substr(\$10, 1, 20)}" | head' # ·o·
+alias cpus='ps aux --sort=-%cpu|head' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( mem ) dispay processes consuming the most memory
-alias mem='ps aux --sort=-%mem | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, \$10, substr(\$11, 1, 50)}" | head'
-alias mems='ps aux --sort=-%mem|head'
+# ( mem ) dispay processes consuming the most memory # ·o·
+alias mem='ps aux --sort=-%mem | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, \$10, substr(\$11, 1, 50)}" | head' # ·o·
+alias mems='ps aux --sort=-%mem|head' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( df ) shows disk usage in human-readable format
-alias df='df -h '
+# ( df ) shows disk usage in human-readable format # ·o·
+alias df='df -h' # ·o·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( du ) shows disk usage for files and directories, 
-#      : sorted in decending order
-alias du='du -sh *|sort -rh '
+# ( du ) shows disk usage for files and directories, # ·o·
+#      : sorted in decending order # ·o·
+alias du='du -sh *|sort -rh' # ·o·
 #
 # ·o· -------------- System Commands --------------- ·o· System Commands
 #
