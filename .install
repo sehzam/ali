@@ -63,8 +63,11 @@ output_file_var="$HOME/.aliases/.etc/.ali.list.names"
 search_pattern=".***.aliases"
 
 # Schleife zum Lesen der verfügbaren Dateien im Verzeichnis ~/.ali-main/.aliases/.dir/*
+echo "before"
 for file in ~/ali-main/.aliases/.dir/*; do
+echo "after"
     if [ -f "$file" ]; then
+echo "in"
         # Dateiname ohne Pfad extrahieren
         filename=$(basename "$file")
 
@@ -76,6 +79,7 @@ for file in ~/ali-main/.aliases/.dir/*; do
         echo "cp -Rp $file $directory_to_save$filename"
     fi
 done
+echo "out"
 
 
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
