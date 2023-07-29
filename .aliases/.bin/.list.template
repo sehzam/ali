@@ -1,0 +1,49 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           $alias_file            ------------ ·o· $alias_file
+# ·o· ______________________________________________ ·o· 
+#
+# ·o· ______________________________________________ ·o· 
+# ·o· --------------   R A W Output ---------------- ·o· R A W Output
+# ·o· ______________________________________________ ·o· 
+#
+# ( .$alias_file ): raw output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
+alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
+#
+# ·o· ---------------------------------------------- ·o· 
+#
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ Functions  ---------------- ·f· $alias_file Functions
+# ·f· ______________________________________________ ·f· 
+#
+${alias_file}_a() { # ·c·
+  .$alias_file | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' | grep -E '# ·o|# ·a|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·' # ·c·
+} # ·c·
+#
+${alias_file}_e() { # ·c·
+  .$alias_file | grep -E '·o|·e' | grep -v '# ·a' | grep -v '# ·c' | grep -E '# ·o|# ·e|\(|\)|echo|__|·o·|# ·o·|# ' # ·c·
+} # ·c·
+#
+${alias_file}_f() { # ·c· 
+  .$alias_file # ·c·
+} # ·c·
+#
+# ·f· ---------------------------------------------- ·f· 
+#
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------- Aliases ------------------ ·o· Development
+# ·o· ______________________________________________ ·o· 
+#
+# ( .$alias_file.a ): lists ~/.aliases/.dir/.$alias_file.aliases · ( only aliases ) # ·e·
+alias '.$alias_file.a'='c && ${alias_file}_a' # ·a·
+#
+# ( .$alias_file.e ): lists ~/.aliases/.dir/.$alias_file.aliases · ( alias + explaination ) # ·e· 
+alias '.$alias_file.e'='c && ${alias_file}_e' # ·a·
+#
+# ( .$alias_file.f ): lists ~/.aliases/.dir/.$alias_file.aliases · ( functions ) # ·e·
+alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
+#
+# ·o· ---------------------------------------------- ·o· 
+#
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           $alias_file            ------------ ·o· $alias_file
+# ·o· ______________________________________________ ·o· 
