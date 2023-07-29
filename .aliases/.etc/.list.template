@@ -5,6 +5,8 @@ directory_to_save="$HOME/.aliases/.list/" # ·v·
 output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v· 
 echo $output_file_var
 search_pattern=".***.aliases" # ·v· 
+
+if [ -s "$output_file_var" ]; then # ·c·
 echo "list template file ok"
     while read -r alias_file; do # ·c· 
 # ·e· Debugging: list all loaded *.aliases files
@@ -72,3 +74,4 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
     fi # ·c· 
 #
   done < "$output_file_var" # ·c· 
+fi # ·c·
