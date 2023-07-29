@@ -45,15 +45,15 @@ alias ".ali.func"='c && cat ~/.aliases/.bin/.ali.function.aliases' # ·a·
 # ·f· ______________________________________________ ·f· 
 #
 ali_a() { # ·c·
-  .ali | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' | grep -E '# ·o|# ·a|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·' # ·c·
+  .ali # ·c·
 } # ·c·
 #
 ali_e() { # ·c·
-  .ali | grep -E '·o|·e' | grep -v '# ·a' | grep -v '# ·c' | grep -E '# ·o|# ·e|\(|\)|echo|__|·o·|# ·o·|# ' # ·c·
+  .ali # ·c·
 } # ·c·
 #
 ali_f() { # ·c· 
-  .ali.func # ·c·
+   c && .ali.func | grep -v '·o·' | grep -v '·e·'| grep -E '\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 #
 # ·f· ---------------------------------------------- ·f· 
