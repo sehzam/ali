@@ -9,51 +9,67 @@ echo -
 echo ______________________________________________________
 echo ..............Installation started !
 echo ______________________________________________________
+#
 echo ·________________________________· |grep -E "_"  
 echo "| copying files to directory:    |" ~/.aliases/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
+#
 cp -Rp ./ali-main/.aliases/.ali.aliases ~/.aliases/
 cp ./ali-main/.uninstall ~/.aliases/.uninstall
+#
 echo ...............ali commands : ~/.aliases/.ali.aliases
+#
 echo .....deinstall link created : ~/.aliases/.uninstall
+#
 echo ·________________________________· |grep -E "_" 
 echo "| copying files to directory:    |" ~/.aliases/.bin/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
+#
 cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
 echo ......Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
+#
 cp -Rp ./ali-main/.aliases/.etc/.list.template ~/.aliases/.etc/
 echo ............. List Template : ~/.aliases/.etc/.list.template
+#
 echo ·________________________________· |grep -E "_" 
 echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-cp -Rp ./ali-main/.aliases/.etc/.keep ~/.aliases/.etc
-echo ..........Listing Directory : ~/.aliases/.dir/.list/.keep
+cp -Rp ./ali-main/.aliases/.list/ ~/.aliases/
+echo ..........Listing Directory : ~/.aliases/.dir/.list/
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.dir.aliases ~/.aliases/.dir/
 echo .........Directory commands : ~/.aliases/.dir/.dir.aliases
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.fsc.aliases ~/.aliases/.dir/
 echo ........Filesystem commands : ~/.aliases/.dir/.fsc.aliases 
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.git.aliases ~/.aliases/.dir/
 echo ...............Git commands : ~/.aliases/.dir/.git.aliases
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.own.aliases ~/.aliases/.dir/
 echo ..............List commands : ~/.aliases/.dir/.own.aliases 
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.net.aliases ~/.aliases/.dir/
 echo ...........Network commands : ~/.aliases/.dir/.net.aliases
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.sys.aliases ~/.aliases/.dir/
 echo ............System commands : ~/.aliases/.dir/.sys.aliases 
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.zip.aliases ~/.aliases/.dir/
 echo .......Compression commands : ~/.aliases/.dir/.zip.aliases
+#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.ghb.aliases ~/.aliases/.dir/
 echo ............GitHub commands : ~/.aliases/.dir/.ghb.aliases
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 
 remove_string_from_file() {
     local search_string="$1"
