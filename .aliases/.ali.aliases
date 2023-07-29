@@ -1,60 +1,78 @@
+#
 echo \| TYPE · \(.ali.e\) · and HIT enter \||grep -E "_|\(|\)|TYPE|HIT" # ·f·
 echo ·_________________________________· |grep -E "_"  # ·f·
-
+#
 # ·o·                                                ·o·
 # ·o·              { A } = lias                      ·o·
 # ·o·              { L } = ists                      ·o·
 # ·o·              { I } = njection                  ·o·
 # ·o·                                                ·o·
 # ·o· ______________________________________________ ·o· 
+#
 # ·o· --------------- Loadings --------------------- ·o· Loading
 # ·o· ______________________________________________ ·o· 
+#
 # ( c ): clears the terminal # ·e· 
 alias c='clear; ls -a' # ·a· 
+#
 . ~/.aliases/.bin/.ali.function.aliases
-. ~/.aliases/.bin/.ali.list.aliases
-
+#
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Installation ------------------ ·o· Installation
 # ·o· ______________________________________________ ·o· 
+#
 # ( .ali.setup | .as ): INSTALL / RE INSTALL / UN INSTALL {ali} # ·e·
+#
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------ Custom Editing ------------------ ·o· Custom Editing
 # ·o· ______________________________________________ ·o· 
+#
 # ( .ali.edit ): opens the .bash_aliases file in the default editor # ·e·
 alias ".ali.edit"='xdg-open ~/.aliases/.ali.aliases' # ·a·
+#
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- R A W Output ------------------ ·o· R A W Output
 # ·o· ______________________________________________ ·o· 
+#
 # ( .ali ): raw output · ~/.bash_aliases  # ·e·
 alias ".ali"='c && cat ~/.aliases/.ali.aliases' # ·a·
+#
 # ·o· ---------------------------------------------- ·o· 
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions ----------------- ·f· {ali} Functions
 # ·f· ______________________________________________ ·f· 
+#
 ali_a() { # ·c·
   .ali | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' | grep -E '# ·o|# ·a|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·' # ·c·
 } # ·c·
+#
 ali_e() { # ·c·
   .ali | grep -E '·o|·e' | grep -v '# ·a' | grep -v '# ·c' | grep -E '# ·o|# ·e|\(|\)|echo|__|·o·|# ·o·|# ' # ·c·
 } # ·c·
+#
 ali_f() { # ·c· 
   .ali | grep -E '·f|·c|·v|·i|·e|·o' | grep -v 'alias' | grep -E '·f·|#|·v·|·i·|\(|\)|echo|__|·c·' # ·c·
 } # ·c·
+#
 # ·f· ---------------------------------------------- ·f· 
+#
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------- Aliases ------------------ ·o· Development
 # ·o· ______________________________________________ ·o· 
+#
 # ( .ali.a ): lists ~/.aliases/.ali.aliases · ( only aliases ) # ·e·
 alias ".ali.a"='c && ali_a' # ·a·
+#
 # ( .ali.e ): lists ~/.aliases/.ali.aliases · ( alias + explaination ) # ·e· 
 alias ".ali.e"='c && ali_e' # ·a·
 alias ".ali.e"='c && ali_e' # ·a·
+#
 # ( .ali.f ): lists ~/.aliases/.ali.aliases · ( functions ) # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
+#
 # ·o· ---------------------------------------------- ·o· 
 #
 # ·o·                                                ·o·
