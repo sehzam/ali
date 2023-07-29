@@ -26,8 +26,8 @@ echo "| copying files to directory:    |" ~/.aliases/.bin/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
 cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
 echo ......Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
-cp -Rp ./ali-main/.aliases/.bin/.ali.list.aliases ~/.aliases/.bin/
-echo ..........Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
+cp -Rp ./ali-main/.aliases/.bin/.list.template ~/.aliases/.bin/
+echo ............. List Template : ~/.aliases/.bin/.list.template
 echo ·________________________________· |grep -E "_" 
 echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
