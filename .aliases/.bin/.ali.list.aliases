@@ -1,6 +1,7 @@
 #!/bin/bash
 
 directory_to_search="$HOME/.aliases/.dir/"
+mkdir -p ~/.aliases/.list/
 directory_to_save="$HOME/.aliases/.list/"
 output_file="$HOME/.aliases/.bin/.dir.list"
 output_file_var="$HOME/.aliases/.bin/.dir.list.names"
