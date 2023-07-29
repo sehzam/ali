@@ -13,6 +13,8 @@ fi
 
 if [ -s "$output_file" ]; then
     while read -r alias_file; do
+    echo $alias_file
+    echo $directory_to_save
         if [ -f "$directory_to_search$alias_file" ]; then
             echo "#
 # ·o· ______________________________________________ ·o· 
