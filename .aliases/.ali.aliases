@@ -39,7 +39,6 @@ alias ".ali"='c && cat ~/.aliases/.ali.aliases' # ·a·
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions ----------------- ·f· {ali} Functions
 # ·f· ______________________________________________ ·f· 
-
 ali_a() { # ·c·
   .ali | grep -E "·o|·a" | grep -v "# ·e" | grep -v "# ·c" # ·c·
 } # ·c·
@@ -54,12 +53,11 @@ ali_f() { # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------- Aliases ------------------ ·o· Development
 # ·o· ______________________________________________ ·o· 
-# ( .ali.a ): lists ~/.bash_aliases · ( only aliases ) # ·e·
+# ( .ali.a ): lists ~/.aliases/.ali.aliases · ( only aliases ) # ·e·
 alias ".ali.a"='c && ali_a | grep -E "# ·o|# ·a|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·"' # ·a·
 # ( .ali.e ): lists ~/.bash_aliases · ( alias + explaination ) # ·e· 
 alias ".ali.e"='c && ali_e' # ·a·
 alias ".ali.e"='c && ali_e | grep -E "# ·o|# ·e|\(|\)|echo|__|·o·|# ·o·|# "' # ·a·
-
 # ( .ali.f ): lists ~/.bash_aliases · ( functions ) # ·e·
 alias ".ali.f"='c && ali_f | grep -E "·f·|#|·v·|·i·|\(|\)|echo|__|·c·"' # ·a·
 # ·o· ---------------------------------------------- ·o· 

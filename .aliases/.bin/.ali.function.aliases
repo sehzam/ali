@@ -7,10 +7,10 @@
     } # ·c·
 # ·e· ( START ) = { List of alias files containing alias definitions for the shell }
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
-output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
-output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
+output_file="$HOME/.aliases/.etc/.ali.list"
+output_file_var="$HOME/.aliases/.etc/.ali.list.names"
 search_pattern=".***.aliases" # ·v· 
-if ! [ -f ~/.aliases/.bin/.ali.lists ]; then # ·c·  
+if ! [ -f ~/.aliases/.etc/.ali.lists ]; then # ·c·  
         # ·e· ( INFO ) Find commmand searchs for files with pattern abd write it to file  
         find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
         find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
@@ -24,7 +24,6 @@ if [ -s "$output_file" ]; then # ·c·
         if [ -f "$directory_to_search$alias_file" ]; then # ·c· 
             # ·e· ( INFO ) sourcing the file, for loading it to current shell session
             # ·e· ( INFO ) in .bashrc its loads at every new shell session
-            echo "$directory_to_search$alias_file" # ·c·
             . "$directory_to_search$alias_file" # ·c·
         fi # ·c· 
     done < "$output_file" # ·c·v· 

@@ -1,66 +1,79 @@
+#!/bin/bash
 
 directory_to_search="$HOME/.aliases/.dir/"
 directory_to_save="$HOME/.aliases/.list/"
-output_file=$(cat ~/.aliases/.bin/.ali.list)
-output_file_var=$(cat ~/.aliases/.bin/.ali.list.names)
+output_file="$HOME/.aliases/.etc/.ali.list"
+output_file_var="$HOME/.aliases/.etc/.ali.list.names"
 
-            echo "$directory_to_search"
-            echo "$alias_file" 
-
-if [ -s "$output_file" ]; then
+# Prüfen, ob die Ausgabedatei nicht leer ist
+if [ -s "$output_file_var" ]; then
     while read -r alias_file; do
-        if [ -f "$directory_to_search$alias_file" ]; then
-            echo "#
+        # Ausgabe der Variablen für Debugging
+        echo "$directory_to_save.$alias_file.aliases"
+
+        # Überprüfen, ob die Datei existiert und eine reguläre Datei ist
+        if [ -f "$directory_to_search.$alias_file.aliases" ]; then
+
+
+echo "
 # ·o· ______________________________________________ ·o· 
-# ·o· --------      $alias_file         ------------ ·o· $alias_file
+# ·o· --------          $alias_file            ------------ ·o· $alias_file
 # ·o· ______________________________________________ ·o· 
-#" > "$directory_to_save$alias_file.aliases"
-            echo "#
-# ( .$alias_file ): raw output · ~/.aliases/.dir/$alias_file.aliases # ·e·
-#" >> "$directory_to_save$alias_file.aliases"
-            echo "alias \".${alias_file}\"='cat ~/.aliases/.dir/${alias_file}.aliases' # ·a·
-#" >> "$directory_to_save$alias_file.aliases"
+#
 
-            echo "#
-# ( .$alias_file.s ): search and highlight string · ~/.aliases/.dir/$alias_file.aliases # ·e·
-#" >> "$directory_to_save$alias_file.aliases"
-            echo "alias \".${alias_file}.s\"='custom_dir_search' # ·a·
-#" >> "$directory_to_save$alias_file.aliases"
-
-            echo "#
-# ( .$alias_file.a ): lists aliases(only) · ~/.aliases/.dir/$alias_file.aliases # ·e·
-#" >> "$directory_to_save$alias_file.aliases"
-            echo "alias \".${alias_file}.a\"='dir_a' # ·a·
-#" >> "$directory_to_save$alias_file.aliases"
-
-            echo "#
-# ( .$alias_file.aa ): (short) lists aliases(only) · ~/.aliases/.dir/$alias_file.aliases # ·e·
-#" >> "$directory_to_save$alias_file.aliases"
-            echo "alias \".${alias_file}.aa\"='dir_aa' # ·a·
-#" >> "$directory_to_save$alias_file.aliases"
-
-            echo "#
-# ( .$alias_file.e ): lists explanation · ~/.aliases/.dir/$alias_file.aliases # ·e·
-#" >> "$directory_to_save$alias_file.aliases"
-            echo "alias \".${alias_file}.e\"='dir_e' # ·a·
-#" >> "$directory_to_save$alias_file.aliases"
-
-            echo "#
-# ( .$alias_file.ee ): (short) lists explanation · ~/.aliases/.dir/$alias_file.aliases # ·e·
-#" >> "$directory_to_save$alias_file.aliases"
-            echo "alias \".${alias_file}.ee\"='dir_ee' # ·a·
-#" >> "$directory_to_save$alias_file.aliases"
-
-            echo "#
-# ( .$alias_file.f ) : functions · ~/.aliases/.dir/$alias_file.aliases # ·e·
-#" >> "$directory_to_save$alias_file.aliases"
-            echo "alias \".${alias_file}.f\"='dir_f' # ·a·
-#" >> "$directory_to_save$alias_file.aliases"
-            echo "#
 # ·o· ______________________________________________ ·o· 
-# ·o· --------      $alias_file         ------------ ·o· $alias_file
+# ·o· -------------- R A W Output ------------------ ·o· R A W Output
 # ·o· ______________________________________________ ·o· 
-#" >> "$directory_to_save$alias_file.aliases"
+# ( .$alias_file ): raw output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
+alias ".$alias_file"='c && cat ~/.aliases/.dir.$alias_file.aliases' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ Functions ----------------- ·f· {ali} Functions
+# ·f· ______________________________________________ ·f· 
+$alias_file'_a'() { # ·c·
+  .$alias_file | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' # ·c·
+} # ·c·
+$alias_file'_e'() { # ·c·
+  .$alias_file | grep -E '·o|·e' | grep -v '# ·a' | grep -v '# ·c' # ·c·
+} # ·c·
+$alias_file'_f'() { # ·c· 
+  .$alias_file | grep -E '·f|·c|·v|·i|·e|·o' | grep -v 'alias' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------- Aliases ------------------ ·o· Development
+# ·o· ______________________________________________ ·o· 
+# ( .$alias_file.a ): lists ~/.aliases/.dir/.$alias_file.aliases · ( only aliases ) # ·e·
+alias '.$alias_file.a'='c && $alias_file'_a' | grep -E '# ·o|# ·a|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·' # ·a·
+# ( .$alias_file.e ): lists ~/.aliases/.dir/.$alias_file.aliases · ( alias + explaination ) # ·e· 
+alias '.$alias_file.e'='c && $alias_file'_e'' # ·a·
+alias '.$alias_file.e'='c && $alias_file'_e' | grep -E '# ·o|# ·e|\(|\)|echo|__|·o·|# ·o·|# ' # ·a·
+# ( .$alias_file.f ): lists ~/.aliases/.dir/.$alias_file.aliases · ( functions ) # ·e·
+alias '.$alias_file.f'='c && $alias_file'_f' | grep -E '·f·|#|·v·|·i·|\(|\)|echo|__|·c·' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+#
+# ·o· ______________________________________________ ·o· 
+# ·o· --------          $alias_file            ------------ ·o· $alias_file
+# ·o· ______________________________________________ ·o· 
+#
+" > "$directory_to_save.$alias_file.aliases"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         fi
     done < "$output_file_var"
 fi
+
