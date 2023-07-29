@@ -85,7 +85,7 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 #
 # ·o· ______________________________________________ ·o· 
 # ·o· --------           $alias_file            ------------ ·o· $alias_file
-# ·o· ______________________________________________ ·o·" > $directory_to_save.$alias_files.aliases # ·c· 
+# ·o· ______________________________________________ ·o·" > $directory_to_save.$alias_file.aliases # ·c· 
 
 echo "$directory_to_save.$alias_file.aliases"
 # ·e· Check, if file exist and if its a regular file
