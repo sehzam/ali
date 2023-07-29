@@ -125,14 +125,14 @@ uc_string=$(echo "$input_string" | tr '[:lower:]' '[:upper:]') # ·c·
 current_year=$(date +%Y) # ·c·
 
 # Schreiben des Inhalts in die README.md-Datei # ·e·
-cat > README.md << EOF # ·c·
+cat > README.md << EOF
 ---
 #
 # $(echo "$uc_string" | tr -d '\n' | sed 's/./ & /g')
 # 
 ---
-EOF # ·c·
-cat >> README.md << EOF # ·c·
+EOF
+cat >> README.md << EOF
 > __Content__:
   - For evolving workflow speed.
     - ...
@@ -146,10 +146,10 @@ cat >> README.md << EOF # ·c·
   - ...
   - ...
 ---
-EOF # ·c·
+EOF
 
 
-cat >> README.md << EOF # ·c·
+cat >> README.md << EOF
 ## Installation
 
 > For the first __Installation:__
@@ -174,7 +174,7 @@ cat >> README.md << EOF # ·c·
 ## Contributors & Authors
 > Author: ${GITHUB_USERNAME} © ${current_year}
 ---
-EOF # ·c·
+EOF
     # Add the README.md to the staging area # ·e·
     git add README.md # ·c·
 
