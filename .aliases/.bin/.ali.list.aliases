@@ -1,8 +1,8 @@
 
 directory_to_search="$HOME/.aliases/.dir/"
 directory_to_save="$HOME/.aliases/.list/"
-output_file=$(cat ~/.aliases/.bin/.dir.list)
-output_file_var=$(cat ~/.aliases/.bin/.dir.list.names)
+output_file=$(cat ~/.aliases/.bin/.ali.list)
+output_file_var=$(cat ~/.aliases/.bin/.ali.list.names)
 
             echo "$directory_to_search"s
             echo "$alias_file" 
