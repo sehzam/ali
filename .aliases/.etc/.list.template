@@ -1,5 +1,7 @@
 # Die Funktion mit dem Namen 'generate_alias' nimmt den Parameter $alias_file entgegen
 generate_alias() {
+echo "generate_alias() {"
+echo "$1"
     local alias_file="$1"
 
     echo "#
@@ -54,6 +56,3 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 # ·o· ______________________________________________ ·o· 
 "
 }
-
-# Hier rufen wir die Funktion 'generate_alias' mit dem Parameter "example" auf
-generate_alias "example"
