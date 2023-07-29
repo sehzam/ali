@@ -61,7 +61,9 @@ echo ..........Listing Directory : ~/.aliases/.dir/.list/
 if ! [ -f ~/.aliases/.etc/.ali.lists ]; then # ·c·  
         # ·e· ( INFO ) Find commmand searchs for files with pattern abd write it to file  
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
+          echo "$output_file"
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
+          echo "$output_file_var"
 fi # ·c· 
 #
 for file in ~/.aliases/.dir/*; do
