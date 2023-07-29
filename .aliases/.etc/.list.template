@@ -4,6 +4,7 @@ directory_to_save="$HOME/.aliases/.list/" # ·v·
 #
 if [ -s "$output_file_var" ]; then # ·c· 
     while read -r alias_file; do # ·c· 
+    echo $alias_file
         # ·e· Debugging: list all loaded *.aliases files
           echo "$directory_to_save.$alias_file.aliases" # ·c· 
 
