@@ -75,6 +75,7 @@ echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.ghb.aliases ~/.aliases/.dir/
 echo ............GitHub commands : ~/.aliases/.dir/.ghb.aliases
 
+echo ............TEST
 remove_string_from_file() {
     local search_string="$1"
     local file_path="$2"
@@ -85,6 +86,7 @@ remove_string_from_file() {
 bashrc_path="$HOME/.bashrc"
 ss_1="#-#-#"
 remove_string_from_file "$ss_1" "$bashrc_path"
+echo ............TEST
 
 echo ______________________________________________________
 echo ......"UNNESTED: universal entry points removed"
