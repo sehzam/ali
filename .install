@@ -40,10 +40,6 @@ echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
 #
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-cp -Rp ./ali-main/.aliases/.list/.info ~/.aliases/.list
-echo ..........Listing Directory : ~/.aliases/.list/
-#
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.dir.aliases ~/.aliases/.dir/
 echo .........Directory commands : ~/.aliases/.dir/.dir.aliases
 #
