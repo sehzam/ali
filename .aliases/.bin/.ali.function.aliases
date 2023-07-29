@@ -57,7 +57,7 @@ alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 #
 # ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions ----------------- ·f· {ali} Functions
+# ·f· ------------------ Functions ----------------- ·f· $alias_file Functions
 # ·f· ______________________________________________ ·f· 
 #
 ${alias_file}_a() { # ·c·
@@ -69,7 +69,7 @@ ${alias_file}_e() { # ·c·
 } # ·c·
 #
 ${alias_file}_f() { # ·c· 
-  .$alias_file | grep -E '·f|·c|·v|·i|·e|·o' | grep -v 'alias' | grep -E '·f·|#|·v·|·i·|\(|\)|echo|__|·c·' # ·c·
+  .$alias_file # ·c·
 } # ·c·
 #
 # ·f· ---------------------------------------------- ·f· 
@@ -101,7 +101,7 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 fi # ·c· 
 #
 # ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions  ---------------- ·f· .ali Entry Point
+# ·f· ------------------ Functions  ---------------- ·f· Directory Control System
 # ·f· ______________________________________________ ·f· 
 #
 # ·e· ·· START ·· = { make a backup of file given as parameter with timestamp }
