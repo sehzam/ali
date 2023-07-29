@@ -69,9 +69,7 @@ fi # ·c·
 #
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r alias_file; do # ·c·
-          if [ -f "$directory_to_search$alias_file" ]; then # ·c· 
                 echo $directory_to_source$alias_file # ·c· 
-          fi # ·c· 
     done < "$output_file_var" # ·c·
 fi # ·c·
 
