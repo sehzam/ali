@@ -32,8 +32,11 @@ echo ·________________________________· |grep -E "·"
 cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
 echo ......Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
 #
-cp -Rp ./ali-main/.aliases/.etc/.list.template ~/.aliases/.etc/
-echo ............. List Template : ~/.aliases/.etc/.list.template
+cp -Rp ./ali-main/.aliases/.list/._list.template ~/.aliases/.list/
+echo .......... Listing Template : ~/.aliases/.list/._list.template
+#
+cp -Rp ./ali-main/.aliases/.etc/.ali.list ~/.aliases/.etc/
+echo ...... Alias Category Lists : ~/.aliases/.etc/.ali.list
 #
 echo ·________________________________· |grep -E "_" 
 echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"

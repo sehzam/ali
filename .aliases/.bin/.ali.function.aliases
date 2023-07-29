@@ -39,7 +39,7 @@ if [ -s "$output_file" ]; then # ·c·
           fi # ·c· 
     done < "$output_file" # ·c·
 fi # ·c·
-source ~/.aliases/.etc/.list.template
+source ~/.aliases/.list/._list.template
 
 
 
