@@ -1,12 +1,18 @@
+#
+echo ·_________________________________· |grep -E "_"  # ·f·
+echo \| TYPE · \(.ali.e\) · and HIT enter \||grep -E "_|\(|\)|TYPE|HIT" # ·f·
+echo ·_________________________________· |grep -E "_"  # ·f·
+#
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions ----------------- ·f· .ali Entry Point
 # ·f· ______________________________________________ ·f· 
+#
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
 directory_to_save="$HOME/.aliases/.list/" # ·v· 
 output_file="$HOME/.aliases/.etc/.ali.list"
 output_file_var="$HOME/.aliases/.etc/.ali.list.names"
 search_pattern=".***.aliases" # ·v· 
-
+#
 if ! [ -f ~/.aliases/.etc/.ali.lists ]; then # ·c·  
         # ·e· ( INFO ) Find commmand searchs for files with pattern abd write it to file  
         find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
@@ -31,10 +37,7 @@ fi # ·c·
       grep -E "$1" "$2" # ·c·
     } # ·c·
 # ·e· ( START ) = { List of alias files containing alias definitions for the shell }
-
-
-
-
+#
 # Prüfen, ob die Ausgabedatei nicht leer ist
 if [ -s "$output_file_var" ]; then
     while read -r alias_file; do
@@ -43,11 +46,8 @@ if [ -s "$output_file_var" ]; then
 
         # Überprüfen, ob die Datei existiert und eine reguläre Datei ist
         if [ -f "$directory_to_search.$alias_file.aliases" ]; then
-
-
-echo "
 #
-# ·o· ______________________________________________ ·o· 
+echo "# ·o· ______________________________________________ ·o· 
 # ·o· --------           $alias_file            ------------ ·o· $alias_file
 # ·o· ______________________________________________ ·o· 
 #
@@ -87,7 +87,6 @@ alias '.$alias_file.a'='c && ${alias_file}_a' # ·a·
 #
 # ( .$alias_file.e ): lists ~/.aliases/.dir/.$alias_file.aliases · ( alias + explaination ) # ·e· 
 alias '.$alias_file.e'='c && ${alias_file}_e' # ·a·
-alias '.$alias_file.e'='c && ${alias_file}_e' # ·a·
 #
 # ( .$alias_file.f ): lists ~/.aliases/.dir/.$alias_file.aliases · ( functions ) # ·e·
 alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
@@ -97,35 +96,34 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 # ·o· ______________________________________________ ·o· 
 # ·o· --------           $alias_file            ------------ ·o· $alias_file
 # ·o· ______________________________________________ ·o· 
-#
 " > "$directory_to_save.$alias_file.aliases"
 source $directory_to_save.$alias_file.aliases
         fi
     done < "$output_file_var"
 fi
+#
+# ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions ----------------- ·f· .ali Entry Point
 # ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions ----------------- ·f· Directory Control System
-# ·f· ______________________________________________ ·f· 
-
+#
 # ·e· ·· START ·· = { make a backup of file given as parameter with timestamp }
 bk() { # ·c·
   # ·e· = alias = .bk
   cp "$1" "$1_$(date '+%Y%m%d%H%M%S').bak" # ·c· 
 } # ·c· 
-
+#
 # ·e· ·· START ·· = { create folder recursively and enter them }
 cf() { # ·c·
   # ·e· = alias = .cf
   mkdir -p "$1" && cd "$1" # ·c·
 } # ·c· 
-
+#
 # ·e· ·· START ·· = { searchs for string and replace the in file }
 sr() { # ·c·
   # ·e· = alias = .sr
   sed -i "s/$1/$2/g" "$3" # ·c· 
 } # ·c· 
-
+#
 function copy_create_folder() { # ·c· 
   # ·e· # Get the last argument as the destination
   local destination="${@: -1}" # ·c·  
@@ -134,5 +132,5 @@ function copy_create_folder() { # ·c·
   shift $(( $# - 1 )) # ·c·  
   cp -r "$@" "$destination" # ·c· 
 } # ·c· 
-
+#
 # ·f· ------------------ Functions ----------------- ·f· Directory Control System
