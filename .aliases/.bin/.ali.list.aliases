@@ -18,6 +18,7 @@ if [ -s "$output_file" ]; then
 #" > "$directory_to_search$list.$alias_file"
             echo "alias \".${alias_file}\"='cat ~/.aliases/.dir/${alias_file}.aliases' # ·a·
 #" >> "$directory_to_search$list.$alias_file"
+echo "$directory_to_search$list.$alias_file"
 
             echo "#
 # ( .$alias_file.s ): search and highlight string · ~/.aliases/.dir/$alias_file.aliases # ·e·
