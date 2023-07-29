@@ -1,5 +1,6 @@
 directory_to_search="$HOME/.aliases/.dir/"
 directory_to_save="$HOME/.aliases/.list/"
+directory_to_source="$HOME/.ali-main/.aliases/"
 output_file="$HOME/.aliases/.etc/.ali.list"
 output_file_var="$HOME/.aliases/.etc/.ali.list.names"
 search_pattern=".***.aliases"
@@ -66,17 +67,13 @@ if ! [ -f ~/.aliases/.etc/.ali.lists ]; then # ·c·
           echo "$output_file_var"
 fi # ·c· 
 #
-for file in ~/.aliases/.dir/*; do
-    if [ -f "$file" ]; then
-        echo $directory_to_save$filename
-        # Dateiname ohne Pfad extrahieren
-        filename=$(basename "$file")
-
-        # Ausführen des cp -Rp Befehls für jede Datei im vorgegebenen Format
-        cp -Rp "$file" "$directory_to_save$filename"
-        echo "cp -Rp $file $directory_to_save$filename"
-    fi
-done
+if [ -s "$output_file_var" ]; then # ·c·
+    while read -r alias_file; do # ·c·
+          if [ -f "$directory_to_search$alias_file" ]; then # ·c· 
+                echo $directory_to_source$alias_file # ·c· 
+          fi # ·c· 
+    done < "$output_file_var" # ·c·
+fi # ·c·
 
 
 remove_string_from_file() {
