@@ -1,126 +1,59 @@
-# ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions ----------------- ·f· .ali Entry Point
-# ·f· ______________________________________________ ·f· 
-# ·e· ( START ) = { List of alias files containing alias definitions for the shell }
-directory_to_search="$HOME/.aliases/.dir/" # ·v· 
-output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
-output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
-search_pattern=".***.aliases" # ·v· 
-if ! [ -f ~/.aliases/.ali.lists ]; then # ·c·  
-        # ·e· ( INFO ) Find commmand searchs for files with pattern abd write it to file  
-        find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
-        find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
-fi # ·c· 
-# ·e· ( INFO ) Source reading the aliases to make it available at current session 
-# ·e· ( INFO ) Check, output file exists and is not empty 
-if [ -s "$output_file" ]; then # ·c·
-    while read -r alias_file; do # ·c·
-    # ·e· ( INFO ) If the output file exists, than source it 
-        # ·e· ( INFO ) Check, if file exists as regular file  
-        if [ -f "$directory_to_search$alias_file" ]; then # ·c· 
-            # ·e· ( INFO ) sourcing the file, for loading it to current shell session
-            # ·e· ( INFO ) in .bashrc its loads at every new shell session
-            echo "$directory_to_search$alias_file" # ·c·
-            echo "list" # ·c·
-            . "$directory_to_search$alias_file" # ·c·
-        fi # ·c· 
-    done < "$output_file" # ·c·v· 
-fi # ·c·
-# ·f· ------------------ Functions ----------------- ·f· .ali Entry Point
+#!/bin/bash
 
-# ·o· _______________________________________________ ·o· 
-# ·o· ------------- All Aliases --------------------- ·o· All Aliases
-# ·o· _______________________________________________ ·o· 
-#
-# ( aliases ): lists all defined aliases in sorted order # ·e·
-#
+directory_to_search="$HOME/.aliases/.dir/"
+output_file="$HOME/.aliases/.bin/.ali.list"
+output_file_var="$HOME/.aliases/.bin/.ali.list.names"
+search_pattern=".***.aliases"
 
-alias aliases='alias|sort|grep -E "="' # ·a·
+if ! [ -f ~/.aliases/.ali.lists ]; then
+    find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file"
+    find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var"
+fi
 
-# ( .all ): lists all defined aliases in sorted order # ·e·
-#
+if [ -s "$output_file" ]; then
+    while read -r alias_file; do
+        if [ -f "$directory_to_search$alias_file" ]; then
+            echo "#
+# ( .$alias_file ): raw output · ~/.aliases/.dir/$alias_file.aliases # ·e·
+#" > "$directory_to_search$list.$alias_file"
+            echo "alias \".${alias_file}\"='cat ~/.aliases/.dir/${alias_file}.aliases' # ·a·
+#" >> "$directory_to_search$list.$alias_file"
 
-alias ".all"='aliases;' # ·a·
+            echo "#
+# ( .$alias_file.s ): search and highlight string · ~/.aliases/.dir/$alias_file.aliases # ·e·
+#" >> "$directory_to_search$list.$alias_file"
+            echo "alias \".${alias_file}.s\"='custom_dir_search' # ·a·
+#" >> "$directory_to_search$list.$alias_file"
 
-# ·o· _______________________________________________ ·o· 
-# ·o·               -----------                       ·o· All Aliases
-# ·o· _______________________________________________ ·o·
+            echo "#
+# ( .$alias_file.a ): lists aliases(only) · ~/.aliases/.dir/$alias_file.aliases # ·e·
+#" >> "$directory_to_search$list.$alias_file"
+            echo "alias \".${alias_file}.a\"='dir_a' # ·a·
+#" >> "$directory_to_search$list.$alias_file"
 
-# ·o· _______________________________________________ ·o· 
-# ·o· --------------- Alias Lists ------------------- ·o· LISTS
-# ·o· _______________________________________________ ·o· 
-# ·o·                                                 ·o·  
-# ·o· _______________________________________________ ·o· 
-# ·o· ----------------- Directories ----------------- ·o· Directories
-# ·o· _______________________________________________ ·o· 
-#
+            echo "#
+# ( .$alias_file.aa ): (short) lists aliases(only) · ~/.aliases/.dir/$alias_file.aliases # ·e·
+#" >> "$directory_to_search$list.$alias_file"
+            echo "alias \".${alias_file}.aa\"='dir_aa' # ·a·
+#" >> "$directory_to_search$list.$alias_file"
 
-# ( .dir ): raw output · ~/.aliases/.dir/.dir.aliases # ·e·
-#
+            echo "#
+# ( .$alias_file.e ): lists explanation · ~/.aliases/.dir/$alias_file.aliases # ·e·
+#" >> "$directory_to_search$list.$alias_file"
+            echo "alias \".${alias_file}.e\"='dir_e' # ·a·
+#" >> "$directory_to_search$list.$alias_file"
 
-alias ".dir"='cat ~/.aliases/.dir/.dir.aliases' # ·a·
-#
+            echo "#
+# ( .$alias_file.ee ): (short) lists explanation · ~/.aliases/.dir/$alias_file.aliases # ·e·
+#" >> "$directory_to_search$list.$alias_file"
+            echo "alias \".${alias_file}.ee\"='dir_ee' # ·a·
+#" >> "$directory_to_search$list.$alias_file"
 
-#
-# ( .dir.s ): search and highlight string · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.s"='custom_dir_search' # ·a·
-
-#
-# ( .dir.a ): lists aliases(only) · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.a"='dir_a' # ·a·
-
-#
-# ( .dir.aa ): (short) lists aliases(only) · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.aa"='dir_aa' # ·a·
-
-#
-# ( .dir.e ): lists explaination · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.e"='dir_e' # ·a·
-
-#
-# ( .dir.ee ): (short) lists explaination · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.ee"='dir_ee' # ·a·
-
-#
-# ( .dir.f ) : functions · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.f"='dir_f' # ·a·
-
-#
-# ( .dir.f.info ) : (only info) functions · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.f.info"='dir_f_info' # ·a·
-
-#
-# ( .dir.f.code ) : (only code) functions · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.f.code"='dir_f_code' # ·a·
-
-#
-# ( .dir.f.combine ) : (conmbined) functions · ~/.aliases/.dir/.dir.aliases # ·e·
-#
-
-alias ".dir.f.combine"='dir_f_combine' # ·a·
-
-#
-# ·o· _______________________________________________ ·o· 
-# ·o·                   ---------                     ·o· Directories
-# ·o· _______________________________________________ ·o· 
-# ·o· _______________________________________________ ·o· 
-# ·o·                 -----------                     ·o· LISTS
-# ·o· _______________________________________________ ·o· 
-
-
+            echo "#
+# ( .$alias_file.f ) : functions · ~/.aliases/.dir/$alias_file.aliases # ·e·
+#" >> "$directory_to_search$list.$alias_file"
+            echo "alias \".${alias_file}.f\"='dir_f' # ·a·
+#" >> "$directory_to_search$list.$alias_file"
+        fi
+    done < "$output_file"
+fi
