@@ -39,16 +39,6 @@ fi # ·c·
 #
 # ·e· Check, if output file is not empty
 if [ -s "$output_file_var" ]; then # ·c· 
-    while read -r alias_file; do # ·c· 
-        # ·e· Debugging: list all loaded *.aliases files
-          echo "$directory_to_save.$alias_file.aliases" # ·c· 
-
-        # ·e· Check, if file exist and if its a regular file
-          if [ -f "$directory_to_search.$alias_file.aliases" ]; then # ·c· 
-            source $directory_to_save.$alias_file.aliases # ·c· 
-#
-        fi # ·c· 
-    done < "$output_file_var" # ·c· 
 
     while read -r alias_files; do # ·c· 
         source ~/.aliases/.etc/.list.template # ·c·
@@ -59,6 +49,18 @@ if [ -s "$output_file_var" ]; then # ·c·
         # ·e· Check, if file exist and if its a regular file
           if [ -f "$directory_to_search.$alias_files.aliases" ]; then # ·c· 
             echo "($generate_alias $alias_files)" > "$directory_to_save.$alias_files.aliases" # ·c· 
+#
+        fi # ·c· 
+    done < "$output_file_var" # ·c· 
+    
+    while read -r alias_file; do # ·c· 
+        # ·e· Debugging: list all loaded *.aliases files
+          echo "$directory_to_save.$alias_file.aliases" # ·c· 
+
+        # ·e· Check, if file exist and if its a regular file
+          if [ -f "$directory_to_search.$alias_file.aliases" ]; then # ·c· 
+            source $directory_to_save.$alias_file.aliases # ·c· 
+
 #
         fi # ·c· 
     done < "$output_file_var" # ·c· 
