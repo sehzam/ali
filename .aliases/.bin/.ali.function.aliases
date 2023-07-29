@@ -7,6 +7,7 @@
     } # ·c·
 # ·e· ( START ) = { List of alias files containing alias definitions for the shell }
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
+mkdir -p ~/.aliases/.list/
 directory_to_list="$HOME/.aliases/.list/" # ·v· 
 output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
 output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
