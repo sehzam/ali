@@ -33,8 +33,9 @@ fi # ·c·
     grp() { # ·c·
       grep -E "$1" "$2" # ·c·
     } # ·c·
-
-dir_template=$(cat ~/.aliases/.bin/.list.template)
+#
+cat ~/.aliases/.etc/.list.template # ·c·
+#
 # ·e· ( START ) = { List of alias files containing alias definitions for the shell }
 #
 # ·e· Check, if output file is not empty
@@ -45,7 +46,7 @@ if [ -s "$output_file_var" ]; then # ·c·
 
         # ·e· Check, if file exist and if its a regular file
           if [ -f "$directory_to_search.$alias_file.aliases" ]; then # ·c· 
-            echo "$dir_template" > "$directory_to_save.$alias_file.aliases" # ·c· 
+            echo "$generate_alias $alias_file" > "$directory_to_save.$alias_file.aliases" # ·c· 
 #
     source $directory_to_save.$alias_file.aliases # ·c· 
 #
