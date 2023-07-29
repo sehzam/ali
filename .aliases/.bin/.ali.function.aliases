@@ -58,7 +58,7 @@ if [ -s "$output_file_var" ]; then # ·c·
 
         # ·e· Check, if file exist and if its a regular file
           if [ -f "$directory_to_search.$alias_files.aliases" ]; then # ·c· 
-            echo $generate_alias "$(alias_files)" > "$directory_to_save.$alias_files.aliases" # ·c· 
+            echo $generate_alias "$alias_files" > "$directory_to_save.$alias_files.aliases" # ·c· 
 #
         fi # ·c· 
     done < "$output_file_var" # ·c· 
