@@ -7,6 +7,7 @@
     } # ·c·
 # ·e· ( START ) = { List of alias files containing alias definitions for the shell }
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
+directory_to_list="$HOME/.aliases/.list/" # ·v· 
 output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
 output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
 search_pattern=".***.aliases" # ·v· 
@@ -26,6 +27,12 @@ if [ -s "$output_file" ]; then # ·c·
             # ·e· ( INFO ) in .bashrc its loads at every new shell session
             # echo "$directory_to_search$alias_file" # ·c·
             . "$directory_to_search$alias_file" # ·c·
+        fi # ·c· 
+        if [ -f "$directory_to_list$alias_file" ]; then # ·c· 
+            # ·e· ( INFO ) sourcing the file, for loading it to current shell session
+            # ·e· ( INFO ) in .bashrc its loads at every new shell session
+            # echo "$directory_to_search$alias_file" # ·c·
+            . "$directory_to_list$alias_file" # ·c·
         fi # ·c· 
     done < "$output_file" # ·c·v· 
 fi # ·c·
