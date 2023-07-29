@@ -5,10 +5,10 @@
 # ·o· -------------- Reboot Options ---------------- ·o· Reboot Options 
 #
 # : s.r : initiates a system reboot
-alias '.s.r'='sudo reboot now'
+alias 's.r'='sudo reboot now'
 #
 # : s.rr : initiates a system shutdown
-alias '.s.rr'='sudo shutdown now'
+alias 's.rr'='sudo shutdown now'
 # ·o· -------------- Reboot Options ---------------- ·o· Reboot Options 
 # ·o· ------------- System Information ------------- ·o· Sytem Information
 #
@@ -44,25 +44,25 @@ alias pi='pip install '
 # : pp : run python3
 alias pp='python3 '
 #
-# : .s.i : installs a package using apt-get
-alias '.s.i'='sudo apt-get install '
+# : s.i : installs a package using apt-get
+alias 's.i'='sudo apt-get install '
 #
-# : .s.pi : install a pyhon package
-alias '.s.pi'='sudo pipx install '
+# : s.pi : install a pyhon package
+alias 's.pi'='sudo pipx install '
 #
-# : .s.si : installs a package using snap
-alias '.s.si'='sudo snap install '
+# : s.si : installs a package using snap
+alias 's.si'='sudo snap install '
 #
-# : .s.ud : updates the package lists
-alias '.s.ud'='sudo apt-get update'
+# : s.ud : updates the package lists
+alias 's.ud'='sudo apt-get update'
 #
-# : .s.ug : upgrades installed packages
-alias '.s.ug'='sudo apt-get upgrade'
+# : s.ug : upgrades installed packages
+alias 's.ug'='sudo apt-get upgrade'
 #
-# : .s.arc : removes automatically installed packages 
+# : s.arc : removes automatically installed packages 
 #          : that are no longer needed 
 #          : and cleans the package cache
-alias '.s.arc'='sudo apt-get autoremove && sudo apt-get clean'
+alias 's.arc'='sudo apt-get autoremove && sudo apt-get clean'
 #
 # ·o· --------------- Sytem Update ----------------- ·o· Sytem Update
 # ·o· -------------- System Commands --------------- ·o· System Commands

@@ -5,13 +5,13 @@
 
 # ·o· ------------------- ZIP ---------------------- ·o· ZIP options
 
-# : .x.z c: compress : ZIP archive
+# : .x.z.c: compress : ZIP archive
 # = (ex.) = .x.z c file.zip file1.txt file2.txt folder1/
-alias '.x.z c'='zip'
+alias '.x.z.c'='zip'
 
-# : .x.z e : extract : ZIP archive
+# : .x.z.e : extract : ZIP archive
 # = (ex.) = .x.z e file.zip
-alias '.x.z e'='unzip'
+alias '.x.z.e'='unzip'
 
 # ·o· ------------------- ZIP ---------------------- ·o· ZIP options
 # ·o· ------------------- 7Z ----------------------- ·o· 7Z options

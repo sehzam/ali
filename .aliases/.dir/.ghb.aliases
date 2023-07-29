@@ -207,10 +207,11 @@ echo '·________________________________·'|grep -E "·"
 echo ·_____________________________________________________________________________· |grep -E "_"  # ·f·
 echo '·________________________________·'|grep -E "_" 
 echo '| .....   API Token Setup   .... |'|grep -E "\|"
-echo '| .....     .gh.token       .... |'|grep -E "\|"
+echo '| .....   .gh.token.setup   .... |'|grep -E "\|"
 echo '·________________________________·'|grep -E "·"  
 
 echo ·_____________________________________________________________________________· |grep -E "_"  # ·f·
+
 echo 'Usage: .gh.ssh.create <ssh_title> to create or add SSH Key to GitHub'| grep -E "<|>|\.|:"
 echo '·________________________________·'|grep -E "_" 
 echo '|Add SSH KEY to GitHub via Token |'|grep -E "\|"
@@ -218,6 +219,7 @@ echo '| .....   .gh.ssh.create    .... |'|grep -E "\|"
 echo '·________________________________·'|grep -E "·"  
 
 echo ·_____________________________________________________________________________· |grep -E "_"  # ·f·
+
 echo 'Usage: .gh.repo.delete <repository_name> to delete GitHub repo'| grep -E "<|>|\.|:"
 echo '·________________________________·'|grep -E "_" 
 echo '|  GitHub Repo Delete via Token  |'|grep -E "\|"
@@ -225,15 +227,11 @@ echo '| .....  .gh.repo.delete    .... |'|grep -E "\|"
 echo '·________________________________·'|grep -E "·"  
 
 echo ·_____________________________________________________________________________· |grep -E "_"  # ·f·
+
 echo 'Usage: .gh.repo.create <repository_name> to create GitHub repo'| grep -E "<|>|\.|:"
 echo '·________________________________·'|grep -E "_" 
 echo '|  GitHub Repo Create via Token  |'|grep -E "\|"
 echo '| .....  .gh.repo.create    .... |'|grep -E "\|"
 echo '·________________________________·'|grep -E "·"  
-
-echo ·_____________________________________________________________________________· |grep -E "_"  # ·f·
-echo "with $ GITHUB_USERNAME" and $ GITHUB_TOKEN| grep -E "<|>|\.|:"
-echo "in ~/.config/.github/.login"| grep -E "<|>|\.|:"
 }
-
 alias ".gh.info"="info"
