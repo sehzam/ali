@@ -24,6 +24,7 @@ if [ -s "$output_file" ]; then # ·c·
         if [ -f "$directory_to_search$alias_file" ]; then # ·c· 
             # ·e· ( INFO ) sourcing the file, for loading it to current shell session
             # ·e· ( INFO ) in .bashrc its loads at every new shell session
+            echo $directory_to_search$alias_file
             . "$directory_to_search$alias_file" # ·c·
         fi # ·c· 
     done < "$output_file" # ·c·v· 
