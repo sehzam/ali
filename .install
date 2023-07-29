@@ -10,7 +10,7 @@ echo ______________________________________________________
 echo ..............Installation started !
 echo ______________________________________________________
 mkdir -p ~/.aliases/.bin/
-mkdir -p ~/.aliases/.etc/
+mkdir -p ~/.aliases/.dir/
 mkdir -p ~/.aliases/.etc/
 mkdir -p ~/.aliases/.list/
 #
