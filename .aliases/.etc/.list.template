@@ -6,6 +6,27 @@ output_file="$HOME/.aliases/.etc/.ali.list" # ·v·
 output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v· 
 search_pattern=".***.aliases" # ·v· 
 #
+if [ -f "$output_file" ]; then
+    output_file_data=$(<"$output_file")
+else
+    echo "File $output_file not exists or is empty."
+    exit 1
+fi
+#
+if [ -f "$output_file_var" ]; then
+    output_file_var_data=$(<"$output_file_var")
+else
+    echo "File $output_file_var not exists or is empty."
+    exit 1
+fi
+#
+# Example: Output of Content of: $output_file_data and $output_file_var_data
+echo "Content:  \$output_file_data:"
+echo "$output_file_data"
+#
+echo "Content: \$output_file_var_data:"
+echo "$output_file_var_data"
+#
 if [ -s "$output_file_var" ]; then # ·c·
 echo "list template file ok"
     while read -r alias_file; do # ·c· 
@@ -69,6 +90,7 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 # ·e· Check, if file exist and if its a regular file
     if [ -f "$directory_to_save.$alias_file.aliases" ]; then # ·c· 
       echo "$alias_file is sourced"
+      echo "ACCESS: ( .$alias_file.e )"
       source $directory_to_save.$alias_file.aliases # ·c· 
     fi # ·c· 
 #
