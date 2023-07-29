@@ -4,7 +4,7 @@ echo \| TYPE · \(.ali.e\) · and HIT enter \||grep -E "_|\(|\)|TYPE|HIT" # ·i�
 echo ·_________________________________· |grep -E "_"  # ·i·
 #
 # ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions ----------------- ·f· .ali Entry Point
+# ·f· ------------------ Functions  ---------------- ·f· .ali Entry Point
 # ·f· ______________________________________________ ·f· 
 #
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
@@ -102,7 +102,7 @@ source $directory_to_save.$alias_file.aliases
 fi
 #
 # ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions ----------------- ·f· .ali Entry Point
+# ·f· ------------------ Functions  ---------------- ·f· .ali Entry Point
 # ·f· ______________________________________________ ·f· 
 #
 # ·e· ·· START ·· = { make a backup of file given as parameter with timestamp }
@@ -132,4 +132,4 @@ function copy_create_folder() { # ·c·
     cp -r "$@" "$destination" # ·c· 
 } # ·c· 
 #
-# ·f· ------------------ Functions ----------------- ·f· Directory Control System
+# ·f· ------------------ Functions  ---------------- ·f· Directory Control System
