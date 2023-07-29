@@ -1,8 +1,8 @@
 #!/bin/bash
 
 directory_to_search="$HOME/.aliases/.dir/"
-output_file="$HOME/.aliases/.bin/.ali.list"
-output_file_var="$HOME/.aliases/.bin/.ali.list.names"
+output_file="$HOME/.aliases/.bin/.list.list"
+output_file_var="$HOME/.aliases/.bin/.list.list.names"
 search_pattern=".***.aliases"
 
 if ! [ -f ~/.aliases/.ali.lists ]; then
