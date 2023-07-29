@@ -34,7 +34,7 @@ fi # ·c·
       grep -E "$1" "$2" # ·c·
     } # ·c·
 #
-cat ~/.aliases/.etc/.list.template # ·c·
+soirce ~/.aliases/.etc/.list.template # ·c·
 #
 # ·e· ( START ) = { List of alias files containing alias definitions for the shell }
 #
