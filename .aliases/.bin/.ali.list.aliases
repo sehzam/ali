@@ -15,59 +15,59 @@ if [ -s "$output_file" ]; then
     while read -r alias_file; do
     echo $alias_file
     echo $directory_to_save
-    echo "$directory_to_save${alias_file}.aliases"
+    echo "$directory_to_save.${alias_file}.aliases"
         if [ -f "$directory_to_search$alias_file" ]; then
             echo "#
 # ·o· ______________________________________________ ·o· 
 # ·o· --------      $alias_file         ------------ ·o· $alias_file
 # ·o· ______________________________________________ ·o· 
-#" > "$directory_to_save${alias_file}.aliases"
+#" > "$directory_to_save.${alias_file}.aliases"
             echo "#
 # ( .$alias_file ): raw output · ~/.aliases/.dir/${alias_file}.aliases # ·e·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
             echo "alias \".${alias_file}\"='cat ~/.aliases/.dir/${alias_file}.aliases' # ·a·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
 
             echo "#
 # ( .$alias_file.s ): search and highlight string · ~/.aliases/.dir/${alias_file}.aliases # ·e·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
             echo "alias \".${alias_file}.s\"='custom_dir_search' # ·a·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
 
             echo "#
 # ( .$alias_file.a ): lists aliases(only) · ~/.aliases/.dir/${alias_file}.aliases # ·e·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
             echo "alias \".${alias_file}.a\"='dir_a' # ·a·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
 
             echo "#
 # ( .$alias_file.aa ): (short) lists aliases(only) · ~/.aliases/.dir/${alias_file}.aliases # ·e·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
             echo "alias \".${alias_file}.aa\"='dir_aa' # ·a·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
 
             echo "#
 # ( .$alias_file.e ): lists explanation · ~/.aliases/.dir/${alias_file}.aliases # ·e·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
             echo "alias \".${alias_file}.e\"='dir_e' # ·a·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
 
             echo "#
 # ( .$alias_file.ee ): (short) lists explanation · ~/.aliases/.dir/${alias_file}.aliases # ·e·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
             echo "alias \".${alias_file}.ee\"='dir_ee' # ·a·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
 
             echo "#
 # ( .$alias_file.f ) : functions · ~/.aliases/.dir/${alias_file}.aliases # ·e·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
             echo "alias \".${alias_file}.f\"='dir_f' # ·a·
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
             echo "#
 # ·o· ______________________________________________ ·o· 
 # ·o· --------      $alias_file         ------------ ·o· $alias_file
 # ·o· ______________________________________________ ·o· 
-#" >> "$directory_to_save${alias_file}.aliases"
+#" >> "$directory_to_save.${alias_file}.aliases"
         fi
     done < "$output_file_var"
 fi
