@@ -6,42 +6,42 @@
 #
 # ·o· ------------ Modify and Commit --------------- ·o· Modify and Commit
 #
-# : g.a : stages changes to be commited
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.a ) stages changes to be commited
 alias 'g.a'='git add'
 #
-# : g.c : commit changes with a commit message
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.c ) commit changes with a commit message
 alias 'g.c'='git commit -m'
 #
 # ·o· ------------ Modify and Commit --------------- ·o· Modify and Commit
 #
 # ·o· ----------- Manage Branch & Remote ----------- ·o· Manage Branch & Remote
 #
-# : g.s : shows the status of the repository,
-#      : including the current branch, modified files, and untracked files
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.s ) shows the status of the repository,
+#       : including the current branch, modified files, and untracked files
 alias 'g.s'='git status'
 #
-# : g.ss : shows the status of the repository in a short format
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.ss ) shows the status of the repository in a short format
 alias 'g.ss'='git status -s'
 #
-# : g.co : checks out a branch or a specific commit
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.co ) checks out a branch or a specific commit
 alias 'g.co'='git checkout'
 #
-# : g.f : fetches changes from a remote repository
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.f ) fetches changes from a remote repository
 alias 'g.f'='git fetch'
 #
-# : g.p : pulls changes from a remote repository
-#      : into the current branch
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.p ) pulls changes from a remote repository
+#       : into the current branch
 alias 'g.p'='git pull'
 #
-# : g.push : pushes changes to a remote repository
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.push ) pushes changes to a remote repository
 alias 'g.push'='git push'
 #
 # ·o· ----------- Manage Branch & Remote ----------- ·o· Manage Branch & Remote
@@ -52,52 +52,52 @@ alias 'g.push'='git push'
 #
 # ·o· ---------- Show Branches & Commits ----------- ·o· Show Branches & Commits
 #
-# : g.b : lists branches in the repository
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.b ) lists branches in the repository
 alias 'g.b'='git branch'
 #
-# : g.l.o : shows the commit history in a condensed format,
-#      : with one line per commit
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.l.o ) shows the commit history in a condensed format,
+#         : with one line per commit
 alias 'g.l.o'='git log --oneline --decorate --color'
 #
-# : g.l.p : shows the commit history with the commit hash,
-#       : author name, and commit message
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.l.p ) shows the commit history with the commit hash,
+#         : author name, and commit message
 alias 'g.l.p'='git log --pretty=format:"%h %an %s"'
 #
-# : g.l.g : shows the commit history as a graph,
-#       : indicating banching and merging
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.l.g ) shows the commit history as a graph,
+#         : indicating banching and merging
 alias 'g.l.g'='git log --graph --decorate --color '
 #
-# : g.l.m : shows the commit history filtered
-#       : by a specific commit message or pattern
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.l.m ) shows the commit history filtered
+#         : by a specific commit message or pattern
 alias 'g.l.m'='git log --grep'
 #
-# : g.l.n : shows the files changed in each commit in the commit history
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.l.n ) shows the files changed in each commit in the commit history
 alias 'g.l.n'='git log --name-only'
 #
 # ·o· ---------- Show Branches & Commits ----------- ·o· Show Branches & Commits
 #
 # ·o· ------------- Merging & Rebasing ------------- ·o· Merging & Rebasing
 #
-# : g.m : merges changes from one branch into another branch
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.m ) merges changes from one branch into another branch
 alias 'g.m'='git merge'
 #
-# : g.rb : rebases the current branch onto another branch or commit
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.rb ) rebases the current branch onto another branch or commit
 alias "g.rb"='git rebase'
 #
 # ·o· ------------- Merging & Rebasing ------------- ·o· Merging & Rebasing
 #
 # ·o· ------------------ Stashing ------------------ ·o· Stashing
 #
-# : g.st : stashes changes in the working directory
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.st ) stashes changes in the working directory
 alias "g.st"='git stash'
 #
 # ·o· ------------------ Stashing ------------------ ·o· Stashing
@@ -108,101 +108,100 @@ alias "g.st"='git stash'
 #
 # ·o· -------------- Remote Operators -------------- ·o· Remote Operators
 #
-# : g.cl : clones a git repository from a remote source
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.cl ) clones a git repository from a remote source
 alias "g.cl"='git clone'
 #
-# : g.rem : shows the remote repositories associated with the current repository
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.rem ) shows the remote repositories associated with the current repository
 alias "g.rem"='git remote -v'
 #
 # ·o· -------------- Remote Operators -------------- ·o· Remote Operators
 #
 # ·o· --------------- Commit History --------------- ·o· Commit History
 #
-# : g.bl : blames each line in a file
+# ·o· ---------------------------------------------- ·o· 
+# ( g.bl ) blames each line in a file
 #        : on the commit that introduced it,
 #        : displaying the blame output with a commit message
-#
 alias "g.bl"='git blame --color-words'
 #
-# : g.d : shows changes between commits,
+# ·o· ---------------------------------------------- ·o· 
+# ( g.d ) shows changes between commits,
 #       : branches, or other git objects
-#
 alias "g.d"='git diff'
 #
-# : g.d.l : shows changes between the staging area and the last commit
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.d.l ) shows changes between the staging area and the last commit
 alias "g.d.l"='git diff --cached'
+#
 # ·o· --------------- Commit History --------------- ·o· Commit History
 # ·o· ---------------- More Controls --------------- ·o· More Controls
 #
-# : g.c.p : applies a commit from another branch
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.c.p ) applies a commit from another branch
 #         : onto the current branch
-#
 alias "g.c.p"='git cherry-pick'
 #
-# : g.po : applies the most recent stash
-#
-#       : and removes it from the stash list
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.po ) applies the most recent stash
+#        : and removes it from the stash list
 alias "g.po"='git stash pop'
 #
-# : g.res : resets the current branch to a specific commit or the HEAD
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.res ) resets the current branch to a specific commit or the HEAD
 alias "g.res"='git reset'
 #
-# : g.sh : shows information about a specific commit
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.sh ) shows information about a specific commit
 alias "g.sh"='git show'
 #
-# : g.t : creates, lists, or verifies tags in the repository.
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.t ) creates, lists, or verifies tags in the repository.
 alias "g.t"='git tag'
 #
 # ·o· ---------------- More Controls --------------- ·o· More Controls
 #
 # ·o· --------------- Admin Controls --------------- ·o· Admin Controls
 #
-# : g.i : initializes a new git repository
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.i ) initializes a new git repository
 alias "g.i"='git init'
 #
-# : g.u : undoes the last commit, moving the HEAD to the previous commit
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.u ) undoes the last commit, moving the HEAD to the previous commit
 alias "g.u"='git reset HEAD~'
 #
-# : g.con : configures git settings
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.con ) configures git settings
 alias "g.con"='git config'
 #
-# : g.c.name : git user name change by adding a string with your name
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.c.name ) git user name change by adding a string with your name
 alias "g.c.name"='git config --global user.name'
 #
-# : g.c.mail : git user email change by adding a string with your email
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.c.mail ) git user email change by adding a string with your email
 alias "g.c.mail"='git config --global user.email'
 #
-# : g.clean : cleans the working directory,
+# ·o· ---------------------------------------------- ·o· 
+# ( g.clean ) cleans the working directory,
 #           : removing untracked files and directories
-#
 alias "g.clean"='git clean -df'
 #
-# : g.u : marks files as unchanged to prevent them from being committed
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( g.u ) marks files as unchanged to prevent them from being committed
 alias "g.u"='git update-index --assume-unchanged'
 #
-# : g.m : merges changes from one branch
+# ·o· ---------------------------------------------- ·o· 
+# ( g.m ) merges changes from one branch
 #       : into another branch,
 #       : creating a merge commit even if fast-forward is possible
-#
 alias "g.m"='git merge --no-ff'
 #
-# : g.r : reverts a commit by creating a new commit
+# ·o· ---------------------------------------------- ·o· 
+# ( g.r ) reverts a commit by creating a new commit
 #       : that undoes the changes
-#
 alias "g.r"='git revert'
 #
 # ·o· --------------- Admin Controls --------------- ·o· Admin Controls

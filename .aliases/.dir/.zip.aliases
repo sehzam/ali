@@ -1,85 +1,105 @@
-
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------ Package extracting -------------- ·o· Package extracting
 # ·o· ______________________________________________ ·o· 
-
+#
 # ·o· ------------------- ZIP ---------------------- ·o· ZIP options
-
-# : .x.z.c: compress : ZIP archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.z.c) compress : ZIP archive
 # = (ex.) = .x.z c file.zip file1.txt file2.txt folder1/
 alias '.x.z.c'='zip'
-
-# : .x.z.e : extract : ZIP archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.z.e ) extract : ZIP archive
 # = (ex.) = .x.z e file.zip
 alias '.x.z.e'='unzip'
-
+#
 # ·o· ------------------- ZIP ---------------------- ·o· ZIP options
+#
 # ·o· ------------------- 7Z ----------------------- ·o· 7Z options
-
-# : .x.7z.c : compress : 7z archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.7z.c ) compress : 7z archive
 # = (exam.) = .x.7z.c a file.7z file1.txt file2.txt folder1/
 alias '.x.7z.c'='7z a'
-
-# : .x.7z.e : extract : 7z archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.7z.e ) extract : 7z archive
 # = (exa.) = .x.7z.e x file.7z
 alias '.x.7z.e'='7z x'
-
+#
 # ·o· ------------------- 7Z ----------------------- ·o· 7Z options
+#
 # ·o· ------------------- GZ ----------------------- ·o· GZ options
-
-# : .x.gz.c : compress : GZ archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.gz.c ) compress : GZ archive
 # = (exa.) = .x.gz.c file.gz
 alias '.x.gz.c'='gzip'
-
-# : .x.gz.e : extract : GZ archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.gz.e ) extract : GZ archive
 # = (exa.) = .x.gz.e -d file.gz
 alias '.x.gz.e'='gzip -d'
-
+#
 # ·o· ------------------- GZ ----------------------- ·o· GZ options
+#
 # ·o· ------------------- XZ ----------------------- ·o· GZ options
-
-# : .x.xz.c : compress : XZ archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.xz.c ) compress : XZ archive
 # = (exm.) = .x.xz.c file.tar.xz file1.txt file2.txt folder1/
 alias '.x.xz.c'='tar -cJf'
-
-# : .x.xz.e : extract : XZ archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.xz.e ) extract : XZ archive
 # = (exa.) = .x.xz.e file.txt.xz
 alias '.x.xz.e'='tar -xJf'
-
+#
 # ·o· ------------------- XZ ----------------------- ·o· GZ options
+#
 # ·o· ------------------- TAR ---------------------- ·o· TAR options
-
-# : .x.tar.c : compress : TAR archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.tar.c ) compress : TAR archive
 # = (exam.) = .x.tar.c file.tar file1.txt file2.txt folder1/
 alias '.x.tar.c'='tar -cf'
-
-# : .x.tar.e : extract : TAR archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.tar.e ) extract : TAR archive
 # = (exam.) = .x.tar.e file.tar
 alias '.x.tar.e'='tar -xf'
-
+#
 # ·o· ------------------- TAR ---------------------- ·o· TAR options
+#
 # ·o· ------------------- LHA ---------------------- ·o· LHA options
-
-# : .x.lha.c : compress : LHA archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.lha.c ) compress : LHA archive
 # = (exam.) = x.lha.c file.lzh file1.txt file2.txt folder1/
 alias 'x.lha.c'='lha -cf'
-
-# : x.lha.e : extract : LHA archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( x.lha.e ) extract : LHA archive
 # = (exam.) = x.lha.e file.lzh
 alias 'x.lha.e'='lha -xf'
-
+#
 # ·o· ------------------- LHA ---------------------- ·o· LHA options
+#
 # ·o· ----------------- TAR-BZ2 -------------------- ·o· TAR-BZ2 options
-
-# : .x.tarbz2.c : compress : TAR archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.tarbz2.c ) compress : TAR archive
 # = (exam.) = .x.tarbz2.c file.tar.bz2 file1.txt file2.txt folder1/
 alias '.x.tarbz2.c'='tar -cjf'
-
-# : .x.tarbz2.e : extract : TAR archive
+#
+# ·o· ---------------------------------------------- ·o· 
+# ( .x.tarbz2.e ) extract : TAR archive
 # = (exam.) = .x.tarbz2.e file.tar
 alias '.x.tarbz2.e'='tar -xjf'
-
+#
 # ·o· ----------------- TAR-BZ2 -------------------- ·o· TAR-BZ2 options
+#
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------ Package extracting -------------- ·o· Package extracting
 # ·o· ______________________________________________ ·o· 

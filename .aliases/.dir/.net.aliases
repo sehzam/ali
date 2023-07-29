@@ -2,23 +2,28 @@
 # ·o· ------------- Network Control ---------------- ·o· Network Control
 # ·o· ______________________________________________ ·o· 
 #
-# : .i.if : shows network interface information
-#
+# ·o· ---------------------------------------------- ·o· 
+# ( .i.if ) shows network interface information
 alias .i.if='ifconfig -a '
 #
-# : .i.ip : retrieves the public IP address
+# ·o· ---------------------------------------------- ·o· 
+# ( .i.ip ) retrieves the public IP address
 alias .i.ip='curl ifconfig.me'
 #
-# : .i.pi : retrieves the public IP address using ipinfo.io
+# ·o· ---------------------------------------------- ·o· 
+# ( .i.pi ) retrieves the public IP address using ipinfo.io
 alias .i.pi='curl ipinfo.io/ip'
 #
-# : .i.p : pings google.com five times
+# ·o· ---------------------------------------------- ·o· 
+# ( .i.p ) pings google.com five times
 alias '.i.p'='ping -c 5 google.com'
 #
-# : '.i.wr' : downloads a file using wget and resumes partial downloads
+# ·o· ---------------------------------------------- ·o· 
+# ( '.i.wr' ) downloads a file using wget and resumes partial downloads
 alias '.i.wr'='wget -c '
 #
-# : net : shows active network connections
+# ·o· ---------------------------------------------- ·o· 
+# ( net ) shows active network connections
 alias net='netstat -tuln '
 #
 # ·o· ______________________________________________ ·o· 

@@ -2,80 +2,103 @@
 # ·o· -------- Directory Control System ------------ ·o· Directory Control System
 # ·o· ______________________________________________ ·o· 
 #
-# : c : clears the terminal # ·e· 
+# ·o· ---------------------------------------------- ·o· 
+# ( c ) clears the terminal # ·e· 
 alias c='clear; ls' # ·a·
 #
-# : bak : create a backup of a file with timestamp by giving the path # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( bak ) create a backup of a file with timestamp by giving the path # ·e·
 alias 'bak'='bk' # ·a·
 #
-# : .cf : create recursively folders # ·e· 
+# ·o· ---------------------------------------------- ·o· 
+# ( .cf ) create recursively folders # ·e· 
 #       : by give one string parameter with path and enter # ·e·
 alias '.cf'='cf' # ·a·
 #
-# : .ccf : create recursively folders # ·e· 
+# ·o· ---------------------------------------------- ·o· 
+# ( .ccf ) create recursively folders # ·e· 
 #        : by give one string parameter with path and enter # ·e·
 alias '.ccf'='copy_create_folder' # ·a·
 #
-# : .r : delete recursively folders and files # ·e· 
+# ·o· ---------------------------------------------- ·o· 
+# ( .r ) delete recursively folders and files # ·e· 
 alias ".r"="sudo rm -r" # ·a·
 #
-# : dd : delete folder or file recursively # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( dd ) delete folder or file recursively # ·e·
 alias 'dd'='rm -r' # ·a·
 #
-# : rep : search replace sed command capsulated in a function call # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( rep ) search replace sed command capsulated in a function call # ·e·
 alias 'rep'='sr' # ·a·
 #
-# : ... : open current directory in Linux GUI # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( ... ) open current directory in Linux GUI # ·e·
 alias '...'='xdg-open .' # ·a·
 #
-# : h : changes the directory to the user's home directory and lists its contents # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( h ) changes the directory to the user's home directory and lists its contents # ·e·
 alias h='cd ~ && ls' # ·a·
 #
-# : pr : changes the directory to the previous one and lists its contents # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( pr ) changes the directory to the previous one and lists its contents # ·e·
 alias pr='cd - && ls' # ·a·
 #
-# : r : changes the directory to the parent directory and lists its contents # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( r ) changes the directory to the parent directory and lists its contents # ·e·
 alias r='cd .. && ls' # ·a·
 #
-# : rr : changes the directory to the grandparent directory and lists its contents # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( rr ) changes the directory to the grandparent directory and lists its contents # ·e·
 alias rr='cd ../.. && ls' # ·a·
 #
-# : rrr : changes the directory to the great-grandparent directory and lists its contents # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( rrr ) changes the directory to the great-grandparent directory and lists its contents # ·e·
 alias rrr='cd ../../.. && ls' # ·a·
 #
-# : rrrr : changes the directory to the great-great-greatparent directory and lists its contents # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( rrrr ) changes the directory to the great-great-greatparent directory and lists its contents # ·e·
 alias rrrr='cd ../../../.. && ls' # ·a·
 #
-# : l : lists files and diredctories in long format, # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( l ) lists files and diredctories in long format, # ·e·
 #     : sorted by modification time # ·e·
 alias l='ls -lrt ' # ·a·
 #
-# : ll : lists all files and directories in long format # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( ll ) lists all files and directories in long format # ·e·
 #      : with human-readable sizes # ·e·
 alias ll='ls -alh ' # ·a·
 #
-# : lll : lists all files and directories in long format # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( lll ) lists all files and directories in long format # ·e·
 #       : with human-readable sizes, # ·e·
 #       : and opens the output in a pager (less) # ·e·
 alias lll='ls -alh|less ' # ·a·
 #
-# : t : shows the last lines of a file and continues # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( t ) shows the last lines of a file and continues # ·e·
 #     : to display new lines as they are added # ·e·
 alias t='tail -f ' # ·a·
 #
-# : tt : shows the last n lines of a file # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( tt ) shows the last n lines of a file # ·e·
 alias tt='tail -n' # ·a·
 #
-# : ttt : shows the last 10 lines of a file # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( ttt ) shows the last 10 lines of a file # ·e·
 alias ttt='tail -n 10' # ·a·
 #
-# : tttt : shows the last 100 lines of a file # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( tttt ) shows the last 100 lines of a file # ·e·
 alias tttt='tail -n 100' # ·a·
 #
-# : terr : shows the last lines of the error log file # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( terr ) shows the last lines of the error log file # ·e·
 alias terr='tail -f /var/log/error.log' # ·a·
 #
-# : tsys : shows the last lines of the system log file # ·e·
+# ·o· ---------------------------------------------- ·o· 
+# ( tsys ) shows the last lines of the system log file # ·e·
 alias tsys='tail -f /var/log/syslog' # ·a·
 #
 # ·o· ______________________________________________ ·o· 
