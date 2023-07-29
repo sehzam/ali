@@ -5,16 +5,11 @@ output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v·
 #
 if [ -s "$output_file_var" ]; then # ·c· 
     while read -r alias_file; do # ·c· 
+
     echo $alias_file
-        # ·e· Debugging: list all loaded *.aliases files
-          echo "$directory_to_save.$alias_file.aliases" # ·c· 
+# ·e· Debugging: list all loaded *.aliases files
+    echo "$directory_to_search.$alias_file.aliases" # ·c· 
 
-        # ·e· Check, if file exist and if its a regular file
-          if [ -f "$directory_to_search.$alias_file.aliases" ]; then # ·c· 
-            source $directory_to_save.$alias_file.aliases # ·c· 
-
-#
-          fi # ·c· 
     echo "#
 # ·o· ______________________________________________ ·o· 
 # ·o· --------           "$alias_file"            ------------ ·o· $alias_file
@@ -67,5 +62,10 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 # ·o· ______________________________________________ ·o· 
 "  > "$directory_to_save.$alias_files.aliases" # ·c· 
 
+# ·e· Check, if file exist and if its a regular file
+    if [ -f "$directory_to_save.$alias_file.aliases" ]; then # ·c· 
+      source $directory_to_save.$alias_file.aliases # ·c· 
+    fi # ·c· 
+#
   done < "$output_file_var" # ·c· 
 fi # ·c· 
