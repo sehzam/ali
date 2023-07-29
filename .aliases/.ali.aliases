@@ -1,4 +1,3 @@
-echo ·_________________________________· |grep -E "_" # ·f·
 echo \| TYPE · \(.ali.e\) · and HIT enter \||grep -E "_|\(|\)|TYPE|HIT" # ·f·
 echo ·_________________________________· |grep -E "_"  # ·f·
 
@@ -14,9 +13,6 @@ echo ·_________________________________· |grep -E "_"  # ·f·
 alias c='clear; ls -a' # ·a· 
 . ~/.aliases/.bin/.ali.function.aliases
 . ~/.aliases/.bin/.ali.list.aliases
-alias '.func'="cat ~/.aliases/.bin/.ali.function.aliases"
-alias '.list'="cat ~/.aliases/.bin/.ali.list.aliases"
-alias f=".ali && .func && .list"
 
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
@@ -40,24 +36,29 @@ alias ".ali"='c && cat ~/.aliases/.ali.aliases' # ·a·
 # ·f· ------------------ Functions ----------------- ·f· {ali} Functions
 # ·f· ______________________________________________ ·f· 
 ali_a() { # ·c·
-  .ali | grep -E "·o|·a" | grep -v "# ·e" | grep -v "# ·c" # ·c·
+  .ali | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' | grep -E '# ·o|# ·a|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·' # ·c·
 } # ·c·
 ali_e() { # ·c·
-  .ali | grep -E "·o|·e" | grep -v "# ·a" | grep -v "# ·c" # ·c·
+  .ali | grep -E '·o|·e' | grep -v '# ·a' | grep -v '# ·c' | grep -E '# ·o|# ·e|\(|\)|echo|__|·o·|# ·o·|# ' # ·c·
 } # ·c·
 ali_f() { # ·c· 
-  # .ali | grep -E "·f|·c|·v" | grep -v "****" # ·c· 
-  f  | grep -E "·f|·c|·v|·i|·e|·o" | grep -v "alias" # ·c·
+  .ali | grep -E '·f|·c|·v|·i|·e|·o' | grep -v 'alias' | grep -E '·f·|#|·v·|·i·|\(|\)|echo|__|·c·' # ·c·
 } # ·c·
 # ·f· ---------------------------------------------- ·f· 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------- Aliases ------------------ ·o· Development
 # ·o· ______________________________________________ ·o· 
 # ( .ali.a ): lists ~/.aliases/.ali.aliases · ( only aliases ) # ·e·
-alias ".ali.a"='c && ali_a | grep -E "# ·o|# ·a|\(|\)|echo|__| [^,]*=|·o·|# ·o·|·"' # ·a·
-# ( .ali.e ): lists ~/.bash_aliases · ( alias + explaination ) # ·e· 
+alias ".ali.a"='c && ali_a' # ·a·
+# ( .ali.e ): lists ~/.aliases/.ali.aliases · ( alias + explaination ) # ·e· 
 alias ".ali.e"='c && ali_e' # ·a·
-alias ".ali.e"='c && ali_e | grep -E "# ·o|# ·e|\(|\)|echo|__|·o·|# ·o·|# "' # ·a·
-# ( .ali.f ): lists ~/.bash_aliases · ( functions ) # ·e·
-alias ".ali.f"='c && ali_f | grep -E "·f·|#|·v·|·i·|\(|\)|echo|__|·c·"' # ·a·
+alias ".ali.e"='c && ali_e' # ·a·
+# ( .ali.f ): lists ~/.aliases/.ali.aliases · ( functions ) # ·e·
+alias ".ali.f"='c && ali_f' # ·a·
 # ·o· ---------------------------------------------- ·o· 
+#
+# ·o·                                                ·o·
+# ·o·              { A } = lias                      ·o·
+# ·o·              { L } = ists                      ·o·
+# ·o·              { I } = njection                  ·o·
+# ·o·                                                ·o·
