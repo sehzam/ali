@@ -1,24 +1,32 @@
-# _OWN__________________________________________________ : = : Personal Directories
+# ·o· ______________________________________________ ·o· 
+# ·o· ----------------- Personal ------------------- ·o· Personal Aliases
+# ·o· ______________________________________________ ·o· 
 #
-# : .a : change directory : current project & show (hidden )content
-alias '.a'='cd ~/Documents/ali/ && ll'
-# : .e : change directory : encounter notes & show content
-alias '.e'='cd ~/Documents/SPICED/vectorized-vegeta-encounter-notes/ && ls'
-# : .s : change directory : students code & show content
-alias '.s'='cd ~/Documents/SPICED/vectorized-vegeta-student-code/ && ls'
-# : .l : change directory : ~/Downloads/ & show content
-alias '.l'='cd ~/Downloads/ && ls'
-# : .d : change directory : ~/Documents/ & show content
-alias '.d'='cd ~/Documents/ && ls'
-# : .o : change directory : ~/OneDrive/ & show content
-alias '.o'='cd ~/OneDrive/ && ls'
-# : .v : change directory : ~/Videos/ & show content
-alias '.v'='cd ~/Videos/ && ls'
-# : .m : change directory : ~/Music/ & show content
-alias '.m'='cd ~/Music/ && ls'
-# : .p : change directory : ~/Pictures/ & show content
-alias '.p'='cd ~/Pictures/ && ls'
-# : .t : change directory : ~/Desktop/ & show content 
-alias '.t'='cd ~/Desktop/ && ls'
+# ·o· ------------ Personal Directories ------------ ·o· Personal Aliases
 #
-# _OWN__________________________________________________ : = : Personal Directories
+# : ..a : change directory : current project & show (hidden )content
+alias '..a'='cd ~/Documents/ali/ && ll'
+# : ..e : change directory : encounter notes & show content
+alias '..e'='cd ~/Documents/SPICED/vectorized-vegeta-encounter-notes/ && ls'
+# : ..s : change directory : students code & show content
+alias '..s'='cd ~/Documents/SPICED/vectorized-vegeta-student-code/ && ls'
+# : ..l : change directory : ~/Downloads/ & show content
+alias '..l'='cd ~/Downloads/ && ls'
+# : ..d : change directory : ~/Documents/ & show content
+alias '..d'='cd ~/Documents/ && ls'
+# : ..o : change directory : ~/OneDrive/ & show content
+alias '..o'='cd ~/OneDrive/ && ls'
+# : ..v : change directory : ~/Videos/ & show content
+alias '..v'='cd ~/Videos/ && ls'
+# : ..m : change directory : ~/Music/ & show content
+alias '..m'='cd ~/Music/ && ls'
+# : ..p : change directory : ~/Pictures/ & show content
+alias '..p'='cd ~/Pictures/ && ls'
+# : ..t : change directory : ~/Desktop/ & show content 
+alias '..t'='cd ~/Desktop/ && ls'
+#
+# ·o· ------------ Personal Directories ------------ ·o· Personal Aliases
+#
+# ·o· ______________________________________________ ·o· 
+# ·o· ----------------- Personal ------------------- ·o· Personal Aliases
+# ·o· ______________________________________________ ·o· 

@@ -1,69 +1,29 @@
-# : =           __________________________              : 
-# :   ________________ Directory= _____________________ = Directory Control System
-# : =           __________________________              : 
-# : = _________________________________________________ : # ·o· 
-# :                    Functions=                       = Directory Control System # ·o·
-# : = _________________________________________________ : # ·o·
-
-# ·o· ·· START ·· = { make a backup of file given as parameter with timestamp }
-# ·o·
-bk() { # ·o·
-  # ·o·
-  # ·o· = alias = .bk
-  # ·o·
-  cp "$1" "$1_$(date '+%Y%m%d%H%M%S').bak" # ·o· 
-} # ·o· 
-# ·o·
-# ·o· ··  END  ·· = { make... }
-# ·o·
-
-# ·o· ·· START ·· = { create folder recursively and enter them }
-# ·o·
-cf() { # ·o·
-  # ·o·
-  # ·o· = alias = .cf
-  # ·o·
-  mkdir -p "$1" && cd "$1" # ·o·
-} # ·o· 
-# ·o· ··  END  ·· = { create... }
-# ·o·
-
-# ·o· ·· START ·· = { searchs for string and replace the in file }
-# ·o·
-sr() { # ·o·
-  # ·o·
-  # ·o· = alias = .sr
-  # ·o·
-  sed -i "s/$1/$2/g" "$3" # ·o· 
-} # ·o· 
-# ·o·
-# ·o· ··  END  ·· = { searchs... }
-# ·o·
-
-# : = _________________________________________________ : # ·o·
-# :                    Functions=                       = Directory Control System # ·o·
-# : = _________________________________________________ : # ·o·
-# : =
-# : = _________________________________________________ : 
-# :                       System=                       = System
-# : = _________________________________________________ :
-# : =
+# ·o· ______________________________________________ ·o· 
+# ·o· -------- Directory Control System ------------ ·o· Directory Control System
+# ·o· ______________________________________________ ·o· 
 #
 # : c : clears the terminal
 alias c='clear; ls'
 #
-# : .bk : create a backup of a file with timestamp by giving the path
-alias '.bk'='bk'
+# : bak : create a backup of a file with timestamp by giving the path
+alias 'bak'='bk'
 #
 # : .cf : create recursively folders 
 #       : by give one string parameter with path and enter
 alias '.cf'='cf'
 #
-# : .dd : delete folder or file recursively
-alias '.dd'='rm -r'
+# : .ccf : create recursively folders 
+#        : by give one string parameter with path and enter
+alias '.ccf'='copy_create_folder'
 #
-# : .sr : search replace sed command capsulated in a function call
-alias '.sr'='sr'
+# : .r : delete recursively folders and files 
+alias ".r"="sudo rm -r"
+#
+# : dd : delete folder or file recursively
+alias 'dd'='rm -r'
+#
+# : rep : search replace sed command capsulated in a function call
+alias 'rep'='sr'
 #
 # : ... : open current directory in Linux GUI
 alias '...'='xdg-open .'
@@ -92,9 +52,9 @@ alias l='ls -lrt '
 #
 # : ll : lists all files and directories in long format 
 #      : with human-readable sizes
-# : lll : lists all files and directories in long format 
 alias ll='ls -alh '
 #
+# : lll : lists all files and directories in long format 
 #       : with human-readable sizes, 
 #       : and opens the output in a pager (less)
 alias lll='ls -alh|less '
@@ -118,11 +78,6 @@ alias terr='tail -f /var/log/error.log'
 # : tsys : shows the last lines of the system log file
 alias tsys='tail -f /var/log/syslog'
 #
-# : =
-# : = _________________________________________________ : 
-# :                       System=                       = System
-# : = _________________________________________________ :
-# : =
-# : =           __________________________              : 
-# :   ________________ Directory= _____________________ = Directory Control System
-# : =           __________________________              : 
+# ·o· ______________________________________________ ·o· 
+# ·o· -------- Directory Control System ------------ ·o· Directory Control System
+# ·o· ______________________________________________ ·o· 

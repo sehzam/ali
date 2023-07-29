@@ -39,7 +39,7 @@
     wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && 
     unzip main.zip && 
     rm main.zip && 
-    source ./ali-main/.setup
+    . ./ali-main/.setup
 ```
 > #### __Deinstallation__ __&__                     __Update__  
 

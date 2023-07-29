@@ -59,7 +59,7 @@ remove_string_from_file "$ss_10" "$bashrc_path"
 
 echo "#-#-#
 # Aliases Loader #-#-#
-alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip* && source ~/ali-main/.setup && source ~/.bashrc' #-#-#
+alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip* && . ~/ali-main/.setup && . ~/.bashrc' #-#-#
 alias '.as'='.ali.setup' #-#-#
 #-#-#" >> ~/.bashrc
 

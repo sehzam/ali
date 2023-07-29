@@ -1,43 +1,47 @@
-# _FSC__________________________________________________ : = : File System Control
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------- File System Control --------------- ·o· File System Control
+# ·o· ______________________________________________ ·o· 
 #
-# : fs.n : finds files with a specific name
-# = (ex) = fs.n myfile.txt
-alias 'fs.n'='find . -type f -name'
+# : .f.n : finds files with a specific name
+# = (ex) = .f.n myfile.txt
+alias '.f.n'='find . -type f -name'
 #
-# : fs.d : finds directories with a specific name
-# (i.e.) = fs.d mydir
-alias 'fs.d'='find . -type d -name'
+# : .f.s : finds directories with a specific name
+# (i.e.) = .f.s mydir
+alias '.f.s'='find . -type d -name'
 #
-# : fs.x : finds files with a specific extension
-# (i.e.) = fs.x *.jpg
-alias 'fs.x'='find . -type f -name'
+# : .f.x : finds files with a specific extension
+# (i.e.) = .f.x *.jpg
+alias '.f.x'='find . -type f -name'
 #
-# : fs.s : finds files with a specific size
-# (i.e.) = fs.s +1M
-alias 'fs.s'='find . -type f -size'
+# : .f.s : finds files with a specific size
+# (i.e.) = .f.s +1M
+alias '.f.s'='find . -type f -size'
 #
-# : fs.m : finds files modified after a specific date and time
-# (i.e.) = fs.m "2023-01-01 00:00:00"
-alias 'fs.m'='find . -type f -newermt'
+# : .f.m : finds files modified after a specific date and time
+# (i.e.) = .f.m "2023-01-01 00:00:00"
+alias '.f.m'='find . -type f -newermt'
 #
-# : fs.min : finds files modified within a specific number of minutes
-# (i.e.) = fs.min -60
-alias 'fs.min'='find . -type f -mmin'
+# : .f.min : finds files modified within a specific number of minutes
+# (i.e.) = .f.min -60
+alias '.f.min'='find . -type f -mmin'
 #
-# : fs.str : finds files containing a specific string
-# ( i.e.) = fs.str 'search_string'
-alias 'fs.str'='grep -r'
+# : .f.str : finds files containing a specific string
+# ( i.e.) = .f.str 'search_string'
+alias '.f.str'='grep -r'
 #
-# : fs.user : finds files owned by a specific user
-# ( i.e.) = fs.user username
-alias 'fs.user'='find . -type f -user'
+# : .f.user : finds files owned by a specific user
+# ( i.e.) = .f.user username
+alias '.f.user'='find . -type f -user'
 #
-# : fs.perm : finds files with specific permissions
-# ( i.e.) = fs.perm 644
-alias 'fs.perm'='find . -type f -perm'
+# : .f.perm : finds files with specific permissions
+# ( i.e.) = .f.user 644
+alias '.f.user'='find . -type f -perm'
 #
-# : fs.emp : finds empty directories
-# (i.e.) = fs.emp
-alias 'fs.emp'='find . -type d -empty'
+# : .f.user : finds empty directories
+# (i.e.) = .f.user
+alias '.f.user'='find . -type d -empty'
 #
-# _FSC__________________________________________________ : = : File System Control
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------- File System Control --------------- ·o· File System Control
+# ·o· ______________________________________________ ·o· 

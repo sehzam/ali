@@ -1,80 +1,85 @@
-# _ZIP__________________________________________________ : = : Package extracting
-# __________________________________________ : = ZIP options :
 
-# : c.i.z : compress : ZIP archive
-# = (ex.) = c.i.z file.zip file1.txt file2.txt folder1/
-alias 'c.i.z'='zip'
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------ Package extracting -------------- ·o· Package extracting
+# ·o· ______________________________________________ ·o· 
 
-# : c.u.z : extract : ZIP archive
-# = (ex.) = c.u.z file.zip
-alias 'c.u.z'='unzip'
+# ·o· ------------------- ZIP ---------------------- ·o· ZIP options
 
-# __________________________________________ : = ZIP options :
-# __________________________________________ : = 7Z options :
+# : .x.z c: compress : ZIP archive
+# = (ex.) = .x.z c file.zip file1.txt file2.txt folder1/
+alias '.x.z c'='zip'
 
-# : c.i.7z : compress : 7z archive
-# = (exam.) = c.i.7z a file.7z file1.txt file2.txt folder1/
-alias 'c.i.7z'='7z a'
+# : .x.z e : extract : ZIP archive
+# = (ex.) = .x.z e file.zip
+alias '.x.z e'='unzip'
 
-# : c.u.7z : extract : 7z archive
-# = (exa.) = c.u.7z x file.7z
-alias 'c.u.7z'='7z x'
+# ·o· ------------------- ZIP ---------------------- ·o· ZIP options
+# ·o· ------------------- 7Z ----------------------- ·o· 7Z options
 
-# __________________________________________ : = 7Z options :
-# __________________________________________ : = GZ options :
+# : .x.7z.c : compress : 7z archive
+# = (exam.) = .x.7z.c a file.7z file1.txt file2.txt folder1/
+alias '.x.7z.c'='7z a'
 
-# : c.i.gz : compress : GZ archive
-# = (exa.) = c.i.gz file.gz
-alias 'c.i.gz'='gzip'
+# : .x.7z.e : extract : 7z archive
+# = (exa.) = .x.7z.e x file.7z
+alias '.x.7z.e'='7z x'
 
-# : c.u.gz : extract : GZ archive
-# = (exa.) = c.u.gz -d file.gz
-alias 'c.u.gz'='gzip -d'
+# ·o· ------------------- 7Z ----------------------- ·o· 7Z options
+# ·o· ------------------- GZ ----------------------- ·o· GZ options
 
-# __________________________________________ : = GZ options :
-# __________________________________________ : = XZ options :
+# : .x.gz.c : compress : GZ archive
+# = (exa.) = .x.gz.c file.gz
+alias '.x.gz.c'='gzip'
 
+# : .x.gz.e : extract : GZ archive
+# = (exa.) = .x.gz.e -d file.gz
+alias '.x.gz.e'='gzip -d'
 
-# : c.i.xz : compress : XZ archive
-# = (exm.) = c.i.xz file.tar.xz file1.txt file2.txt folder1/
-alias 'c.i.xz'='tar -cJf'
+# ·o· ------------------- GZ ----------------------- ·o· GZ options
+# ·o· ------------------- XZ ----------------------- ·o· GZ options
 
-# : c.u.xz : extract : XZ archive
-# = (exa.) = c.u.xz file.txt.xz
-alias 'c.u.tar'='tar -xJf'
+# : .x.xz.c : compress : XZ archive
+# = (exm.) = .x.xz.c file.tar.xz file1.txt file2.txt folder1/
+alias '.x.xz.c'='tar -cJf'
 
-# __________________________________________ : = XZ options :
-# __________________________________________ : = TAR options :
+# : .x.xz.e : extract : XZ archive
+# = (exa.) = .x.xz.e file.txt.xz
+alias '.x.xz.e'='tar -xJf'
 
-# : c.i.tar : compress : TAR archive
-# = (exam.) = c.i.tar file.tar file1.txt file2.txt folder1/
-alias 'c.i.tar'='tar -cf'
+# ·o· ------------------- XZ ----------------------- ·o· GZ options
+# ·o· ------------------- TAR ---------------------- ·o· TAR options
 
-# : c.u.tar : extract : TAR archive
-# = (exam.) = c.u.tar file.tar
-alias 'c.u.tar'='tar -xf'
+# : .x.tar.c : compress : TAR archive
+# = (exam.) = .x.tar.c file.tar file1.txt file2.txt folder1/
+alias '.x.tar.c'='tar -cf'
 
-# __________________________________________ : = TAR options :
-# __________________________________________ : = LHA options :
+# : .x.tar.e : extract : TAR archive
+# = (exam.) = .x.tar.e file.tar
+alias '.x.tar.e'='tar -xf'
 
-# : c.i.lha : compress : LHA archive
-# = (exam.) = c.i.lha file.lzh file1.txt file2.txt folder1/
-alias 'c.i.lha'='lha -cf'
+# ·o· ------------------- TAR ---------------------- ·o· TAR options
+# ·o· ------------------- LHA ---------------------- ·o· LHA options
 
-# : c.u.lha : extract : LHA archive
-# = (exam.) = c.u.lha file.lzh
-alias 'c.u.lha'='lha -xf'
+# : .x.lha.c : compress : LHA archive
+# = (exam.) = x.lha.c file.lzh file1.txt file2.txt folder1/
+alias 'x.lha.c'='lha -cf'
 
-# __________________________________________ : = LHA options :
-# __________________________________________ : = TAR-BZ2 options :
+# : x.lha.e : extract : LHA archive
+# = (exam.) = x.lha.e file.lzh
+alias 'x.lha.e'='lha -xf'
 
-# : c.i.tar.bz2 : compress : TAR archive
-# = (exam.) = c.i.tar.bz2 file.tar.bz2 file1.txt file2.txt folder1/
-alias 'c.i.tar.bz2'='tar -cjf'
+# ·o· ------------------- LHA ---------------------- ·o· LHA options
+# ·o· ----------------- TAR-BZ2 -------------------- ·o· TAR-BZ2 options
 
-# : c.u.tar.bz2 : extract : TAR archive
-# = (exam.) = c.u.tar.bz2 file.tar
-alias 'c.u.tar.bz2'='tar -xjf'
+# : .x.tarbz2.c : compress : TAR archive
+# = (exam.) = .x.tarbz2.c file.tar.bz2 file1.txt file2.txt folder1/
+alias '.x.tarbz2.c'='tar -cjf'
 
-# __________________________________________ : = TAR-BZ2 options :
-# _ZIP__________________________________________________ : = : Package extracting
+# : .x.tarbz2.e : extract : TAR archive
+# = (exam.) = .x.tarbz2.e file.tar
+alias '.x.tarbz2.e'='tar -xjf'
+
+# ·o· ----------------- TAR-BZ2 -------------------- ·o· TAR-BZ2 options
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------ Package extracting -------------- ·o· Package extracting
+# ·o· ______________________________________________ ·o· 

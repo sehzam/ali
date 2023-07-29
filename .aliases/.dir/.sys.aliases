@@ -1,13 +1,16 @@
-# _SYS__________________________________________________ : = : System Control
-# _______________________________________ : = Reboot options :
+# ·o· ______________________________________________ ·o· 
+# ·o· -------------- Systen Control ---------------- ·o· System Control
+# ·o· ______________________________________________ ·o· 
+
+# ·o· -------------- Reboot Options ---------------- ·o· Reboot Options 
 #
 # : s.r : initiates a system reboot
-alias 's.r'='sudo reboot now'
+alias '.s.r'='sudo reboot now'
 #
 # : s.rr : initiates a system shutdown
-alias 's.rr'='sudo shutdown now'
-# _______________________________________ : = Reboot options :
-# ___________________________________ : = System information :
+alias '.s.rr'='sudo shutdown now'
+# ·o· -------------- Reboot Options ---------------- ·o· Reboot Options 
+# ·o· ------------- System Information ------------- ·o· Sytem Information
 #
 # : neo : displays system information using the neofetch command
 alias neo='neofetch '
@@ -21,20 +24,19 @@ alias now='date +"%Y-%m-%d %H:%M:%S"'
 # : exe : adds executable permissions to a file
 alias exe='chmod +x '
 #
-# : ssh.rsa : displays the contents of the public ED SSH key
-alias 'ssh.rsa'='cat ~/.ssh/id_rsa.pub'
+# : .ssh.rsa : displays the contents of the public ED SSH key
+alias '.ssh.rsa'='cat ~/.ssh/id_rsa.pub'
 #
-# : ssh.ed : displays the contents of the public ED SSH key
-alias 'ssh.ed'='cat ~/.ssh/id_ed25519.pub'
+# : .ssh.ed : displays the contents of the public ED SSH key
+alias '.ssh.ed'='cat ~/.ssh/id_ed25519.pub'
 #
-# : ssh.rsa.create : creates the contents of the public RSA SSH key
-alias 'ssh.rsa.create'='ssh-keygen -t rsa -b 2048'
+# : .ssh.rsa.create : creates the contents of the public RSA SSH key
+alias '.ssh.rsa.create'='ssh-keygen -t rsa -b 2048'
 #
-# : ssh.ed.create : creates the contents of the public ED SSH key
-alias 'ssh.ed.create'='ssh-keygen -t ed25519'
-# ___________________________________ : = System information :
-# ________________________________________ : = System update :
-#
+# : .ssh.ed.create : creates the contents of the public ED SSH key
+alias '.ssh.ed.create'='ssh-keygen -t ed25519'
+# ·o· ------------- System Information ------------- ·o· Sytem Information
+# ·o· --------------- Sytem Update ----------------- ·o· Sytem Update
 #
 # : pi : pip install
 alias pi='pip install '
@@ -42,28 +44,28 @@ alias pi='pip install '
 # : pp : run python3
 alias pp='python3 '
 #
-# : s.i : installs a package using apt-get
-alias 's.i'='sudo apt-get install '
+# : .s.i : installs a package using apt-get
+alias '.s.i'='sudo apt-get install '
 #
-# : s.pi : install a pyhon package
-alias 's.pi'='sudo pipx install '
+# : .s.pi : install a pyhon package
+alias '.s.pi'='sudo pipx install '
 #
-# : s.si : installs a package using snap
-alias 's.si'='sudo snap install '
+# : .s.si : installs a package using snap
+alias '.s.si'='sudo snap install '
 #
-# : s.ud : updates the package lists
-alias 's.ud'='sudo apt-get update'
+# : .s.ud : updates the package lists
+alias '.s.ud'='sudo apt-get update'
 #
-# : s.ug : upgrades installed packages
-alias 's.ug'='sudo apt-get upgrade'
+# : .s.ug : upgrades installed packages
+alias '.s.ug'='sudo apt-get upgrade'
 #
-# : s.arc : removes automatically installed packages 
-#         : that are no longer needed 
-#         : and cleans the package cache
-alias 's.arc'='sudo apt-get autoremove && sudo apt-get clean'
-# ________________________________________ : = System update :
-# ______________________________________ : = System commands :
+# : .s.arc : removes automatically installed packages 
+#          : that are no longer needed 
+#          : and cleans the package cache
+alias '.s.arc'='sudo apt-get autoremove && sudo apt-get clean'
 #
+# ·o· --------------- Sytem Update ----------------- ·o· Sytem Update
+# ·o· -------------- System Commands --------------- ·o· System Commands
 #
 # : hg : searches the command history for a specific keyword
 alias hg='history|grep'
@@ -85,5 +87,8 @@ alias df='df -h '
 # : du : shows disk usage for files and directories, 
 #      : sorted in decending order
 alias du='du -sh *|sort -rh '
-# ______________________________________ : = System commands :
-# _SYS__________________________________________________ : = : System Control
+# ·o· -------------- System Commands --------------- ·o· System Commands
+#
+# ·o· ______________________________________________ ·o· 
+# ·o· -------------- Systen Control ---------------- ·o· System Control
+# ·o· ______________________________________________ ·o· 

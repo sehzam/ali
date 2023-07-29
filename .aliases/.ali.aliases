@@ -15,8 +15,8 @@ alias c='clear; ls -a' # ·a·
 alias '.func'="cat ~/.aliases/.bin/.ali.function.aliases"
 alias '.list'="cat ~/.aliases/.bin/.ali.list.aliases"
 alias f=".ali && .func && .list"
-source ~/.aliases/.bin/.ali.function.aliases
-source ~/.aliases/.bin/.ali.list.aliases
+. ~/.aliases/.bin/.ali.function.aliases
+. ~/.aliases/.bin/.ali.list.aliases
 
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 

@@ -1,22 +1,26 @@
-# _NET__________________________________________________ : = : Network Control 
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------- Network Control ---------------- ·o· Network Control
+# ·o· ______________________________________________ ·o· 
 #
-# : ipp : shows network interface information
+# : .i.if : shows network interface information
 #
-alias ipp='ifconfig -a '
+alias .i.if='ifconfig -a '
 #
-# : ip : retrieves the public IP address
-alias ip='curl ifconfig.me'
+# : .i.ip : retrieves the public IP address
+alias .i.ip='curl ifconfig.me'
 #
-# : ipi : retrieves the public IP address using ipinfo.io
-alias ipi='curl ipinfo.io/ip'
+# : .i.pi : retrieves the public IP address using ipinfo.io
+alias .i.pi='curl ipinfo.io/ip'
 #
-# : pg : pings google.com five times
-alias pg='ping -c 5 google.com'
+# : .i.p : pings google.com five times
+alias '.i.p'='ping -c 5 google.com'
 #
-# : wr : downloads a file using wget and resumes partial downloads
-alias wr='wget -c '
+# : '.i.wr' : downloads a file using wget and resumes partial downloads
+alias '.i.wr'='wget -c '
 #
-# : nt : shows active network connections
-alias nt='netstat -tuln '
+# : net : shows active network connections
+alias net='netstat -tuln '
 #
-# _NET__________________________________________________ : = : Network Control 
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------- Network Control ---------------- ·o· Network Control
+# ·o· ______________________________________________ ·o· 

@@ -14,25 +14,25 @@ fi
     if [ "$name" = "n" ] || [ "$name" = "N" ]; then
         echo "REMOVING Alias Listing System A L I"
         echo "$name""o. Let's remove this now"
-        source ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
+        . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
         rm -r ~/ali-main/
         bash
     elif [ "$name" = "y" ] || [ "$name" = "Y" ]; then
         echo "UPDATING Alias Listing System A L I"
         echo "$name""es. Let's do the job done"
-        source ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
-        source ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
+        . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
+        . ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
         rm -r ~/ali-main/
         bash
     elif ! [ "$name" = "Y" ] && ! [ "$name" = "y" ] && ! [ "$name" = "N" ] && ! [ "$name" = "n" ]; then
-        source ~/ali-main/.setup|grep -E ':|·|~|\.|-|__'
+        . ~/ali-main/.setup|grep -E ':|·|~|\.|-|__'
     fi
     echo ______________________________________________________ |grep -E "_"
 }
 
 if ! [ -d ~/.aliases ]; then
     echo "INSTALLING Alias Listing System A L I"
-    source ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
+    . ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
     rm -r ~/ali-main/
     bash
 elif [ -d ~/.aliases ]; then
