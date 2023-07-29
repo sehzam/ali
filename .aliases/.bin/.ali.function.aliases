@@ -34,7 +34,7 @@ fi # ·c·
       grep -E "$1" "$2" # ·c·
     } # ·c·
 #
-soirce ~/.aliases/.etc/.list.template # ·c·
+source ~/.aliases/.etc/.list.template # ·c·
 #
 # ·e· ( START ) = { List of alias files containing alias definitions for the shell }
 #
@@ -51,13 +51,13 @@ if [ -s "$output_file_var" ]; then # ·c·
         fi # ·c· 
     done < "$output_file_var" # ·c· 
 
-    while read -r alias_file; do # ·c· 
+    while read -r alias_files; do # ·c· 
         # ·e· Debugging: list all loaded *.aliases files
-          echo "$directory_to_save.$alias_file.aliases" # ·c· 
+          echo "$directory_to_save.$alias_files.aliases" # ·c· 
 
         # ·e· Check, if file exist and if its a regular file
-          if [ -f "$directory_to_search.$alias_file.aliases" ]; then # ·c· 
-            echo "$(generate_alias) $(alias_file)" > "$directory_to_save.$alias_file.aliases" # ·c· 
+          if [ -f "$directory_to_search.$alias_files.aliases" ]; then # ·c· 
+            echo "$(generate_alias) $(alias_files)" > "$directory_to_save.$alias_files.aliases" # ·c· 
 #
         fi # ·c· 
     done < "$output_file_var" # ·c· 
