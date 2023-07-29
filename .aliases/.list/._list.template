@@ -28,13 +28,10 @@ echo "Content: \$output_file_var_data:"
 echo "$output_file_var_data"
 #
 if [ -s "$output_file_var" ]; then # ·c·
-echo "list template file ok"
     while read -r alias_file; do # ·c· 
 # ·e· Debugging: list all loaded *.aliases files
     echo ".$alias_file.aliases found !" # ·c· 
-    echo "Creating .aliases render file of : $directory_to_search.$alias_file.aliases" # ·c· 
-    echo "to directory : $directory_to_search.$alias_file.aliases" # ·c· 
-    echo "ACCESSABLE .$alias_file.e" # ·c· 
+    echo "Directory : $directory_to_search.$alias_file.aliases" # ·c· 
 
     echo "#
 # ·o· ______________________________________________ ·o· 
