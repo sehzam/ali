@@ -9,11 +9,6 @@ echo -
 echo ______________________________________________________
 echo ..............Installation started !
 echo ______________________________________________________
-mkdir -p ~/.aliases/.bin
-mkdir -p ~/.aliases/.dir
-echo ..~/.aliases/ directory created successfully
-echo ..~/.aliases/.bin directory created successfully
-echo ..~/.aliases/.dir directory created successfully
 echo ·________________________________· |grep -E "_"  
 echo "| copying files to directory:    |" ~/.aliases/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
@@ -26,8 +21,6 @@ echo "| copying files to directory:    |" ~/.aliases/.bin/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
 cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
 echo ......Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
-mkdir -p ~/.aliases/.etc/
-mkdir -p ~/.aliases/.list/
 cp -Rp ./ali-main/.aliases/.etc/.list.template ~/.aliases/.etc/
 echo ............. List Template : ~/.aliases/.etc/.list.template
 echo ·________________________________· |grep -E "_" 
@@ -113,6 +106,8 @@ echo ....................."explaination:" "( .ali.e )"
 echo ........................"functions:" "( .ali.f )" 
 echo ...................................................... 
 echo ______________________________________________________ 
-# # # 
-# xdg-open https://github.com/sehzam/ali  
-# # # 
+#
+# # # # # # # # # # # # # # # # # # # # # # 
+# xdg-open https://github.com/sehzam/ali  #
+# # # # # # # # # # # # # # # # # # # # # # 
+#

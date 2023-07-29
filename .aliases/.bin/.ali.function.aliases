@@ -34,7 +34,6 @@ fi # ·c·
       grep -E "$1" "$2" # ·c·
     } # ·c·
 #
-source ~/.aliases/.etc/.list.template # ·c·
 #
 # ·e· ( START ) = { List of alias files containing alias definitions for the shell }
 #
@@ -52,6 +51,8 @@ if [ -s "$output_file_var" ]; then # ·c·
     done < "$output_file_var" # ·c· 
 
     while read -r alias_files; do # ·c· 
+        source ~/.aliases/.etc/.list.template # ·c·
+
         # ·e· Debugging: list all loaded *.aliases files
           echo "$directory_to_save.$alias_files.aliases" # ·c· 
 
