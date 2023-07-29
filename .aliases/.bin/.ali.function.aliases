@@ -83,7 +83,7 @@ ${alias_file}_f() { # ·c·
 # ·o· ______________________________________________ ·o· 
 #
 # ( .$alias_file.a ): lists ~/.aliases/.dir/.$alias_file.aliases · ( only aliases ) # ·e·
-alias '.$alias_file.a'='c && ${alias_file}_a # ·a·
+alias '.$alias_file.a'='c && ${alias_file}_a' # ·a·
 #
 # ( .$alias_file.e ): lists ~/.aliases/.dir/.$alias_file.aliases · ( alias + explaination ) # ·e· 
 alias '.$alias_file.e'='c && ${alias_file}_e' # ·a·
