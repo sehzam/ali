@@ -8,6 +8,7 @@ search_pattern=".***.aliases" # ·v·
 find "$directory_to_save" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
 #
 if [ -s "$output_file_var" ]; then # ·c· 
+echo "list template file ok"
     while read -r alias_file; do # ·c· 
 # ·e· Debugging: list all loaded *.aliases files
     echo ".$alias_file.aliases found !" # ·c· 
