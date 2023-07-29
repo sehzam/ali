@@ -54,9 +54,6 @@ echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
 #
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-cp -Rp ./ali-main/.aliases/.list/ ~/.aliases/
-echo ..........Listing Directory : ~/.aliases/.dir/.list/
-#
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
@@ -71,6 +68,7 @@ for file in ~/.ali-main/.aliases/.dir/*; do
         # Dateiname ohne Pfad extrahieren
         filename=$(basename "$file")
         echo $file
+        echo "$file"
 
         # Ausführen des cp -Rp Befehls für jede Datei im vorgegebenen Format
         cp -Rp "$file" "$directory_to_save$filename"
