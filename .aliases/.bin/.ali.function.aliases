@@ -47,7 +47,16 @@ if [ -s "$output_file_var" ]; then # ·c·
         # ·e· Check, if file exist and if its a regular file
           if [ -f "$directory_to_search.$alias_file.aliases" ]; then # ·c· 
             source $directory_to_save.$alias_file.aliases # ·c· 
-            
+#
+        fi # ·c· 
+    done < "$output_file_var" # ·c· 
+
+    while read -r alias_file; do # ·c· 
+        # ·e· Debugging: list all loaded *.aliases files
+          echo "$directory_to_save.$alias_file.aliases" # ·c· 
+
+        # ·e· Check, if file exist and if its a regular file
+          if [ -f "$directory_to_search.$alias_file.aliases" ]; then # ·c· 
             echo $generate_alias"$(alias_file)" > "$directory_to_save.$alias_file.aliases" # ·c· 
 #
         fi # ·c· 
