@@ -3,6 +3,7 @@ echo "list template"
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
 directory_to_save="$HOME/.aliases/.list/" # ·v· 
 output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v· 
+echo "$output_file_var"
 search_pattern=".***.aliases" # ·v· 
 #
 find "$directory_to_save" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
