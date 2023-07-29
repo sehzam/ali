@@ -31,6 +31,10 @@ echo ..........Ali List commands : ~/.aliases/.bin/.ali.list.aliases/
 echo ·________________________________· |grep -E "_" 
 echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
+mkdir -p ~/.aliases/.etc/
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
+cp -Rp ./ali-main/.aliases/.etc/.keep ~/.aliases/.etc
+echo ..........Listing Directory : ~/.aliases/.dir/.list/.keep
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 cp -Rp ./ali-main/.aliases/.dir/.dir.aliases ~/.aliases/.dir/
 echo .........Directory commands : ~/.aliases/.dir/.dir.aliases
