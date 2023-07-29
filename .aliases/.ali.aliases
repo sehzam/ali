@@ -12,11 +12,11 @@ echo ·_________________________________· |grep -E "_"  # ·f·
 # ·o· ______________________________________________ ·o· 
 # ( c ): clears the terminal # ·e· 
 alias c='clear; ls -a' # ·a· 
+. ~/.aliases/.bin/.ali.function.aliases
+. ~/.aliases/.bin/.ali.list.aliases
 alias '.func'="cat ~/.aliases/.bin/.ali.function.aliases"
 alias '.list'="cat ~/.aliases/.bin/.ali.list.aliases"
 alias f=".ali && .func && .list"
-. ~/.aliases/.bin/.ali.function.aliases
-. ~/.aliases/.bin/.ali.list.aliases
 
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
