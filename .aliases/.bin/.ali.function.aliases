@@ -18,7 +18,17 @@ if ! [ -f ~/.aliases/.etc/.ali.lists ]; then # ·c·
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
 fi # ·c· 
+# ·e· ( START ) = { grep and highlight pattern in file }
+    grp() { # ·c·
+      grep -E "$1" "$2" # ·c·
+    } # ·c·
+#
+#
+# ·e· ( START ) = { List of alias files containing alias definitions for the shell }
+#
 # ·e· ( INFO ) Source reading the aliases to make it available at current session. Check, output file exists and is not empty 
+#
+# ·e· Check, if output file is not empty
 if [ -s "$output_file" ]; then # ·c·
     while read -r alias_file; do # ·c·
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
@@ -29,42 +39,7 @@ if [ -s "$output_file" ]; then # ·c·
           fi # ·c· 
     done < "$output_file" # ·c·
 fi # ·c·
-# ·e· ( START ) = { grep and highlight pattern in file }
-    grp() { # ·c·
-      grep -E "$1" "$2" # ·c·
-    } # ·c·
-#
-#
-# ·e· ( START ) = { List of alias files containing alias definitions for the shell }
-#
-# ·e· Check, if output file is not empty
-if [ -s "$output_file_var" ]; then # ·c· 
-
-    while read -r alias_files; do # ·c· 
-        source ~/.aliases/.etc/.list.template # ·c·
-
-        # ·e· Debugging: list all loaded *.aliases files
-          echo "$directory_to_save.$alias_files.aliases" # ·c· 
-
-        # ·e· Check, if file exist and if its a regular file
-          if [ -f "$directory_to_search.$alias_files.aliases" ]; then # ·c· 
-            echo "($generate_alias $alias_files)" > "$directory_to_save.$alias_files.aliases" # ·c· 
-#
-        fi # ·c· 
-    done < "$output_file_var" # ·c· 
-    
-    while read -r alias_file; do # ·c· 
-        # ·e· Debugging: list all loaded *.aliases files
-          echo "$directory_to_save.$alias_file.aliases" # ·c· 
-
-        # ·e· Check, if file exist and if its a regular file
-          if [ -f "$directory_to_search.$alias_file.aliases" ]; then # ·c· 
-            source $directory_to_save.$alias_file.aliases # ·c· 
-
-#
-        fi # ·c· 
-    done < "$output_file_var" # ·c· 
-fi # ·c· 
+source ~/.aliases/.etc/.list.template
 #
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions  ---------------- ·f· Directory Control System
