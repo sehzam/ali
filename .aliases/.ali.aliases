@@ -7,13 +7,15 @@
 # ·o· ---------------- Loadings -------------------- ·o· Loading
 # ·o· ______________________________________________ ·o· 
 # ( c ): clears the terminal # ·e· 
-alias c='clear; ls -alh' # ·a· 
 . ~/.aliases/.bin/.ali.function.aliases # ·c· 
+alias c='clear' # ·a· 
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Installation ------------------ ·o· Installation
 # ·o· ______________________________________________ ·o· 
 # ( .ali.setup | .as ): UPDATE / UNINSTALL {ali} # ·e·
+alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip* && . ~/ali-main/.setup && . ~/.bashrc' # ·a·
+alias '.as'='.ali.setup' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------ Custom Editing ------------------ ·o· Custom Editing
@@ -39,6 +41,9 @@ ali_e() { # ·c·
   c && .ali | grep -v '# ·i·' | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|=|:|·o·' # ·c·
 } # ·c·
 ali_f() { # ·c· 
+   c && .ali | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+} # ·c·
+ali_func() { # ·c· 
    c && .ali.func | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 # ·f· ---------------------------------------------- ·f· 
@@ -49,8 +54,10 @@ ali_f() { # ·c·
 alias ".ali.a"='c && ali_a' # ·a·
 # ( .ali.e ):( explaination ) · lists ~/.aliases/.ali.aliases # ·e· 
 alias ".ali.e"='c && ali_e' # ·a·
-# ( .ali.f ):( ·functions·  ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
+# ( .ali.f ):( ·functions·  ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
+# ( .ali.f ):( ·functions·  ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
+alias ".ali.func"='c && ali_func' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·o·                                                ·o·
 # ·o·              { A } = lias                      ·o·
