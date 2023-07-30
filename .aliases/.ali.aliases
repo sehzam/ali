@@ -7,7 +7,7 @@
 # ·o· ______________________________________________ ·o· 
  
 # ·o· ______________________________________________ ·o·
-# ·o· ---------------- Loadings -------------------- ·o· Loading
+# ·o· ---------------- Loadings -------------------- ·o· Loadings
 . ~/.aliases/.bin/.ali.function # ·c· 
 # ( c ): clears the terminal # ·e· 
 alias c='clear' # ·a· 
@@ -51,7 +51,7 @@ ali_ff() { # ·c·
 # ·f· ---------------------------------------------- ·f· 
 
 # ·o· ______________________________________________ ·o· 
-# ·o· ------------------  Aliases ------------------ ·o· Development
+# ·o· ------------------  Aliases ------------------ ·o· Aliases
 # ( .ali )    :( ENTRY  POINT ) · ~/.aliases/.ali.aliases  # ·e·
 alias ".ali"='c && ali' # ·a·
 # ( .ali.a )  :( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
