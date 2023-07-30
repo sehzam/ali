@@ -5,8 +5,8 @@ prompt () {
         rm main.zip 
     fi
     echo "______________________________________________________" |grep -E "_"
-    echo "If you want __________________________  A L I  _______" |grep -E "UPDATE|REMOVE|A_L_I" 
-    echo "______ to UPDATE or REMOVE ? _                       _" |grep -E "UPDATE|REMOVE|A_L_I" 
+    echo "If you want __________________________  A L I  _______" |grep -E "|_|A L I" 
+    echo "______ to UPDATE or REMOVE ? _                       _" |grep -E "UPDATE|REMOVE|_" 
     echo "______________________________ Alias Listing System ?_" |grep -E "_"
     echo "______________________________________________________" |grep -E "_"
     read -p "UPDATE: ( Y/y ) | REMOVE: ( N/n ) ? : " name 
