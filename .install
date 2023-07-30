@@ -154,8 +154,8 @@ echo ....................."explaination:" \( .$list.e \)
 echo ........................"functions:" \( .$list.f \) 
 echo ...................................................... 
 echo "type: ( .$list.e )" 
-echo "echo ________________
-echo \| · \(.$list.e\) · \||grep -E '\||\(|\)|_' # ·i·
+echo "echo ________________|grep -E '_'
+echo \| · \(.$list.e\) · \||grep -E '\||\(|\)' # ·i·
 " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
