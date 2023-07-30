@@ -26,14 +26,12 @@ prompt () {
     fi
     echo ______________________________________________________ |grep -E "_"
 }
-
+clear
 if ! [ -d ~/.aliases ]; then
-    clear
     echo "INSTALLING Alias Listing System A L I"
     . ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
     rm -r ~/ali-main/
     bash 
 elif [ -d ~/.aliases ]; then
-    clear
     prompt 
 fi
