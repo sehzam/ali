@@ -41,7 +41,7 @@ if [ -s "$output_file" ]; then # ·c·
                 echo $directory_to_search$alias_file # ·c· 
                 source "$directory_to_search$alias_file" # ·c·
           fi # ·c· 
-    done < "$output_file" # ·c·
+    done < "$output_file_data" # ·c·
 fi # ·c·
 source ~/.aliases/.list/.lists.template
 #
