@@ -38,7 +38,7 @@ ${alias_file}_l() { # ·c·
 # ·f· ---------------------------------------------- ·f· 
 
 # ·o· ______________________________________________ ·o· 
-# ·o· ------------------ Aliases ------------------- ·o· Development
+# ·o· ------------------ Aliases  ------------------ ·o· Development
 # ( .$alias_file )   :( ENTRY  POINT ) · lists ~/.aliases/.list/.$alias_file.lists # ·e·
 alias '.$alias_file'='c && ${alias_file}_l' # ·a·
 # ( .$alias_file.a ) :( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·

@@ -77,7 +77,7 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------------- ${list^^}  -------------------- ·o· ${list^^}
 # ( .$list ) : ( ENTRY POINT ) ·  IN · ~/.aliases/.list # ·e·
-#                  ( LISTING ) · FOR · ~/.aliases/.dir/.$list.aliases # ·e·
+#                ( LISTING ) · FOR · ~/.aliases/.dir/.$list.aliases # ·e·
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
