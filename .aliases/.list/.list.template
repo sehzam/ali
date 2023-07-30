@@ -15,8 +15,10 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· --------------   R A W Output ---------------- ·o· R A W Output
 # ·o· ______________________________________________ ·o· 
-# ( .$alias_file ): raw output · ~/.aliases/.list/.$alias_file.aliases  # ·e·
-alias ".$alias_file"='c && cat ~/.aliases/.list/.$alias_file.aliases' # ·a·
+# ( .$alias_file.raw ): RAW output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
+alias '.$alias_file.raw'='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
+# ( .$alias_file ): RAW LIST output · ~/.aliases/.list/.$alias_file.aliases  # ·e·
+alias '.$alias_file'='c && cat ~/.aliases/.list/.$alias_file.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·f· ______________________________________________ ·f· 
 # ·f· --------------- ${alias_file^} Functions ---------------- ·f· ${alias_file^} Functions
@@ -30,10 +32,15 @@ ${alias_file}_e() { # ·c·
 ${alias_file}_f() { # ·c· 
   c && .$alias_file | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
+${alias_file}_l() { # ·c·
+  c && .$alias_file | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
+} # ·c·
 # ·f· ---------------------------------------------- ·f· 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------- Aliases ------------------ ·o· Development
 # ·o· ______________________________________________ ·o· 
+# ( .$alias_file )  :  ( ENTRY POINT ) · lists ~/.aliases/.list/.$alias_file.aliases # ·e·
+alias '.$alias_file'='c && ${alias_file}_l' # ·a·
 # ( .$alias_file.a ):( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
 alias '.$alias_file.a'='c && ${alias_file}_a' # ·a·
 # ( .$alias_file.e ):( explaination ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e· 

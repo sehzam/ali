@@ -3,62 +3,68 @@
 # ·o·              { L } = ists                      ·o·
 # ·o·              { I } = njection                  ·o·
 # ·o·                                                ·o·
+
 # ·o· ______________________________________________ ·o· 
 # ·o· ---------------- Loadings -------------------- ·o· Loading
-# ·o· ______________________________________________ ·o· 
-# ( c ): clears the terminal # ·e· 
 . ~/.aliases/.bin/.ali.function # ·c· 
+# ( c ): clears the terminal # ·e· 
 alias c='clear' # ·a· 
 # ·o· ---------------------------------------------- ·o· 
+
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Installation ------------------ ·o· Installation
-# ·o· ______________________________________________ ·o· 
 # ( .ali.setup | .as ): UPDATE / UNINSTALL {ali} # ·e·
 alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip* && . ~/ali-main/.setup && . ~/.bashrc' # ·a·
 alias '.as'='.ali.setup' # ·a·
 # ·o· ---------------------------------------------- ·o· 
+
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------ Custom Editing ------------------ ·o· Custom Editing
-# ·o· ______________________________________________ ·o· 
 # ( .ali.edit ): opens the .bash_aliases file in the default editor # ·e·
 alias ".ali.edit"='xdg-open ~/.aliases/.ali.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
+
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- R A W Output ------------------ ·o· R A W Output
-# ·o· ______________________________________________ ·o· 
-# ( .ali ): raw output · ~/.bash_aliases  # ·e·
-alias ".ali"='c && cat ~/.aliases/.ali.aliases' # ·a·
-# ( .ali.func ): raw output · ~/.aliases/.bin/.ali.function  # ·e·
-alias ".ali.func"='c && cat ~/.aliases/.bin/.ali.function' # ·a·
+# ( .ali.raw ): RAW output · ~/.aliases/.ali.aliases  # ·e·
+alias ".ali.raw"='c && cat ~/.aliases/.ali.aliases' # ·a·
+# ( .ali.func ): RAW output · ~/.aliases/.bin/.ali.function  # ·e·
+alias ".ali.function"='c && cat ~/.aliases/.bin/.ali.function' # ·a·
 # ·o· ---------------------------------------------- ·o· 
+
 # ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions ----------------- ·f· {ali} Functions
-# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ Functions ----------------- ·f· .ali Functions
 ali_a() { # ·c·
-  c && .ali | grep -v '# ·i·' | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|=|:|alias |·o·' # ·c·
+  c && .ali.raw | grep -v '# ·i·' | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|=|:|alias |·o·' # ·c·
 } # ·c·
 ali_e() { # ·c·
-  c && .ali | grep -v '# ·i·' | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|=|:|·o·' # ·c·
+  c && .ali.raw | grep -v '# ·i·' | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|=|:|·o·' # ·c·
 } # ·c·
 ali_f() { # ·c· 
-   c && .ali | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+   c && .ali.raw | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
-ali_func() { # ·c· 
-   c && .ali.func | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+ali_ff() { # ·c· 
+   c && .ali.raw.function | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+} # ·c·
+ali_l() { # ·c·
+  c && .ali.raw | grep -v '# ·i·' | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|=|:|·o·' # ·c·
 } # ·c·
 # ·f· ---------------------------------------------- ·f· 
+
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Development
-# ·o· ______________________________________________ ·o· 
-# ( .ali.a ):( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
+# ( .ali )   :  ENTRY POINT · ~/.aliases/.ali.aliases  # ·e·
+alias ".ali"='c && .ali.l' # ·a·
+# ( .ali.a ) : ( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.a"='c && ali_a' # ·a·
-# ( .ali.e ):( explaination ) · lists ~/.aliases/.ali.aliases # ·e· 
+# ( .ali.e ) : ( explaination ) · lists ~/.aliases/.ali.aliases # ·e· 
 alias ".ali.e"='c && ali_e' # ·a·
-# ( .ali.f ):( ·functions·  ) · lists ~/.aliases/.ali.aliases # ·e·
+# ( .ali.f ) : ( ·functions·  ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
-# ( .ali.func ):( ·functions·  ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
-alias ".ali.func"='c && ali_func' # ·a·
+# ( .ali.ff ):( ·functions·  ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
+alias ".ali.ff"='c && ali_func' # ·a·
 # ·o· ---------------------------------------------- ·o· 
+
 # ·o·                                                ·o·
 # ·o·              { A } = lias                      ·o·
 # ·o·              { L } = ists                      ·o·
