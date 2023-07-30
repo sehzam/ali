@@ -7,14 +7,14 @@ output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v·
 search_pattern=".***.aliases" # ·v· 
 #
 if [ -f "$output_file" ]; then
-    output_file=$(<"$output_file")
+    output_file_data=$(<"$output_file")
 else
     echo "File $output_file not exists or is empty."
     exit 1
 fi
 #
 if [ -f "$output_file_var" ]; then
-    output_file_var=$(<"$output_file_var")
+    output_file_var_data=$(<"$output_file_var")
 else
     echo "File $output_file_var not exists or is empty."
     exit 1
