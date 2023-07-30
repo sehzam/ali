@@ -13,13 +13,11 @@ fi
     echo ______________________________________________________ |grep -E "_"
     if [ "$name" = "n" ] || [ "$name" = "N" ]; then
         echo "REMOVING Alias Listing System A L I"
-        echo "$(name)o. Let's remove this now"
         . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
         rm -r ~/ali-main/
         bash 
     elif [ "$name" = "y" ] || [ "$name" = "Y" ]; then
         echo "UPDATING Alias Listing System A L I"
-        echo "$(name)es. Let's do the job done"
         . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
         . ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
         rm -r ~/ali-main/
