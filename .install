@@ -154,7 +154,7 @@ echo ....................."explaination:" \( .$list.e \)
 echo ........................"functions:" \( .$list.f \) 
 echo ...................................................... 
 echo "type:" \( .$list.e \) 
-echo "echo .
+echo "echo "type:" \( .$list.e \)
     " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
