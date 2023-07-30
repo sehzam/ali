@@ -63,11 +63,31 @@ if [ -s "$output_file" ]; then # ·c·
     while read -r file; do # ·c·
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
           if [ -f "$directory_to_search$file" ]; then # ·c· 
-                echo "Copy file: $file"
-                echo "$file ---> $directory_to_save$file"  
+                echo "copy file: $file  ---> $directory_to_save"  
                     cp -r $directory_to_search$file $directory_to_save$file  
           fi # ·c· 
     done < "$output_file" # ·c·
+fi # ·c·
+
+if [ -s "$output_file_var" ]; then # ·c·
+    while read -r file; do # ·c·
+        # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
+          if [ -f "$directory_to_save.$file.alises" ]; then # ·c· 
+                echo "add available lists to your ~/.aliases/.ali.aliases file: $file  ---> ~/.aliases/.ali.aliases "  
+                echo "
+# ·o· ______________________________________________ ·o· 
+# ·o· -------------------- $file --------------------- ·o· $file
+# ·o· ______________________________________________ ·o· 
+# ( .$file.a ): lists ~/.aliases/.dir/.$file.aliases · ( only aliases ) # ·e·
+alias '.$file.a'='c && $(file)_a' # ·a·
+# ( .$file.e ): lists ~/.aliases/.dir/.$file.aliases · ( alias + explaination ) # ·e· 
+alias '.$file.e'='c && $(file)_e' # ·a·
+# ( .$file.f ): lists ~/.aliases/.dir/.$file.aliases · ( functions ) # ·e·
+alias '.$file.f'='c && $(file)_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+" >> ~/.aliases/.ali.aliases
+          fi # ·c· 
+    done < "$output_file_var" # ·c·
 fi # ·c·
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 
