@@ -55,35 +55,21 @@ search_pattern=".***.aliases"
 if [ -d "$directory_to_search" ]; then # ·c·
         # ·e· ( INFO ) Find commmand searchs for files with pattern abd write it to file  
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
-          echo "$output_file"
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
-          echo "$output_file_var"
 fi
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 
-# Schleife zum Lesen der verfügbaren Dateien im Verzeichnis ~/.ali-main/.aliases/.dir/*
-echo "before"
 if [ -s "$output_file" ]; then # ·c·
     while read -r file; do # ·c·
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
           if [ -f "$directory_to_search$file" ]; then # ·c· 
-
-
-            
-            # Ausgabe des Dateinamens vor dem Kopieren
-                echo "Datei, die kopiert wird: $file"
-
-            # Ausführen des cp -Rp Befehls für jede Datei im vorgegebenen Format
-            # cp -Rp "$file" "$directory_to_save$filename"
-                echo "cp -r $file $directory_to_save$file"  
-                cp -r $directory_to_search$file $directory_to_save$file  
-            
+                echo "Copy file: $file"
+                echo "$file ---> $directory_to_save$file"  
+                    cp -r $directory_to_search$file $directory_to_save$file  
           fi # ·c· 
     done < "$output_file" # ·c·
 fi # ·c·
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-
-echo "out"
 
 remove_string_from_file() {
     local search_string="$1"
