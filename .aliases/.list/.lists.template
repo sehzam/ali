@@ -15,8 +15,8 @@ fi
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r alias_file; do # ·c· 
       # ·e· Debugging: list all loaded *.aliases files
-        echo ".$alias_file.aliases found !" # ·c· 
-        echo "Directory : $directory_to_search.$alias_file.aliases" # ·c· 
+        echo "( .$alias_file.e )" # ·c· 
+        # echo "Directory : $directory_to_search.$alias_file.aliases" # ·c· 
         echo "#
 # ·o· ______________________________________________ ·o· 
 # ·o· --------           "$alias_file"            ------------ ·o· $alias_file
