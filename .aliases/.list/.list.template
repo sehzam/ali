@@ -33,12 +33,12 @@ ${alias_file}_f() { # ·c·
   c && .$alias_file.raw | grep -v '# ·a·' | grep -v '# ·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 ${alias_file}_l() { # ·c·
-  c && .$alias_file.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+  c && .$alias_file.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
 } # ·c·
 # ·f· ---------------------------------------------- ·f· 
 
 # ·o· ______________________________________________ ·o· 
-# ·o· ------------------- Aliases ------------------ ·o· Development
+# ·o· ------------------ Aliases ------------------- ·o· Development
 # ( .$alias_file )   :( ENTRY  POINT ) · lists ~/.aliases/.list/.$alias_file.lists # ·e·
 alias '.$alias_file'='c && ${alias_file}_l' # ·a·
 # ( .$alias_file.a ) :( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
