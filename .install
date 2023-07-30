@@ -78,7 +78,7 @@ if [ -s "$output_file" ]; then # ·c·
             # Ausführen des cp -Rp Befehls für jede Datei im vorgegebenen Format
             # cp -Rp "$file" "$directory_to_save$filename"
             echo "cp -Rp $file $directory_to_save$file"  
-            cp -Rp "$directory_to_search$file $directory_to_save$file"  
+            cp -Rp $directory_to_search$file $directory_to_save$file  
           fi # ·c· 
     done < "$output_file" # ·c·
 fi # ·c·
