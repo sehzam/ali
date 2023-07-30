@@ -147,9 +147,28 @@ echo ......................"entry point:" \( .$list \)
 echo .........................."aliases:" \( .$list.a \) 
 echo ....................."explaination:" \( .$list.e \) 
 echo ........................"functions:" \( .$list.f \) 
-echo ...................................................... 
+echo ......................................................
+
+ 
+output_file_final="$HOME/.aliases/.etc/.ali.info"
+
+# Löschen der Ergebnisdatei, falls sie bereits existiert
+> "$output_file_final"
+
+if [ -s "$output_file_var" ]; then
+    while IFS= read -r line; do
+        # Entfernen von Leerzeichen und Zeilenumbrüchen aus der Zeile
+        cleaned_line=$(echo "$line" | tr -d '[:space:]')
+        # Hinzufügen der Punkte zwischen den Begriffen
+        echo -n "( .$list.e )" >> "$output_file_final"
+        
+    done < "$output_file_var"
+    # echo "" >> "$output_file_final" # Neue Zeile am Ende hinzufügen
+fi
+
+
 echo "echo ______________________|grep -E '_' # ·i·
-echo \| type: · \(.$list.e\) · \||grep -E '\||\(|\)' # ·i·
+echo \| type: $output_file_final \||grep -E '\||\(|\)|\.|' # ·i·
 " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
