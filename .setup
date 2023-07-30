@@ -5,8 +5,9 @@ prompt () {
         rm main.zip 
     fi
     echo ______________________________________________________ |grep -E "_"
-    echo If you want to UPDATE or REMOVE_______\(  A L I \)_______ |grep -E "UPDATE|REMOVE|A_L_I" 
-    echo _______________________________ Alias Listing System ? |grep -E "_"
+    echo If you want __________________________  A L I  _______ |grep -E "UPDATE|REMOVE|A_L_I" 
+    echo ______ to UPDATE or REMOVE ? _                       _ |grep -E "UPDATE|REMOVE|A_L_I" 
+    echo ______________________________ Alias Listing System ?_ |grep -E "_"
     echo ______________________________________________________ |grep -E "_"
     read -p "UPDATE: ( Y/y ) | REMOVE: ( N/n ) ? : " name 
     echo ______________________________________________________ |grep -E "_"
@@ -21,8 +22,8 @@ prompt () {
         . ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
         rm -r ~/ali-main/
         bash 
-    elif ! [ "$name" = "Y" ] && ! [ "$name" = "y" ] && ! [ "$name" = "N" ] && ! [ "$name" = "n" ]; then
-        . ~/ali-main/.setup|grep -E ':|·|~|\.|-|__'
+    # elif ! [ "$name" = "Y" ] && ! [ "$name" = "y" ] && ! [ "$name" = "N" ] && ! [ "$name" = "n" ]; then
+    #     . ~/ali-main/.setup|grep -E ':|·|~|\.|-|__'
     fi
     echo ______________________________________________________ |grep -E "_"
 }
