@@ -40,7 +40,7 @@ ${alias_file}_a() { # ·c·
 } # ·c·
 #
 ${alias_file}_e() { # ·c·
-  c && .$alias_file | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \{|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
+  c && .$alias_file | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
 } # ·c·
 #
 ${alias_file}_f() { # ·c· 
