@@ -171,5 +171,5 @@ if [ -s "$output_file_var" ]; then
         
     done < "$output_file_var"
 fi
-echo cat $output_file_final
-echo cat "$output_file_final"
+info=$(<$output_file_final)
+echo  $output_file_final
