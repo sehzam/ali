@@ -52,11 +52,11 @@ ali_ff() { # ·c·
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Aliases
-# ( .ali )    :( ENTRY  POINT ) · ~/.aliases/.ali.aliases  # ·e·
+# ( .ali )   : (ENTRY POINT) · ~/.aliases/.ali.aliases  # ·e·
 alias ".ali"='c && ali' # ·a·
-# ( .ali.a )  :( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
+# ( .ali.a ) : ( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.a"='c && ali_a' # ·a·
-# ( .ali.f )  :( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
+# ( .ali.f ) : ( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
-# ( .ali.ff ) :( functions... ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
+# ( .ali.ff ) : ( functions... ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
 alias ".ali.ff"='c && ali_ff' # ·a·
