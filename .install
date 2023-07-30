@@ -46,10 +46,6 @@ echo ·________________________________· |grep -E "_"
 echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
 #
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 directory_to_search="$HOME/ali-main/.aliases/.dir/"
 directory_to_save="$HOME/.aliases/.list/"
 output_file="$HOME/.aliases/.etc/.ali.list"
@@ -72,23 +68,21 @@ if [ -s "$output_file" ]; then # ·c·
           if [ -f "$directory_to_search$file" ]; then # ·c· 
 
 
+            echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
+            
             # Ausgabe des Dateinamens vor dem Kopieren
-            echo "Datei, die kopiert wird: $file"
+                echo "Datei, die kopiert wird: $file"
 
             # Ausführen des cp -Rp Befehls für jede Datei im vorgegebenen Format
             # cp -Rp "$file" "$directory_to_save$filename"
-            echo "cp -Rp $file $directory_to_save$file"  
-            # cp -Rp $directory_to_search$file $directory_to_save$file  
+                echo "cp -Rp $file $directory_to_save$file"  
+                # cp -Rp $directory_to_search$file $directory_to_save$file  
+            
+            echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
           fi # ·c· 
     done < "$output_file" # ·c·
 fi # ·c·
 echo "out"
-
-
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 
 remove_string_from_file() {
     local search_string="$1"
