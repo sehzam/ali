@@ -59,6 +59,7 @@ if [ -d "$directory_to_search" ]; then # ·c·
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
           echo "$output_file_var"
 fi
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 
 # Schleife zum Lesen der verfügbaren Dateien im Verzeichnis ~/.ali-main/.aliases/.dir/*
 echo "before"
@@ -68,7 +69,6 @@ if [ -s "$output_file" ]; then # ·c·
           if [ -f "$directory_to_search$file" ]; then # ·c· 
 
 
-            echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
             
             # Ausgabe des Dateinamens vor dem Kopieren
                 echo "Datei, die kopiert wird: $file"
@@ -78,10 +78,11 @@ if [ -s "$output_file" ]; then # ·c·
                 echo "cp -Rp $file $directory_to_save$file"  
                 # cp -Rp $directory_to_search$file $directory_to_save$file  
             
-            echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
           fi # ·c· 
     done < "$output_file" # ·c·
 fi # ·c·
+echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
+
 echo "out"
 
 remove_string_from_file() {
