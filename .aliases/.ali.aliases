@@ -37,10 +37,10 @@ alias ".ali.function"='cat ~/.aliases/.bin/.ali.function' # ·a·
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions  ---------------- ·f· .ali Functions
 ali() { # ·c·
-  c && .ali.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+  c && .ali.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
 } # ·c·
 ali_a() { # ·c·
-  c && .ali.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|=|:|alias |·o·' # ·c·
+  c && .ali.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
 } # ·c·
 ali_f() { # ·c· 
    c && .ali.raw | grep -v '# ·a·' | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|echo |\#|\|' # ·c·
