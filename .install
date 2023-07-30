@@ -60,28 +60,28 @@ fi
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 
 if [ -s "$output_file" ]; then # ·c·
-    while read -r filename; do # ·c·
+    while read -r list; do # ·c·
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
-          if [ -f "$directory_to_search$filename" ]; then # ·c· 
-                echo "copy file: $filename  ---> $directory_to_save"  
-                    cp -r $directory_to_search$filename $directory_to_save$filename  
+          if [ -f "$directory_to_search$list" ]; then # ·c· 
+                echo "copy file: $list  ---> $directory_to_save"  
+                    cp -r $directory_to_search$list $directory_to_save$list  
           fi # ·c· 
     done < "$output_file" # ·c·
 fi # ·c·
 
 if [ -s "$output_file_var" ]; then # ·c·
-    while read -r filename; do # ·c·
-    echo "add available lists to your ~/.aliases/.ali.aliases file: $filename  ---> ~/.aliases/.ali.aliases "  
+    while read -r list; do # ·c·
+    echo "add available lists to your ~/.aliases/.ali.aliases file: $list  ---> ~/.aliases/.ali.aliases "  
     echo "
 # ·o· ______________________________________________ ·o· 
-# ·o· -------------------- $filename --------------------- ·o· $filename
+# ·o· -------------------- $list --------------------- ·o· $list
 # ·o· ______________________________________________ ·o· 
-# ( .$filename.a ): lists ~/.aliases/.dir/.$filename.aliases · ( only aliases ) # ·e·
-alias '.$filename.a'='c && $(filename)_a' # ·a·
-# ( .$filename.e ): lists ~/.aliases/.dir/.$filename.aliases · ( alias + explaination ) # ·e· 
-alias '.$filename.e'='c && $(filename)_e' # ·a·
-# ( .$filename.f ): lists ~/.aliases/.dir/.$filename.aliases · ( functions ) # ·e·
-alias '.$filename.f'='c && $(filename)_f' # ·a·
+# ( .$list.a ): lists ~/.aliases/.dir/.$list.aliases · ( only aliases ) # ·e·
+alias '.$list.a'='c && $(list)_a' # ·a·
+# ( .$list.e ): lists ~/.aliases/.dir/.$list.aliases · ( alias + explaination ) # ·e· 
+alias '.$list.e'='c && $(list)_e' # ·a·
+# ( .$list.f ): lists ~/.aliases/.dir/.$list.aliases · ( functions ) # ·e·
+alias '.$list.f'='c && $(list)_f' # ·a·
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
