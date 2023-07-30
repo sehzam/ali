@@ -76,18 +76,13 @@ if [ -s "$output_file_var" ]; then # ·c·
     echo "
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------------- ${list^^}  -------------------- ·o· ${list^^}
-# ·o· ______________________________________________ ·o· 
-# ( .$list )  :( only aliases ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
-alias '.$list.a'='c && ${list}_a' # ·a·
-# ( .$list.a ):( only aliases ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
-alias '.$list.a'='c && ${list}_a' # ·a·
-# ( .$list.e ):( explaination ) · lists ~/.aliases/.dir/.$list.aliases # ·e· 
-alias '.$list.e'='c && ${list}_e' # ·a·
-# ( .$list.f ):( ·functions·  ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
-alias '.$list.f'='c && ${list}_f' # ·a·
+# ( .$list ) : ( ENTRY POINT ) ·  IN · ~/.aliases/.list # ·e·
+#                  ( LISTING ) · FOR · ~/.aliases/.dir/.$list.aliases # ·e·
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
+echo "
+# ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 
 remove_string_from_file() {
@@ -171,5 +166,5 @@ fi
 
 info=$(<$output_file_final)
 echo  "
-echo '| $info'|grep -E '\(|\) # ·f·'
+echo '\| $info'|grep -E '\(|\) # ·f·'
 " >> ~/.aliases/.ali.aliases
