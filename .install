@@ -173,4 +173,4 @@ if [ -s "$output_file_var" ]; then
 fi
 info=$(<$output_file_final)
 echo  "
-$info|grep -E '\(|\)'" >> ~/.aliases/.ali.aliases
+'$info'|grep -E '\(|\)'" >> ~/.aliases/.ali.aliases
