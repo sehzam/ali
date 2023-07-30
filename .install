@@ -79,14 +79,11 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· -------------------- $list  -------------------- ·o· $list
 # ·o· ______________________________________________ ·o· 
 # ( .$list.a ):( only aliases ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
-alias '.$list.a'='c && $list" >> ~/.aliases/.ali.aliases
-    echo "_a' # ·a·
+alias '.$list.a'='c && .${list}_a' # ·a·
 # ( .$list.e ):( explaination ) · lists ~/.aliases/.dir/.$list.aliases # ·e· 
-alias '.$list.e'='c && $list" >> ~/.aliases/.ali.aliases
-echo "_e' # ·a·
+alias '.$list.e'='c && .${list}_e' # ·a·
 # ( .$list.f ):( ·functions·  ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
-alias '.$list.f'='c && $$list" >> ~/.aliases/.ali.aliases
-echo "_f' # ·a·
+alias '.$list.f'='c && .${list}'
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
