@@ -33,6 +33,7 @@ cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
 echo ......Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 ##
+cp -Rp ./ali-main/.aliases/.list/ ~/.aliases/
 cp -Rp ./ali-main/.aliases/.list/.lists.template ~/.aliases/.list/
 echo .......... Listing Template : ~/.aliases/.list/.lists.template
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
