@@ -9,7 +9,7 @@ prompt () {
     echo "______ to UPDATE or REMOVE ? _                       _" |grep -E "UPDATE|REMOVE|A_L_I" 
     echo "______________________________ Alias Listing System ?_" |grep -E "_"
     echo "______________________________________________________" |grep -E "_"
-    read "-p "UPDATE: ( Y/y ) | REMOVE: ( N/n ) ? : " name "
+    read -p "UPDATE: ( Y/y ) | REMOVE: ( N/n ) ? : " name 
     echo "______________________________________________________" |grep -E "_"
     if [ "$name" = "n" ] || [ "$name" = "N" ]; then
         echo "REMOVING Alias Listing System A L I"
