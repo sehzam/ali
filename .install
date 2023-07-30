@@ -83,7 +83,6 @@ alias '.$filename.e'='c && $(filename)_e' # ·a·
 # ( .$filename.f ): lists ~/.aliases/.dir/.$filename.aliases · ( functions ) # ·e·
 alias '.$filename.f'='c && $(filename)_f' # ·a·
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
-          fi # ·c· 
     done < "$output_file_var" # ·c·
 fi # ·c·
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
