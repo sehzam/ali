@@ -14,17 +14,18 @@ echo ·_________________________________· |grep -E "_"  # ·i·
 #
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
 directory_to_save="$HOME/.aliases/.list/" # ·v· 
+output_file="$HOME/.aliases/.etc/.ali.list" # ·v· 
 output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v· 
 #
 if [ -f "$output_file" ]; then
-    output_file_data=$(<"$output_file")
+    output_file=$(<"$output_file")
 else
     echo "File $output_file not exists or is empty."
     exit 1
 fi
 #
 if [ -f "$output_file_var" ]; then
-    output_file_var_data=$(<"$output_file_var")
+    output_file_var=$(<"$output_file_var")
 else
     echo "File $output_file_var not exists or is empty."
     exit 1
@@ -41,7 +42,7 @@ if [ -s "$output_file" ]; then # ·c·
                 echo $directory_to_search$alias_file # ·c· 
                 source "$directory_to_search$alias_file" # ·c·
           fi # ·c· 
-    done < "$output_file_data" # ·c·
+    done < "$output_file" # ·c·
 fi # ·c·
 source ~/.aliases/.list/.lists.template
 #
