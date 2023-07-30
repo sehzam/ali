@@ -66,12 +66,16 @@ fi # ·c·
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
+
+# Extract the first letter and converts it into Capital
+first_letter=$(echo "$word" | awk '{print toupper(substr($0,1,1))}')
+
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r list; do # ·c·
     echo "Add Entry Rows for < ${list} > to your file : ~/.aliases/.ali.aliases"  
     echo "
 # ·o· ______________________________________________ ·o· 
-# ·o· -------------------- $list  -------------------- ·o· $list
+# ·o· -------------------- ${list^^}  -------------------- ·o· ${list^^}
 # ·o· ______________________________________________ ·o· 
 # ( .$list )  :( only aliases ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
 alias '.$list.a'='c && ${list}_a' # ·a·
