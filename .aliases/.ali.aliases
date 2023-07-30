@@ -56,7 +56,7 @@ alias ".ali.a"='c && ali_a' # ·a·
 alias ".ali.e"='c && ali_e' # ·a·
 # ( .ali.f ):( ·functions·  ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
-# ( .ali.f ):( ·functions·  ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
+# ( .ali.func ):( ·functions·  ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
 alias ".ali.func"='c && ali_func' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·o·                                                ·o·

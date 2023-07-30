@@ -1,8 +1,8 @@
 # echo "list template"
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
 directory_to_save="$HOME/.aliases/.list/" # ·v· 
-output_file="$HOME/.aliases/.etc/.ali.list" # ·v· 
-output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v· 
+output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
+output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
 search_pattern=".***.aliases" # ·v· 
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r alias_file; do # ·c· 
@@ -10,7 +10,7 @@ if [ -s "$output_file_var" ]; then # ·c·
         # echo "( .$alias_file.e )" # ·c· 
         # echo "Directory : $directory_to_search.$alias_file.aliases" # ·c· 
         echo "# ·o· ______________________________________________ ·o· 
-# ·o· --------           "$alias_file"            ------------ ·o· $alias_file
+# ·o· --------           "${alias_file^}"            ------------ ·o· ${alias_file^}
 # ·o· ______________________________________________ ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· --------------   R A W Output ---------------- ·o· R A W Output
@@ -19,7 +19,7 @@ if [ -s "$output_file_var" ]; then # ·c·
 alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·f· ______________________________________________ ·f· 
-# ·f· ----------- { $alias_file } Functions ---------------- ·f· {$alias_file} Functions
+# ·f· ----------- { ${alias_file^} } Functions ---------------- ·f· {$${alias_file^}} Functions
 # ·f· ______________________________________________ ·f· 
 ${alias_file}_a() { # ·c·
   c && .$alias_file | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·'  | grep -E '# ·a·|# ·o·|__|--|\(|\)|=||alias|# ·o·' # ·c·
