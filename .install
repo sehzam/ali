@@ -47,7 +47,7 @@ echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
 #
 directory_to_search="$HOME/ali-main/.aliases/.dir/"
-directory_to_save="$HOME/.aliases/.list/"
+directory_to_save="$HOME/.aliases/.dir/"
 output_file="$HOME/.aliases/.etc/.ali.list"
 output_file_var="$HOME/.aliases/.etc/.ali.list.names"
 search_pattern=".***.aliases"
@@ -75,8 +75,8 @@ if [ -s "$output_file" ]; then # ·c·
 
             # Ausführen des cp -Rp Befehls für jede Datei im vorgegebenen Format
             # cp -Rp "$file" "$directory_to_save$filename"
-                echo "cp -Rp $file $directory_to_save$file"  
-                # cp -Rp $directory_to_search$file $directory_to_save$file  
+                echo "cp -r $file $directory_to_save$file"  
+                cp -r $directory_to_search$file $directory_to_save$file  
             
           fi # ·c· 
     done < "$output_file" # ·c·
