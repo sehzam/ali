@@ -50,7 +50,7 @@ echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
-directory_to_search="~/ali-main/.aliases/.dir/"
+directory_to_search="$HOME/ali-main/.aliases/.dir/"
 directory_to_save="$HOME/.aliases/.list/"
 output_file="$HOME/.aliases/.etc/.ali.list"
 output_file_var="$HOME/.aliases/.etc/.ali.list.names"
