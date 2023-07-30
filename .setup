@@ -14,13 +14,13 @@ prompt () {
     echo "______________________________________________________" |grep -E "_"
     if [ "$name" = "n" ] || [ "$name" = "N" ]; then
         echo "REMOVING Alias Listing System A L I"
-        . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
+        . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__|<|>'
         rm -r ~/ali-main/
         bash 
     elif [ "$name" = "y" ] || [ "$name" = "Y" ]; then
         echo "UPDATING Alias Listing System A L I"
-        . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__'
-        . ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
+        . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__|<|>'
+        . ~/ali-main/.install|grep -E ':|·|~|\.|-|__|<|>'
         rm -r ~/ali-main/
         bash 
     # elif ! [ "$name" = "Y" ] && ! [ "$name" = "y" ] && ! [ "$name" = "N" ] && ! [ "$name" = "n" ]; then
@@ -31,7 +31,7 @@ prompt () {
 clear
 if ! [ -d ~/.aliases ]; then
     echo "INSTALLING Alias Listing System A L I"
-    . ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
+    . ~/ali-main/.install|grep -E ':|·|~|\.|-|__|<|>'
     rm -r ~/ali-main/
     bash 
 elif [ -d ~/.aliases ]; then
