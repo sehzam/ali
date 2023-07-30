@@ -80,8 +80,6 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
-echo "
-# ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 
 remove_string_from_file() {
@@ -167,11 +165,11 @@ echo -n '"' >> ~/.aliases/.ali.aliases
 echo -n " | grep -E '\||\(|\)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
 echo "
-# ·o· ---------------------------------------------- ·o· 
-
+# ·o· ______________________________________________ ·o· 
 # ·o·                                                ·o·
 # ·o·              { A } = lias                      ·o·
 # ·o·              { L } = ists                      ·o·
 # ·o·              { I } = njection                  ·o·
-# ·o·                                                ·o·" >> ~/.aliases/.ali.aliases
+# ·o·                                                ·o·
+# ·o· ______________________________________________ ·o·" >> ~/.aliases/.ali.aliases
 
