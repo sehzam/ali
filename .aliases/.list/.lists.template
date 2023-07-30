@@ -6,19 +6,15 @@ output_file="$HOME/.aliases/.etc/.ali.list" # ·v·
 output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v· 
 search_pattern=".***.aliases" # ·v· 
 #
-if [ -f "$output_file" ]; then
-    output_file_data=$(<"$output_file")
-else
-    echo "File $output_file not exists or is empty."
-    exit 1
+
+if [ -d "$directory_to_search" ]; then # ·c·
+        # ·e· ( INFO ) Find commmand searchs for files with pattern abd write it to file  
+          find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
+          echo "$output_file"
+          find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
+          echo "$output_file_var"
 fi
-#
-if [ -f "$output_file_var" ]; then
-    output_file_var_data=$(<"$output_file_var")
-else
-    echo "File $output_file_var not exists or is empty."
-    exit 1
-fi
+
 #
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r alias_file; do # ·c· 
