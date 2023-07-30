@@ -71,7 +71,7 @@ fi # ·c·
 
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r list; do # ·c·
-    echo "ADD available ( ${list} ) list ENTRY POINTS"  
+    echo "ADD available  ${list}  list ENTRY POINTS"  
     echo "TO your file: >> ~/.aliases/.ali.aliases"  
 echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
     echo "
