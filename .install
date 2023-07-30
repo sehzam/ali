@@ -70,7 +70,7 @@ if [ -s "$output_file" ]; then # ·c·
 fi # ·c·
 
 if [ -s "$output_file_var" ]; then # ·c·
-    while read -r file; do # ·c·
+    while read -r filename; do # ·c·
     echo "add available lists to your ~/.aliases/.ali.aliases file: $filename  ---> ~/.aliases/.ali.aliases "  
     echo "
 # ·o· ______________________________________________ ·o· 
