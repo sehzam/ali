@@ -1,12 +1,11 @@
 prompt () {
-if ! [ -d ~/ali-main ]; then
-    wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && 
-    unzip main.zip && 
-    rm main.zip 
-fi
-
+    if ! [ -d ~/ali-main ]; then
+        wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && 
+        unzip main.zip && 
+        rm main.zip 
+    fi
     echo ______________________________________________________ |grep -E "_"
-    echo If you want to UPDATE or REMOVE_________A_L_I_________ |grep -E "UPDATE|REMOVE|A_L_I" 
+    echo If you want to UPDATE or REMOVE_______\(  A L I \)_______ |grep -E "UPDATE|REMOVE|A_L_I" 
     echo _______________________________ Alias Listing System ? |grep -E "_"
     echo ______________________________________________________ |grep -E "_"
     read -p "UPDATE: ( Y/y ) | REMOVE: ( N/n ) ? : " name 
@@ -29,10 +28,12 @@ fi
 }
 
 if ! [ -d ~/.aliases ]; then
+    clear
     echo "INSTALLING Alias Listing System A L I"
     . ~/ali-main/.install|grep -E ':|·|~|\.|-|__'
     rm -r ~/ali-main/
     bash 
 elif [ -d ~/.aliases ]; then
+    clear
     prompt 
 fi

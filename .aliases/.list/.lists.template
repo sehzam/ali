@@ -24,7 +24,7 @@ if [ -s "$output_file_var" ]; then # ·c·
 alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions  ---------------- ·f· $alias_file Functions
+# ·f· ----------- { $alias_file } Functions ---------------- ·f· {$alias_file} Functions
 # ·f· ______________________________________________ ·f· 
 ${alias_file}_a() { # ·c·
   c && .$alias_file | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·'  | grep -E '# ·a·|# ·o·|__|--|\(|\)|=||alias|# ·o·' # ·c·
@@ -41,9 +41,9 @@ ${alias_file}_f() { # ·c·
 # ·o· ______________________________________________ ·o· 
 # ( .$alias_file.a ):( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
 alias '.$alias_file.a'='c && ${alias_file}_a' # ·a·
-# ( .$alias_file.e ): lists ~/.aliases/.dir/.$alias_file.aliases · ( alias + explaination ) # ·e· 
+# ( .$alias_file.e ):( explaination ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e· 
 alias '.$alias_file.e'='c && ${alias_file}_e' # ·a·
-# ( .$alias_file.f ): lists ~/.aliases/.dir/.$alias_file.aliases · ( functions ) # ·e·
+# ( .$alias_file.f ):( ·functions·  ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
 alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 

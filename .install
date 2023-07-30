@@ -84,11 +84,10 @@ alias '.$list.a'='c && .${list}_a' # ·a·
 # ( .$list.e ):( explaination ) · lists ~/.aliases/.dir/.$list.aliases # ·e· 
 alias '.$list.e'='c && .${list}_e' # ·a·
 # ( .$list.f ):( ·functions·  ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
-alias '.$list.f'='c && .${list}'
+alias '.$list.f'='c && .${list}' # ·a·
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
-echo _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __ _ __
 
 remove_string_from_file() {
     local search_string="$1"

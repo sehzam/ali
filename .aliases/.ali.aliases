@@ -33,7 +33,7 @@ alias ".ali.func"='c && cat ~/.aliases/.bin/.ali.function.aliases' # ·a·
 # ·f· ------------------ Functions ----------------- ·f· {ali} Functions
 # ·f· ______________________________________________ ·f· 
 ali_a() { # ·c·
-  c && .ali  | grep -v '# ·i·' | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|=|:|alias |·o·' # ·c·
+  c && .ali | grep -v '# ·i·' | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|=|:|alias |·o·' # ·c·
 } # ·c·
 ali_e() { # ·c·
   c && .ali | grep -v '# ·i·' | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|=|:|·o·' # ·c·
