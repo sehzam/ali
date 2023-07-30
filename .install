@@ -37,9 +37,6 @@ cp -Rp ./ali-main/.aliases/.list/.list.template ~/.aliases/.list/
 echo .......... Listing Template : ~/.aliases/.list/.list.template
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 #
-cp -Rp ./ali-main/.aliases/.bin/.ali.list ~/.aliases/.bin/
-echo ...... Alias Category Lists : ~/.aliases/.bin/.ali.list
-#
 echo ·________________________________· |grep -E "_" 
 echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
