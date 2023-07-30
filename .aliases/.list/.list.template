@@ -19,7 +19,7 @@ if [ -s "$output_file_var" ]; then # ·c·
 alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·f· ______________________________________________ ·f· 
-# ·f· ----------- { ${alias_file^} } Functions ---------------- ·f· {$${alias_file^}} Functions
+# ·f· --------------- ${alias_file^} Functions ---------------- ·f· ${alias_file^} Functions
 # ·f· ______________________________________________ ·f· 
 ${alias_file}_a() { # ·c·
   c && .$alias_file | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·'  | grep -E '# ·a·|# ·o·|__|--|\(|\)|=||alias|# ·o·' # ·c·
@@ -42,7 +42,7 @@ alias '.$alias_file.e'='c && ${alias_file}_e' # ·a·
 alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
-# ·o· --------           $alias_file            ------------ ·o· $alias_file
+# ·o· --------           ${alias_file^}            ------------ ·o· ${alias_file^}
 # ·o· ______________________________________________ ·o·" > $directory_to_save.$alias_file.aliases # ·c· 
 
     if [ -f "$directory_to_save.$alias_file.aliases" ]; then # ·c· 
