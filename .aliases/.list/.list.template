@@ -17,7 +17,7 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· --------------   R A W Output ---------------- ·o· R A W Output
 # ( .$alias_file.raw ): RAW output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
 alias '.$alias_file.raw'='cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
-# ( .$alias_file.l ): RAW LIST output · ~/.aliases/.list/.$alias_file.aliases  # ·e·
+# ( .$alias_file.l ): RAW LIST output · ~/.aliases/.list/.$alias_file.lists  # ·e·
 alias '.$alias_file.l'='cat ~/.aliases/.list/.$alias_file.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
@@ -39,7 +39,7 @@ ${alias_file}_l() { # ·c·
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------- Aliases ------------------ ·o· Development
-# ( .$alias_file )   :( ENTRY  POINT ) · lists ~/.aliases/.list/.$alias_file.aliases # ·e·
+# ( .$alias_file )   :( ENTRY  POINT ) · lists ~/.aliases/.list/.$alias_file.lists # ·e·
 alias '.$alias_file'='c && ${alias_file}_l' # ·a·
 # ( .$alias_file.a ) :( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
 alias '.$alias_file.a'='c && ${alias_file}_a' # ·a·
