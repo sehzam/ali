@@ -73,6 +73,7 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
       # echo "$alias_file is sourced" 
       # echo "ACCESS: ( .$alias_file.e )"
         source $directory_to_save.$alias_file.aliases # ·c· 
+        source $directory_to_search.$alias_file.aliases # ·c· 
     fi # ·c· 
 #
   done < "$output_file_var" # ·c· 
