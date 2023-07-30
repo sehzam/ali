@@ -58,10 +58,3 @@ alias ".ali.a"='c && ali_a' # ·a·
 alias ".ali.f"='c && ali_f' # ·a·
 # ( .ali.ff ) :( functions... ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
 alias ".ali.ff"='c && ali_ff' # ·a·
-# ·o· ---------------------------------------------- ·o· 
-
-# ·o·                                                ·o·
-# ·o·              { A } = lias                      ·o·
-# ·o·              { L } = ists                      ·o·
-# ·o·              { I } = njection                  ·o·
-# ·o·                                                ·o·

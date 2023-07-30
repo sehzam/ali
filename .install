@@ -74,10 +74,9 @@ if [ -s "$output_file_var" ]; then # ·c·
     while read -r list; do # ·c·
     echo "Add Entry Rows for < ${list} > to your file : ~/.aliases/.ali.aliases"  
     echo "
-# ·o· ______________________________________________ ·o· 
 # ·o· -------------------- ${list^^}  -------------------- ·o· ${list^^}
-# ( .$list ) : ( ENTRY POINT ) ·  IN · ~/.aliases/.list # ·e·
-#                ( LISTING ) · FOR · ~/.aliases/.dir/.$list.aliases # ·e·
+# ( .$list )    :( ENTRY  POINT ) · ~/.aliases/.list # ·e·
+
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
@@ -167,4 +166,12 @@ echo -n "(=| .ali $info|=)" >> ~/.aliases/.ali.aliases
 echo -n '"' >> ~/.aliases/.ali.aliases
 echo -n " | grep -E '\||\(|\)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
+echo "
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o·                                                ·o·
+# ·o·              { A } = lias                      ·o·
+# ·o·              { L } = ists                      ·o·
+# ·o·              { I } = njection                  ·o·
+# ·o·                                                ·o·" >> ~/.aliases/.ali.aliases
 
