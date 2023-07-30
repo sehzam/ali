@@ -172,4 +172,4 @@ if [ -s "$output_file_var" ]; then
     done < "$output_file_var"
 fi
 info=$(<$output_file_final)
-echo  $output_file_final
+echo  $info
