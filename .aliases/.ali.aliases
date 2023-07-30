@@ -5,13 +5,13 @@
 # ·o·                                                ·o·
 # ·o· ______________________________________________ ·o· 
 #
-# ·o· --------------- Loadings --------------------- ·o· Loading
+# ·o· ---------------- Loadings -------------------- ·o· Loading
 # ·o· ______________________________________________ ·o· 
 #
 # ( c ): clears the terminal # ·e· 
 alias c='clear; ls -alh' # ·a· 
 #
-. ~/.aliases/.bin/.ali.function.aliases
+. ~/.aliases/.bin/.ali.function.aliases # ·c· 
 #
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
@@ -45,11 +45,11 @@ alias ".ali.func"='c && cat ~/.aliases/.bin/.ali.function.aliases' # ·a·
 # ·f· ______________________________________________ ·f· 
 #
 ali_a() { # ·c·
-  .ali # ·c·
+  c && .ali | grep -v "# ·c·"|grep -v "# ·f·"|grep -v "# ·e·"|grep -v "__"|grep -E "# ·a·|--|alias |=|# ·o·|·o·" # ·c·
 } # ·c·
 #
 ali_e() { # ·c·
-  .ali # ·c·
+  c && .ali | grep -v "# ·c·"|grep -v "# ·f·"|grep -v "# ·a·"|grep -v "__"|grep -E "·e·|--|\(|\)|:|# |·o·" # ·c·
 } # ·c·
 #
 ali_f() { # ·c· 
@@ -59,7 +59,7 @@ ali_f() { # ·c·
 # ·f· ---------------------------------------------- ·f· 
 #
 # ·o· ______________________________________________ ·o· 
-# ·o· ------------------- Aliases ------------------ ·o· Development
+# ·o· ------------------  Aliases ------------------ ·o· Development
 # ·o· ______________________________________________ ·o· 
 #
 # ( .ali.a ): lists ~/.aliases/.ali.aliases · ( only aliases ) # ·e·

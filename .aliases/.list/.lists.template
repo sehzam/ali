@@ -36,15 +36,15 @@ alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ·f· ______________________________________________ ·f· 
 #
 ${alias_file}_a() { # ·c·
-  .$alias_file | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' | grep -E '# ·o|# ·a·|\(|\)|alias|__| [^,]*=|·o·|# ·o·|·' # ·c·
+  c && .$alias_file | grep -E '·o|·a' | grep -v '# ·e' | grep -v '# ·c' | grep -E '# ·o|# ·a·|\(|\)|alias|__| [^,]*=|·o·|# ·o·|·' # ·c·
 } # ·c·
 #
 ${alias_file}_e() { # ·c·
-  .$alias_file | grep -E '·o|·e' | grep -v '# ·a' | grep -v '# ·c' | grep -E '# ·o|# ·e·|\(|\)|alias|__|·o·|# ·o·|# ' # ·c·
+  c && .$alias_file | grep -v '# ·c·'|grep -v '# ·f·'|grep -v '# ·a·'|grep -v '__'|grep -E '·e·|--|\(|\)|:|# |·o·' # ·c·
 } # ·c·
 #
 ${alias_file}_f() { # ·c· 
-  .$alias_file # ·c·
+  c && .$alias_file | grep -v '·o·' | grep -v '·e·'| grep -E '\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 #
 # ·f· ---------------------------------------------- ·f· 
