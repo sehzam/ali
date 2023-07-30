@@ -23,8 +23,6 @@ prompt () {
         . ~/ali-main/.install|grep -E ':|·|~|\.|-|__|<|>'
         rm -r ~/ali-main/
         bash 
-    # elif ! [ "$name" = "Y" ] && ! [ "$name" = "y" ] && ! [ "$name" = "N" ] && ! [ "$name" = "n" ]; then
-    #     . ~/ali-main/.setup|grep -E ':|·|~|\.|-|__'
     fi
     echo ______________________________________________________ |grep -E "_"
 }

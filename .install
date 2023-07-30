@@ -51,6 +51,7 @@ output_file="$HOME/.aliases/.etc/.ali.list"
 output_file_var="$HOME/.aliases/.etc/.ali.list.names"
 search_pattern=".***.aliases"
 
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 if [ -d "$directory_to_search" ]; then # ·c·
         # ·e· ( INFO ) Find commmand searchs for files with pattern abd write it to file  
           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
@@ -64,28 +65,28 @@ if [ -s "$output_file" ]; then # ·c·
                 echo "copy file: $list  ---> $directory_to_save"  
                     cp -r $directory_to_search$list $directory_to_save$list  
           fi # ·c· 
-echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
-
     done < "$output_file" # ·c·
 fi # ·c·
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r list; do # ·c·
     echo "Add Entry Rows for < ${list} > to your file : ~/.aliases/.ali.aliases"  
-echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
     echo "
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------------- $list  -------------------- ·o· $list
 # ·o· ______________________________________________ ·o· 
 # ( .$list.a ):( only aliases ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
-alias '.$list.a'='c && .${list}_a' # ·a·
+alias '.$list.a'='c && ${list}_a' # ·a·
 # ( .$list.e ):( explaination ) · lists ~/.aliases/.dir/.$list.aliases # ·e· 
-alias '.$list.e'='c && .${list}_e' # ·a·
+alias '.$list.e'='c && ${list}_e' # ·a·
 # ( .$list.f ):( ·functions·  ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
-alias '.$list.f'='c && .${list}_f' # ·a·
+alias '.$list.f'='c && ${list}_f' # ·a·
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 
 remove_string_from_file() {
     local search_string="$1"
@@ -104,6 +105,7 @@ echo from ~/.bashrc file
 echo ______________________________________________________
 
 if ! grep -q "$ss_1" "$bashrc_path"; then
+
 echo "#-#-#
 # Aliases Loader #-#-#
 alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip && . ~/ali-main/.setup && . ~/.bashrc' #-#-#
@@ -137,7 +139,9 @@ echo .........................."aliases:" "( .ali.a )"
 echo ....................."explaination:" "( .ali.e )" 
 echo ........................"functions:" "( .ali.f )" 
 echo ...................................................... 
-echo ______________________________________________________ 
+echo ______________________________________________________
+
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r list; do # ·c·
 echo ...................................................... 
@@ -148,12 +152,19 @@ echo .........................."aliases:" \( .$list.a \)
 echo ....................."explaination:" \( .$list.e \) 
 echo ........................"functions:" \( .$list.f \) 
 echo ......................................................
-
- 
+    done < "$output_file_var" # ·c·    
+fi # ·c·
+echo ______________________________________________________ 
+#
+# # # # # # # # # # # # # # # # # # # # # # 
+# xdg-open https://github.com/sehzam/ali  #
+# # # # # # # # # # # # # # # # # # # # # # 
+#
+output_file_var="$HOME/.aliases/.etc/.ali.list.names"
 output_file_final="$HOME/.aliases/.etc/.ali.info"
 
 # Löschen der Ergebnisdatei, falls sie bereits existiert
-> "$output_file_final"
+# > "$output_file_final"
 
 if [ -s "$output_file_var" ]; then
     while IFS= read -r line; do
@@ -165,15 +176,5 @@ if [ -s "$output_file_var" ]; then
     done < "$output_file_var"
     # echo "" >> "$output_file_final" # Neue Zeile am Ende hinzufügen
 fi
-    done < "$output_file_var" # ·c·
-
-fi # ·c·
-echo "echo ______________________|grep -E '_' # ·i·
-echo \| type: $output_file_final \||grep -E '\||\(|\)|\.|' # ·i·
-" >> ~/.aliases/.ali.aliases
-echo ______________________________________________________ 
-#
-# # # # # # # # # # # # # # # # # # # # # # 
-# xdg-open https://github.com/sehzam/ali  #
-# # # # # # # # # # # # # # # # # # # # # # 
-#
+echo $output_file_final
+echo "$output_file_final"
