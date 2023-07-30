@@ -1,69 +1,51 @@
 # echo "list template"
-#
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
 directory_to_save="$HOME/.aliases/.list/" # ·v· 
 output_file="$HOME/.aliases/.etc/.ali.list" # ·v· 
 output_file_var="$HOME/.aliases/.etc/.ali.list.names" # ·v· 
 search_pattern=".***.aliases" # ·v· 
-#
 # if [ -d "$directory_to_search" ]; then # ·c·
 #         # ·e· ( INFO ) Find commmand searchs for files with pattern abd write it to file  
 #           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; > "$output_file" # ·c·
 #           find "$directory_to_search" -type f -name "$search_pattern" -exec basename {} \; | awk -F. '{print $2}' > "$output_file_var" # ·c·
 # fi
-#
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r alias_file; do # ·c· 
       # ·e· Debugging: list all loaded *.aliases files
         echo "( .$alias_file.e )" # ·c· 
         # echo "Directory : $directory_to_search.$alias_file.aliases" # ·c· 
-        echo "#
-# ·o· ______________________________________________ ·o· 
+        echo "# ·o· ______________________________________________ ·o· 
 # ·o· --------           "$alias_file"            ------------ ·o· $alias_file
 # ·o· ______________________________________________ ·o· 
-#
 # ·o· ______________________________________________ ·o· 
 # ·o· --------------   R A W Output ---------------- ·o· R A W Output
 # ·o· ______________________________________________ ·o· 
-#
 # ( .$alias_file ): raw output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
 alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
-#
 # ·o· ---------------------------------------------- ·o· 
-#
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions  ---------------- ·f· $alias_file Functions
 # ·f· ______________________________________________ ·f· 
-#
 ${alias_file}_a() { # ·c·
   c && .$alias_file | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·'  | grep -E '# ·a·|# ·o·|__|--|\(|\)|=||alias|# ·o·' # ·c·
 } # ·c·
-#
 ${alias_file}_e() { # ·c·
   c && .$alias_file | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
 } # ·c·
-#
 ${alias_file}_f() { # ·c· 
   c && .$alias_file | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
-#
 # ·f· ---------------------------------------------- ·f· 
-#
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------- Aliases ------------------ ·o· Development
 # ·o· ______________________________________________ ·o· 
-#
-# ( .$alias_file.a ): lists ~/.aliases/.dir/.$alias_file.aliases · ( only aliases ) # ·e·
+# ( .$alias_file.a ):( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
 alias '.$alias_file.a'='c && ${alias_file}_a' # ·a·
-#
 # ( .$alias_file.e ): lists ~/.aliases/.dir/.$alias_file.aliases · ( alias + explaination ) # ·e· 
 alias '.$alias_file.e'='c && ${alias_file}_e' # ·a·
-#
 # ( .$alias_file.f ): lists ~/.aliases/.dir/.$alias_file.aliases · ( functions ) # ·e·
 alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
-#
 # ·o· ---------------------------------------------- ·o· 
-#
 # ·o· ______________________________________________ ·o· 
 # ·o· --------           $alias_file            ------------ ·o· $alias_file
 # ·o· ______________________________________________ ·o·" > $directory_to_save.$alias_file.aliases # ·c· 
@@ -71,7 +53,5 @@ alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
     if [ -f "$directory_to_save.$alias_file.aliases" ]; then # ·c· 
         source $directory_to_save.$alias_file.aliases # ·c· 
     fi # ·c· 
-#
-#
   done < "$output_file_var" # ·c· 
 fi # ·c·

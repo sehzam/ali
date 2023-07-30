@@ -13,7 +13,7 @@ alias c='clear; ls -alh' # ·a·
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Installation ------------------ ·o· Installation
 # ·o· ______________________________________________ ·o· 
-# ( .ali.setup | .as ): INSTALL / RE INSTALL / UN INSTALL {ali} # ·e·
+# ( .ali.setup | .as ): UPDATE / UNINSTALL {ali} # ·e·
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------ Custom Editing ------------------ ·o· Custom Editing
@@ -45,11 +45,11 @@ ali_f() { # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Development
 # ·o· ______________________________________________ ·o· 
-# ( .ali.a ): lists ~/.aliases/.ali.aliases · ( only aliases ) # ·e·
+# ( .ali.a ):( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.a"='c && ali_a' # ·a·
-# ( .ali.e ): lists ~/.aliases/.ali.aliases · ( alias + explaination ) # ·e· 
+# ( .ali.e ):( explaination ) · lists ~/.aliases/.ali.aliases # ·e· 
 alias ".ali.e"='c && ali_e' # ·a·
-# ( .ali.f ): lists ~/.aliases/.ali.aliases · ( functions ) # ·e·
+# ( .ali.f ):( ·functions·  ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·o·                                                ·o·

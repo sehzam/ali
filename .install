@@ -76,14 +76,14 @@ if [ -s "$output_file_var" ]; then # ·c·
     echo ".$list.aliases ENTRY POINTS  ---> ~/.aliases/.ali.aliases "  
     echo "
 # ·o· ______________________________________________ ·o· 
-# ·o· -------------------- $list --------------------- ·o· $list
+# ·o· -------------------- $list  -------------------- ·o· $list
 # ·o· ______________________________________________ ·o· 
 # ( .$list.a ): lists ~/.aliases/.dir/.$list.aliases · ( only aliases ) # ·e·
-alias '.$list.a'='c && $list_a' # ·a·
+alias '.$list.a'='c && $($list)_a' # ·a·
 # ( .$list.e ): lists ~/.aliases/.dir/.$list.aliases · ( alias + explaination ) # ·e· 
-alias '.$list.e'='c && $list_e' # ·a·
+alias '.$list.e'='c && $($list)_e' # ·a·
 # ( .$list.f ): lists ~/.aliases/.dir/.$list.aliases · ( functions ) # ·e·
-alias '.$list.f'='c && $list_f' # ·a·
+alias '.$list.f'='c && $($list)_f' # ·a·
 # ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 fi # ·c·
