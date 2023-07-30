@@ -72,17 +72,17 @@ fi # ·c·
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r file; do # ·c·
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
-                echo "add available lists to your ~/.aliases/.ali.aliases file: $file  ---> ~/.aliases/.ali.aliases "  
+                echo "add available lists to your ~/.aliases/.ali.aliases file: $(file)  ---> ~/.aliases/.ali.aliases "  
                 echo "
 # ·o· ______________________________________________ ·o· 
-# ·o· -------------------- $file --------------------- ·o· $file
+# ·o· -------------------- $(file) --------------------- ·o· $(file)
 # ·o· ______________________________________________ ·o· 
-# ( .$file.a ): lists ~/.aliases/.dir/.$file.aliases · ( only aliases ) # ·e·
-alias '.$file.a'='c && $(file)_a' # ·a·
-# ( .$file.e ): lists ~/.aliases/.dir/.$file.aliases · ( alias + explaination ) # ·e· 
-alias '.$file.e'='c && $(file)_e' # ·a·
-# ( .$file.f ): lists ~/.aliases/.dir/.$file.aliases · ( functions ) # ·e·
-alias '.$file.f'='c && $(file)_f' # ·a·
+# ( .$(file).a ): lists ~/.aliases/.dir/.$(file).aliases · ( only aliases ) # ·e·
+alias '.$(file).a'='c && $(file)_a' # ·a·
+# ( .$(file).e ): lists ~/.aliases/.dir/.$(file).aliases · ( alias + explaination ) # ·e· 
+alias '.$(file).e'='c && $(file)_e' # ·a·
+# ( .$(file).f ): lists ~/.aliases/.dir/.$(file).aliases · ( functions ) # ·e·
+alias '.$(file).f'='c && $(file)_f' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
