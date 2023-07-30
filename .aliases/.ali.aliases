@@ -45,15 +45,15 @@ alias ".ali.func"='c && cat ~/.aliases/.bin/.ali.function.aliases' # ·a·
 # ·f· ______________________________________________ ·f· 
 #
 ali_a() { # ·c·
-  c && .ali | grep -v "# ·c·"|grep -v "# ·f·"|grep -v "# ·e·"|grep -v "__"|grep -E "# ·a·|--|alias |=|# ·o·|·o·" # ·c·
+  c && .ali  | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '·a·|·o·|__|--|\(|\)|=|#|alias' # ·c·
 } # ·c·
 #
 ali_e() { # ·c·
-  c && .ali | grep -v "# ·c·"|grep -v "# ·f·"|grep -v "# ·a·"|grep -v "__"|grep -E "·e·|--|\(|\)|:|# |·o·" # ·c·
+  c && .ali | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '·e·|·o·|__|--|\(|\)|:|#' # ·c·
 } # ·c·
 #
 ali_f() { # ·c· 
-   c && .ali.func | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+   c && .ali.func | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 #
 # ·f· ---------------------------------------------- ·f· 
