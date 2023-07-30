@@ -38,16 +38,16 @@ ali_a() { # ·c·
   c && .ali.raw | grep -v '# ·i·' | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|=|:|alias |·o·' # ·c·
 } # ·c·
 ali_e() { # ·c·
-  c && .ali.raw | grep -v '# ·i·' | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|=|:|·o·' # ·c·
+  c && .ali.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
 } # ·c·
 ali_f() { # ·c· 
-   c && .ali.raw | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+   c && .ali.raw | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 ali_ff() { # ·c· 
-   c && .ali.function | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+  ali_f
 } # ·c·
 ali_l() { # ·c·
-  c && .ali.raw | grep -v '# ·i·' | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|=|:|·o·' # ·c·
+  ali_e
 } # ·c·
 # ·f· ---------------------------------------------- ·f· 
 

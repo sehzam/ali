@@ -10,7 +10,7 @@ if [ -s "$output_file_var" ]; then # ·c·
         # echo "( .$alias_file.e )" # ·c· 
         # echo "Directory : $directory_to_search.$alias_file.aliases" # ·c· 
         echo "# ·o· ______________________________________________ ·o· 
-# ·o· --------            ${alias_file^^}             ------------ ·o· ${alias_file^^}
+# ·o· --------           ${alias_file^^}            ------------ ·o· ${alias_file^^}
 # ·o· ______________________________________________ ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· --------------   R A W Output ---------------- ·o· R A W Output
@@ -24,7 +24,7 @@ alias '.$alias_file.l'='cat ~/.aliases/.list/.$alias_file.aliases' # ·a·
 # ·f· --------------- ${alias_file^^} Functions ---------------- ·f· ${alias_file^^} Functions
 # ·f· ______________________________________________ ·f· 
 ${alias_file}_a() { # ·c·
-  c && .$alias_file.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·'  | grep -E '# ·a·|# ·o·|__|--|\(|\)|=||alias|# ·o·' # ·c·
+  c && .$alias_file.raw | grep -v '# ·i·' | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|=|:|alias |·o·' # ·c·
 } # ·c·
 ${alias_file}_e() { # ·c·
   c && .$alias_file.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
@@ -33,7 +33,7 @@ ${alias_file}_f() { # ·c·
   c && .$alias_file.raw | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 ${alias_file}_l() { # ·c·
-  c && .$alias_file.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
+  ${alias_file}_e
 } # ·c·
 # ·f· ---------------------------------------------- ·f· 
 # ·o· ______________________________________________ ·o· 
