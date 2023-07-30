@@ -19,7 +19,7 @@ if [ -s "$output_file" ]; then # ·c·
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
           if [ -f "$directory_to_search$alias_file" ]; then # ·c· 
               # ·e· ( INFO ) sourcing the file, for loading it to current shell session in .bashrc its loads at every new shell session
-                echo $directory_to_search$alias_file # ·c· 
+                # echo $directory_to_search$alias_file # ·c· 
                   source "$directory_to_search$alias_file" # ·c·
           fi # ·c· 
     done < "$output_file" # ·c·
