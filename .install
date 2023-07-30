@@ -167,6 +167,6 @@ echo -n "(=| .ali $info|=)" >> ~/.aliases/.ali.aliases
 echo -n '"' >> ~/.aliases/.ali.aliases
 echo -n " | grep -E '\||\(|\)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
-echo-n "'
+echo -n "'
 __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __'| grep -E '\||\(|\)'" >> ~/.aliases/.ali.aliases
 
