@@ -11,7 +11,6 @@ echo ..............Installation started !
 echo ______________________________________________________
 mkdir -p ~/.aliases/.bin/
 mkdir -p ~/.aliases/.dir/
-mkdir -p ~/.aliases/.etc/
 mkdir -p ~/.aliases/.list/
 #
 echo ·________________________________· |grep -E "_"  
@@ -29,17 +28,17 @@ echo ·________________________________· |grep -E "_"
 echo "| copying files to directory:    |" ~/.aliases/.bin/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
 #
-cp -Rp ./ali-main/.aliases/.bin/.ali.function.aliases ~/.aliases/.bin/
-echo ......Ali Function commands : ~/.aliases/.bin/.ali.function.aliases/
+cp -Rp ./ali-main/.aliases/.bin/.ali.function ~/.aliases/.bin/
+echo ......Ali Function commands : ~/.aliases/.bin/.ali.function
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 ##
 cp -Rp ./ali-main/.aliases/.list/ ~/.aliases/
-cp -Rp ./ali-main/.aliases/.list/.lists.template ~/.aliases/.list/
-echo .......... Listing Template : ~/.aliases/.list/.lists.template
+cp -Rp ./ali-main/.aliases/.list/.list.template ~/.aliases/.list/
+echo .......... Listing Template : ~/.aliases/.list/.list.template
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 #
-cp -Rp ./ali-main/.aliases/.etc/.ali.list ~/.aliases/.etc/
-echo ...... Alias Category Lists : ~/.aliases/.etc/.ali.list
+cp -Rp ./ali-main/.aliases/.bin/.ali.list ~/.aliases/.bin/
+echo ...... Alias Category Lists : ~/.aliases/.bin/.ali.list
 #
 echo ·________________________________· |grep -E "_" 
 echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
@@ -47,8 +46,8 @@ echo ·________________________________· |grep -E "·"
 #
 directory_to_search="$HOME/ali-main/.aliases/.dir/"
 directory_to_save="$HOME/.aliases/.dir/"
-output_file="$HOME/.aliases/.etc/.ali.list"
-output_file_var="$HOME/.aliases/.etc/.ali.list.names"
+output_file="$HOME/.aliases/.bin/.ali.list"
+output_file_var="$HOME/.aliases/.bin/.ali.list.names"
 search_pattern=".***.aliases"
 
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
@@ -160,11 +159,8 @@ echo ______________________________________________________
 # xdg-open https://github.com/sehzam/ali  #
 # # # # # # # # # # # # # # # # # # # # # # 
 #
-output_file_var="$HOME/.aliases/.etc/.ali.list.names"
-output_file_final="$HOME/.aliases/.etc/.ali.info"
-
-# Löschen der Ergebnisdatei, falls sie bereits existiert
-# > "$output_file_final"
+output_file_var="$HOME/.aliases/.bin/.ali.list.names"
+output_file_final="$HOME/.aliases/.bin/.ali.info"
 
 if [ -s "$output_file_var" ]; then
     while IFS= read -r line; do
@@ -174,7 +170,6 @@ if [ -s "$output_file_var" ]; then
         echo -n "( .$cleaned_line.e )" >> "$output_file_final"
         
     done < "$output_file_var"
-    # echo "" >> "$output_file_final" # Neue Zeile am Ende hinzufügen
 fi
-echo $output_file_final
-echo "$output_file_final"
+echo cat $output_file_final
+echo cat "$output_file_final"

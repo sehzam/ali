@@ -7,7 +7,7 @@
 # ·o· ---------------- Loadings -------------------- ·o· Loading
 # ·o· ______________________________________________ ·o· 
 # ( c ): clears the terminal # ·e· 
-. ~/.aliases/.bin/.ali.function.aliases # ·c· 
+. ~/.aliases/.bin/.ali.function # ·c· 
 alias c='clear' # ·a· 
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
@@ -28,8 +28,8 @@ alias ".ali.edit"='xdg-open ~/.aliases/.ali.aliases' # ·a·
 # ·o· ______________________________________________ ·o· 
 # ( .ali ): raw output · ~/.bash_aliases  # ·e·
 alias ".ali"='c && cat ~/.aliases/.ali.aliases' # ·a·
-# ( .ali.func ): raw output · ~/.aliases/.bin/.ali.function.aliases  # ·e·
-alias ".ali.func"='c && cat ~/.aliases/.bin/.ali.function.aliases' # ·a·
+# ( .ali.func ): raw output · ~/.aliases/.bin/.ali.function  # ·e·
+alias ".ali.func"='c && cat ~/.aliases/.bin/.ali.function' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions ----------------- ·f· {ali} Functions
