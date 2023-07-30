@@ -163,8 +163,8 @@ output_file_var="$HOME/.aliases/.bin/.ali.list.names"
 output_file_final="$HOME/.aliases/.bin/.ali.info"
 echo "| · ( .ali.e ) · |
 " >> "$output_file_final"
-echo "| · (  LISTS ) · |
-" >> "$output_file_final"
+echo "
+__________________" >> "$output_file_final"
 
 if [ -s "$output_file_var" ]; then
     while IFS= read -r line; do
@@ -176,10 +176,9 @@ if [ -s "$output_file_var" ]; then
     done < "$output_file_var"
 fi
 echo "
-| · (  LISTS ) · |" >> "$output_file_final"
+__________________" >> "$output_file_final"
 
 info=$(<$output_file_final)
-echo $output_file_final
 echo  "
 echo '$info'|grep -E '\(|\)'
 " >> ~/.aliases/.ali.aliases
