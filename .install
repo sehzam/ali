@@ -165,13 +165,12 @@ if [ -s "$output_file_var" ]; then
     done < "$output_file_var"
     # echo "" >> "$output_file_final" # Neue Zeile am Ende hinzufügen
 fi
+    done < "$output_file_var" # ·c·
 
-
+fi # ·c·
 echo "echo ______________________|grep -E '_' # ·i·
 echo \| type: $output_file_final \||grep -E '\||\(|\)|\.|' # ·i·
 " >> ~/.aliases/.ali.aliases
-    done < "$output_file_var" # ·c·
-fi # ·c·
 echo ______________________________________________________ 
 #
 # # # # # # # # # # # # # # # # # # # # # # 
