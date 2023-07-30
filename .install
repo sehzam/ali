@@ -161,7 +161,7 @@ echo ______________________________________________________
 #
 output_file_var="$HOME/.aliases/.bin/.ali.list.names"
 output_file_final="$HOME/.aliases/.bin/.ali.info"
-echo "| · ( .ali.e ) · |
+echo "· ( .ali.e ) ·
 " >> "$output_file_final"
 echo "
 __________________" >> "$output_file_final"
