@@ -71,7 +71,9 @@ fi # ·c·
 
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r list; do # ·c·
-    echo "add available lists to your ~/.aliases/.ali.aliases file: $list  ---> ~/.aliases/.ali.aliases "  
+    echo "ADD available lists"  
+    echo "TO your ~/.aliases/.ali.aliases FILE: "  
+    echo ".$list.aliases ENTRY POINTS  ---> ~/.aliases/.ali.aliases "  
     echo "
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------------- $list --------------------- ·o· $list
