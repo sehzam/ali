@@ -36,11 +36,11 @@ alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ·f· ______________________________________________ ·f· 
 #
 ${alias_file}_a() { # ·c·
-  c && .$alias_file | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '·a·|·o·|__|--|\(|\)|=|#|alias' # ·c·
+  c && .$alias_file | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·'  | grep -E '# ·a·|# ·o·|__|--|\(|\)|=||alias|# ·o·' # ·c·
 } # ·c·
 #
 ${alias_file}_e() { # ·c·
-  c && .$alias_file | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '·e·|·o·|__|--|\(|\)|:|#' # ·c·
+  c && .$alias_file | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|:|# ·o·' # ·c·
 } # ·c·
 #
 ${alias_file}_f() { # ·c· 
