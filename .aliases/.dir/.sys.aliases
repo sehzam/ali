@@ -5,119 +5,119 @@
 # ·o· -------------- Reboot Options ---------------- ·o· Reboot Options 
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.r ) initiates a system reboot # ·o·
-alias 's.r'='sudo reboot now' # ·o·
+# ( s.r ) initiates a system reboot # ·e·
+alias 's.r'='sudo reboot now' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.rr ) initiates a system shutdown # ·o·
-alias 's.rr'='sudo shutdown now' # ·o·
+# ( s.rr ) initiates a system shutdown # ·e·
+alias 's.rr'='sudo shutdown now' # ·a·
 #
 # ·o· -------------- Reboot Options ---------------- ·o· Reboot Options 
 #
-# ·o· ------------- System Information ------------- ·o· Sytem Information
+# ·o· -------------- System Information ------------ ·o· Sytem Information
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( neo ) displays system information using the neofetch command # ·o·
-alias neo='neofetch ' # ·o·
+# ( neo ) displays system information using the neofetch command # ·e·
+alias neo='neofetch ' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( calc ) invokes the calculator (bc) in interactive mode # ·o·
-alias calc='bc -l' # ·o·
+# ( calc ) invokes the calculator (bc) in interactive mode # ·e·
+alias calc='bc -l' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( now ) displays the current date and time # ·o·
-alias now='date +"%Y-%m-%d %H:%M:%S"' # ·o·
+# ( now ) displays the current date and time # ·e·
+alias now='date +"%Y-%m-%d %H:%M:%S"' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( exe ) adds executable permissions to a file # ·o·
-alias exe='chmod +x ' # ·o·
+# ( exe ) adds executable permissions to a file # ·e·
+alias exe='chmod +x ' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .ssh.rsa ) displays the contents of the public ED SSH key # ·o·
-alias '.ssh.rsa'='cat ~/.ssh/id_rsa.pub' # ·o·
+# ( .ssh.rsa ) displays the contents of the public ED SSH key # ·e·
+alias '.ssh.rsa'='cat ~/.ssh/id_rsa.pub' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .ssh.ed ) displays the contents of the public ED SSH key # ·o·
-alias '.ssh.ed'='cat ~/.ssh/id_ed25519.pub' # ·o·
+# ( .ssh.ed ) displays the contents of the public ED SSH key # ·e·
+alias '.ssh.ed'='cat ~/.ssh/id_ed25519.pub' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .ssh.rsa.create ) creates the contents of the public RSA SSH key # ·o·
-alias '.ssh.rsa.create'='ssh-keygen -t rsa -b 2048' # ·o·
+# ( .ssh.rsa.create ) creates the contents of the public RSA SSH key # ·e·
+alias '.ssh.rsa.create'='ssh-keygen -t rsa -b 2048' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( .ssh.ed.create ) creates the contents of the public ED SSH key # ·o·
-alias '.ssh.ed.create'='ssh-keygen -t ed25519' # ·o·
+# ( .ssh.ed.create ) creates the contents of the public ED SSH key # ·e·
+alias '.ssh.ed.create'='ssh-keygen -t ed25519' # ·a·
 #
-# ·o· ------------- System Information ------------- ·o· Sytem Information
+# ·o· -------------- System Information ------------ ·o· Sytem Information
 #
-# ·o· --------------- Sytem Update ----------------- ·o· Sytem Update
-#
-# ·o· ---------------------------------------------- ·o· 
-# ( pi ) pip install # ·o·
-alias pi='pip install' # ·o·
+# ·o· ---------------- Sytem Update ---------------- ·o· Sytem Update
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( pp ) run python3 # ·o·
-alias pp='python3' # ·o·
+# ( pi ) pip install # ·e·
+alias pi='pip install' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.i ) installs a package using apt-get # ·o·
-alias 's.i'='sudo apt-get install' # ·o·
+# ( pp ) run python3 # ·e·
+alias pp='python3' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.pi ) install a pyhon package # ·o·
-alias 's.pi'='sudo pipx install' # ·o·
+# ( s.i ) installs a package using apt-get # ·e·
+alias 's.i'='sudo apt-get install' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.si ) installs a package using snap # ·o·
-alias 's.si'='sudo snap install' # ·o·
+# ( s.pi ) install a pyhon package # ·e·
+alias 's.pi'='sudo pipx install' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.ud ) updates the package lists # ·o·
-alias 's.ud'='sudo apt-get update' # ·o·
+# ( s.si ) installs a package using snap # ·e·
+alias 's.si'='sudo snap install' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.ug ) upgrades installed packages # ·o·
-alias 's.ug'='sudo apt-get upgrade' # ·o·
+# ( s.ud ) updates the package lists # ·e·
+alias 's.ud'='sudo apt-get update' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( s.arc ) removes automatically installed packages # ·o·
-#          : that are no longer needed # ·o·
-#          : and cleans the package cache # ·o·
-alias 's.arc'='sudo apt-get autoremove && sudo apt-get clean' # ·o·
-#
-# ·o· --------------- Sytem Update ----------------- ·o· Sytem Update
-#
-# ·o· -------------- System Commands --------------- ·o· System Commands
+# ( s.ug ) upgrades installed packages # ·e·
+alias 's.ug'='sudo apt-get upgrade' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( hg ) searches the command history for a specific keyword # ·o·
-alias hg='history|grep' # ·o·
+# ( s.arc ) removes automatically installed packages # ·e·
+#          : that are no longer needed # ·e·
+#          : and cleans the package cache # ·e·
+alias 's.arc'='sudo apt-get autoremove && sudo apt-get clean' # ·a·
+#
+# ·o· ---------------- Sytem Update ---------------- ·o· Sytem Update
+#
+# ·o· --------------- System Commands -------------- ·o· System Commands
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( eco ) displays the value of the PATH environment variable # ·o·
-alias eco='echo $PATH' # ·o·
+# ( hg ) searches the command history for a specific keyword # ·e·
+alias hg='history|grep' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( cpu ) lists running processes sorted by CPU usage # ·o·
-alias cpu='ps aux --sort=-%cpu | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, substr(\$10, 1, 20)}" | head' # ·o·
-alias cpus='ps aux --sort=-%cpu|head' # ·o·
+# ( eco ) displays the value of the PATH environment variable # ·e·
+alias eco='echo $PATH' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( mem ) dispay processes consuming the most memory # ·o·
-alias mem='ps aux --sort=-%mem | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, \$10, substr(\$11, 1, 50)}" | head' # ·o·
-alias mems='ps aux --sort=-%mem|head' # ·o·
+# ( cpu ) lists running processes sorted by CPU usage # ·e·
+alias cpu='ps aux --sort=-%cpu | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, substr(\$10, 1, 20)}" | head' # ·a·
+alias cpus='ps aux --sort=-%cpu|head' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( df ) shows disk usage in human-readable format # ·o·
-alias df='df -h' # ·o·
+# ( mem ) dispay processes consuming the most memory # ·e·
+alias mem='ps aux --sort=-%mem | awk "{OFS=\"\t\"} {print \$1, \$2, \$3, \$4, \$5, \$6, \$7, \$8, \$9, \$10, substr(\$11, 1, 50)}" | head' # ·a·
+alias mems='ps aux --sort=-%mem|head' # ·a·
 #
 # ·o· ---------------------------------------------- ·o· 
-# ( du ) shows disk usage for files and directories, # ·o·
-#      : sorted in decending order # ·o·
-alias du='du -sh *|sort -rh' # ·o·
+# ( df ) shows disk usage in human-readable format # ·e·
+alias df='df -h' # ·a·
 #
-# ·o· -------------- System Commands --------------- ·o· System Commands
+# ·o· ---------------------------------------------- ·o· 
+# ( du ) shows disk usage for files and directories, # ·e·
+#      : sorted in decending order # ·e·
+alias du='du -sh *|sort -rh' # ·a·
+#
+# ·o· --------------- System Commands -------------- ·o· System Commands
 #
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Systen Control ---------------- ·o· System Control
