@@ -27,9 +27,9 @@ alias ".ali.edit"='xdg-open ~/.aliases/.ali.aliases' # ·a·
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- R A W Output ------------------ ·o· R A W Output
 # ( .ali.raw ): RAW output · ~/.aliases/.ali.aliases  # ·e·
-alias ".ali.raw"='c && cat ~/.aliases/.ali.aliases' # ·a·
+alias ".ali.raw"='cat ~/.aliases/.ali.aliases' # ·a·
 # ( .ali.func ): RAW output · ~/.aliases/.bin/.ali.function  # ·e·
-alias ".ali.function"='c && cat ~/.aliases/.bin/.ali.function' # ·a·
+alias ".ali.function"='cat ~/.aliases/.bin/.ali.function' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
 # ·f· ______________________________________________ ·f· 
@@ -44,7 +44,7 @@ ali_f() { # ·c·
    c && .ali.raw | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 ali_ff() { # ·c· 
-   c && .ali.raw.function | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+   c && .ali.function | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 ali_l() { # ·c·
   c && .ali.raw | grep -v '# ·i·' | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|=|:|·o·' # ·c·
