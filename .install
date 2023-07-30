@@ -71,7 +71,8 @@ echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
 first_letter=$(echo "$word" | awk '{print toupper(substr($0,1,1))}')
 
 if [ -s "$output_file_var" ]; then # ·c·
-echo "# ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
+echo "
+# ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
     while read -r list; do # ·c·
     echo "Add Entry Rows for < ${list} > to your file : ~/.aliases/.ali.aliases"  
     echo "
