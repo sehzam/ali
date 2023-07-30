@@ -53,7 +53,7 @@ ali_e() { # ·c·
 } # ·c·
 #
 ali_f() { # ·c· 
-   c && .ali.func | grep -v '·o·' | grep -v '·e·'| grep -E '\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
+   c && .ali.func | grep -v '·o·' | grep -v '·e·'| grep -E '\{|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 #
 # ·f· ---------------------------------------------- ·f· 
