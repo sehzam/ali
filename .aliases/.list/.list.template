@@ -15,8 +15,8 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· --------------   R A W Output ---------------- ·o· R A W Output
 # ·o· ______________________________________________ ·o· 
-# ( .$alias_file ): raw output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
-alias ".$alias_file"='c && cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
+# ( .$alias_file ): raw output · ~/.aliases/.list/.$alias_file.aliases  # ·e·
+alias ".$alias_file"='c && cat ~/.aliases/.list/.$alias_file.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·f· ______________________________________________ ·f· 
 # ·f· --------------- ${alias_file^} Functions ---------------- ·f· ${alias_file^} Functions
