@@ -162,5 +162,5 @@ fi
 
 info=$(<$output_file_final)
 echo  "
-echo "'\| $info'|grep -E '\(|\)'" # ·f·
+echo '\| $info'|grep -E '\(|\)' # ·f·
 " >> ~/.aliases/.ali.aliases
