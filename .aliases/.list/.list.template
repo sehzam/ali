@@ -10,7 +10,7 @@ if [ -s "$output_file_var" ]; then # ·c·
         # echo "( .$alias_file.e )" # ·c· 
         # echo "Directory : $directory_to_search.$alias_file.aliases" # ·c· 
         echo "# ·o· ______________________________________________ ·o· 
-# ·o· --------            ${list^^}             ------------ ·o· ${list^^}
+# ·o· --------            ${alias_file^^}             ------------ ·o· ${alias_file^^}
 # ·o· ______________________________________________ ·o· 
 # ·o· ______________________________________________ ·o· 
 # ·o· --------------   R A W Output ---------------- ·o· R A W Output
@@ -21,7 +21,7 @@ alias '.$alias_file.raw'='cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 alias '.$alias_file.l'='cat ~/.aliases/.list/.$alias_file.aliases' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·f· ______________________________________________ ·f· 
-# ·f· --------------- ${list^^} Functions ---------------- ·f· ${list^^} Functions
+# ·f· --------------- ${alias_file^^} Functions ---------------- ·f· ${alias_file^^} Functions
 # ·f· ______________________________________________ ·f· 
 ${alias_file}_a() { # ·c·
   c && .$alias_file.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·'  | grep -E '# ·a·|# ·o·|__|--|\(|\)|=||alias|# ·o·' # ·c·
@@ -49,7 +49,7 @@ alias '.$alias_file.e'='c && ${alias_file}_e' # ·a·
 alias '.$alias_file.f'='c && ${alias_file}_f' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
-# ·o· --------           ${list^^}            ------------ ·o· ${list^^}
+# ·o· --------           ${alias_file^^}            ------------ ·o· ${alias_file^^}
 # ·o· ______________________________________________ ·o·" > $directory_to_save.$alias_file.aliases # ·c· 
 
     if [ -f "$directory_to_save.$alias_file.aliases" ]; then # ·c· 
