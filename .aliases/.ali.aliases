@@ -54,7 +54,7 @@ ali_l() { # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Development
 # ( .ali )   :  ENTRY POINT · ~/.aliases/.ali.aliases  # ·e·
-alias ".ali"='c && .ali_l' # ·a·
+alias ".ali"='c && ali_l' # ·a·
 # ( .ali.a ) : ( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.a"='c && ali_a' # ·a·
 # ( .ali.e ) : ( explaination ) · lists ~/.aliases/.ali.aliases # ·e· 
