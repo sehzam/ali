@@ -71,9 +71,9 @@ fi # ·c·
 
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r file; do # ·c·
-    echo "$directory_to_save.$file.alises"
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
           if [ -f "$directory_to_save.$file.alises" ]; then # ·c· 
+    echo "$directory_to_save.$file.alises aaaaaa"
                 echo "add available lists to your ~/.aliases/.ali.aliases file: $file  ---> ~/.aliases/.ali.aliases "  
                 echo "
 # ·o· ______________________________________________ ·o· 
