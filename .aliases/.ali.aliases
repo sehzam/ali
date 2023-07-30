@@ -34,35 +34,30 @@ alias ".ali.function"='cat ~/.aliases/.bin/.ali.function' # ·a·
 
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions ----------------- ·f· .ali Functions
+ali() { # ·c·
+  c && .ali.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
+} # ·c·
 ali_a() { # ·c·
   c && .ali.raw | grep -v '# ·i·' | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|__|--|\(|\)|=|:|alias |·o·' # ·c·
-} # ·c·
-ali_e() { # ·c·
-  c && .ali.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·a·|# ·o·|__|--|\(|\)|:|·o·' # ·c·
 } # ·c·
 ali_f() { # ·c· 
    c && .ali.raw | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 ali_ff() { # ·c· 
-  ali_f
-} # ·c·
-ali_l() { # ·c·
-  ali_e
+   c && .ali.function | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
 } # ·c·
 # ·f· ---------------------------------------------- ·f· 
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Development
 # ( .ali )    :( ENTRY  POINT ) · ~/.aliases/.ali.aliases  # ·e·
-alias ".ali"='c && ali_l' # ·a·
+alias ".ali"='c && ali' # ·a·
 # ( .ali.a )  :( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.a"='c && ali_a' # ·a·
-# ( .ali.e )  :( explaination ) · lists ~/.aliases/.ali.aliases # ·e· 
-alias ".ali.e"='c && ali_e' # ·a·
 # ( .ali.f )  :( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
 # ( .ali.ff ) :( functions... ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
-alias ".ali.ff"='c && ali_func' # ·a·
+alias ".ali.ff"='c && ali_ff' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o·                                                ·o·

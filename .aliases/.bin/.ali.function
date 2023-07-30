@@ -3,19 +3,19 @@
 # ·f· ______________________________________________ ·f· 
 
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
-directory_to_save="$HOME/.aliases/.list/" # ·v· 
 output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
-output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
 
 # ·e· Check, if output file is not empty
 if [ -s "$output_file" ]; then # ·c·
     while read -r alias_file; do # ·c·
+
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
           if [ -f "$directory_to_search$alias_file" ]; then # ·c· 
               # ·e· ( INFO ) sourcing the file, for loading it to current shell session in .bashrc its loads at every new shell session
                 # echo $directory_to_search$alias_file # ·c· 
                   source "$directory_to_search$alias_file" # ·c·
           fi # ·c· 
+    
     done < "$output_file" # ·c·
 fi # ·c·
 source ~/.aliases/.list/.list.template
