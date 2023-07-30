@@ -53,15 +53,15 @@ ali_l() { # ·c·
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Development
-# ( .ali )   :  ENTRY POINT · ~/.aliases/.ali.aliases  # ·e·
+# ( .ali )    :( ENTRY  POINT ) · ~/.aliases/.ali.aliases  # ·e·
 alias ".ali"='c && ali_l' # ·a·
-# ( .ali.a ) : ( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
+# ( .ali.a )  :( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.a"='c && ali_a' # ·a·
-# ( .ali.e ) : ( explaination ) · lists ~/.aliases/.ali.aliases # ·e· 
+# ( .ali.e )  :( explaination ) · lists ~/.aliases/.ali.aliases # ·e· 
 alias ".ali.e"='c && ali_e' # ·a·
-# ( .ali.f ) : ( ·functions·  ) · lists ~/.aliases/.ali.aliases # ·e·
+# ( .ali.f )  :( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
-# ( .ali.ff ):( ·functions·  ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
+# ( .ali.ff ) :( functions... ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
 alias ".ali.ff"='c && ali_func' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 

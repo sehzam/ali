@@ -73,6 +73,8 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------------- $list  -------------------- ·o· $list
 # ·o· ______________________________________________ ·o· 
+# ( .$list )  :( only aliases ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
+alias '.$list.a'='c && ${list}_a' # ·a·
 # ( .$list.a ):( only aliases ) · lists ~/.aliases/.dir/.$list.aliases # ·e·
 alias '.$list.a'='c && ${list}_a' # ·a·
 # ( .$list.e ):( explaination ) · lists ~/.aliases/.dir/.$list.aliases # ·e· 
@@ -130,7 +132,7 @@ echo ..............................":" "( .as )"
 echo ...................................................... 
 echo ............."U S A G E: Alias Listing System"
 echo ...................................................... 
-echo ......................"entry point:" "( .ali )" 
+echo ...."entry point with explaination:" "( .ali )" 
 echo .........................."aliases:" "( .ali.a )" 
 echo ....................."explaination:" "( .ali.e )" 
 echo ........................"functions:" "( .ali.f )" 
@@ -165,5 +167,5 @@ fi
 
 info=$(<$output_file_final)
 echo  "
-echo '| $info'|grep -E '\(|\)'
+echo '| $info'|grep -E '\(|\) # ·f·'
 " >> ~/.aliases/.ali.aliases
