@@ -4,103 +4,83 @@
 # ·o· ______________________________________________ ·o· 
 
 # ·o· ---------------------------------------------- ·o· 
+
 # ( c ) clears the terminal # ·e· 
 alias c='clear; ls' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( bak ) create a backup of a file with timestamp by giving the path # ·e·
 alias 'bak'='bk' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( cf ) create recursively folders # ·e· 
 #       : by give one string parameter with path and enter # ·e·
 alias 'cf'='cf' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( ccf ) create recursively folders # ·e· 
 #        : by give one string parameter with path and enter # ·e·
 alias 'ccf'='copy_create_folder' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( s.dd ) delete recursively folders and files # ·e· 
 alias "s.dd"="sudo rm -r" # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( dd ) delete folder or file recursively # ·e·
 alias 'dd'='rm -r' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( rep ) search replace sed command capsulated in a function call # ·e·
 alias 'rep'='sr' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( ... ) open current directory in Linux GUI # ·e·
 alias '...'='xdg-open .' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( h ) changes the directory to the user's home directory and lists its contents # ·e·
 alias h='cd ~ && ls' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( pr ) changes the directory to the previous one and lists its contents # ·e·
 alias pr='cd - && ls' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( r ) changes the directory to the parent directory and lists its contents # ·e·
 alias r='cd .. && ls' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( rr ) changes the directory to the grandparent directory and lists its contents # ·e·
 alias rr='cd ../.. && ls' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( rrr ) changes the directory to the great-grandparent directory and lists its contents # ·e·
 alias rrr='cd ../../.. && ls' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( rrrr ) changes the directory to the great-great-greatparent directory and lists its contents # ·e·
 alias rrrr='cd ../../../.. && ls' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( l ) lists files and diredctories in long format, # ·e·
 #     : sorted by modification time # ·e·
 alias l='ls -lrt ' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( ll ) lists all files and directories in long format # ·e·
 #      : with human-readable sizes # ·e·
 alias ll='ls -alh ' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( lll ) lists all files and directories in long format # ·e·
 #       : with human-readable sizes, # ·e·
 #       : and opens the output in a pager (less) # ·e·
 alias lll='ls -alh|less ' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( t ) shows the last lines of a file and continues # ·e·
 #     : to display new lines as they are added # ·e·
 alias t='tail -f ' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( tt ) shows the last n lines of a file # ·e·
 alias tt='tail -n' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( ttt ) shows the last 10 lines of a file # ·e·
 alias ttt='tail -n 10' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( tttt ) shows the last 100 lines of a file # ·e·
 alias tttt='tail -n 100' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( terr ) shows the last lines of the error log file # ·e·
 alias terr='tail -f /var/log/error.log' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( tsys ) shows the last lines of the system log file # ·e·
 alias tsys='tail -f /var/log/syslog' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ______________________________________________ ·o· 

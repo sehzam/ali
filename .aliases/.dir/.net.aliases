@@ -3,30 +3,27 @@
 # ·o· ______________________________________________ ·o· 
 
 # ·o· ---------------------------------------------- ·o· 
+
 # ( i.if ) shows network interface information # ·e·
 alias 'i.if'='ifconfig -a' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( i.ip ) retrieves the public IP address # ·e·
 alias 'i.ip'='curl ifconfig.me' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( i.pi ) retrieves the public IP address using ipinfo.io # ·e·
 alias 'i.pi'='curl ipinfo.io/ip' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( i.p ) pings google.com five times # ·e·
 alias 'i.p'='ping -c 5 google.com' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( i.wr ) downloads a file using wget and resumes partial downloads # ·e·
 alias 'i.wr'='wget -c' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( net ) shows active network connections # ·e·
 alias 'i.n'='netstat -tuln ' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
+
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Network Control  -------------- ·o· Network Control
 # ·o· ______________________________________________ ·o· 

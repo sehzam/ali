@@ -26,18 +26,18 @@ alias now='date +"%Y-%m-%d %H:%M:%S"' # ·a·
 # ( exe ) adds executable permissions to a file # ·e·
 alias exe='chmod +x ' # ·a·
 
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ------------------ SSH Keys ------------------ ·o· SSH Keys
 # ( .ssh.rsa ) displays the contents of the public RSA SSH key # ·e·
 alias '.ssh.rsa'='cat ~/.ssh/id_rsa.pub' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( .ssh.ed ) displays the contents of the public ED SSH key # ·e·
 alias '.ssh.ed'='cat ~/.ssh/id_ed25519.pub' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( .ssh.rsa.create ) creates the contents of the public RSA SSH key # ·e·
 alias '.ssh.rsa.create'='ssh-keygen -t rsa -b 2048' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
 # ( .ssh.ed.create ) creates the contents of the public ED SSH key # ·e·
 alias '.ssh.ed.create'='ssh-keygen -t ed25519' # ·a·
 
