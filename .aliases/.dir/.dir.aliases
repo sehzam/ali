@@ -12,18 +12,18 @@ alias c='clear; ls' # ·a·
 alias 'bak'='bk' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
-# ( .cf ) create recursively folders # ·e· 
+# ( cf ) create recursively folders # ·e· 
 #       : by give one string parameter with path and enter # ·e·
-alias '.cf'='cf' # ·a·
+alias 'cf'='cf' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
-# ( .ccf ) create recursively folders # ·e· 
+# ( ccf ) create recursively folders # ·e· 
 #        : by give one string parameter with path and enter # ·e·
-alias '.ccf'='copy_create_folder' # ·a·
+alias 'ccf'='copy_create_folder' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
-# ( .r ) delete recursively folders and files # ·e· 
-alias ".r"="sudo rm -r" # ·a·
+# ( s.dd ) delete recursively folders and files # ·e· 
+alias "s.dd"="sudo rm -r" # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 # ( dd ) delete folder or file recursively # ·e·
