@@ -91,8 +91,8 @@ repo_delete() { # ·c·
   fi
 
   repo_list
-  local repo_name="$1" # ·c·
-  local repo_path=$(cat ~/.config/.github/.repo|grep -E "$1"|grep -oP "(?<=$1 = ).*") # ·c·
+  repo_name="$1" # ·c·
+  repo_path=$(cat ~/.config/.github/.repo|grep -E "$1"|grep -oP "(?<=$1 = ).*") # ·c·
   modal(){
     echo "______________________________________________________" |grep -E "_"
     echo "_If you want _________________________________________" |grep -E "_" 
