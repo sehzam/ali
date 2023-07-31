@@ -72,8 +72,7 @@ fi # ·c·
 curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
 } # ·c·
 
-    list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
-  fn=$(echo $(echo "$list"|grep -E "$1"))
+    
 # Define the function to delete a GitHub repository
 repo_delete() {
   # Check if the repository name is provided as an argument
@@ -81,12 +80,14 @@ repo_delete() {
     echo "Usage: repo_delete <repository_name>"
     return 1
   fi
-
+  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
+  fn=$(echo $(echo "$list"|grep -E "$1"))
+  
   local repo_name="$1"
   local repo_path=$(grep -E "^$repo_name = " ~/.config/.github/.repo | grep -oP "(?<=$repo_name = ).*")
 
   # Check if the repository exists
-  if ! echo "$list" | grep -q "$repo_name"; then
+  if ! echo "$fn" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named repository NOT FOUND!"
     echo "-----------------------------------"
     echo "----- Available Repositories ------"
@@ -119,7 +120,7 @@ repo_delete() {
       # Prompt to delete the repository from the hard disk
       read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
-        rm -r "$repo_path/$repo_name"
+        rm -r "$repo_path"
         echo "Directory successfully deleted from HARDDISK: $repo_path/$repo_name"
       else
         echo "Repository was not deleted from the hard disk."
@@ -198,7 +199,7 @@ git_setup_and_push() {
   
 
   if [[ "$fn" == "$1" ]]; then
-    echo "$1 = $pd$1" >> ~/.config/.github/.repo
+    echo "$1 = $pd/$1/" >> ~/.config/.github/.repo
     echo "-- INFO -- Repository path: : :  $pd/$1  : : : added to REPO INSTALL LIST: ~/.config/.github/.repo"
     return 1
   fi
