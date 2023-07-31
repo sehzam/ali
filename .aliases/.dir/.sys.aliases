@@ -26,7 +26,7 @@ alias now='date +"%Y-%m-%d %H:%M:%S"' # ·a·
 # ( exe ) adds executable permissions to a file # ·e·
 alias exe='chmod +x ' # ·a·
 
-# ( .ssh.rsa ) displays the contents of the public ED SSH key # ·e·
+# ( .ssh.rsa ) displays the contents of the public RSA SSH key # ·e·
 alias '.ssh.rsa'='cat ~/.ssh/id_rsa.pub' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
