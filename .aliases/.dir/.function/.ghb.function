@@ -8,11 +8,14 @@ setup(){
   if [ -f ~/.config/.github/.login ]; then
 
     if [[ "$GITHUB_TOKEN" == "" ]] | [[ "$GITHUB_USERNAME" == "" ]]; then
+    echo "empty"
      update_login
     fi
   elif ! [ -f ~/.config/.github/.login ]; then
+    echo "no file"
       update_login
   else
+    echo "function"
     $function
   fi
 
