@@ -26,7 +26,7 @@ sr() { # ·c·
     sed -i "s/$1/$2/g" "$3" # ·c· 
 } # ·c· 
 #
-copy_create_folder() { # ·c· 
+function copy_create_folder() { # ·c· 
   # ·e· # Get the last argument as the destination
     local destination="${@: -1}" # ·c·  
     mkdir -p "$destination" # ·c· 
