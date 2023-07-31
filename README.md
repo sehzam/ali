@@ -76,17 +76,17 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 > #### Alias Lists
 |        Lists               |            Explaination                  |
 |----------------------------|------------------------------------------|
-| __`. d i r`__              | cat ~/.aliases/.dir.aliases              | 
-| __`. f s c`__              | cat ~/.aliases/.fsc.aliases              | 
-| __`. g i t`__              | cat ~/.aliases/.git.aliases              | 
-| __`. n e t`__              | cat ~/.aliases/.net.aliases              | 
-| __`. o w n`__              | cat ~/.aliases/.own.aliases              | 
-| __`. s y s`__              | cat ~/.aliases/.sys.aliases              | 
-| __`. z i p`__              | cat ~/.aliases/.zip.aliases              | 
+| __`. d i r`__              | cat ~/.aliases/.list/.dir.aliases              | 
+| __`. f s c`__              | cat ~/.aliases/.list/.fsc.aliases              | 
+| __`. g i t`__              | cat ~/.aliases/.list/.git.aliases              | 
+| __`. n e t`__              | cat ~/.aliases/.list/.net.aliases              | 
+| __`. o w n`__              | cat ~/.aliases/.list/.own.aliases              | 
+| __`. s y s`__              | cat ~/.aliases/.list/.sys.aliases              | 
+| __`. z i p`__              | cat ~/.aliases/.list/.zip.aliases              | 
 |-|-|
-| __`. * * * . a`__          | cat ~/.aliases/.* * *.aliases (only alias)  |
-| __`. * * * . e`__          | cat ~/.aliases/.* * *.aliases (explaination)|
-| __`. * * * . f`__          | cat ~/.aliases/.* * *.aliases (functions)   |
+| __`. * * * . a`__          | cat ~/.aliases/.dir/.* * *.aliases (only alias)  |
+| __`. * * * . e`__          | cat ~/.aliases/.dir/.* * *.aliases (explaination)|
+| __`. * * * . f`__          | cat ~/.aliases/.dir/.* * *.aliases (functions)   |
 
 ---
 ## Licence
