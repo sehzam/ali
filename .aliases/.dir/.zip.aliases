@@ -17,7 +17,7 @@ alias 'x.z.e'='unzip' # ·a·
 # ·o· -------------------- 7Z ---------------------- ·o· 7Z options
 
 # ( x.7z.c ) compress : 7z archive # ·e·
-# = (exam.) = x.7z.c a file.7z file1.txt file2.txt folder1/ # ·e·
+# = USE = x.7z.c a file.7z file1.txt file2.txt folder1/ # ·e·
 alias 'x.7z.c'='7z a' # ·a·
 
 # ( x.7z.e ) extract : 7z archive # ·e·
@@ -53,11 +53,11 @@ alias 'x.xz.e'='tar -xJf' # ·a·
 # ·o· ------------------  TAR ---------------------- ·o· TAR options
 
 # ( x.tar.c ) compress : TAR archive # ·e·
-# = (exam.) = x.tar.c file.tar file1.txt file2.txt folder1/ # ·e·
+# = USE = x.tar.c file.tar file1.txt file2.txt folder1/ # ·e·
 alias 'x.tar.c'='tar -cf' # ·a·
 
 # ( x.tar.e ) extract : TAR archive # ·e·
-# = (exam.) = x.tar.e file.tar # ·e·
+# = USE = x.tar.e file.tar # ·e·
 alias 'x.tar.e'='tar -xf' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
@@ -65,11 +65,11 @@ alias 'x.tar.e'='tar -xf' # ·a·
 # ·o· ------------------  LHA ---------------------- ·o· LHA options
 
 # ( x.lha.c ) compress : LHA archive # ·e·
-# = (exam.) = x.lha.c file.lzh file1.txt file2.txt folder1/ # ·e·
+# = USE = x.lha.c file.lzh file1.txt file2.txt folder1/ # ·e·
 alias 'x.lha.c'='lha -cf' # ·a·
 
 # ( x.lha.e ) extract : LHA archive # ·e·
-# = (exam.) = x.lha.e file.lzh # ·e·
+# = USE = x.lha.e file.lzh # ·e·
 alias 'x.lha.e'='lha -xf' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
@@ -77,11 +77,11 @@ alias 'x.lha.e'='lha -xf' # ·a·
 # ·o· ----------------  TAR-BZ2 -------------------- ·o· TAR-BZ2 options
 
 # ( x.tarbz2.c ) compress : TAR archive # ·e·
-# = (exam.) = x.tarbz2.c file.tar.bz2 file1.txt file2.txt folder1/ # ·e·
+# = USE = x.tarbz2.c file.tar.bz2 file1.txt file2.txt folder1/ # ·e·
 alias 'x.tarbz2.c'='tar -cjf' # ·a·
 
 # ( x.tarbz2.e ) extract : TAR archive # ·e·
-# = (exam.) = x.tarbz2.e file.tar # ·e·
+# = USE = x.tarbz2.e file.tar # ·e·
 alias 'x.tarbz2.e'='tar -xjf' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 

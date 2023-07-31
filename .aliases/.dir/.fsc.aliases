@@ -5,27 +5,27 @@
 # ·o· ---------------------------------------------- ·o· 
 
 # ( f.n ) finds files with a specific name # ·e·
-# = (ex) = f.n myfile.txt # ·e·
+# = USE = f.n myfile.txt # ·e·
 alias 'f.n'='find . -type f -name' # ·a·
 
 # ( f.s ) finds directories with a specific name # ·e·
-# (i.e.) = f.s mydir # ·e·
+# USE = f.s mydir # ·e·
 alias 'f.s'='find . -type d -name' # ·a·
 
 # ( f.x ) finds files with a specific extension # ·e·
-# (i.e.) = f.x *.jpg # ·e·
+# USE = f.x *.jpg # ·e·
 alias 'f.x'='find . -type f -name' # ·a·
 
 # ( f.s ) finds files with a specific size # ·e·
-# (i.e.) = f.s +1M # ·e·
+# USE = f.s +1M # ·e·
 alias 'f.s'='find . -type f -size' # ·a·
 
 # ( f.m ) finds files modified after a specific date and time # ·e·
-# (i.e.) = f.m "2023-01-01 00:00:00" # ·e·
+# USE = f.m "2023-01-01 00:00:00" # ·e·
 alias 'f.m'='find . -type f -newermt' # ·a·
 
 # ( f.min ) finds files modified within a specific number of minutes # ·e·
-# (i.e.) = f.min -60 # ·e·
+# USE = f.min -60 # ·e·
 alias 'f.min'='find . -type f -mmin' # ·a·
 
 # ( f.str ) finds files containing a specific string # ·e·
@@ -41,7 +41,7 @@ alias 'f.user'='find . -type f -user' # ·a·
 alias 'f.user'='find . -type f -perm' # ·a·
 
 # ( f.user ) finds empty directories # ·e·
-# (i.e.) = f.user # ·e·
+# USE = f.user # ·e·
 alias 'f.user'='find . -type d -empty' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
