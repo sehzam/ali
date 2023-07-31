@@ -114,7 +114,7 @@ repo_delete() {
   }
   modal
 
-repo_list="~/.config/.github/.repo"
+repo_list=$(cat ~/.config/.github/.repo)
   # Process the user's answer
   case "$answer" in
     [Yy])
