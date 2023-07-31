@@ -106,7 +106,7 @@ if [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
 elif [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
     ssh_key=$(cat ~/.ssh/id_ed25519.pub) # ·c·
 fi # ·c·
-# SSH-Schlüssel der cURL-Anfrage übergeben und die API aufrufen # ·e·
+# Emit SSH key to curl and call the API # ·e·
 curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
 } # ·c·
 
@@ -161,7 +161,7 @@ input_string="$1" # ·c·
 uc_string=$(echo "$input_string" | tr '[:lower:]' '[:upper:]') # ·c·
 current_year=$(date +%Y) # ·c·
 
-# Schreiben des Inhalts in die README.md-Datei # ·e·
+# Write the contetnt to the README.md file # ·e·
 cat > README.md << EOF
 ---
 #
