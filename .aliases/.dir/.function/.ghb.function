@@ -95,8 +95,7 @@ git_setup_and_push() { # ·c·
     echo "Usage: git_setup_and_push <repository_name>" # ·c·
     return 1 # ·c·
   fi # ·c·
-  cd ~/Documents/ # ·c·
-  cd ~/Dokumente/ # ·c·
+  cd ~/projects/ # ·c·
   local repo_name="$1" # ·c·
   local api_url="https://api.github.com/user/repos" # ·c·
   # JSON-Payload for the repository creation request # ·e·
