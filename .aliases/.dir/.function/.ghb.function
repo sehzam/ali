@@ -89,45 +89,51 @@ repo_delete() { # ·c·
 # add remote, and # ·e·
 # push to the remote # ·e·
 
-git_setup_and_push() { # ·c·
-  # Check if the repository name is provided as an argument # ·e·
-  if [ $# -ne 1 ]; then # ·c·
-    echo "Usage: git_setup_and_push <repository_name>" # ·c·
-    return 1 # ·c·
-  fi # ·c·
-  cd ~/projects/ # ·c·
-  local repo_name="$1" # ·c·
-  local api_url="https://api.github.com/user/repos" # ·c·
-  # JSON-Payload for the repository creation request # ·e·
-  local payload='{ # ·c·
-    "name": "'$repo_name'", # ·c·
-    "private": false, # ·c·
-    "auto_init": true # ·c·
-  }' # ·c·
-  # Create the new GitHub repository # ·e·
-  local response=$(curl -X POST \  # ·c·
-    -H "Authorization: token $GITHUB_TOKEN" \ # ·c·
-    -H "Accept: application/vnd.github.v3+json" \ # ·c·
-    -d "$payload" \ # ·c·
-    "$api_url") # ·c·
-    echo https://"$GITHUB_TOKEN"@github.com/$GITHUB_USERNAME/$1.git # ·c·
-    git clone https://"$GITHUB_TOKEN"@github.com/$GITHUB_USERNAME/$1.git # ·c·
-    cd "$1" # ·c·
-    rm README.md # ·c·
 
-input_string="$1" # ·c·
-uc_string=$(echo "$input_string" | tr '[:lower:]' '[:upper:]') # ·c·
-current_year=$(date +%Y) # ·c·
+git_setup_and_push() {
+  # Check if the repository name is provided as an argument
+  if [ $# -ne 1 ]; then
+    echo "Usage: git_setup_and_push <repository_name>"
+    return 1
+  fi
 
-# Write the contetnt to the README.md file # ·e·
-cat > README.md << EOF
+  cd ~/projects/
+
+  local repo_name="$1"
+  local api_url="https://api.github.com/user/repos"
+  # JSON-Payload for the repository creation request
+  local payload='{
+    "name": "'"$repo_name"'",
+    "private": false,
+    "auto_init": true
+  }'
+
+  # Create the new GitHub repository
+  local response=$(curl -X POST \
+    -H "Authorization: token $GITHUB_TOKEN" \
+    -H "Accept: application/vnd.github.v3+json" \
+    -d "$payload" \
+    "$api_url")
+
+  echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git"
+
+  git clone "https://github.com/$GITHUB_USERNAME/$1.git"
+  cd "$1"
+  rm README.md
+
+  uc_string=${repo_name^^}
+  current_year=$(date +%Y)
+
+  # Write the content to the README.md file
+  cat > README.md << EOF
 ---
 #
-# $(echo "$uc_string" | tr -d '\n' | sed 's/./ & /g')
+# ${uc_string//[$'\n']/ & }
 # 
 ---
 EOF
-cat >> README.md << EOF
+
+  cat >> README.md << EOF
 > __Content__:
   - For evolving workflow speed.
     - ...
@@ -143,8 +149,7 @@ cat >> README.md << EOF
 ---
 EOF
 
-
-cat >> README.md << EOF
+  cat >> README.md << EOF
 ## Installation
 
 > For the first __Installation:__
@@ -170,17 +175,18 @@ cat >> README.md << EOF
 > Author: ${GITHUB_USERNAME} © ${current_year}
 ---
 EOF
-    # Add the README.md to the staging area # ·e·
-    git add README.md # ·c·
 
-    # Make the initial commit with the repository name as the commit message # ·e·
-    git commit -m "The Project begins" # ·c·
-    git push # ·c·
-    # Display the Git status at the end # ·e·
-    git status # ·c·
-    cd .. # ·c·
-    # code ./$1/ # ·c·
-    # code ./$1/README.md # ·c·
+  # Add the README.md to the staging area
+  git add README.md
+
+  # Make the initial commit with the repository name as the commit message
+  git commit -m "The Project begins"
+  git push
+
+  # Display the Git status at the end
+  git status
+
+  cd ..
 }
 
 # ·f· ______________________________________________ ·f· 
