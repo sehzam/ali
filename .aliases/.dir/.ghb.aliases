@@ -198,11 +198,11 @@ EOF
 
 # ·o· ---------------------------------------------- ·o· 
 # ( .ghb.token ) show installed API Token - if not RUN ( .ghb.token.setup ) # ·e·
-alias ".gh.token"="cat ~/.config/.github/.login" # ·a·
+alias ".ghb.token"="cat ~/.config/.github/.login" # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 # ( .ghb.token.setup ) PROMPT to add API Token - IMPORTANT for functionality # ·e·
-alias ".gh.token.setup"="update_login" # ·a·
+alias ".ghb.token.setup"="update_login" # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 # ( .ghb.ssh ) show available ssh keys # ·e·
