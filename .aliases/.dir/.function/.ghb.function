@@ -75,6 +75,7 @@ curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: applicati
     
 # Define the function to delete a GitHub repository
 repo_delete() {
+
   # Check if the repository name is provided as an argument
   if [ $# -ne 1 ]; then
     echo "Usage: repo_delete <repository_name>"
@@ -82,10 +83,11 @@ repo_delete() {
   fi
   list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
   fn=$(echo "$list"|grep -E "\b$1\b")
-  
+  fn
   local repo_name="$1"
   local repo_path=$(grep -E "^$repo_name = " ~/.config/.github/.repo | grep -oP "(?<=$repo_name = ).*")
-
+  repo_path=$(  grep -E "^sin = " ~/.config/.github/.repo | grep -oP "(?<=sin = ).*")
+echo $repo_path
   # Check if the repository exists
   if ! echo "$fn" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named repository NOT FOUND!"
@@ -121,7 +123,7 @@ repo_list=$(cat ~/.config/.github/.repo)
       # Prompt to delete the repository from the hard disk
       read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
-        rm -rf $repo_path
+        rm -r -f $repo_path
         echo "Directory successfully deleted from HARDDISK: $repo_path"
         echo "$repo_list" | grep -v "\/$repo_name\/" > ~/.config/.github/.repo
       else
