@@ -178,9 +178,9 @@ EOF
     git push # ·c·
     # Display the Git status at the end # ·e·
     git status # ·c·
-    cd .. && c # ·c·
-    code ./$1/ # ·c·
-    code ./$1/README.md # ·c·
+    cd .. # ·c·
+    # code ./$1/ # ·c·
+    # code ./$1/README.md # ·c·
 }
 
 # ·f· ______________________________________________ ·f· 
