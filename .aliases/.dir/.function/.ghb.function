@@ -72,55 +72,66 @@ fi # ·c·
 curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
 } # ·c·
 
-
-# Define the function to delete a GitHub repository # ·e·
-repo_delete() { # ·c·
-  # Check if the repository name is provided as an argument # ·e·
-  if [ $# -ne 1 ]; then # ·c·
-    return 1 # ·c·
-  fi # ·c·
     list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
   fn=$(echo $(echo "$list"|grep -E "$1"))
+# Define the function to delete a GitHub repository
+repo_delete() {
+  # Check if the repository name is provided as an argument
+  if [ $# -ne 1 ]; then
+    echo "Usage: repo_delete <repository_name>"
+    return 1
+  fi
 
-  repo_list
+  local repo_name="$1"
+  local repo_path=$(grep -E "^$repo_name = " ~/.config/.github/.repo | grep -oP "(?<=$repo_name = ).*")
 
-  if ! [[ "$fn" == "$1" ]]; then
-    echo "-- ATTENTION -- NO Repository FOUND"
+  # Check if the repository exists
+  if ! echo "$list" | grep -q "$repo_name"; then
+    echo "-- ATTENTION -- $repo_name named repository NOT FOUND!"
+    echo "-----------------------------------"
+    echo "----- Available Repositories ------"
+    repo_list
+    echo "-----------------------------------"
     echo "-- Aborting -- RUN AGAIN !"
     return 1
   fi
 
-  repo_list
-  local repo_name="$1" # ·c·
-  local repo_path=$(cat ~/.config/.github/.repo|grep -E "$1"|grep -oP "(?<=$1 = ).*") # ·c·
-  modal(){
-    echo "______________________________________________________" |grep -E "_"
-    echo "_If you want _________________________________________" |grep -E "_" 
-    echo "______________________________       ATTENTION       _" |grep -E "|_|ATTENTION" 
-    echo "__to DELETE the Repository ? _                       _" |grep -E "DELETE|_" 
-    echo "______________________________         $1 ?" |grep -E "_"
-    echo "______________________________________________________" |grep -E "_"
-    read -p "DELETE: ( Y/y ) | ABORT: ( N/n ) ? : " answer 
-    echo "______________________________________________________" |grep -E "_"
+  # Prompt the user for confirmation
+  modal() {
+    echo "______________________________________________________"
+    echo "_If you want _________________________________________"
+    echo "______________________________       ATTENTION       _"
+    echo "__to DELETE the Repository ? _                       _"
+    echo "______________________________         $repo_name ?"
+    echo "______________________________________________________"
+    read -p "DELETE: ( Y/y ) | ABORT: ( N/n ) ? : " answer
+    echo "______________________________________________________"
   }
-modal
-    
-    if [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
-    
-      local repo_name="$1" # ·c·
+  modal
 
-      curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name" # ·c·
+  # Process the user's answer
+  case "$answer" in
+    [Yy])
+      # Delete the repository on GitHub
+      curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name"
       echo "Repository successfully deleted from GitHub: github.com/$GITHUB_USERNAME/$repo_name"
-      echo "If you want to delete the Directories from HARDDISK: $repo_path/$repo_name"
-      echo "Updated Repository List: "
-      repo_list
-      echo "Updated Repository List: "
-      echo "If NOT.( Press: Ctrl + C )"
-      sudo rm -r $repo_path/$1 # ·c·
-      echo "Directory successfully deleted from HARDDISK: $repo_path/$repo_name"
-    else 
-      modal
-    fi
+
+      # Prompt to delete the repository from the hard disk
+      read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
+      if [[ "$delete_from_disk" =~ [Yy] ]]; then
+        rm -r "$repo_path/$repo_name"
+        echo "Directory successfully deleted from HARDDISK: $repo_path/$repo_name"
+      else
+        echo "Repository was not deleted from the hard disk."
+      fi
+      ;;
+    [Nn])
+      echo "Repository deletion aborted."
+      ;;
+    *)
+      echo "Invalid input. Repository deletion aborted."
+      ;;
+  esac
 }
 
 
@@ -128,8 +139,8 @@ modal
 repo_list() { # ·c·
   # Check if the repository name is provided as an argument # ·e·
 
-  local repo_name=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)') # ·c·
-  repo_name
+  curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
+  
 }
 
 # Define the function # ·e·
