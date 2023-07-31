@@ -1,4 +1,47 @@
 . ~/.config/.github/.login # ·c·
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ TEMPLATE ------------------ ·o· TEMPLATE
+# ·o· ______________________________________________ ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ TEMPLATE ------------------ ·f· TEMPLATE
+# ·f· ______________________________________________ ·f· 
+info(){ # ·c·
+echo .
+echo '·________________________________·'|grep -E "_"  # ·c·
+echo '| ..... Check your SSH Keys .... |'|grep -E "\|" # ·c·
+echo '| .....      .gh.ssh        .... |'|grep -E "\|" # ·c·
+echo '·________________________________·'|grep -E "·"  # ·c·
+echo .
+echo '·________________________________·'|grep -E "_"  # ·c·
+echo '| ..   Check GitHub API Token .. |'|grep -E "\|" # ·c·
+echo '| .....      .gh.token      .... |'|grep -E "\|" # ·c·
+echo '·________________________________·'|grep -E "·"  # ·c· 
+echo .
+echo '·________________________________·'|grep -E "_"  # ·c·
+echo '| .....   API Token Setup   .... |'|grep -E "\|" # ·c·
+echo '| .....   .gh.token.setup   .... |'|grep -E "\|" # ·c·
+echo '·________________________________·'|grep -E "·"  # ·c· 
+echo .
+echo 'Usage: .gh.ssh.create <ssh_title> to create or add SSH Key to GitHub'| grep -E "<|>|\.|:"
+echo '·________________________________·'|grep -E "_"  # ·c·
+echo '|Add SSH KEY to GitHub via Token |'|grep -E "\|" # ·c·
+echo '| .....   .gh.ssh.create    .... |'|grep -E "\|" # ·c·
+echo '·________________________________·'|grep -E "·"  # ·c· 
+echo .
+echo 'Usage: .gh.repo.delete <repository_name> to delete GitHub repo'| grep -E "<|>|\.|:"
+echo '·________________________________·'|grep -E "_"  # ·c·
+echo '|  GitHub Repo Delete via Token  |'|grep -E "\|" # ·c·
+echo '| .....  .gh.repo.delete    .... |'|grep -E "\|" # ·c·
+echo '·________________________________·'|grep -E "·"  # ·c· 
+echo .
+echo 'Usage: .gh.repo.create <repository_name> to create GitHub repo'| grep -E "<|>|\.|:"
+echo '·________________________________·'|grep -E "_"  # ·c·
+echo '|  GitHub Repo Create via Token  |'|grep -E "\|" # ·c·
+echo '| .....  .gh.repo.create    .... |'|grep -E "\|" # ·c·
+echo '·________________________________·'|grep -E "·"  # ·c· 
+echo .
+} # ·c·
 
 update_login(){ # ·c·
   echo ...................................................
@@ -38,10 +81,6 @@ show_ssh(){ # ·c·
       echo "{ ED25519 } SSH KEY" # ·c·
     fi # ·c·
 } # ·c·
-
-alias ".gh.ssh"="show_ssh" # ·a·
-alias ".gh.token"="cat ~/.config/.github/.login" # ·a·
-alias ".gh.token.setup"="update_login" # ·a·
 
 # Add SSH -RSA- -ED- KEY to your GitHub Account # ·e· 
 add_ssh_github(){ # ·c·
@@ -85,14 +124,13 @@ repo_delete() { # ·c·
   curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name" # ·c·
 }
 
-alias ".gh.repo.delete"="repo_delete" # ·a·
-
 # Define the function # ·e·
 # to initialize a new Git repository, # ·e· 
 # create a branch, # ·e·
 # make the first commit, # ·e· 
 # add remote, and # ·e·
 # push to the remote # ·e·
+
 git_setup_and_push() { # ·c·
   # Check if the repository name is provided as an argument # ·e·
   if [ $# -ne 1 ]; then # ·c·
@@ -187,42 +225,22 @@ EOF
     code ./$1/ # ·c·
     code ./$1/README.md # ·c·
 }
+
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ TEMPLATE ------------------ ·f· TEMPLATE
+# ·f· ______________________________________________ ·f· 
+
+# ·o· ------------------- Alias -------------------- ·o· Alias
+
+alias ".gh.info"="info" # ·a·
+alias ".gh.ssh"="show_ssh" # ·a·
+alias ".gh.token"="cat ~/.config/.github/.login" # ·a·
+alias ".gh.token.setup"="update_login" # ·a·
+alias ".gh.repo.delete"="repo_delete" # ·a·
 alias ".gh.repo.create"="git_setup_and_push" # ·a·
 
-info(){ # ·c·
-echo .
-echo '·________________________________·'|grep -E "_"  # ·c·
-echo '| ..... Check your SSH Keys .... |'|grep -E "\|" # ·c·
-echo '| .....      .gh.ssh        .... |'|grep -E "\|" # ·c·
-echo '·________________________________·'|grep -E "·"  # ·c·
-echo .
-echo '·________________________________·'|grep -E "_"  # ·c·
-echo '| ..   Check GitHub API Token .. |'|grep -E "\|" # ·c·
-echo '| .....      .gh.token      .... |'|grep -E "\|" # ·c·
-echo '·________________________________·'|grep -E "·"  # ·c· 
-echo .
-echo '·________________________________·'|grep -E "_"  # ·c·
-echo '| .....   API Token Setup   .... |'|grep -E "\|" # ·c·
-echo '| .....   .gh.token.setup   .... |'|grep -E "\|" # ·c·
-echo '·________________________________·'|grep -E "·"  # ·c· 
-echo .
-echo 'Usage: .gh.ssh.create <ssh_title> to create or add SSH Key to GitHub'| grep -E "<|>|\.|:"
-echo '·________________________________·'|grep -E "_"  # ·c·
-echo '|Add SSH KEY to GitHub via Token |'|grep -E "\|" # ·c·
-echo '| .....   .gh.ssh.create    .... |'|grep -E "\|" # ·c·
-echo '·________________________________·'|grep -E "·"  # ·c· 
-echo .
-echo 'Usage: .gh.repo.delete <repository_name> to delete GitHub repo'| grep -E "<|>|\.|:"
-echo '·________________________________·'|grep -E "_"  # ·c·
-echo '|  GitHub Repo Delete via Token  |'|grep -E "\|" # ·c·
-echo '| .....  .gh.repo.delete    .... |'|grep -E "\|" # ·c·
-echo '·________________________________·'|grep -E "·"  # ·c· 
-echo .
-echo 'Usage: .gh.repo.create <repository_name> to create GitHub repo'| grep -E "<|>|\.|:"
-echo '·________________________________·'|grep -E "_"  # ·c·
-echo '|  GitHub Repo Create via Token  |'|grep -E "\|" # ·c·
-echo '| .....  .gh.repo.create    .... |'|grep -E "\|" # ·c·
-echo '·________________________________·'|grep -E "·"  # ·c· 
-echo .
-} # ·c·
-alias ".gh.info"="info" # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ TEMPLATE ------------------ ·o· TEMPLATE
+# ·o· ______________________________________________ ·o· 
