@@ -4,67 +4,67 @@
 
 # ·o· ------------------  ZIP ---------------------- ·o· ZIP options
 
-# ( .x.z.c) compress : ZIP archive # ·e·
-# = (ex.) = .x.z c file.zip file1.txt file2.txt folder1/ # ·e·
-alias '.x.z.c'='zip' # ·a·
+# ( x.z.c) compress : ZIP archive # ·e·
+# = (ex.) = x.z c file.zip file1.txt file2.txt folder1/ # ·e·
+alias 'x.z.c'='zip' # ·a·
 
-# ( .x.z.e ) extract : ZIP archive # ·e·
-# = (ex.) = .x.z e file.zip # ·e·
-alias '.x.z.e'='unzip' # ·a·
+# ( x.z.e ) extract : ZIP archive # ·e·
+# = (ex.) = x.z e file.zip # ·e·
+alias 'x.z.e'='unzip' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· -------------------- 7Z ----------------------- ·o· 7Z options
 
-# ( .x.7z.c ) compress : 7z archive # ·e·
-# = (exam.) = .x.7z.c a file.7z file1.txt file2.txt folder1/ # ·e·
-alias '.x.7z.c'='7z a' # ·a·
+# ( x.7z.c ) compress : 7z archive # ·e·
+# = (exam.) = x.7z.c a file.7z file1.txt file2.txt folder1/ # ·e·
+alias 'x.7z.c'='7z a' # ·a·
 
-# ( .x.7z.e ) extract : 7z archive # ·e·
-# = (exa.) = .x.7z.e x file.7z # ·e·
-alias '.x.7z.e'='7z x' # ·a·
+# ( x.7z.e ) extract : 7z archive # ·e·
+# = (exa.) = x.7z.e x file.7z # ·e·
+alias 'x.7z.e'='7z x' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· -------------------- GZ ---------------------- ·o· GZ options
 
-# ( .x.gz.c ) compress : GZ archive # ·e·
-# = (exa.) = .x.gz.c file.gz # ·e·
-alias '.x.gz.c'='gzip' # ·a·
+# ( x.gz.c ) compress : GZ archive # ·e·
+# = (exa.) = x.gz.c file.gz # ·e·
+alias 'x.gz.c'='gzip' # ·a·
 
-# ( .x.gz.e ) extract : GZ archive # ·e·
-# = (exa.) = .x.gz.e -d file.gz # ·e·
-alias '.x.gz.e'='gzip -d' # ·a·
+# ( x.gz.e ) extract : GZ archive # ·e·
+# = (exa.) = x.gz.e -d file.gz # ·e·
+alias 'x.gz.e'='gzip -d' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· -------------------- XZ ---------------------- ·o· GZ options
 
-# ( .x.xz.c ) compress : XZ archive # ·e·
-# = (exm.) = .x.xz.c file.tar.xz file1.txt file2.txt folder1/ # ·e·
-alias '.x.xz.c'='tar -cJf' # ·a·
+# ( x.xz.c ) compress : XZ archive # ·e·
+# = (exm.) = x.xz.c file.tar.xz file1.txt file2.txt folder1/ # ·e·
+alias 'x.xz.c'='tar -cJf' # ·a·
 
-# ( .x.xz.e ) extract : XZ archive # ·e·
-# = (exa.) = .x.xz.e file.txt.xz # ·e·
-alias '.x.xz.e'='tar -xJf' # ·a·
+# ( x.xz.e ) extract : XZ archive # ·e·
+# = (exa.) = x.xz.e file.txt.xz # ·e·
+alias 'x.xz.e'='tar -xJf' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ------------------  TAR ---------------------- ·o· TAR options
 
-# ( .x.tar.c ) compress : TAR archive # ·e·
-# = (exam.) = .x.tar.c file.tar file1.txt file2.txt folder1/ # ·e·
-alias '.x.tar.c'='tar -cf' # ·a·
+# ( x.tar.c ) compress : TAR archive # ·e·
+# = (exam.) = x.tar.c file.tar file1.txt file2.txt folder1/ # ·e·
+alias 'x.tar.c'='tar -cf' # ·a·
 
-# ( .x.tar.e ) extract : TAR archive # ·e·
-# = (exam.) = .x.tar.e file.tar # ·e·
-alias '.x.tar.e'='tar -xf' # ·a·
+# ( x.tar.e ) extract : TAR archive # ·e·
+# = (exam.) = x.tar.e file.tar # ·e·
+alias 'x.tar.e'='tar -xf' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ------------------  LHA ---------------------- ·o· LHA options
 
-# ( .x.lha.c ) compress : LHA archive # ·e·
+# ( x.lha.c ) compress : LHA archive # ·e·
 # = (exam.) = x.lha.c file.lzh file1.txt file2.txt folder1/ # ·e·
 alias 'x.lha.c'='lha -cf' # ·a·
 
@@ -76,13 +76,13 @@ alias 'x.lha.e'='lha -xf' # ·a·
 
 # ·o· ----------------  TAR-BZ2 -------------------- ·o· TAR-BZ2 options
 
-# ( .x.tarbz2.c ) compress : TAR archive # ·e·
-# = (exam.) = .x.tarbz2.c file.tar.bz2 file1.txt file2.txt folder1/ # ·e·
-alias '.x.tarbz2.c'='tar -cjf' # ·a·
+# ( x.tarbz2.c ) compress : TAR archive # ·e·
+# = (exam.) = x.tarbz2.c file.tar.bz2 file1.txt file2.txt folder1/ # ·e·
+alias 'x.tarbz2.c'='tar -cjf' # ·a·
 
-# ( .x.tarbz2.e ) extract : TAR archive # ·e·
-# = (exam.) = .x.tarbz2.e file.tar # ·e·
-alias '.x.tarbz2.e'='tar -xjf' # ·a·
+# ( x.tarbz2.e ) extract : TAR archive # ·e·
+# = (exam.) = x.tarbz2.e file.tar # ·e·
+alias 'x.tarbz2.e'='tar -xjf' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 

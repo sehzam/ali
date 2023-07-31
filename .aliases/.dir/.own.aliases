@@ -5,7 +5,7 @@
 # ·o· ------------ Personal Directories ------------ ·o· Personal Directories
 
 # ·o· ---------------------------------------------- ·o· 
-# ( a ) change directory : current project & show (hidden )content # ·e·
+# ( a ) change directory : current project & show (hidden) content # ·e·
 alias 'a'='cd ~/projects/personal/ali/ && ll' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
@@ -41,7 +41,7 @@ alias 'm'='cd ~/Music/ && ls' # ·a·
 alias 'p'='cd ~/Pictures/ && ls' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
-# ( ..t ) change directory : ~/Desktop/ & show content # ·e·
+# ( t ) change directory : ~/Desktop/ & show content # ·e·
 alias 't'='cd ~/Desktop/ && ls' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 

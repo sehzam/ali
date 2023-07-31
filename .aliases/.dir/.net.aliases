@@ -1,5 +1,5 @@
 # ·o· ______________________________________________ ·o· 
-# ·o· -------------- Network Control --------------- ·o· Network Control
+# ·o· -------------- Network Control  -------------- ·o· Network Control
 # ·o· ______________________________________________ ·o· 
 
 # ·o· ---------------------------------------------- ·o· 
@@ -19,14 +19,14 @@ alias 'i.pi'='curl ipinfo.io/ip' # ·a·
 alias 'i.p'='ping -c 5 google.com' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
-# ( 'i.wr' ) downloads a file using wget and resumes partial downloads # ·e·
+# ( i.wr ) downloads a file using wget and resumes partial downloads # ·e·
 alias 'i.wr'='wget -c' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 # ( net ) shows active network connections # ·e·
-alias net='netstat -tuln ' # ·a·
+alias 'i.n'='netstat -tuln ' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 # ·o· ______________________________________________ ·o· 
-# ·o· -------------- Network Control --------------- ·o· Network Control
+# ·o· -------------- Network Control  -------------- ·o· Network Control
 # ·o· ______________________________________________ ·o· 
