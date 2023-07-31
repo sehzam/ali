@@ -107,7 +107,7 @@ git_setup_and_push() {
   # JSON-Payload for the repository creation request
   local payload='{
     "name": "'"$repo_name"'",
-    "private": true,
+    "private": false,
     "auto_init": true
   }'
 
