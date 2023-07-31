@@ -168,14 +168,15 @@ git_setup_and_push() {
     echo "Usage: git_setup_and_push <repository_name>"
     return 1
   fi
-  repo_list
 
   # Check if the repotiory exists. If true, aborting wirh message
   list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
   fn=$(echo $(echo "$list"|grep -E "$1"))
 
-  if [[ "$fn" == "$1" ]]; then
-    echo "-- ATTENTION -- Repository already created on GitHub"
+  if [[ "$fn" == "$1" ]]; thenecho "-----------------------------------"
+    echo "----- Available Repositories ------"
+    repo_list
+    echo "-----------------------------------"
     echo "-- Aborting -- RUN AGAIN !"
     return 1
   fi
@@ -205,8 +206,8 @@ git_setup_and_push() {
   
 
   if [[ "$fn" == "$1" ]]; then
-    echo "$1 = $pd/$1/" >> ~/.config/.github/.repo
-    echo "-- INFO -- Repository path: : :  $pd/$1  : : : added to REPO INSTALL LIST: ~/.config/.github/.repo"
+    echo "\b$1\b = $pd/\b$1\b/" >> ~/.config/.github/.repo
+    echo "-- INFO -- Repository path: : :  $pd/\b$1\b  : : : added to REPO INSTALL LIST: ~/.config/.github/.repo"
   fi
 
   echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git"
