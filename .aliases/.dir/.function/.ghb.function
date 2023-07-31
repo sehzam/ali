@@ -100,7 +100,7 @@ git_setup_and_push() {
     echo "Usage: git_setup_and_push <repository_name>"
     return 1
   fi
-<
+
   local repo_name="$1"
   local api_url="https://api.github.com/user/repos"
 
