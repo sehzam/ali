@@ -30,7 +30,7 @@ ${alias_file}_e() { # ·c·
   c && .$alias_file.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
 } # ·c·
 ${alias_file}_f() { # ·c· 
-  c && .$alias_file.raw | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|#|\}|# ·f·|# ·c·|# ·v·|--|echo |\|' # ·c·
+  c && .$alias_file.raw | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
 } # ·c·
 ${alias_file}_l() { # ·c·
   c && .$alias_file.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
