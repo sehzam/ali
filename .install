@@ -69,7 +69,7 @@ echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r list; do # ·c·
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
-          if [ -f "$directory_to_search$list" ]; then # ·c· 
+          if [ -f "$directory_to_search_function.$list.function" ]; then # ·c· 
                 echo "copy function file: $list  ---> $directory_to_save"  
                     cp -r $directory_to_search_function.$list.function $directory_to_save_function.$list.function  
           fi # ·c· 
