@@ -81,8 +81,31 @@ repo_delete() { # ·c·
   fi # ·c·
 
   local repo_name="$1" # ·c·
-  sudo rm -r ~/projects/$1 # ·c·
-  curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name" # ·c·
+    echo "______________________________________________________" |grep -E "_"
+    echo "_If you want _________________________________________" |grep -E "_" 
+    echo "______________________________       ATTENTION       _" |grep -E "|_|ATTENTION" 
+    echo "__to DELETE the Repository ? _                       _" |grep -E "DELETE|_" 
+    echo "______________________________         $1 ?" |grep -E "_"
+    echo "______________________________________________________" |grep -E "_"
+    read -p "DELETE: ( Y/y ) | ABORT: ( N/n ) ? : " answer 
+    echo "______________________________________________________" |grep -E "_"
+
+    cat ~/.config/.github/.repo|grep -E "ali"
+    if [ "$answer" = "n" ] || [ "$answer" = "N" ]; then
+      return 1
+    elif [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
+      sudo rm -r ~/projects/$1 # ·c·
+      curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name" # ·c·
+    fi
+}
+
+
+# Define the function to delete a GitHub repository # ·e·
+repo_list() { # ·c·
+  # Check if the repository name is provided as an argument # ·e·
+
+  local repo_name=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)') # ·c·
+  repo_name
 }
 
 # Define the function # ·e·
@@ -93,6 +116,9 @@ repo_delete() { # ·c·
 # push to the remote # ·e·
 
 
+
+
+
 git_setup_and_push() {
 
   # Check if the repository name is provided as an argument
@@ -101,6 +127,17 @@ git_setup_and_push() {
     return 1
   fi
 
+  # Check if the repotiory exists. If true, aborting wirh message
+  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
+  fn=$(echo $(echo "$list"|grep -E "$1"))
+
+  if [[ "$fn" == "$1" ]]; then
+    echo "-- ATTENTION -- Repository already created on GitHub"
+    echo "-- Aborting -- RUN AGAIN !"
+    return 1
+  fi
+
+  # Initialize parameter
   local repo_name="$1"
   local api_url="https://api.github.com/user/repos"
 
@@ -110,13 +147,27 @@ git_setup_and_push() {
     "private": false,
     "auto_init": true
   }'
-
   # Create the new GitHub repository
     local response=$(curl -X POST \
     -H "Authorization: token $GITHUB_TOKEN" \
     -H "Accept: application/vnd.github.v3+json" \
     -d "$payload" \
     "$api_url")
+
+
+  # Check if the repotiory exists. If true, aborting wirh message
+  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
+  fn=$(echo $(echo "$list"|grep -E "$1"))
+  pd=$(pwd)
+
+  if [[ "$fn" == "$1" ]]; then
+    echo "$1 = $fn$1" >> ~/.config/.github/.repo
+    echo "-- INFO -- Repository name add to REPO INSTALL LIST: ~/.config/.github/.repo"
+    return 1
+  fi
+
+
+
 
   echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git"
   echo git clone "git@github.com:$GITHUB_USERNAME/$1.git"

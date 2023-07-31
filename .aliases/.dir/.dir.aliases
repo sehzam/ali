@@ -28,8 +28,8 @@ alias 'dd'='rm -r' # ·a·
 # ( rep ) search replace sed command capsulated in a function call # ·e·
 alias 'rep'='sr' # ·a·
 
-# ( ... ) open current directory in Linux GUI # ·e·
-alias '...'='xdg-open .' # ·a·
+# ( .. ) xdg-open following parameter in GUI # ·e·
+alias '..'='xdg-open' # ·a·
 
 # ( h ) changes the directory to the user's home directory and lists its contents # ·e·
 alias h='cd ~ && ls' # ·a·
