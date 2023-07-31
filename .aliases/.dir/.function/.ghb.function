@@ -80,10 +80,6 @@ repo_delete() {
     echo "Usage: repo_delete <repository_name>"
     return 1
   fi
-  if [ $# -ne 1 ]; then
-    echo "Usage: repo_delete <repository_name>"
-    return 1
-  fi
   list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
   fn=$(echo "$list"|grep -E "\b$1\b")
   
@@ -125,8 +121,8 @@ repo_list=$(cat ~/.config/.github/.repo)
       # Prompt to delete the repository from the hard disk
       read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
-        rm -r -f "$repo_path"
-        echo "Directory successfully deleted from HARDDISK: $repo_path"
+        rm -rf "\b$repo_path\b"
+        echo "Directory successfully deleted from HARDDISK: \b$repo_path\b"
         echo "$repo_list" | grep -v "\b\/$repo_name\/" > ~/.config/.github/.repo
       else
         echo "Repository was not deleted from the hard disk."
