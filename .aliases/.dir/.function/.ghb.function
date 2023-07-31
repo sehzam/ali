@@ -16,9 +16,34 @@ setup(){
       update_login
   else
     echo "function"
-    $function
+    shift 1 # Überspringe den ersten Parameter (den Funktionennamen)
+    $function "$@" # Führe die Funktion mit den restlichen Parametern aus
   fi
 
+}
+
+token(){
+  cat ~/.config/.github/.login
+}
+
+token_setup() {
+  setup token "$@"
+}
+
+add_ssh_github_setup() {
+  setup add_ssh_github "$@"
+}
+
+repo_delete_setup() {
+  setup repo_delete "$@"
+}
+
+repo_list_setup() {
+  setup repo_list "$@"
+}
+
+git_setup_and_push_setup() {
+  setup git_setup_and_push "$@"
 }
 
 update_login(){ # ·c·
@@ -90,7 +115,6 @@ add_ssh_github(){ # ·c·
   # Emit SSH key to curl and call the API # ·e·
   curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
 } # ·c·
-
     
 # Define the function to delete a GitHub repository
 repo_delete() {
@@ -131,6 +155,7 @@ echo $repo_path
   modal
 
 repo_list=$(cat ~/.config/.github/.repo)
+
   # Process the user's answer
   case "$answer" in
     [Yy])
@@ -165,7 +190,6 @@ repo_list=$(cat ~/.config/.github/.repo)
   esac
 }
 
-
 # Define the function to delete a GitHub repository # ·e·
 repo_list() { # ·c·
   # Check if the repository name is provided as an argument # ·e·
@@ -174,16 +198,9 @@ repo_list() { # ·c·
   
 }
 
-# Define the function # ·e·
-# to initialize a new Git repository, # ·e· 
-# create a branch, # ·e·
-# make the first commit, # ·e· 
-# add remote, and # ·e·
-# push to the remote # ·e·
-
-
-
-
+# Define the function to initialize a new Git repository, # ·e· 
+# create a branch, make the first commit, # ·e· 
+# add remote, and push to the remote # ·e·
 
 git_setup_and_push() {
 

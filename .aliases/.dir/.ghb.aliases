@@ -8,8 +8,8 @@
 # ·o· ------------------  Alias -------------------- ·o· Alias
 
 # ( .ghb.token | .token ) show installed API Token - if not RUN ( .ghb.token.setup ) # ·e·
-alias ".ghb.token"="setup cat ~/.config/.github/.login" # ·a·
-alias ".token"="cat ~/.config/.github/.login" # ·a·
+alias ".ghb.token"="token" # ·a·
+alias ".token"="token" # ·a·
 
 # ( .ghb.token.setup | .token.setup ) PROMPT to add API Token - IMPORTANT for functionality # ·e·
 alias ".ghb.token.setup"="setup update_login" # ·a·
