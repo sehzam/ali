@@ -20,8 +20,11 @@ update_login(){ # ·c·
   fi # ·c·
   if ! [ "$username" = "" ]; then # ·c·
     if ! [ "$token" = "" ]; then # ·c·
-      echo "GITHUB_USERNAME='$username'  # ·c·
-GITHUB_TOKEN='$token'" >  ~/.config/.github/.login # ·c·
+      if ! [ -d ~/.config/.github/ ]; then
+        mkdir -p ~/.config/.github/
+      fi
+      echo "GITHUB_USERNAME='$username'">  ~/.config/.github/.login # ·c·
+      echo "GITHUB_TOKEN='$token'" >  ~/.config/.github/.login # ·c·
       echo ................................................... # ·c·
       cat ~/.config/.github/.login # ·c·
       echo ................................................... # ·c·
@@ -91,20 +94,20 @@ repo_delete() { # ·c·
 
 
 git_setup_and_push() {
+
   # Check if the repository name is provided as an argument
   if [ $# -ne 1 ]; then
     echo "Usage: git_setup_and_push <repository_name>"
     return 1
   fi
-
-  cd ~/projects/
-
+<
   local repo_name="$1"
   local api_url="https://api.github.com/user/repos"
+
   # JSON-Payload for the repository creation request
   local payload='{
     "name": "'"$repo_name"'",
-    "private": false,
+    "private": true,
     "auto_init": true
   }'
 
@@ -116,10 +119,17 @@ git_setup_and_push() {
     "$api_url")
 
   echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git"
-
+  echo "$1" >> ~/config
   git clone "git@github.com:$GITHUB_USERNAME/$1.git"
   cd "$1"
   rm README.md
+
+  if ! [ -d ~/.config/.github/ ]; then
+        mkdir -p ~/.config/.github/
+  fi
+  path=pwd
+  echo "$1 = $path" >> ~/.config/.github/.repo
+
 
   uc_string=${repo_name^^}
   current_year=$(date +%Y)
@@ -186,7 +196,6 @@ EOF
   # Display the Git status at the end
   git status
 
-  cd ..
 }
 
 # ·f· ______________________________________________ ·f· 
