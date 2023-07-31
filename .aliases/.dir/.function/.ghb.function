@@ -123,13 +123,14 @@ git_setup_and_push() {
   git clone "git@github.com:$GITHUB_USERNAME/$1.git"
   cd "$1"
   rm README.md
-
+################################################
   if ! [ -d ~/.config/.github/ ]; then
         mkdir -p ~/.config/.github/
   fi
   path=pwd
   > ~/.config/.github/.repo
   echo "$1 = $path" >> ~/.config/.github/.repo
+#­-#­--#­--#­--#­--#­--#­--#­--#­--#­--#­--#­--#­--#­--#­--#­--#­
 
 
   uc_string=${repo_name^^}
