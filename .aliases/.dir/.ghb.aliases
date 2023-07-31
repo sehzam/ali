@@ -23,45 +23,45 @@ echo '| .....   API Token Setup   .... |'|grep -E "\|" # ·c·
 echo '| .....   .gh.token.setup   .... |'|grep -E "\|" # ·c·
 echo '·________________________________·'|grep -E "·"  # ·c· 
 echo .
-echo 'Usage: .gh.ssh.create <ssh_title> to create or add SSH Key to GitHub'| grep -E "<|>|\.|:"
+echo 'Usage: .gh.ssh.create <ssh_title> to create or add SSH Key to GitHub'| grep -E "<|>|\.|:" # ·e·
 echo '·________________________________·'|grep -E "_"  # ·c·
 echo '|Add SSH KEY to GitHub via Token |'|grep -E "\|" # ·c·
 echo '| .....   .gh.ssh.create    .... |'|grep -E "\|" # ·c·
 echo '·________________________________·'|grep -E "·"  # ·c· 
-echo .
-echo 'Usage: .gh.repo.delete <repository_name> to delete GitHub repo'| grep -E "<|>|\.|:"
+echo .ä
+echo 'Usage: .gh.repo.delete <repository_name> to delete GitHub repo'| grep -E "<|>|\.|:" # ·e·
 echo '·________________________________·'|grep -E "_"  # ·c·
 echo '|  GitHub Repo Delete via Token  |'|grep -E "\|" # ·c·
 echo '| .....  .gh.repo.delete    .... |'|grep -E "\|" # ·c·
 echo '·________________________________·'|grep -E "·"  # ·c· 
 echo .
-echo 'Usage: .gh.repo.create <repository_name> to create GitHub repo'| grep -E "<|>|\.|:"
+echo 'Usage: .gh.repo.create <repository_name> to create GitHub repo'| grep -E "<|>|\.|:" # ·e·
 echo '·________________________________·'|grep -E "_"  # ·c·
 echo '|  GitHub Repo Create via Token  |'|grep -E "\|" # ·c·
 echo '| .....  .gh.repo.create    .... |'|grep -E "\|" # ·c·
 echo '·________________________________·'|grep -E "·"  # ·c· 
-echo .
+echo . # ·c·
 } # ·c·
 
 update_login(){ # ·c·
-  echo ...................................................
-  echo Please create a GitHub API Token in your GitHub Account
-  echo AND give repo and delete_repo 
-  echo permissions to this token
-  echo in  -- https://github.com/settings/tokens --
-  echo ...................................................
-  read -p "Please enter your GitHub USERNAME =  " username
-  read -p "Please enter your GitHub TOKEN =  " token
-  echo ...................................................
-  if [ "$username" = "" ]; then
-    return 1
-  fi
-  if [ "$token" = "" ]; then
-    return 1
-  fi
-  if ! [ "$username" = "" ]; then
-    if ! [ "$token" = "" ]; then
-      echo "GITHUB_USERNAME='$username'
+  echo ................................................... # ·c·
+  echo Please create a GitHub API Token in your GitHub Account # ·c·
+  echo AND give repo and delete_repo  # ·c·
+  echo permissions to this token # ·c·
+  echo in  -- https://github.com/settings/tokens -- # ·c·
+  echo ................................................... # ·c·
+  read -p "Please enter your GitHub USERNAME =  " username # ·c·
+  read -p "Please enter your GitHub TOKEN =  " token  # ·c·
+  echo ................................................... # ·c·
+  if [ "$username" = "" ]; then # ·c·
+    return 1 # ·c·
+  fi # ·c·
+  if [ "$token" = "" ]; then # ·c·
+    return 1 # ·c·
+  fi # ·c·
+  if ! [ "$username" = "" ]; then # ·c·
+    if ! [ "$token" = "" ]; then # ·c·
+      echo "GITHUB_USERNAME='$username'  # ·c·
 GITHUB_TOKEN='$token'" >  ~/.config/.github/.login # ·c·
       echo ................................................... # ·c·
       cat ~/.config/.github/.login # ·c·
@@ -109,7 +109,6 @@ fi # ·c·
 # SSH-Schlüssel der cURL-Anfrage übergeben und die API aufrufen # ·e·
 curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
 } # ·c·
-alias ".gh.ssh.create"="add_ssh_github" # ·a·
 
 
 # Define the function to delete a GitHub repository # ·e·
@@ -230,10 +229,11 @@ EOF
 # ·f· ------------------ TEMPLATE ------------------ ·f· TEMPLATE
 # ·f· ______________________________________________ ·f· 
 
-# ·o· ------------------- Alias -------------------- ·o· Alias
+# ·o· ------------------  Alias -------------------- ·o· Alias
 
 alias ".gh.info"="info" # ·a·
 alias ".gh.ssh"="show_ssh" # ·a·
+alias ".gh.ssh.create"="add_ssh_github" # ·a·
 alias ".gh.token"="cat ~/.config/.github/.login" # ·a·
 alias ".gh.token.setup"="update_login" # ·a·
 alias ".gh.repo.delete"="repo_delete" # ·a·
