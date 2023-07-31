@@ -14,7 +14,7 @@ alias 'x.z.e'='unzip' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
-# ·o· -------------------- 7Z ----------------------- ·o· 7Z options
+# ·o· -------------------- 7Z ---------------------- ·o· 7Z options
 
 # ( x.7z.c ) compress : 7z archive # ·e·
 # = (exam.) = x.7z.c a file.7z file1.txt file2.txt folder1/ # ·e·
