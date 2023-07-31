@@ -79,8 +79,9 @@ repo_delete() { # ·c·
   if [ $# -ne 1 ]; then # ·c·
     return 1 # ·c·
   fi # ·c·
-
+  repo_list
   local repo_name="$1" # ·c·
+  local repo_path=$(cat ~/.config/.github/.repo|grep -E "$1"|grep -oP "(?<=$1 = ).*") # ·c·
     echo "______________________________________________________" |grep -E "_"
     echo "_If you want _________________________________________" |grep -E "_" 
     echo "______________________________       ATTENTION       _" |grep -E "|_|ATTENTION" 
@@ -90,12 +91,14 @@ repo_delete() { # ·c·
     read -p "DELETE: ( Y/y ) | ABORT: ( N/n ) ? : " answer 
     echo "______________________________________________________" |grep -E "_"
 
-    cat ~/.config/.github/.repo|grep -E "ali"
+    
     if [ "$answer" = "n" ] || [ "$answer" = "N" ]; then
       return 1
     elif [ "$answer" = "y" ] || [ "$answer" = "Y" ]; then
-      sudo rm -r ~/projects/$1 # ·c·
       curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name" # ·c·
+      echo "Repository successfully deleted from GitHub: github.com/$GITHUB_USERNAME/$repo_name"
+      sudo rm -r $repo_path/$1 # ·c·
+      echo "Directory successfully deleted from HARDDISK: $repo_path/$repo_name"
     fi
 }
 
@@ -126,6 +129,7 @@ git_setup_and_push() {
     echo "Usage: git_setup_and_push <repository_name>"
     return 1
   fi
+  repo_list
 
   # Check if the repotiory exists. If true, aborting wirh message
   list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
@@ -159,10 +163,11 @@ git_setup_and_push() {
   list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
   fn=$(echo $(echo "$list"|grep -E "$1"))
   pd=$(pwd)
+  
 
   if [[ "$fn" == "$1" ]]; then
-    echo "$1 = $fn$1" >> ~/.config/.github/.repo
-    echo "-- INFO -- Repository name add to REPO INSTALL LIST: ~/.config/.github/.repo"
+    echo "$1 = $pd$1" >> ~/.config/.github/.repo
+    echo "-- INFO -- Repository path:::$pd$1:::added to REPO INSTALL LIST: ~/.config/.github/.repo"
     return 1
   fi
 
