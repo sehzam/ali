@@ -121,7 +121,7 @@ repo_list=$(cat ~/.config/.github/.repo)
       # Prompt to delete the repository from the hard disk
       read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
-        rm -rf "\b$repo_path\b"
+        rm -rf "$repo_path"
         echo "Directory successfully deleted from HARDDISK: $repo_path"
         echo "$repo_list" | grep -v "\/$repo_name\/" > ~/.config/.github/.repo
       else
