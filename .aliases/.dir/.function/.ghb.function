@@ -114,6 +114,7 @@ repo_delete() {
   }
   modal
 
+repo_list="~/.config/.github/.repo"
   # Process the user's answer
   case "$answer" in
     [Yy])
@@ -126,7 +127,7 @@ repo_delete() {
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
         rm -r -f "$repo_path"
         echo "Directory successfully deleted from HARDDISK: $repo_path"
-        echo "Directory successfully deleted from HARDDISK: $repo_path"
+        cat "$repo_list" | grep -v "\b\/$repo_name\/" > "$repo_list"
       else
         echo "Repository was not deleted from the hard disk."
       fi
