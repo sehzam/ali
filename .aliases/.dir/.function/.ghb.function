@@ -23,7 +23,7 @@ update_login(){ # ·c·
       if ! [ -d ~/.config/.github/ ]; then
         mkdir -p ~/.config/.github/
       fi
-      echo "GITHUB_USERNAME='$username'" >>  ~/.config/.github/.login # ·c·
+      echo "GITHUB_USERNAME='$username'" >  ~/.config/.github/.login # ·c·
       echo "GITHUB_TOKEN='$token'" >>  ~/.config/.github/.login # ·c·
       echo ................................................... # ·c·
       cat ~/.config/.github/.login # ·c·
