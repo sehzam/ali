@@ -112,13 +112,13 @@ git_setup_and_push() {
   }'
 
   # Create the new GitHub repository
-  local response=$(curl -X POST \
+    local response=$(curl -X POST \
     -H "Authorization: token $GITHUB_TOKEN" \
     -H "Accept: application/vnd.github.v3+json" \
     -d "$payload" \
     "$api_url")
 
-  echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git = $GITHUB_TOKEN"
+  echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git"
   echo git clone "git@github.com:$GITHUB_USERNAME/$1.git"
   git clone "git@github.com:$GITHUB_USERNAME/$1.git"
   cd "$1"
