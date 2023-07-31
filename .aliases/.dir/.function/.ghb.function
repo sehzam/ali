@@ -1,0 +1,189 @@
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ Function ------------------ ·f·  Function
+# ·f· ______________________________________________ ·f· 
+
+update_login(){ # ·c·
+  echo ................................................... # ·c·
+  echo Please create a GitHub API Token in your GitHub Account # ·c·
+  echo AND give repo and delete_repo  # ·c·
+  echo permissions to this token # ·c·
+  echo in  -- https://github.com/settings/tokens -- # ·c·
+  echo ................................................... # ·c·
+  read -p "Please enter your GitHub USERNAME =  " username # ·c·
+  read -p "Please enter your GitHub TOKEN =  " token  # ·c·
+  echo ................................................... # ·c·
+  if [ "$username" = "" ]; then # ·c·
+    return 1 # ·c·
+  fi # ·c·
+  if [ "$token" = "" ]; then # ·c·
+    return 1 # ·c·
+  fi # ·c·
+  if ! [ "$username" = "" ]; then # ·c·
+    if ! [ "$token" = "" ]; then # ·c·
+      echo "GITHUB_USERNAME='$username'  # ·c·
+GITHUB_TOKEN='$token'" >  ~/.config/.github/.login # ·c·
+      echo ................................................... # ·c·
+      cat ~/.config/.github/.login # ·c·
+      echo ................................................... # ·c·
+    fi # ·c·
+  fi # ·c·
+} # ·c·
+show_ssh(){ # ·c·
+    if [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
+      echo "{ RSA } SSH KEY" # ·c·
+        cat ~/.ssh/id_rsa.pub # ·c·
+      echo "{ RSA } SSH KEY" # ·c·
+    fi # ·c·
+    if [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
+      echo "{ ED25519 } SSH KEY" # ·c·
+        cat ~/.ssh/id_ed25519.pub # ·c·
+      echo "{ ED25519 } SSH KEY" # ·c·
+    fi # ·c·
+} # ·c·
+
+# Add SSH -RSA- -ED- KEY to your GitHub Account # ·e· 
+add_ssh_github(){ # ·c·
+  # Check if the repository name is provided as an argument # ·e·
+if [ $# -ne 1 ]; then # ·c·
+  return 1 # ·c·
+fi # ·c·
+
+if ! [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
+  if ! [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
+    read -p "-NO SSH KEY - FOUND. Which cert you want? type { rsa } for RSA SHH Key -or- { ed } for ED25519 SSH Key = " key  # ·c·
+    if [ "$key" = "rsa" ]; then # ·c·
+      ssh-keygen -t rsa -b 2048 # ·c·
+    fi # ·c·
+    if [ "$key" = "ed" ]; then # ·c·
+      ssh-keygen -t ed25519 # ·c·
+    fi # ·c·
+  fi # ·c·
+fi # ·c·
+
+if [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
+  ssh_key=$(cat ~/.ssh/id_rsa.pub) # ·c·
+elif [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
+    ssh_key=$(cat ~/.ssh/id_ed25519.pub) # ·c·
+fi # ·c·
+# Emit SSH key to curl and call the API # ·e·
+curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
+} # ·c·
+
+
+# Define the function to delete a GitHub repository # ·e·
+repo_delete() { # ·c·
+  # Check if the repository name is provided as an argument # ·e·
+  if [ $# -ne 1 ]; then # ·c·
+    return 1 # ·c·
+  fi # ·c·
+
+  local repo_name="$1" # ·c·
+  sudo rm -r ~/Documents/$1 # ·c·
+  curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name" # ·c·
+}
+
+# Define the function # ·e·
+# to initialize a new Git repository, # ·e· 
+# create a branch, # ·e·
+# make the first commit, # ·e· 
+# add remote, and # ·e·
+# push to the remote # ·e·
+
+git_setup_and_push() { # ·c·
+  # Check if the repository name is provided as an argument # ·e·
+  if [ $# -ne 1 ]; then # ·c·
+    echo "Usage: git_setup_and_push <repository_name>" # ·c·
+    return 1 # ·c·
+  fi # ·c·
+  cd ~/Documents/ # ·c·
+  cd ~/Dokumente/ # ·c·
+  local repo_name="$1" # ·c·
+  local api_url="https://api.github.com/user/repos" # ·c·
+  # JSON-Payload for the repository creation request # ·e·
+  local payload='{ # ·c·
+    "name": "'$repo_name'", # ·c·
+    "private": false, # ·c·
+    "auto_init": true # ·c·
+  }' # ·c·
+  # Create the new GitHub repository # ·e·
+  local response=$(curl -X POST \  # ·c·
+    -H "Authorization: token $GITHUB_TOKEN" \ # ·c·
+    -H "Accept: application/vnd.github.v3+json" \ # ·c·
+    -d "$payload" \ # ·c·
+    "$api_url") # ·c·
+    echo https://"$GITHUB_TOKEN"@github.com/$GITHUB_USERNAME/$1.git # ·c·
+    git clone https://"$GITHUB_TOKEN"@github.com/$GITHUB_USERNAME/$1.git # ·c·
+    cd "$1" # ·c·
+    rm README.md # ·c·
+
+input_string="$1" # ·c·
+uc_string=$(echo "$input_string" | tr '[:lower:]' '[:upper:]') # ·c·
+current_year=$(date +%Y) # ·c·
+
+# Write the contetnt to the README.md file # ·e·
+cat > README.md << EOF
+---
+#
+# $(echo "$uc_string" | tr -d '\n' | sed 's/./ & /g')
+# 
+---
+EOF
+cat >> README.md << EOF
+> __Content__:
+  - For evolving workflow speed.
+    - ...
+    - ...
+    - ...
+---
+## Features
+
+> __Functions__
+  - ...
+  - ...
+  - ...
+---
+EOF
+
+
+cat >> README.md << EOF
+## Installation
+
+> For the first __Installation:__
+
+- ___Linux__ & __macOS___:
+  - run in the __Terminal__:
+  - ...
+  - ...
+  - ...
+---
+## Usage
+
+> __type commands__
+  - ...
+  - ...
+  - ...
+---
+## Licence
+
+> M I T
+---
+## Contributors & Authors
+> Author: ${GITHUB_USERNAME} © ${current_year}
+---
+EOF
+    # Add the README.md to the staging area # ·e·
+    git add README.md # ·c·
+
+    # Make the initial commit with the repository name as the commit message # ·e·
+    git commit -m "The Project begins" # ·c·
+    git push # ·c·
+    # Display the Git status at the end # ·e·
+    git status # ·c·
+    cd .. && c # ·c·
+    code ./$1/ # ·c·
+    code ./$1/README.md # ·c·
+}
+
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ Function ------------------ ·f·  Function
+# ·f· ______________________________________________ ·f· 

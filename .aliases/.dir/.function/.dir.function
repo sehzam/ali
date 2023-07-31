@@ -1,0 +1,38 @@
+
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ Functions  ---------------- ·f· Directory Control System
+# ·f· ______________________________________________ ·f· 
+#
+# ·e· ( START ) = { grep and highlight pattern in file }
+    grp() { # ·c·
+      grep -E "$1" "$2" # ·c·
+    } # ·c·
+#
+# ·e· ·· START ·· = { make a backup of file given as parameter with timestamp }
+bk() { # ·c·
+  # ·e· = alias = .bk
+    cp "$1" "$1_$(date '+%Y%m%d%H%M%S').bak" # ·c· 
+} # ·c· 
+#
+# ·e· ·· START ·· = { create folder recursively and enter them }
+cf() { # ·c·
+  # ·e· = alias = .cf
+    mkdir -p "$1" && cd "$1" # ·c·
+} # ·c· 
+#
+# ·e· ·· START ·· = { searchs for string and replace the in file }
+sr() { # ·c·
+  # ·e· = alias = .sr
+    sed -i "s/$1/$2/g" "$3" # ·c· 
+} # ·c· 
+#
+copy_create_folder() { # ·c· 
+  # ·e· # Get the last argument as the destination
+    local destination="${@: -1}" # ·c·  
+    mkdir -p "$destination" # ·c· 
+  # ·e· # Shift all arguments except the last one (destination)
+    shift $(( $# - 1 )) # ·c·  
+    cp -r "$@" "$destination" # ·c· 
+} # ·c· 
+#
+# ·f· ------------------ Functions  ---------------- ·f· Directory Control System

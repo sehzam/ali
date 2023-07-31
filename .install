@@ -42,7 +42,9 @@ echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
 #
 directory_to_search="$HOME/ali-main/.aliases/.dir/"
+directory_to_search_function="$HOME/ali-main/.aliases/.dir/"
 directory_to_save="$HOME/.aliases/.dir/"
+directory_to_save_function="$HOME/.aliases/.dir/.function"
 output_file="$HOME/.aliases/.bin/.ali.list"
 output_file_var="$HOME/.aliases/.bin/.ali.list.names"
 search_pattern=".***.aliases"
@@ -58,13 +60,21 @@ if [ -s "$output_file" ]; then # ·c·
     while read -r list; do # ·c·
         # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
           if [ -f "$directory_to_search$list" ]; then # ·c· 
-                echo "copy file: $list  ---> $directory_to_save"  
+                echo "copy aliases file: $list  ---> $directory_to_save"  
                     cp -r $directory_to_search$list $directory_to_save$list  
           fi # ·c· 
     done < "$output_file" # ·c·
 fi # ·c·
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
-
+if [ -s "$output_file_var" ]; then # ·c·
+    while read -r list; do # ·c·
+        # ·e· ( INFO ) If the output file exists, than source it. Check, if file exists as regular file  
+          if [ -f "$directory_to_search$list" ]; then # ·c· 
+                echo "copy function file: $list  ---> $directory_to_save"  
+                    cp -r $directory_to_search_function.$list.function $directory_to_save_function.$list.function  
+          fi # ·c· 
+    done < "$output_file_var" # ·c·
+fi # ·c·
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 
 # Extract the first letter and converts it into Capital
