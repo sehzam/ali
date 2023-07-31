@@ -11,7 +11,9 @@ echo ..............Installation started !
 echo ______________________________________________________
 mkdir -p ~/.aliases/.bin/
 mkdir -p ~/.aliases/.dir/.function/
+mkdir -p ~/.aliases/.dir/.template/
 mkdir -p ~/.aliases/.list/
+mkdir -p ~/.aliases/.list/.function/
 #
 echo ·________________________________· |grep -E "_"  
 echo "| copying files to directory:    |" ~/.aliases/ |grep -E "\|"
@@ -32,9 +34,8 @@ cp -Rp ./ali-main/.aliases/.bin/.ali.function ~/.aliases/.bin/
 echo ......Ali Function commands : ~/.aliases/.bin/.ali.function
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 ##
-cp -Rp ./ali-main/.aliases/.list/ ~/.aliases/
-cp -Rp ./ali-main/.aliases/.list/.list.template ~/.aliases/.list/
-echo .......... Listing Template : ~/.aliases/.list/.list.template
+cp -Rp ./ali-main/.aliases/.list/.function/.list.function ~/.aliases/.list/.function/
+echo .......... Listing Template : ~/.aliases/.list/.function/.list.function
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 #
 echo ·________________________________· |grep -E "_" 
