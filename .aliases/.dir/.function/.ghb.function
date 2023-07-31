@@ -118,7 +118,7 @@ git_setup_and_push() {
     -d "$payload" \
     "$api_url")
 
-  echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git"
+  echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git = $GITHUB_TOKEN"
   git clone "git@github.com:$GITHUB_USERNAME/$1.git"
   cd "$1"
   rm README.md
