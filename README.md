@@ -64,32 +64,29 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 > #### Entry Points
 |        Entry Point         |         Explaination                   |
 |----------------------------|----------------------------------------|
-| __`. a l i`__              | cat ~/.bash_aliases ( __R A W__ output)|
+| __`. a l i`__              | cat ~/.bash_aliases                    |
 |-|-|
 | __`. a l i . a`__          | cat ~/.bash_aliases (only alias)       |
 | __`. a l i . e`__          | cat ~/.bash_aliases (explaination)     |
 | __`. a l i . f`__          | cat ~/.bash_aliases (funtions)         |
 |-|-|
-| __`. a l l . a`__          | prints all aliases (only alias)        |
-| __`. a l l . e`__          | prints all aliases (explaination)      |
-| __`. a l l . f`__          | prints all aliases (functions)         |
 
 ---
 
 > #### Alias Lists
 |        Lists               |            Explaination                  |
 |----------------------------|------------------------------------------|
-| __`. d i r`__              | cat ~/.aliases/.dir.aliases ( __R A W__ )| 
-| __`. f s c`__              | cat ~/.aliases/.fsc.aliases ( __R A W__ )| 
-| __`. g i t`__              | cat ~/.aliases/.git.aliases ( __R A W__ )| 
-| __`. n e t`__              | cat ~/.aliases/.net.aliases ( __R A W__ )| 
-| __`. o w n`__              | cat ~/.aliases/.own.aliases ( __R A W__ )| 
-| __`. s y s`__              | cat ~/.aliases/.sys.aliases ( __R A W__ )| 
-| __`. z i p`__              | cat ~/.aliases/.zip.aliases ( __R A W__ )| 
+| __`. d i r`__              | cat ~/.aliases/.dir.aliases              | 
+| __`. f s c`__              | cat ~/.aliases/.fsc.aliases              | 
+| __`. g i t`__              | cat ~/.aliases/.git.aliases              | 
+| __`. n e t`__              | cat ~/.aliases/.net.aliases              | 
+| __`. o w n`__              | cat ~/.aliases/.own.aliases              | 
+| __`. s y s`__              | cat ~/.aliases/.sys.aliases              | 
+| __`. z i p`__              | cat ~/.aliases/.zip.aliases              | 
 |-|-|
-| __`. " * " . a`__          | cat ~/.aliases/." * ".aliases (only alias)  |
-| __`. " * " . e`__          | cat ~/.aliases/." * ".aliases (explaination)|
-| __`. " * " . f`__          | cat ~/.aliases/." * ".aliases (functions)   |
+| __`. * * * . a`__          | cat ~/.aliases/.* * *.aliases (only alias)  |
+| __`. * * * . e`__          | cat ~/.aliases/.* * *.aliases (explaination)|
+| __`. * * * . f`__          | cat ~/.aliases/.* * *.aliases (functions)   |
 
 ---
 ## Licence
