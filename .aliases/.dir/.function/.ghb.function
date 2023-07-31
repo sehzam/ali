@@ -120,7 +120,7 @@ repo_delete() {
       # Prompt to delete the repository from the hard disk
       read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
-        rm -r "$repo_path"
+        rm -r -f "$repo_path"
         echo "Directory successfully deleted from HARDDISK: $repo_path/$repo_name"
       else
         echo "Repository was not deleted from the hard disk."
@@ -201,11 +201,7 @@ git_setup_and_push() {
   if [[ "$fn" == "$1" ]]; then
     echo "$1 = $pd/$1/" >> ~/.config/.github/.repo
     echo "-- INFO -- Repository path: : :  $pd/$1  : : : added to REPO INSTALL LIST: ~/.config/.github/.repo"
-    return 1
   fi
-
-
-
 
   echo "GitHub Repository URL: https://github.com/$GITHUB_USERNAME/$1.git"
   echo git clone "git@github.com:$GITHUB_USERNAME/$1.git"

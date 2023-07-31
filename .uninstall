@@ -14,7 +14,7 @@ if [ -d ~/.aliases ]; then
     echo ______________________________________________________
     echo ..................alias folder detected
     echo ......~/.aliases/
-        rm -r  ~/.aliases/
+        rm -f  -r  ~/.aliases/
     echo ..................folder deleted
 fi
 echo ______________________________________________________
