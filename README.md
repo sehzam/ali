@@ -84,9 +84,9 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 | __`. s y s`__              | cat ~/.aliases/.list/.sys.aliases              | 
 | __`. z i p`__              | cat ~/.aliases/.list/.zip.aliases              | 
 |-|-|
-| __`. * * * . a`__          | cat ~/.aliases/.dir/.* * *.aliases (only alias)  |
-| __`. * * * . e`__          | cat ~/.aliases/.dir/.* * *.aliases (explaination)|
-| __`. * * * . f`__          | cat ~/.aliases/.dir/.* * *.aliases (functions)   |
+| __`. *** . a`__          | cat ~/.aliases/.dir/.***.aliases (only alias)  |
+| __`. *** . e`__          | cat ~/.aliases/.dir/.***.aliases (explaination)|
+| __`. *** . f`__          | cat ~/.aliases/.dir/.***.aliases (functions)   |
 
 ---
 ## Licence
