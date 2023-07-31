@@ -78,7 +78,7 @@ repo_delete() { # ·c·
   fi # ·c·
 
   local repo_name="$1" # ·c·
-  sudo rm -r ~/Documents/$1 # ·c·
+  sudo rm -r ~/projects/$1 # ·c·
   curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name" # ·c·
 }
 
