@@ -169,7 +169,8 @@ git_setup_and_push() {
   list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
   fn=$(echo $(echo "$list"|grep -E "$1"))
 
-  if [[ "$fn" == "$1" ]]; thenecho "-----------------------------------"
+  if [[ "$fn" == "$1" ]]; then
+    echo "-----------------------------------"
     echo "----- Available Repositories ------"
     repo_list
     echo "-----------------------------------"

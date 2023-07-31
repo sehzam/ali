@@ -20,10 +20,10 @@ alias 'cf'='cf' # ·a·
 alias 'ccf'='copy_create_folder' # ·a·
 
 # ( s.dd ) delete recursively folders and files # ·e· 
-alias "s.dd"="sudo rm -r" # ·a·
+alias "s.dd"="sudo rm -rf" # ·a·
 
 # ( dd ) delete folder or file recursively # ·e·
-alias 'dd'='rm -r' # ·a·
+alias 'dd'='rm -rf' # ·a·
 
 # ( rep ) search replace sed command capsulated in a function call # ·e·
 alias 'rep'='sr' # ·a·
