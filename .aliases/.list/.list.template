@@ -14,10 +14,10 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· ______________________________________________ ·o· 
 
 # ·o· ______________________________________________ ·o· 
-# ·o· --------------   R A W Output ---------------- ·o· R A W Output
-# ( .$alias_file.raw ): RAW output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .$alias_file.raw ) : RAW output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
 alias '.$alias_file.raw'='cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
-# ( .$alias_file.l ): RAW LIST output · ~/.aliases/.list/.$alias_file.lists  # ·e·
+# ( .$alias_file.l )   : RAW output · ~/.aliases/.list/.$alias_file.lists  # ·e·
 alias '.$alias_file.l'='cat ~/.aliases/.list/.$alias_file.lists' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
@@ -30,7 +30,7 @@ ${alias_file}_e() { # ·c·
   c && .$alias_file.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
 } # ·c·
 ${alias_file}_f() { # ·c· 
-  c && .$alias_file.raw | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|echo |\#|\|' # ·c·
+  c && .$alias_file.raw | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|#|\}|# ·f·|# ·c·|# ·v·|--|echo |\|' # ·c·
 } # ·c·
 ${alias_file}_l() { # ·c·
   c && .$alias_file.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
@@ -38,7 +38,7 @@ ${alias_file}_l() { # ·c·
 # ·f· ---------------------------------------------- ·f· 
 
 # ·o· ______________________________________________ ·o· 
-# ·o· ------------------ Aliases  ------------------ ·o· Aliases
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
 # ( .$alias_file )   : (ENTRY POINT) · lists ~/.aliases/.list/.$alias_file.lists # ·e·
 alias '.$alias_file'='c && ${alias_file}_l' # ·a·
 # ( .$alias_file.a ) : ( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·

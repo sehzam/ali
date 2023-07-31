@@ -76,7 +76,7 @@ echo "
     while read -r list; do # ·c·
     echo "Add Entry Rows for < ${list} > to your file : ~/.aliases/.ali.aliases"  
     echo "
-# ( .$list )   : (ENTRY POINT: ${list^^}) · ~/.aliases/.list/.$list.lists # ·e· " >> ~/.aliases/.ali.aliases
+# ( .$list )   : ( ENTRY POINT: ${list^^} ) · ~/.aliases/.list/.$list.lists # ·e· " >> ~/.aliases/.ali.aliases
     done < "$output_file_var" # ·c·
 echo "# ·o· ---------------------------------------------- ·o· " >> ~/.aliases/.ali.aliases
 fi # ·c·

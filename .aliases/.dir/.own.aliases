@@ -1,42 +1,53 @@
 # ·o· ______________________________________________ ·o· 
-# ·o· ----------------- Personal ------------------- ·o· Personal Aliases
+# ·o· ----------------  Personal ------------------- ·o· Personal Aliases
 # ·o· ______________________________________________ ·o· 
-#
-# ·o· ------------ Personal Directories ------------ ·o· Personal Aliases
-#
+
+# ·o· ------------ Personal Directories ------------ ·o· Personal Directories
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..a ) change directory : current project & show (hidden )content # ·e·
 alias '..a'='cd ~/Documents/ali/ && ll' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..e ) change directory : encounter notes & show content # ·e·
 alias '..e'='cd ~/Documents/SPICED/vectorized-vegeta-encounter-notes/ && ls' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..s ) change directory : students code & show content # ·e·
 alias '..s'='cd ~/Documents/SPICED/vectorized-vegeta-student-code/ && ls' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..l ) change directory : ~/Downloads/ & show content # ·e·
 alias '..l'='cd ~/Downloads/ && ls' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..d ) change directory : ~/Documents/ & show content # ·e·
 alias '..d'='cd ~/Documents/ && ls' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..o ) change directory : ~/OneDrive/ & show content # ·e·
 alias '..o'='cd ~/OneDrive/ && ls' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..v ) change directory : ~/Videos/ & show content # ·e·
 alias '..v'='cd ~/Videos/ && ls' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..m ) change directory : ~/Music/ & show content # ·e·
 alias '..m'='cd ~/Music/ && ls' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..p ) change directory : ~/Pictures/ & show content # ·e·
 alias '..p'='cd ~/Pictures/ && ls' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
 # ( ..t ) change directory : ~/Desktop/ & show content # ·e·
 alias '..t'='cd ~/Desktop/ && ls' # ·a·
-#
-# ·o· ------------ Personal Directories ------------ ·o· Personal Aliases
-#
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ------------ Personal Directories ------------ ·o· Personal Directories
+
 # ·o· ______________________________________________ ·o· 
-# ·o· ----------------- Personal ------------------- ·o· Personal Aliases
+# ·o· ----------------  Personal ------------------- ·o· Personal Aliases
 # ·o· ______________________________________________ ·o· 
