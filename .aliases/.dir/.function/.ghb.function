@@ -128,6 +128,7 @@ git_setup_and_push() {
         mkdir -p ~/.config/.github/
   fi
   path=pwd
+  > ~/.config/.github/.repo
   echo "$1 = $path" >> ~/.config/.github/.repo
 
 
