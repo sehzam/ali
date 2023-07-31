@@ -8,7 +8,7 @@
  
 # ·o· ______________________________________________ ·o·
 # ·o· ---------------- Loadings -------------------- ·o· Loadings
-. ~/.aliases/.bin/.ali.function # ·c· 
+. ~/.aliases/.bin/.function/.ali.function # ·c· 
 # ( c ): clears the terminal # ·e· 
 alias c='clear' # ·a· 
 # ·o· ---------------------------------------------- ·o· 
@@ -34,29 +34,14 @@ alias ".ali.raw"='cat ~/.aliases/.ali.aliases' # ·a·
 alias ".ali.function"='cat ~/.aliases/.bin/.ali.function' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
-# ·f· ______________________________________________ ·f· 
-# ·f· ------------------ Functions  ---------------- ·f· .ali Functions
-ali() { # ·c·
-  c && .ali.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
-} # ·c·
-ali_a() { # ·c·
-  c && .ali.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
-} # ·c·
-ali_f() { # ·c· 
-   c && .ali.raw | grep -v '# ·a·' | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|echo |\#|\|' # ·c·
-} # ·c·
-ali_ff() { # ·c· 
-   c && .ali.function | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|function|if |then|fi |do|done|while' # ·c·
-} # ·c·
-# ·f· ---------------------------------------------- ·f· 
-
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Aliases
+
 # ( .ali )   : ( ENTRY POINT ) · ~/.aliases/.ali.aliases  # ·e·
 alias ".ali"='c && ali' # ·a·
 # ( .ali.a ) : ( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.a"='c && ali_a' # ·a·
+# ( .ali.e ) : ( explaination ) · lists ~/.aliases/.ali.aliases # ·e·
+alias ".ali.e"='c && ali' # ·a·
 # ( .ali.f ) : ( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='c && ali_f' # ·a·
-# ( .ali.ff ): ( separeted functions... ) · lists ~/.aliases/.bin/.ali.function.aliases # ·e·
-alias ".ali.ff"='c && ali_ff' # ·a·

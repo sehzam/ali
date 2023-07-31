@@ -18,6 +18,27 @@ if [ -s "$output_file" ]; then # ·c·
     
     done < "$output_file" # ·c·
 fi # ·c·
+
+
+# ( .ali.raw ): RAW output · ~/.aliases/.ali.aliases  # ·e·
+alias ".ali.raw"='cat ~/.aliases/.ali.aliases' # ·a·
+
+# ( .ali.func ): RAW output · ~/.aliases/.bin/.ali.function  # ·e·
+alias ".ali.function"='cat ~/.aliases/.bin/.ali.function' # ·a·
+
+ali() { # ·c·
+  c && .ali.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+ali_a() { # ·c·
+  c && .ali.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+ali_f() { # ·c· 
+   c && .ali.function | grep -v '# ·a·' | grep -v '·o·' | grep -v '·e·'| grep -E '\{|#|\} \# ·c·|\# ·f·|# ·c·|·v·|--|·f·|echo |\#|\|' # ·c·
+} # ·c·
+
+
+# ·f· ---------------------------------------------- ·f· 
+
 source ~/.aliases/.list/.function/.list.function
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions  ---------------- ·f· .ali Entry Point
