@@ -122,8 +122,8 @@ repo_list=$(cat ~/.config/.github/.repo)
       read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
         rm -rf "\b$repo_path\b"
-        echo "Directory successfully deleted from HARDDISK: \b$repo_path\b"
-        echo "$repo_list" | grep -v "\b\/$repo_name\/" > ~/.config/.github/.repo
+        echo "Directory successfully deleted from HARDDISK: $repo_path"
+        echo "$repo_list" | grep -v "\/$repo_name\/" > ~/.config/.github/.repo
       else
         echo "Repository was not deleted from the hard disk."
       fi
@@ -203,7 +203,7 @@ git_setup_and_push() {
   
 
   if [[ "$fn" == "$1" ]]; then
-    echo "\b$1\b = $pd/\b$1\b/" >> ~/.config/.github/.repo
+    echo "$1 = $pd/$1/" >> ~/.config/.github/.repo
     echo "-- INFO -- Repository path: : :  $pd/\b$1\b  : : : added to REPO INSTALL LIST: ~/.config/.github/.repo"
   fi
 
