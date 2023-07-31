@@ -3,7 +3,7 @@
 # ·f· ______________________________________________ ·f· 
 
 setup(){
-    echo "enter"
+    echo wwwwww"enter"
   local function=$1
     echo "VAR"
     echo "$1"
@@ -31,23 +31,23 @@ token(){
 }
 
 token_setup() {
-  setup token "$@"
+  setup $token "$@"
 }
 
 add_ssh_github_setup() {
-  setup add_ssh_github "$@"
+  setup $add_ssh_github "$@"
 }
 
 repo_delete_setup() {
-  setup repo_delete "$@"
+  setup $repo_delete "$@"
 }
 
 repo_list_setup() {
-  setup repo_list "$@"
+  setup $repo_list "$@"
 }
 
 git_setup_and_push_setup() {
-  setup git_setup_and_push "$@"
+  setup $git_setup_and_push "$@"
 }
 
 update_login(){ # ·c·
