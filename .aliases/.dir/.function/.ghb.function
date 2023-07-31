@@ -3,7 +3,11 @@
 # ·f· ______________________________________________ ·f· 
 
 setup(){
+    echo "enter"
   local function=$1
+    echo "VAR"
+    echo "$1"
+    echo "VAR"
 
   if [ -f ~/.config/.github/.login ]; then
 
