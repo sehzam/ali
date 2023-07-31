@@ -8,31 +8,30 @@
 # ·o· ------------------  Alias -------------------- ·o· Alias
 
 # ( .ghb.token ) show installed API Token - if not RUN ( .ghb.token.setup ) # ·e·
-alias ".ghb.token"="cat ~/.config/.github/.login" # ·a·
-
-# ( .ghb.token ) show installed API Token - if not RUN ( .ghb.token.setup ) # ·e·
-alias ".ghb.token"="cat ~/.config/.github/.login" # ·a·
+alias ".ghb.token"="setup cat ~/.config/.github/.login" # ·a·
 
 # ( .ghb.token.setup ) PROMPT to add API Token - IMPORTANT for functionality # ·e·
 alias ".ghb.token.setup"="update_login" # ·a·
 
-# ( .ghb.ssh ) show available ssh keys # ·e·
+# ( .ghb.ssh | .ssh ) show available ssh keys # ·e·
 alias ".ghb.ssh"="show_ssh" # ·a·
+alias ".ssh"=".ghb.ssh" # ·a·
 
-# ( .ghb.ssh.create ) send ssh keys to GitHub via API Token # ·e·
-# = .ghb.ssh.create <ssh-key-name for GitHub> if key exists sends it via Token # ·e·
-alias ".ghb.ssh.create"="add_ssh_github" # ·a·
+# ( .ghb.ssh.create | .ssh.create ) <ssh-key-name> send ssh keys to GitHub via API Token # ·e·
+alias ".ghb.ssh.create"="setup add_ssh_github" # ·a·
+alias ".ssh.create"=".ghb.ssh.create" # ·a·
 
-# ( .ghb.repo.show ) show Repositories with API Token # ·e·
-alias ".ghb.repo.show"="repo_list" # ·a·
+# ( .ghb.repo | .repo ) show Repositories with API Token # ·e·
+alias ".ghb.repo"="setup repo_list" # ·a·
+alias ".repo"=".ghb.repo" # ·a·
 
-# ( .ghb.repo.create ) send ssh keys to GitHub via API Token # ·e·
-# = .ghb.repo.create <repo-name for GitHub> via Token # ·e·
-alias ".ghb.repo.create"="git_setup_and_push" # ·a·
+# ( .ghb.repo.create | .repo.create ) <repo-name> send ssh keys to GitHub via API Token # ·e·
+alias ".ghb.repo.create"="setup git_setup_and_push" # ·a·
+alias ".repo.create"=".ghb.repo.create" # ·a·
 
-# ( .ghb.repo.delete ) send ssh keys to GitHub via API Token # ·e·
-# = .ghb.repo.create <repo-name to DELETE> via Token # ·e·
-alias ".ghb.repo.delete"="repo_delete" # ·a·
+# ( .ghb.repo.delete | .repo.delete) <repo-name> send ssh keys to GitHub via API Token # ·e·
+alias ".ghb.repo.delete"="setup repo_delete" # ·a·
+alias ".repo.delete"=".ghb.repo.delete" # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 

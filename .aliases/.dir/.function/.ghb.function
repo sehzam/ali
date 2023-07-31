@@ -2,6 +2,23 @@
 # ·f· ------------------ Function ------------------ ·f·  Function
 # ·f· ______________________________________________ ·f· 
 
+setup(){
+  local functions=$1
+
+  if [ -f ~/.config/.github/.login ]; then
+
+    if [[ "$GITHUB_TOKEN" == "" ]] | [[ "$GITHUB_USERNAME" == "" ]]; then
+      update_login
+    fi
+  elif ! [ -f ~/.config/.github/.login ]; then
+    update_login
+  else
+    functions
+  fi
+
+}
+
+
 update_login(){ # ·c·
   echo ................................................... # ·c·
   echo Please create a GitHub API Token in your GitHub Account # ·c·
@@ -47,29 +64,29 @@ show_ssh(){ # ·c·
 # Add SSH -RSA- -ED- KEY to your GitHub Account # ·e· 
 add_ssh_github(){ # ·c·
   # Check if the repository name is provided as an argument # ·e·
-if [ $# -ne 1 ]; then # ·c·
-  return 1 # ·c·
-fi # ·c·
+  if [ $# -ne 1 ]; then # ·c·
+    return 1 # ·c·
+  fi # ·c·
 
-if ! [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
-  if ! [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
-    read -p "-NO SSH KEY - FOUND. Which cert you want? type { rsa } for RSA SHH Key -or- { ed } for ED25519 SSH Key = " key  # ·c·
-    if [ "$key" = "rsa" ]; then # ·c·
-      ssh-keygen -t rsa -b 2048 # ·c·
-    fi # ·c·
-    if [ "$key" = "ed" ]; then # ·c·
-      ssh-keygen -t ed25519 # ·c·
+  if ! [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
+    if ! [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
+      read -p "-NO SSH KEY - FOUND. Which cert you want? type { rsa } for RSA SHH Key -or- { ed } for ED25519 SSH Key = " key  # ·c·
+      if [ "$key" = "rsa" ]; then # ·c·
+        ssh-keygen -t rsa -b 2048 # ·c·
+      fi # ·c·
+      if [ "$key" = "ed" ]; then # ·c·
+        ssh-keygen -t ed25519 # ·c·
+      fi # ·c·
     fi # ·c·
   fi # ·c·
-fi # ·c·
 
-if [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
-  ssh_key=$(cat ~/.ssh/id_rsa.pub) # ·c·
-elif [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
-    ssh_key=$(cat ~/.ssh/id_ed25519.pub) # ·c·
-fi # ·c·
-# Emit SSH key to curl and call the API # ·e·
-curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
+  if [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
+    ssh_key=$(cat ~/.ssh/id_rsa.pub) # ·c·
+  elif [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
+      ssh_key=$(cat ~/.ssh/id_ed25519.pub) # ·c·
+  fi # ·c·
+  # Emit SSH key to curl and call the API # ·e·
+  curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
 } # ·c·
 
     
