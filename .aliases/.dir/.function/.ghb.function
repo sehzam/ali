@@ -3,17 +3,17 @@
 # ·f· ______________________________________________ ·f· 
 
 setup(){
-  local functions=$1
+  local function=$1
 
   if [ -f ~/.config/.github/.login ]; then
 
     if [[ "$GITHUB_TOKEN" == "" ]] | [[ "$GITHUB_USERNAME" == "" ]]; then
-    "$update_login"
+    update_login
     fi
   elif ! [ -f ~/.config/.github/.login ]; then
-    "$update_login"
+    update_login
   else
-    "$functions"
+    $function
   fi
 
 }
