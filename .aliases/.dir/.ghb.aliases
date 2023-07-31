@@ -7,31 +7,33 @@
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Alias -------------------- ·o· Alias
 
-# ( .ghb.token ) show installed API Token - if not RUN ( .ghb.token.setup ) # ·e·
-alias ".ghb.token"="cat ~/.config/.github/.login" # ·a·
+# ( .ghb.token | .token ) show installed API Token - if not RUN ( .ghb.token.setup ) # ·e·
+alias ".ghb.token"="setup cat ~/.config/.github/.login" # ·a·
+alias ".token"="setup cat ~/.config/.github/.login" # ·a·
 
-# ( .ghb.token.setup ) PROMPT to add API Token - IMPORTANT for functionality # ·e·
-alias ".ghb.token.setup"="update_login" # ·a·
+# ( .ghb.token.setup | .token.setup ) PROMPT to add API Token - IMPORTANT for functionality # ·e·
+alias ".ghb.token.setup"="setup update_login" # ·a·
+alias ".token.setup"="setup update_login" # ·a·
 
 # ( .ghb.ssh | .ssh ) show available ssh keys # ·e·
 alias ".ghb.ssh"="show_ssh" # ·a·
-alias ".ssh"=".ghb.ssh" # ·a·
+alias ".ssh"="show_ssh" # ·a·
 
 # ( .ghb.ssh.create | .ssh.create ) <ssh-key-name> send ssh keys to GitHub via API Token # ·e·
 alias ".ghb.ssh.create"="setup add_ssh_github" # ·a·
-alias ".ssh.create"="add_ssh_github" # ·a·
+alias ".ssh.create"="setup add_ssh_github" # ·a·
 
 # ( .ghb.repo | .repo ) show Repositories with API Token # ·e·
 alias ".ghb.repo"="setup repo_list" # ·a·
-alias ".repo"="repo_list" # ·a·
+alias ".repo"="setup repo_list" # ·a·
 
 # ( .ghb.repo.create | .repo.create ) <repo-name> send ssh keys to GitHub via API Token # ·e·
 alias ".ghb.repo.create"="setup git_setup_and_push" # ·a·
-alias ".repo.create"="git_setup_and_push" # ·a·
+alias ".repo.create"="setup git_setup_and_push" # ·a·
 
 # ( .ghb.repo.delete | .repo.delete) <repo-name> send ssh keys to GitHub via API Token # ·e·
 alias ".ghb.repo.delete"="setup repo_delete" # ·a·
-alias ".repo.delete"="repo_delete" # ·a·
+alias ".repo.delete"="setup repo_delete" # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
