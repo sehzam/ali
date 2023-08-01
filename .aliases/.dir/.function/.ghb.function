@@ -12,31 +12,29 @@ setup(){
   if [ -f ~/.config/.github/.login ]; then
 
     if [[ "$GITHUB_TOKEN" == "" ]] || [[ "$GITHUB_USERNAME" == "" ]] || [ -z ~/.config/.github/.login ]; then
-      echo ######################################
-      echo "TOKEN LOGIN DATA FILE is empty"
-      echo ######################################
+      echo --------------------------------------
+      echo "NOT DEFINED: GitHub API Token"
+      echo --------------------------------------
       update_login
-      return 1
     fi
       echo "function"
       shift 1 # Überspringe den ersten Parameter (den Funktionennamen)
       $function "$@" # Führe die Funktion mit den restlichen Parametern aus
 
   elif ! [ -f ~/.config/.github/.login ]; then
-    echo ######################################
-    echo "no TOKEN LOGIN DATA FILE is found"
-    echo ######################################
+      echo --------------------------------------
+    echo "NO FILE: GitHub API Token"
+      echo --------------------------------------
     update_login
   fi
 }
 ######################################
 token(){
   if ! [ -f ~/.github/.login ]; then
-    echo ######################################
-    echo "GitHub API Token : not installed"
-    echo ######################################
+      echo --------------------------------------
+    echo "NO FILE: GitHub API Token"
+      echo --------------------------------------
     update_login
-    echo ######################################
   else
     cat ~/.config/.github/.login
   fi
