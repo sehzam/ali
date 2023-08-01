@@ -26,11 +26,6 @@ setup(){
     fi
 
       ######################################
-      echo "\$function"
-      echo "shift 1 # Überspringe den ersten Parameter (den Funktionennamen)"
-      echo "\@function(\@1) @ # Führe die Funktion mit den restlichen Parametern aus"
-      ######################################
-      echo "$function"
       shift 1 # Überspringe den ersten Parameter (den Funktionennamen)
       $function "$@" # Führe die Funktion mit den restlichen Parametern aus
       ######################################
