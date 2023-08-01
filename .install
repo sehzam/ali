@@ -179,7 +179,7 @@ echo "
 info=$(<$output_file_final)
 echo -n "echo " >> ~/.aliases/.ali.aliases
 echo -n '"' >> ~/.aliases/.ali.aliases
-echo -n "(=| .ali $info|=)" >> ~/.aliases/.ali.aliases
+echo -n "(| .ali $info |)" >> ~/.aliases/.ali.aliases
 echo -n '"' >> ~/.aliases/.ali.aliases
 echo -n " | grep -E '\||\(|\)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
