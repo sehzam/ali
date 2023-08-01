@@ -2,9 +2,16 @@
 # ·f· ------------------ Function ------------------ ·f·  Function
 # ·f· ______________________________________________ ·f· 
 
-######################################
+############################################################################
+
 setup(){
-    echo "Check if --- GitHub API TOKEN --- installed ?"
+    
+     echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+    echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+    echo "Check"
+    echo "installed Tokens: ~/.config/.github"
+    echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+
   local function=$1
     echo "$1"
     echo "$2"
@@ -12,26 +19,39 @@ setup(){
   if [ -f ~/.config/.github/.login ]; then
 
     if [[ "$GITHUB_TOKEN" == "" ]] || [[ "$GITHUB_USERNAME" == "" ]]; then
-      echo --------------------------------------
+      echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
       echo "NOT DEFINED: GitHub API Token"
-      echo --------------------------------------
+      echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
       update_login
     fi
-      echo "function"
+
+      ######################################
+      echo "\$function"
+      echo "shift 1 # Überspringe den ersten Parameter (den Funktionennamen)"
+      echo "\@function(\@1) @ # Führe die Funktion mit den restlichen Parametern aus"
+      ######################################
+      echo "$function"
       shift 1 # Überspringe den ersten Parameter (den Funktionennamen)
       $function "$@" # Führe die Funktion mit den restlichen Parametern aus
+      ######################################
 
   elif ! [ -f ~/.config/.github/.login ]; then
-      echo --------------------------------------
-    echo "NO FILE: GitHub API Token"
-      echo --------------------------------------
-    update_login
+      echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+      echo "NO FILE: GitHub API Token"
+      echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+      update_login
   fi
+
 }
-######################################
+
+############################################################################
+
 token(){
     cat ~/.config/.github/.login
 }
+
+############################################################################
+
 token_setup() {
   setup token
 }
@@ -47,7 +67,8 @@ repo_list_setup() {
 git_setup_and_push_setup() {
   setup git_setup_and_push "$@"
 }
-######################################
+
+############################################################################
 
 update_login(){ # ·c·
   echo ................................................... # ·c·
@@ -78,7 +99,13 @@ update_login(){ # ·c·
     fi # ·c·
   fi # ·c·
 } # ·c·
+
+############################################################################
+
 show_ssh(){ # ·c·
+    echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+    echo "SSH Keys: installed in ~/.ssh/"
+    echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
   if [ -f ~/.ssh/id_rsa ] || [ -f ~/.ssh/id_ed25519 ]; then
 
     if [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
@@ -93,15 +120,15 @@ show_ssh(){ # ·c·
     fi # ·c·
 
   else
-    echo "ERROR: Directory not found: $repo_path"
-    # Process the user's answer
-    case "$ssh" in
-      
-      read -p "Which SSH KEY you want to create? 
+    echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+    echo "ERROR: no SSH keys found"
+    echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+      read -p "Which SSH KEY you want to create?
 ( ED/ed for ed25519 ) :
-( RSA/rsa for rsa )   :
-" create_ssh
-      
+( RSA/rsa for rsa )   :" ssh
+    echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+    # Process the user's answer
+    case "$ssh" in      
       [RSArsa])
         ssh-keygen -t rsa -b 2048 # ·c·
         ;;
@@ -115,6 +142,8 @@ show_ssh(){ # ·c·
   fi
 } # ·c·
 
+############################################################################
+
 # Add SSH -RSA- -ED- KEY to your GitHub Account # ·e· 
 add_ssh_github(){ # ·c·
   # Check if the repository name is provided as an argument # ·e·
@@ -124,7 +153,13 @@ add_ssh_github(){ # ·c·
 
   if ! [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
     if ! [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
-      read -p "-NO SSH KEY - FOUND. Which cert you want? type { rsa } for RSA SHH Key -or- { ed } for ED25519 SSH Key = " key  # ·c·
+      
+      echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+      read -p "Which SSH KEY you want to create?
+( ED/ed for ed25519 ) :
+( RSA/rsa for rsa )   :" key  # ·c·
+      echo "#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#"
+      
       if [ "$key" = "rsa" ]; then # ·c·
         ssh-keygen -t rsa -b 2048 # ·c·
       fi # ·c·
@@ -134,15 +169,17 @@ add_ssh_github(){ # ·c·
     fi # ·c·
   fi # ·c·
 
-  if [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
-    ssh_key=$(cat ~/.ssh/id_rsa.pub) # ·c·
-  elif [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
+  if [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
       ssh_key=$(cat ~/.ssh/id_ed25519.pub) # ·c·
+  elif [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
+    ssh_key=$(cat ~/.ssh/id_rsa.pub) # ·c·
   fi # ·c·
   # Emit SSH key to curl and call the API # ·e·
   curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·
 } # ·c·
     
+############################################################################
+
 # Define the function to delete a GitHub repository
 repo_delete() {
 
@@ -215,6 +252,8 @@ repo_list=$(cat ~/.config/.github/.repo)
   esac
 }
 
+############################################################################
+
 # Define the function to delete a GitHub repository # ·e·
 repo_list() { # ·c·
   # Check if the repository name is provided as an argument # ·e·
@@ -223,10 +262,11 @@ repo_list() { # ·c·
   
 }
 
+############################################################################
+
 # Define the function to initialize a new Git repository, # ·e· 
 # create a branch, make the first commit, # ·e· 
 # add remote, and push to the remote # ·e·
-
 git_setup_and_push() {
 
   # Check if the repository name is provided as an argument
@@ -350,6 +390,8 @@ EOF
   git status
 
 }
+
+############################################################################
 
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Function ------------------ ·f·  Function
