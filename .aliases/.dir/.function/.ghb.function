@@ -14,14 +14,16 @@ setup(){
     if [[ "$GITHUB_TOKEN" == "" ]] | [[ "$GITHUB_USERNAME" == "" ]]; then
     echo "empty"
      update_login
+     return 1
     fi
-  elif ! [ -f ~/.config/.github/.login ]; then
-    echo "no file"
-      update_login
-  else
     echo "function"
     shift 1 # Überspringe den ersten Parameter (den Funktionennamen)
     $function "$@" # Führe die Funktion mit den restlichen Parametern aus
+
+  elif ! [ -f ~/.config/.github/.login ]; then
+    echo "no file"
+      update_login
+      
   fi
 
 }
