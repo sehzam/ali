@@ -5,14 +5,13 @@
 setup(){
     echo "enter"
   local function=$1
-    echo "VAR"
     echo "$1"
-    echo "VAR"
+    echo "$@"
 
   if [ -f ~/.config/.github/.login ]; then
 
     if [[ "$GITHUB_TOKEN" == "" ]] || [[ "$GITHUB_USERNAME" == "" ]] || [ -z ~/.config/.github/.login ]; then
-    echo "empty"
+    echo "TOKEN LOGIN DATA FILE is empty"
      update_login
      return 1
     fi
@@ -21,11 +20,9 @@ setup(){
     $function "$@" # Führe die Funktion mit den restlichen Parametern aus
 
   elif ! [ -f ~/.config/.github/.login ]; then
-    echo "no file"
+    echo "no TOKEN LOGIN DATA FILE is found"
       update_login
-
   fi
-
 }
 
 token(){
@@ -134,7 +131,6 @@ repo_delete() {
   fn=$(echo "$list"|grep -E "\b$1\b")
   local repo_name="$1"
   local repo_path=$(grep -E "^$repo_name = " ~/.config/.github/.repo | grep -oP "(?<=$repo_name = ).*")
-  echo $repo_path
   # Check if the repository exists
   if ! echo "$fn" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named repository NOT FOUND!"
