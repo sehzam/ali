@@ -65,15 +65,15 @@ git_setup_and_push_setup() {
 ############################################################################
 
 update_login(){ # ·c·
-  echo ####################################### # ·c·
+  echo "#######################################" # ·c·
   echo Please create a GitHub API Token in your GitHub Account # ·c·
   echo AND give repo and delete_repo  # ·c·
   echo permissions to this token in   # ·c·
   echo -- https://github.com/settings/tokens -- # ·c·
-  echo ####################################### # ·c·
+  echo "#######################################" # ·c·
   read -p "Please enter your GitHub USERNAME =  " username # ·c·
   read -p "Please enter your GitHub TOKEN =  " token  # ·c·
-  echo ####################################### # ·c·
+  echo "#######################################" # ·c·
   if [ "$username" = " ]; then # ·c·
     return 1 # ·c·
   fi # ·c·
@@ -87,9 +87,9 @@ update_login(){ # ·c·
       fi
       echo "GITHUB_USERNAME='$username'" >  ~/.config/.github/.login # ·c·
       echo "GITHUB_TOKEN='$token'" >>  ~/.config/.github/.login # ·c·
-      echo ####################################### # ·c·
+      echo "#######################################" # ·c·
       cat ~/.config/.github/.login # ·c·
-      echo ####################################### # ·c·
+      echo "#######################################" # ·c·
     fi # ·c·
   fi # ·c·
 } # ·c·
