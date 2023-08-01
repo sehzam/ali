@@ -6,15 +6,11 @@
 
 setup(){
     
-     echo "#######################################"
     echo "#######################################"
-    echo "Check"
-    echo "installed Tokens: ~/.config/.github"
+    echo "Check installed Tokens: ~/.config/.github"
     echo "#######################################"
 
   local function=$1
-    echo "$1"
-    echo "$2"
 
   if [ -f ~/.config/.github/.login ]; then
 
