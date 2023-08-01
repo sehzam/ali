@@ -2,6 +2,7 @@
 # ·f· ------------------ Function ------------------ ·f·  Function
 # ·f· ______________________________________________ ·f· 
 
+######################################
 setup(){
     echo "enter"
   local function=$1
@@ -11,43 +12,51 @@ setup(){
   if [ -f ~/.config/.github/.login ]; then
 
     if [[ "$GITHUB_TOKEN" == "" ]] || [[ "$GITHUB_USERNAME" == "" ]] || [ -z ~/.config/.github/.login ]; then
-    echo "TOKEN LOGIN DATA FILE is empty"
-     update_login
-     return 1
+      echo ######################################
+      echo "TOKEN LOGIN DATA FILE is empty"
+      echo ######################################
+      update_login
+      return 1
     fi
-    echo "function"
-    shift 1 # Überspringe den ersten Parameter (den Funktionennamen)
-    $function "$@" # Führe die Funktion mit den restlichen Parametern aus
+      echo "function"
+      shift 1 # Überspringe den ersten Parameter (den Funktionennamen)
+      $function "$@" # Führe die Funktion mit den restlichen Parametern aus
 
   elif ! [ -f ~/.config/.github/.login ]; then
+    echo ######################################
     echo "no TOKEN LOGIN DATA FILE is found"
-      update_login
+    echo ######################################
+    update_login
   fi
 }
-
+######################################
 token(){
-  cat ~/.config/.github/.login
+  if ! [ -f ~/.github/.login ]; then
+    echo ######################################
+    echo "GitHub API Token : not installed"
+    echo ######################################
+    update_login
+    echo ######################################
+  else
+    cat ~/.config/.github/.login
+  fi
 }
-
 token_setup() {
   setup token
 }
-
 add_ssh_github_setup() {
   setup add_ssh_github "$@"
 }
-
 repo_delete_setup() {
   setup repo_delete "$@"
 }
-
 repo_list_setup() {
   setup repo_list "$@"
 }
-
 git_setup_and_push_setup() {
   setup git_setup_and_push "$@"
 }
+######################################
 
 update_login(){ # ·c·
   echo ................................................... # ·c·
