@@ -134,7 +134,6 @@ repo_delete() {
   fn=$(echo "$list"|grep -E "\b$1\b")
   local repo_name="$1"
   local repo_path=$(grep -E "^$repo_name = " ~/.config/.github/.repo | grep -oP "(?<=$repo_name = ).*")
-  repo_path=$(  grep -E "^sin = " ~/.config/.github/.repo | grep -oP "(?<=sin = ).*")
   echo $repo_path
   # Check if the repository exists
   if ! echo "$fn" | grep -q "$repo_name"; then
