@@ -163,7 +163,7 @@ if [ -s "$output_file_var" ]; then
         # Entfernen von Leerzeichen und Zeilenumbrüchen aus der Zeile
         cleaned_line=$(echo "$line" | tr -d '[:space:]')
         # Hinzufügen der Punkte zwischen den Begriffen
-        echo -n "| .$cleaned_line " >> "$output_file_final"
+        echo -n "| .$cleaned_line" >> "$output_file_final"
         
     done < "$output_file_var"
 fi
