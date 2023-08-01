@@ -33,7 +33,7 @@ token(){
 }
 
 token_setup() {
-  setup token "$@"
+  setup token
 }
 
 add_ssh_github_setup() {
@@ -135,7 +135,7 @@ repo_delete() {
   local repo_name="$1"
   local repo_path=$(grep -E "^$repo_name = " ~/.config/.github/.repo | grep -oP "(?<=$repo_name = ).*")
   repo_path=$(  grep -E "^sin = " ~/.config/.github/.repo | grep -oP "(?<=sin = ).*")
-echo $repo_path
+  echo $repo_path
   # Check if the repository exists
   if ! echo "$fn" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named repository NOT FOUND!"
@@ -173,9 +173,9 @@ repo_list=$(cat ~/.config/.github/.repo)
       read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
         if ! [ -d "$repo_path" ]; then
-          echo "ERROR: Directory not found · $repo_path"
+          echo "ERROR: Directory not found: $repo_path"
         else
-          rm -r -f $repo_path
+          rm -rf $repo_path
           if ! [ -d "$repo_path" ]; then
             echo "Directory successfully deleted from HARDDISK: $repo_path"
           else
