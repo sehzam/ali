@@ -13,7 +13,14 @@ mkdir -p ~/.aliases/.bin/.function/
 mkdir -p ~/.aliases/.dir/.function/
 mkdir -p ~/.aliases/.dir/.template/
 mkdir -p ~/.aliases/.list/.function/
-#
+
+if ! [ -f ~/.config/.github/.login ]; then
+    mkdir -p ~/.config/.github
+    echo "
+    GUTHUB_USERNAME=''
+    GUTHUB_TOKEN=''" > ~/.config/.github/.login
+fi
+
 echo ·________________________________· |grep -E "_"  
 echo "| copying files to directory:    |" ~/.aliases/ |grep -E "\|"
 echo ·________________________________· |grep -E "·"  
@@ -179,7 +186,8 @@ echo "
 info=$(<$output_file_final)
 echo -n "echo " >> ~/.aliases/.ali.aliases
 echo -n '"' >> ~/.aliases/.ali.aliases
-echo -n "(| .ali $info|)" >> ~/.aliases/.ali.aliases
+echo -n "(| .ali $info
+|)" >> ~/.aliases/.ali.aliases
 echo -n '"' >> ~/.aliases/.ali.aliases
 echo -n " | grep -E '\||\(|\)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
