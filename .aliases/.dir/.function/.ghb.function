@@ -11,7 +11,7 @@ setup(){
 
   if [ -f ~/.config/.github/.login ]; then
 
-    if [[ "$GITHUB_TOKEN" == "" ]] | [[ "$GITHUB_USERNAME" == "" ]]; then
+    if [[ "$GITHUB_TOKEN" == "" ]] || [[ "$GITHUB_USERNAME" == "" ]] || [ -z ~/.config/.github/.login ]; then
     echo "empty"
      update_login
      return 1
@@ -23,7 +23,7 @@ setup(){
   elif ! [ -f ~/.config/.github/.login ]; then
     echo "no file"
       update_login
-      
+
   fi
 
 }
