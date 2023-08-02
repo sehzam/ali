@@ -183,7 +183,6 @@ repo_delete() {
     echo "-- ATTENTION -- $repo_name named PUBLIC repository NOT FOUND!"
     repo_list
     echo "-- Aborting -- RUN AGAIN !"
-    return 1
   elif ! echo "$fn_private" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named PRIVATE repository NOT FOUND!"
     repo_list
