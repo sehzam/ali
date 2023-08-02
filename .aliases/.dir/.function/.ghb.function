@@ -283,7 +283,6 @@ git_setup_and_push() {
 
   public_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[].name')
   private_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=private" | jq -r '.[].name')
-}
   fn=$(echo $(echo "$public_repos"|grep -E "$1"))
   fn_private=$(echo $(echo "$private_repos"|grep -E "$1"))
 
