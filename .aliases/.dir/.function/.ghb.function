@@ -216,9 +216,7 @@ repo_list=$(cat ~/.config/.github/.repo)
           echo "ERROR: Directory not found: $repo_path"
         else
           echo "DELETING: $repo_path"
-          ls $repo_path
           rm -rf $repo_path
-          ls $repo_path
           if ! [ -d "$repo_path" ]; then
             echo "Directory successfully deleted from HARDDISK: $repo_path"
           else
