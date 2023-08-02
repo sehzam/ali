@@ -283,8 +283,8 @@ git_setup_and_push() {
   local repo_name="$1"
   local private="$2"
   local api_url="https://api.github.com/user/repos"
-
-  # JSON-Payload for the repository creation request
+  
+  # JSON-Payload for the repository creation request...
   if [ "$private" == "" ]; then
     local payload='{
     "name": "'"$repo_name"'",
