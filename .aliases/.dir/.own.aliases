@@ -4,6 +4,9 @@
 
 # ·o· ------------ Personal Directories ------------ ·o· Personal Directories
 
+# ( p ) change directory : ~/projects/ & show content # ·e·
+alias 'p'='cd ~/projects/ && ls' # ·a·
+
 # ( w ) change directory : ~/projects/work & show content # ·e·
 alias 'w'='cd ~/projects/work/ && ls' # ·a·
 
