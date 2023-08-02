@@ -179,10 +179,8 @@ repo_delete() {
   local repo_path=$(grep -E "^$repo_name = " ~/.config/.github/.repo | grep -oP "(?<=$repo_name = ).*")
 
   # Check if the repository exists
-  if ! echo "$fn" | grep -q "$repo_name"; then
+  if ! echo "$fn_private" | grep -q "$repo_name" && ! echo "$fn" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named PUBLIC repository NOT FOUND!"
-  fi
-  if ! echo "$fn_private" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named PRIVATE repository NOT FOUND!"
     repo_list
     echo "-- Aborting -- RUN AGAIN !"
