@@ -149,6 +149,7 @@ add_ssh_github(){ # ·c·
     if ! [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
       create_ssh
   fi # ·c·
+  fi # ·c·
 
   if [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
       ssh_key=$(cat ~/.ssh/id_ed25519.pub) # ·c·
