@@ -8,16 +8,8 @@ title_animation() {
     local text4="$4"
     local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
     local shadow_color="\e[90m"
-    local shadow_delay=0.02
+    local shadow_delay=0.005
 
-    matrix(){
-    while :; do
-        color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
-        echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
-        sleep 0.0001
-    done & sleep 3; kill $! > /dev/null 2>&1
-    }
-        matrix
         ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
@@ -116,4 +108,4 @@ echo "$wai"
 . ~/.aliases/.ali.aliases
 # Bash title animation for embedding in ~/.bashrc
 alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
-title_animation "Welcome (=- $wai -=)" "to the M A T R IX " "ALI : Alias List Injection"  "$avail_lists"
+title_animation "Welcome (=- $wai -=)" "to the M A T R I X " "ALI : Alias List Injection"  "$avail_lists"
