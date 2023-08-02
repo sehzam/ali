@@ -4,6 +4,13 @@
 
 ############################################################################
 
+# Skript, um öffentliche Repositories abzurufen
+public_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[].name')
+
+# Skript, um private Repositories abzurufen
+private_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=private" | jq -r '.[].name')
+
+
 setup(){
 
   local function=$1
@@ -64,8 +71,6 @@ update_login(){ # ·c·
   echo "permissions to this token"
   echo "-- https://github.com/settings/tokens --" # ·c·
   echo "######################################" # ·c·
-  echo "######################################" # ·c·
-
   read -p "Please enter your GitHub USERNAME =  " username # ·c·
   read -p "Please enter your GitHub TOKEN =  " token  # ·c·
   echo "######################################" # ·c·
@@ -250,10 +255,10 @@ repo_list() { # ·c·
   echo "Check available Repositories: github.com/$GITHUB_USERNAME/"
   echo "###############w########################"
   echo "PUBLIC"
-  curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=public" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
+  echo "$public_repos"
   echo "#######################################"
   echo "PRIVATE"
-  curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=private" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
+  echo "$private_repos"
   echo "#######################################"
   
 }
@@ -266,16 +271,14 @@ repo_list() { # ·c·
 git_setup_and_push() {
 
   # Check if the repository name is provided as an argument
-  if [ $# -ne 2 ]; then
+  if [ $# -ne 2 ] || [ $# -ne 1 ]; then
     echo "Usage: git_setup_and_push <repository_name> < private | '' >"
     return 1
   fi
 
   # Check if the repotiory exists. If true, aborting wirh message
-  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=public" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
-  list_private=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=private" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
-  fn=$(echo $(echo "$list"|grep -E "$1"))
-  fn_private=$(echo $(echo "$list_private"|grep -E "$1"))
+  fn=$(echo $(echo "$public_repos"|grep -E "$1"))
+  fn_private=$(echo $(echo "$private_repos"|grep -E "$1"))
 
 
   if [[ "$fn" == "$1" ]] || [[ "$fn_private" == "$1" ]]; then
@@ -320,10 +323,8 @@ git_setup_and_push() {
 
 
   # Check if the repotiory exists. If true, aborting wirh message
-    list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=public" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
-    list_private=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=private" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
-    fn=$(echo $(echo "$list"|grep -E "$1"))
-    fn_private=$(echo $(echo "$list_private"|grep -E "$1"))
+    fn=$(echo $(echo "$public_repos"|grep -E "$1"))
+    fn_private=$(echo $(echo "$private_repos"|grep -E "$1"))
 
 
   if [[ "$fn" == "$1" ]] || [[ "$fn_private" == "$1" ]]; then
