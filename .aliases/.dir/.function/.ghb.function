@@ -246,7 +246,7 @@ repo_list() { # ·c·
     
   echo "#######################################"
   echo "Check installed Tokens: ~/.config/.github"
-  echo "#######################################"
+  echo "###############w########################"
   curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
   echo "#######################################"
   
@@ -260,8 +260,8 @@ repo_list() { # ·c·
 git_setup_and_push() {
 
   # Check if the repository name is provided as an argument
-  if [ $# -ne 1 ]; then
-    echo "Usage: git_setup_and_push <repository_name>"
+  if [ $# -ne 2 ]; then
+    echo "Usage: git_setup_and_push <repository_name> < private | '' >"
     return 1
   fi
 
@@ -270,7 +270,7 @@ git_setup_and_push() {
   fn=$(echo $(echo "$list"|grep -E "$1"))
 
   if [[ "$fn" == "$1" ]]; then
-    echo "-- ATTENTION -- $repo_name already available!"
+    echo "-- ATTENTION -- $repo_name already available!"w
     echo "-----------------------------------"
     echo "----- Available Repositories ------"
     repo_list
