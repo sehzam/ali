@@ -9,8 +9,13 @@
 # ·o· ______________________________________________ ·o·
 # ·o· ---------------- Loadings -------------------- ·o· Loadings
 . ~/.aliases/.bin/.function/.ali.function # ·c· 
+
 # ( c ): clears the terminal # ·e· 
 alias c='clear' # ·a· 
+
+# ( @ ): alias for Visual Studio Code # ·e· 
+alias "@"='code' # ·a· 
+
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ______________________________________________ ·o· 
