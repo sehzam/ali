@@ -145,5 +145,5 @@ title_animation() {
 # Bash title animation for embedding in ~/.bashrc
 # alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
 # title_animation "Welcome (=- $wai -=)" "to the M A T R I X " "ALI : Alias List Injection"  "$avail_lists"
-title_animation '$avail_lists'
-alias i="title_animation '$avail_lists'"
+title_animation "$avail_lists"
+alias i="title_animation $avail_lists"
