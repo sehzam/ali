@@ -9,6 +9,7 @@ echo -
 echo ______________________________________________________
 echo ..............Installation started !
 echo ______________________________________________________
+mkdir -p ~/.aliases/.bin/.animation/
 mkdir -p ~/.aliases/.bin/.function/
 mkdir -p ~/.aliases/.dir/.function/
 mkdir -p ~/.aliases/.dir/.template/
@@ -41,6 +42,10 @@ echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
 ##
 cp -Rp ./ali-main/.aliases/.list/.function/.list.function ~/.aliases/.list/.function/
 echo .......... Listing Template : ~/.aliases/.list/.function/.list.function
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
+##
+cp -Rp ./ali-main/.aliases/.bin/.animation/.title.animation ~/.aliases/.bin/.animation/
+echo ........... Title Animation : ~/.aliases/.bin/.animation/.title.animation
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 #
 echo ·________________________________· |grep -E "_" 
