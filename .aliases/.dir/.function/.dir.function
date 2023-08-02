@@ -36,23 +36,20 @@ function copy_create_folder() {
     local destination_abs=$(realpath "$destination")
     local sources=("${@:1:$#-1}")
 
-    # Für jedes Quell-Element (Datei oder Ordner) das Kopieren entsprechend durchführen
     for source in "${sources[@]}"; do
       local source_abs=$(realpath "$source")
 
-      if [ -d "$source" ]; then
-        # Für Ordner müssen wir den Ziel-Pfad korrekt behandeln
-        local source_basename=$(basename "$source")
-        local destination_path="$destination/$source_basename"
-
-        if [[ "$source_abs" == "$destination_abs"* ]]; then
-          echo "Überspringe $source: Es ist ein Unterverzeichnis des Zielordners."
-        else
-          cp -r "$source" "$destination_path"
-        fi
+      # Überprüfen, ob der Quellordner ein Unterverzeichnis des Zielordners ist
+      if [[ "$source_abs" == "$destination_abs"* ]]; then
+        echo "Überspringe $source: Es ist ein Unterverzeichnis des Zielordners."
       else
-        # Für Dateien direkt in das Ziel kopieren
-        cp "$source" "$destination"
+        # Erstellen des vollständigen Ziel-Pfads basierend auf der Quellstruktur
+        local relative_path="${source#$PWD/}"
+        local destination_path="$destination/$relative_path"
+
+        # Kopieren von Dateien oder Ordnern zum Ziel-Pfad
+        mkdir -p "$(dirname "$destination_path")"
+        cp -r "$source" "$destination_path"
       fi
     done
   else
