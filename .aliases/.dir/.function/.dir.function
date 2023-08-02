@@ -26,13 +26,22 @@ sr() { # ·c·
     sed -i "s/$1/$2/g" "$3" # ·c· 
 } # ·c· 
 #
-function copy_create_folder() { # ·c· 
-  # ·e· # Get the last argument as the destination
-    local destination="${@: -1}" # ·c·  
-    mkdir -p "$destination" # ·c· 
-  # ·e· # Shift all arguments except the last one (destination)
-    shift $(( $# - 1 )) # ·c·  
-    cp -r "$@" "$destination" # ·c· 
-} # ·c· 
+function copy_create_folder() {
+  # Get the last argument as the destination
+  local destination="${@: -1}"
+  
+  # Check if the destination folder already exists
+  if [ -d "$destination" ]; then
+    # Shift all arguments except the last one (destination)
+    shift $(( $# - 1 ))
+    cp -r "$@" "$destination"
+  else
+    # Create the destination folder and copy the files and folders
+    mkdir -p "$destination"
+    shift $(( $# - 1 ))
+    cp -r "$@" "$destination"
+  fi
+}
+
 #
 # ·f· ------------------ Functions  ---------------- ·f· Directory Control System
