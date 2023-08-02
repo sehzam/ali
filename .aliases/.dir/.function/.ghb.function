@@ -98,7 +98,7 @@ create_ssh(){
     echo "#######################################"
     # Process the user's answer
     case "$ssh" in      
-      [Rs][Ss][Aa])
+      [Rr][Ss][Aa])
         ssh-keygen -t rsa -b 2048 # ·c·
         ;;
       [Ee][Dd])
