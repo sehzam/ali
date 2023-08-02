@@ -15,11 +15,10 @@ title_animation() {
         color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
         echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
         # sleep 0.00001
-    done & sleep 1 & kill $! > /dev/null 2>&1
+    done & sleep 3 & kill $! > /dev/null 2>&1
     }
-    
         matrix
-    ############################################################################
+        ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
     local y=$(( LINES / 5 ))
@@ -41,8 +40,7 @@ title_animation() {
         sleep $shadow_delay
     done
 
-        matrix
-    ############################################################################
+        ############################################################################
 
     local x=$(( (COLUMNS - ${#text2}) / 2 ))
     local y=$(( LINES / 4 ))
@@ -64,8 +62,7 @@ title_animation() {
         sleep $shadow_delay
     done
 
-        matrix
-    ############################################################################
+        ############################################################################
 
     local x=$(( (COLUMNS - ${#text3}) / 2 ))
     local y=$(( LINES / 3 ))
@@ -87,8 +84,7 @@ title_animation() {
         sleep $shadow_delay
     done
     
-        matrix
-    ############################################################################
+        ############################################################################
 
     local x=$(( (COLUMNS - ${#text4}) / 2 ))
     local y=$(( LINES / 2 ))
@@ -110,7 +106,6 @@ title_animation() {
         sleep $shadow_delay
     done
 
-    matrix
     ############################################################################
     for ((i = 0; i < 5; i++)); do
         echo
