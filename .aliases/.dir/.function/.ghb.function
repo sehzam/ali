@@ -341,7 +341,6 @@ git_setup_and_push() {
 
   # Write the content to the README.md file
   cat > README.md << EOF
----
 #
 # ${uc_string//[$'\n']/ & }
 # 
