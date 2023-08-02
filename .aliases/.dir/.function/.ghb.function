@@ -270,7 +270,7 @@ repo_list() { # ·c·
 git_setup_and_push() {
 
   # Check if the repository name is provided as an argument
-  if [ $# -ne 2 ] || [ $# -ne 1 ]; then
+  if [ $# -ne 2 ] && [ $# -ne 1 ]; then
     echo "Usage: git_setup_and_push <repository_name> < private | '' >"
     return 1
   fi
