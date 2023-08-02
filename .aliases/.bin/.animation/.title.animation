@@ -94,7 +94,9 @@ title_animation() {
         color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
         echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
         sleep 0.01
-    done & sleep 10; kill $!
+    done 
+    sleep 10 
+    kill $!
 
 
 }
