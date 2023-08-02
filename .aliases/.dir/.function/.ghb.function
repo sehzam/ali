@@ -325,7 +325,7 @@ git_setup_and_push() {
     pd=$(pwd)
 
 
-  if [[ "$fn" == "$1" ]] && [[ "$fn_private" == "$1" ]]; then
+  if [[ "$fn" == "$1" ]] || [[ "$fn_private" == "$1" ]]; then
     echo "$1 = $pd/$1/" >> ~/.config/.github/.repo
     echo "-- INFO -- Repository path: : :  $pd/$1  : : : added to REPO INSTALL LIST: ~/.config/.github/.repo"
   fi
