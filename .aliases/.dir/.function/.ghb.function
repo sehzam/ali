@@ -171,10 +171,12 @@ repo_delete() {
     echo "Usage: repo_delete <repository_name>"
     return 1
   fi
-  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=all" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
-  fn=$(echo "$list"|grep -E "\b$1\b")
+  
+  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/repos?type=public" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
+  list_private=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/repos?type=private" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
   local repo_name="$1"
   local repo_path=$(grep -E "^$repo_name = " ~/.config/.github/.repo | grep -oP "(?<=$repo_name = ).*")
+  
   # Check if the repository exists
   if ! echo "$fn" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named repository NOT FOUND!"
@@ -247,7 +249,11 @@ repo_list() { # ·c·
   echo "#######################################"
   echo "Check available Repositories: github.com/$GITHUB_USERNAME/"
   echo "###############w########################"
-  curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=all" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
+  echo "PUBLIC"
+  curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/repos?type=public" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
+  echo "#######################################"
+  echo "PRIVATE"
+  curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/repos?type=private" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
   echo "#######################################"
   
 }
@@ -266,10 +272,13 @@ git_setup_and_push() {
   fi
 
   # Check if the repotiory exists. If true, aborting wirh message
-  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=all" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
+  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/repos?type=public" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
+  list_private=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/repos?type=private" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
   fn=$(echo $(echo "$list"|grep -E "$1"))
+  fn_private=$(echo $(echo "$list_private"|grep -E "$1"))
 
-  if [[ "$fn" == "$1" ]]; then
+
+  if [[ "$fn" == "$1" ]] || [[ "$fn_private" == "$1" ]]; then
     echo "-- ATTENTION -- $repo_name already available!"w
     echo "-----------------------------------"
     echo "----- Available Repositories ------"
@@ -311,12 +320,13 @@ git_setup_and_push() {
 
 
   # Check if the repotiory exists. If true, aborting wirh message
-  list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=all" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
-  fn=$(echo $(echo "$list"|grep -E "$1"))
-  pd=$(pwd)
-  
+    list=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/repos?type=public" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
+    list_private=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/repos?type=private" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)')
+    fn=$(echo $(echo "$list"|grep -E "$1"))
+    fn_private=$(echo $(echo "$list_private"|grep -E "$1"))
 
-  if [[ "$fn" == "$1" ]]; then
+
+  if [[ "$fn" == "$1" ]] || [[ "$fn_private" == "$1" ]]; then
     echo "$1 = $pd/$1/" >> ~/.config/.github/.repo
     echo "-- INFO -- Repository path: : :  $pd/$1  : : : added to REPO INSTALL LIST: ~/.config/.github/.repo"
   fi
