@@ -4,16 +4,16 @@ title_animation() {
     clear
     local text1="$1"
     local text2="$2"
-    local colors=("\e[32m" "\e[93m" "\e[31m" "\e[34m" "\e[36m")
-    local shadow_color="\e[36m"
+    local text3="$3"
+    local text4="$4"
+    local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
+    local shadow_color="\e[90m"
     local shadow_delay=0.000005
 
         ############################################################################
-    
-        ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
-    local y=$(( LINES / 8 ))
+    local y=$(( LINES / 5 ))
 
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
@@ -31,6 +31,7 @@ title_animation() {
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
+
         ############################################################################
 
     local x=$(( (COLUMNS - ${#text2}) / 2 ))
@@ -53,119 +54,58 @@ title_animation() {
         sleep $shadow_delay
     done
 
+        ############################################################################
+
+    local x=$(( (COLUMNS - ${#text3}) / 2 ))
+    local y=$(( LINES / 3 ))
+
+    for ((i = 0; i < ${#text3}; i++)); do
+        local char="${text3:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $((y - 1)) $((x + i))
+        echo -ne "${shadow_color}${char}\e[0m"
+    done
+
+    for ((i = 0; i < ${#text3}; i++)); do
+        local char="${text3:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $y $((x + i))
+        echo -ne "${color}${char}\e[0m"
+        sleep $shadow_delay
+    done
+    
+        ############################################################################
+
+    local x=$(( (COLUMNS - ${#text4}) / 2 ))
+    local y=$(( LINES / 2 ))
+
+    for ((i = 0; i < ${#text4}; i++)); do
+        local char="${text4:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $((y - 1)) $((x + i))
+        echo -ne "${shadow_color}${char}\e[0m"
+    done
+
+    for ((i = 0; i < ${#text4}; i++)); do
+        local char="${text4:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $y $((x + i))
+        echo -ne "${color}${char}\e[0m"
+        sleep $shadow_delay
+    done
+
     ############################################################################
-    for ((i = 0; i < 1; i++)); do
+    for ((i = 0; i < 5; i++)); do
         echo
     done
 }
-
-# title_animation() {
-#     clear
-#     local text1="$1"
-#     local text2="$2"
-#     local text3="$3"
-#     local text4="$4"
-#     local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
-#     local shadow_color="\e[90m"
-#     local shadow_delay=0.000005
-
-#         ############################################################################
-
-#     local x=$(( (COLUMNS - ${#text1}) / 2 ))
-#     local y=$(( LINES / 5 ))
-
-#     for ((i = 0; i < ${#text1}; i++)); do
-#         local char="${text1:i:1}"
-#         local color="${colors[i % ${#colors[@]}]}"
-
-#         tput cup $((y - 1)) $((x + i))
-#         echo -ne "${shadow_color}${char}\e[0m"
-#     done
-
-#     for ((i = 0; i < ${#text1}; i++)); do
-#         local char="${text1:i:1}"
-#         local color="${colors[i % ${#colors[@]}]}"
-
-#         tput cup $y $((x + i))
-#         echo -ne "${color}${char}\e[0m"
-#         sleep $shadow_delay
-#     done
-
-#         ############################################################################
-
-#     local x=$(( (COLUMNS - ${#text2}) / 2 ))
-#     local y=$(( LINES / 4 ))
-
-#     for ((i = 0; i < ${#text2}; i++)); do
-#         local char="${text2:i:1}"
-#         local color="${colors[i % ${#colors[@]}]}"
-
-#         tput cup $((y - 1)) $((x + i))
-#         echo -ne "${shadow_color}${char}\e[0m"
-#     done
-
-#     for ((i = 0; i < ${#text2}; i++)); do
-#         local char="${text2:i:1}"
-#         local color="${colors[i % ${#colors[@]}]}"
-
-#         tput cup $y $((x + i))
-#         echo -ne "${color}${char}\e[0m"
-#         sleep $shadow_delay
-#     done
-
-#         ############################################################################
-
-#     local x=$(( (COLUMNS - ${#text3}) / 2 ))
-#     local y=$(( LINES / 3 ))
-
-#     for ((i = 0; i < ${#text3}; i++)); do
-#         local char="${text3:i:1}"
-#         local color="${colors[i % ${#colors[@]}]}"
-
-#         tput cup $((y - 1)) $((x + i))
-#         echo -ne "${shadow_color}${char}\e[0m"
-#     done
-
-#     for ((i = 0; i < ${#text3}; i++)); do
-#         local char="${text3:i:1}"
-#         local color="${colors[i % ${#colors[@]}]}"
-
-#         tput cup $y $((x + i))
-#         echo -ne "${color}${char}\e[0m"
-#         sleep $shadow_delay
-#     done
-    
-#         ############################################################################
-
-#     local x=$(( (COLUMNS - ${#text4}) / 2 ))
-#     local y=$(( LINES / 2 ))
-
-#     for ((i = 0; i < ${#text4}; i++)); do
-#         local char="${text4:i:1}"
-#         local color="${colors[i % ${#colors[@]}]}"
-
-#         tput cup $((y - 1)) $((x + i))
-#         echo -ne "${shadow_color}${char}\e[0m"
-#     done
-
-#     for ((i = 0; i < ${#text4}; i++)); do
-#         local char="${text4:i:1}"
-#         local color="${colors[i % ${#colors[@]}]}"
-
-#         tput cup $y $((x + i))
-#         echo -ne "${color}${char}\e[0m"
-#         sleep $shadow_delay
-#     done
-
-#     ############################################################################
-#     for ((i = 0; i < 5; i++)); do
-#         echo
-#     done
-# }
+wai=$(whoami)
+echo "$wai"
 . ~/.aliases/.ali.aliases
-# wai=$(whoami)
 # Bash title animation for embedding in ~/.bashrc
-# alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
-# title_animation "Welcome (=- $wai -=)" "to the M A T R I X " "ALI : Alias List Injection"  "$avail_lists"
-title_animation "ALI : Alias List Injection" "$avail_lists"
-alias i="title_animation 'ALI : Alias List Injection' '$avail_lists'"
+alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
+title_animation "Welcome (=- $wai -=)" "to the M A T R I X " "ALI : Alias List Injection"  "$avail_lists"
