@@ -27,37 +27,8 @@ sr() { # ·c·
 } # ·c· 
 #
 function copy_create_folder() {
-  # Das letzte Argument als Zielordner erhalten
   local destination="${@: -1}"
-
-  # Prüfen, ob der Zielordner bereits existiert
-  if [ -d "$destination" ]; then
-    # Absolute Pfade von Quell- und Zielordnern auflösen
-    local destination_abs=$(realpath "$destination")
-    local sources=("${@:1:$#-1}")
-
-    for source in "${sources[@]}"; do
-      local source_abs=$(realpath "$source")
-
-      # Überprüfen, ob der Quellordner ein Unterverzeichnis des Zielordners ist
-      if [[ "$source_abs" == "$destination_abs"* ]]; then
-        echo "Überspringe $source: Es ist ein Unterverzeichnis des Zielordners."
-      else
-        # Erstellen des vollständigen Ziel-Pfads basierend auf der Quellstruktur
-        local relative_path="${source#$PWD/}"
-        local destination_path="$destination/$relative_path"
-
-        # Kopieren von Dateien oder Ordnern zum Ziel-Pfad
-        mkdir -p "$(dirname "$destination_path")"
-        cp -r "$source" "$destination_path"
-      fi
-    done
-  else
-    # Zielordner erstellen und Dateien/Ordner kopieren
-    mkdir -p "$destination"
-    shift $(( $# - 1 ))
-    cp -r "$@" "$destination"
-  fi
+  [ -d "$destination" ] && { local d="$(realpath "$destination")"; shift; for s in "$@"; do [ "${s#"$PWD/"}" != "${d#"$PWD/"}" ] && cp -r "$s" "$destination"/"${s#"$PWD/"}"; done; } || (mkdir -p "$destination" && shift $(( $# - 1 )) && cp -r "$@" "$destination")
 }
 
 #
