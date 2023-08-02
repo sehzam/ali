@@ -247,7 +247,7 @@ repo_list() { # ·c·
   echo "#######################################"
   echo "Check available Repositories: github.com/$GITHUB_USERNAME/"
   echo "###############w########################"
-  curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
+  curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos?type=all" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
   echo "#######################################"
   
 }
@@ -292,6 +292,7 @@ git_setup_and_push() {
     "auto_init": true
     }'
     echo "private: FALSE"
+
   elif [ "$private" == "private" ]; then
     local payload='{
     "name": "'"$repo_name"'",
