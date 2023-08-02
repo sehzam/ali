@@ -4,14 +4,14 @@
 
 # ·o· ------------ Personal Directories ------------ ·o· Personal Directories
 
-# ( p ) change directory : ~/projects/ & show content # ·e·
-alias 'p'='cd ~/projects/ && ls' # ·a·
+# ( x ) change directory : ~/projects/ & show content # ·e·
+alias 'x'='cd ~/projects/ && ls' # ·a·
 
 # ( w ) change directory : ~/projects/work & show content # ·e·
 alias 'w'='cd ~/projects/work/ && ls' # ·a·
 
-# ( x ) change directory : ~/projects/personal & show content # ·e·
-alias 'x'='cd ~/projects/personal/ && ls' # ·a·
+# ( p ) change directory : ~/projects/personal & show content # ·e·
+alias 'p'='cd ~/projects/personal/ && ls' # ·a·
 
 # ( a ) change directory : current project & show (hidden) content # ·e·
 alias 'a'='cd ~/projects/personal/ali/ && ll' # ·a·
