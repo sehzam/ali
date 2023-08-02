@@ -12,7 +12,7 @@ title_animation() {
         ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
-    local y=$(( LINES / 2 ))
+    local y=$(( LINES / 10 ))
 
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
