@@ -87,15 +87,18 @@ title_animation() {
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
+    sleep 1 
     for ((i = 0; i < 5; i++)); do
         echo
     done
-    while :; do
+    end(){
+        sleep 5 & kill $!
+    }
+    end & while :; do
         color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
         echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
-        sleep 0.005
+        sleep 0.0005
     done 
-    sleep 1 
 }
 wai=$(whoami)
 echo "$wai"
