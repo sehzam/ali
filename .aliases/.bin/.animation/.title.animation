@@ -12,13 +12,13 @@ title_animation() {
 
     matrix(){
     while :; do
-  color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
-  echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
-  sleep 0.1
-done & sleep 2; kill $!
+        color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
+        echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
+        sleep 0.0001
+    done & sleep 1; kill $!
     }
     
-    matrix
+    
     ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
@@ -41,7 +41,7 @@ done & sleep 2; kill $!
         sleep $shadow_delay
     done
 
-    matrix
+    
     ############################################################################
 
     local x=$(( (COLUMNS - ${#text2}) / 2 ))
@@ -64,7 +64,7 @@ done & sleep 2; kill $!
         sleep $shadow_delay
     done
 
-    matrix
+    
     ############################################################################
 
     local x=$(( (COLUMNS - ${#text3}) / 2 ))
@@ -87,7 +87,7 @@ done & sleep 2; kill $!
         sleep $shadow_delay
     done
     
-    matrix
+    
     ############################################################################
 
     local x=$(( (COLUMNS - ${#text4}) / 2 ))
@@ -112,8 +112,6 @@ done & sleep 2; kill $!
 
     matrix
     ############################################################################
-    sleep 3
-    kill $!
     for ((i = 0; i < 5; i++)); do
         echo
     done
@@ -122,5 +120,5 @@ wai=$(whoami)
 echo "$wai"
 . ~/.aliases/.ali.aliases
 # Bash title animation for embedding in ~/.bashrc
-alias i="title_animation 'Welcome BACK ($wai)' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '"
+alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
 title_animation "Welcome (=- $wai -=)" "to the M A T R IX " "ALI : Alias List Injection"  "$avail_lists"
