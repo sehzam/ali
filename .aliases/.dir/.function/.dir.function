@@ -27,8 +27,12 @@ sr() { # ·c·
 } # ·c· 
 #
 
-function copy_create_folder() {
+function copy_create_folder() { 
+  # : Diese Zeile kennzeichnet den Beginn der Funktion mit dem Namen copy_create_folder. 
   local destination="${@: -1}"
+  # : Hier wird die Variable destination mit dem letzten Argument der Funktion initialisiert. 
+  #   In Bash steht ${@} für alle Argumente, 
+  #   die der Funktion übergeben wurden, und ${@: -1} gibt das letzte Argument zurück.
   local source_paths=("${@:1:$#-1}")
 
   # Erstellen des Zielverzeichnisses, wenn es nicht existiert
@@ -46,5 +50,79 @@ function copy_create_folder() {
 }
 
 
+
+
+
+# local source_paths=("${@:1:$#-1}")
+
+# : Hier wird die Variable source_paths mit allen Argumenten initialisiert, außer dem letzten. 
+#   Dies bedeutet, dass source_paths alle Quellpfade enthält, die kopiert werden sollen.
+
+# mkdir -p "$destination"
+
+# : Diese Zeile erstellt das Zielverzeichnis ($destination), wenn es nicht existiert. 
+
+#   Die Option -p sorgt dafür, 
+#   dass alle übergeordneten Verzeichnisse erstellt werden, 
+#   falls sie nicht vorhanden sind.
+
+# for source in "${source_paths[@]}"; do
+
+# : Diese Zeile startet eine Schleife, 
+#   die jeden Quellpfad in source_paths durchläuft.
+
+# if [ -d "$source" ]; then
+
+# : Hier wird überprüft, ob der aktuelle Quellpfad ($source) ein Verzeichnis ist. 
+#   Der Ausdruck [ -d "$source" ] testet, 
+#   ob der Pfad ein vorhandenes Verzeichnis ist.
+
+# find "$source" -mindepth 1 -exec bash -c 'mkdir -p "$0/${1#"$PWD/"}" && cp -r "$1" "$0/${1#"$PWD/"}"' "$destination" '{}' \;
+
+# : Wenn der Quellpfad ein Verzeichnis ist, wird find verwendet, 
+#   um den gesamten Inhalt des Verzeichnisses rekursiv zu durchsuchen.
+
+# find "$source"
+
+# : Durchsucht das Quellverzeichnis ($source) und alle seine Unterordner.
+
+# -mindepth 1
+
+# : Ignoriert das Ausgangsverzeichnis selbst, sodass nur der Inhalt des Verzeichnisses kopiert wird, nicht das Verzeichnis selbst.
+
+# -exec
+
+# : Führt den Befehl aus, der nach -exec kommt, für jede gefundene Datei oder jedes gefundene Verzeichnis aus.
+
+# bash -c '...'
+
+# : Führt den nachfolgenden Befehl in einer separaten Bash-Shell aus.
+
+# 'mkdir -p "$0/${1#"$PWD/"}" && cp -r "$1" "$0/${1#"$PWD/"}"'
+
+# : Der Befehl, der für jede gefundene Datei oder jedes gefundene Verzeichnis ausgeführt wird.
+
+# mkdir -p "$0/${1#"$PWD/"}"
+
+# : Erstellt das Zielverzeichnis im $destination-Ordner, 
+#   beibehält dabei die Verzeichnisstruktur des Quellverzeichnisses. 
+#   Die Variable $0 enthält hier den Wert von $destination,
+#   und ${1#"$PWD/"} entfernt das aktuelle Arbeitsverzeichnis aus dem Quellpfad, 
+#   um eine relative Pfadstruktur zu erhalten.
+
+# cp -r "$1" "$0/${1#"$PWD/"}"
+
+# : Kopiert die gefundene Datei oder das gefundene Verzeichnis ($1) 
+#   in das entsprechende Zielverzeichnis.
+
+# else
+# : Wenn der Quellpfad keine Verzeichnis ist (d.h., eine Datei), 
+#   wird diese Anweisung ausgeführt.
+
+# cp "$source" "$destination"
+# : Hier wird die Datei ($source) direkt in das Zielverzeichnis ($destination) kopiert.
+
 #
+# ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions  ---------------- ·f· Directory Control System
+# ·f· ______________________________________________ ·f· 
