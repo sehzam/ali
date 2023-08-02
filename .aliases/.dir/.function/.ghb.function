@@ -246,7 +246,9 @@ repo_list=$(cat ~/.config/.github/.repo)
 # Define the function to delete a GitHub repository # ·e·
 repo_list() { # ·c·
   # Check if the repository name is provided as an argument # ·e·
-    
+  public_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[].name')
+  private_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=private" | jq -r '.[].name')
+
   echo "#######################################"
   echo "Check available Repositories: github.com/$GITHUB_USERNAME/"
   echo "###############w########################"
