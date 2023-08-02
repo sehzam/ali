@@ -209,7 +209,9 @@ repo_list=$(cat ~/.config/.github/.repo)
       curl -X DELETE -u "$GITHUB_USERNAME:$GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_USERNAME/$repo_name"
       echo "Repository successfully deleted from GitHub: github.com/$GITHUB_USERNAME/$repo_name"
 
-      # Prompt to delete the repository from the hard disk
+      if ! [ "$repo_path" == '' ]; then
+
+         # Prompt to delete the repository from the hard disk
       read -p "Delete the repository from the hard disk? ( Y/y to confirm): " delete_from_disk
       if [[ "$delete_from_disk" =~ [Yy] ]]; then
         if ! [ -d "$repo_path" ]; then
@@ -227,6 +229,8 @@ repo_list=$(cat ~/.config/.github/.repo)
       else
         echo "Repository was not deleted from the hard disk."
       fi
+      
+    fi
       ;;
     [Nn])
       echo "Repository deletion aborted."
