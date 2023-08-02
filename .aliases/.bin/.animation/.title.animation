@@ -14,7 +14,7 @@ title_animation() {
     while :; do
         color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
         echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
-        sleep 0.00001
+        sleep 0.0001
     done & sleep 3 & kill $! > /dev/null 2>&1
     }
         matrix
