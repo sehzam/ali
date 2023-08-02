@@ -2,13 +2,24 @@
 
 title_animation() {
     clear
-   local text1="$1"
-   local text2="$2"
-   local text3="$3"
-   local text4="$4"
+    local text1="$1"
+    local text2="$2"
+    local text3="$3"
+    local text4="$4"
     local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
     local shadow_color="\e[90m"
     local shadow_delay=0.02
+
+    matrix(){
+        while :; do
+            color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
+            echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
+            sleep 0.0005
+        done & sleep 1; kill $!
+    }
+    
+    matrix
+    ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
     local y=$(( LINES / 5 ))
@@ -30,6 +41,9 @@ title_animation() {
         sleep $shadow_delay
     done
 
+    matrix
+    ############################################################################
+
     local x=$(( (COLUMNS - ${#text2}) / 2 ))
     local y=$(( LINES / 4 ))
 
@@ -49,6 +63,10 @@ title_animation() {
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
+
+    matrix
+    ############################################################################
+
     local x=$(( (COLUMNS - ${#text3}) / 2 ))
     local y=$(( LINES / 3 ))
 
@@ -68,6 +86,10 @@ title_animation() {
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
+    
+    matrix
+    ############################################################################
+
     local x=$(( (COLUMNS - ${#text4}) / 2 ))
     local y=$(( LINES / 2 ))
 
@@ -87,22 +109,17 @@ title_animation() {
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
-    sleep 1 
+
+    matrix
+    ############################################################################
+    
     for ((i = 0; i < 5; i++)); do
         echo
     done
-    end(){
-        sleep 5 & return 1
-    }
-    end & while :; do
-        color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
-        echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
-        sleep 0.0005
-    done 
 }
 wai=$(whoami)
 echo "$wai"
 . ~/.aliases/.ali.aliases
 # Bash title animation for embedding in ~/.bashrc
 alias i="title_animation 'Welcome BACK ($wai)' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '"
-title_animation "Welcome (=- $wai $(wai^^) -=)" "to the MATRIX" "ALI : Alias List Injection"  "$avail_lists"
+title_animation "Welcome (=- $wai -=)" "to the M A T R IX " "ALI : Alias List Injection"  "$avail_lists"
