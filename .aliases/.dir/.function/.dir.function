@@ -29,12 +29,14 @@ sr() { # ·c·
 function copy_create_folder() {
   # Get the last argument as the destination
   local destination="${@: -1}"
-  
+
   # Check if the destination folder already exists
   if [ -d "$destination" ]; then
-    # Shift all arguments except the last one (destination)
-    shift $(( $# - 1 ))
-    cp -r "$@" "$destination"
+    # Exclude the destination folder from the list of source files/folders
+    local sources=("${@:1:$#-1}")
+
+    # Copy the source files/folders to the destination
+    cp -r "${sources[@]}" "$destination"
   else
     # Create the destination folder and copy the files and folders
     mkdir -p "$destination"
@@ -42,6 +44,7 @@ function copy_create_folder() {
     cp -r "$@" "$destination"
   fi
 }
+
 
 #
 # ·f· ------------------ Functions  ---------------- ·f· Directory Control System
