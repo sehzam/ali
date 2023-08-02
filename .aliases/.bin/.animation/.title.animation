@@ -102,6 +102,7 @@ title_animation() {
 }
 wai=$(whoami)
 echo "$wai"
+. ~/.aliases/.ali.aliases
 # Bash title animation for embedding in ~/.bashrc
-title_animation 'Welcome ( $(wai^^) )' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '
 alias i="title_animation 'Welcome BACK ($wai)' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '"
+title_animation 'Welcome ( $(wai^^) )' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '
