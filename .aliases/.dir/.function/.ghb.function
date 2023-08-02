@@ -251,11 +251,13 @@ repo_list() { # ·c·
 
   echo "#######################################"
   echo "Check available Repositories: github.com/$GITHUB_USERNAME/"
-  echo "###############w########################"
-  echo "PUBLIC"
+  echo "#######################################"
+  echo "# PUBLIC #"
+  echo "##########"
   echo "$public_repos"
   echo "#######################################"
-  echo "PRIVATE"
+  echo "# PRIVATE #"
+  echo "###########"
   echo "$private_repos"
   echo "#######################################"
   
