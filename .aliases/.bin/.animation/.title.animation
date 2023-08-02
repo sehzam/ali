@@ -8,10 +8,10 @@ title_animation() {
    local text4="$4"
     local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
     local shadow_color="\e[90m"
-    local shadow_delay=0.05
+    local shadow_delay=0.2
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
-    local y=$(( LINES / 4 ))
+    local y=$(( LINES / 5 ))
 
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
@@ -31,7 +31,7 @@ title_animation() {
     done
 
     local x=$(( (COLUMNS - ${#text2}) / 2 ))
-    local y=$(( LINES / 3 ))
+    local y=$(( LINES / 4 ))
 
     for ((i = 0; i < ${#text2}; i++)); do
         local char="${text2:i:1}"
@@ -50,7 +50,7 @@ title_animation() {
         sleep $shadow_delay
     done
     local x=$(( (COLUMNS - ${#text3}) / 2 ))
-    local y=$(( LINES / 2 ))
+    local y=$(( LINES / 3 ))
 
     for ((i = 0; i < ${#text3}; i++)); do
         local char="${text3:i:1}"
@@ -93,16 +93,13 @@ title_animation() {
     while :; do
         color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
         echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
-        sleep 0.01
+        sleep 0.005
     done 
-    sleep 10 
-    kill $!
-
-
+    sleep 1 
 }
 wai=$(whoami)
 echo "$wai"
 . ~/.aliases/.ali.aliases
 # Bash title animation for embedding in ~/.bashrc
 alias i="title_animation 'Welcome BACK ($wai)' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '"
-title_animation 'Welcome ( $wai^^ )' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '
+title_animation 'Welcome (=- $wai $wai^^ -=)' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '
