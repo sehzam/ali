@@ -18,8 +18,8 @@ setup(){
     fi
 
       ######################################
-      shift 1 # Überspringe den ersten Parameter (den Funktionennamen)
-      $function "$@" # Führe die Funktion mit den restlichen Parametern aus
+      shift 1 # skip the first parameter ( skip setup() )
+      $function "$@" # run the function with all parameter
       ######################################
 
   elif ! [ -f ~/.config/.github/.login ]; then
@@ -90,6 +90,29 @@ update_login(){ # ·c·
 } # ·c·
 
 ############################################################################
+create_ssh(){
+  echo "#######################################"
+    echo "ERROR: no SSH keys found"
+    echo "#######################################"
+      read -p "Which SSH KEY you want to create?
+( ED/ed for ed25519 ) :
+( RSA/rsa for rsa )   :" ssh
+    echo "#######################################"
+    # Process the user's answer
+    case "$ssh" in      
+      [Rs][Ss][Aa])
+        ssh-keygen -t rsa -b 2048 # ·c·
+        ;;
+      [Ee][Dd])
+        ssh-keygen -t ed25519 # ·c·
+        ;;
+      *)
+        echo "Invalid input. SSH KEY - creation aborted."
+        ;;
+    esac
+}
+############################################################################
+############################################################################
 
 show_ssh(){ # ·c·
     echo "#######################################"
@@ -109,25 +132,7 @@ show_ssh(){ # ·c·
     fi # ·c·
 
   else
-    echo "#######################################"
-    echo "ERROR: no SSH keys found"
-    echo "#######################################"
-      read -p "Which SSH KEY you want to create?
-( ED/ed for ed25519 ) :
-( RSA/rsa for rsa )   :" ssh
-    echo "#######################################"
-    # Process the user's answer
-    case "$ssh" in      
-      [RSArsa])
-        ssh-keygen -t rsa -b 2048 # ·c·
-        ;;
-      [EDed])
-        ssh-keygen -t ed25519 # ·c·
-        ;;
-      *)
-        echo "Invalid input. SSH KEY - creation aborted."
-        ;;
-    esac
+    create_ssh
   fi
 } # ·c·
 
@@ -142,26 +147,14 @@ add_ssh_github(){ # ·c·
 
   if ! [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
     if ! [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
-      
-      echo "#######################################"
-      read -p "Which SSH KEY you want to create?
-( ED/ed for ed25519 ) :
-( RSA/rsa for rsa )   :" key  # ·c·
-      echo "#######################################"
-      
-      if [ "$key" = "rsa" ]; then # ·c·
-        ssh-keygen -t rsa -b 2048 # ·c·
-      fi # ·c·
-      if [ "$key" = "ed" ]; then # ·c·
-        ssh-keygen -t ed25519 # ·c·
-      fi # ·c·
-    fi # ·c·
+      create_ssh
   fi # ·c·
 
   if [ -f ~/.ssh/id_ed25519.pub ]; then # ·c·
       ssh_key=$(cat ~/.ssh/id_ed25519.pub) # ·c·
   elif [ -f ~/.ssh/id_rsa.pub ]; then # ·c·
     ssh_key=$(cat ~/.ssh/id_rsa.pub) # ·c·
+
   fi # ·c·
   # Emit SSH key to curl and call the API # ·e·
   curl -X POST -H "Authorization: token $GITHUB_TOKEN" -H "Content-Type: application/json" -d '{"title":"'"$1"'", "key":"'"$ssh_key"'"}' "https://api.github.com/user/keys" # ·c·

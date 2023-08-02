@@ -16,9 +16,8 @@ mkdir -p ~/.aliases/.list/.function/
 
 if ! [ -f ~/.config/.github/.login ]; then
     mkdir -p ~/.config/.github
-    echo "
-    GUTHUB_USERNAME=''
-    GUTHUB_TOKEN=''" > ~/.config/.github/.login
+    echo "GUTHUB_USERNAME=''
+GUTHUB_TOKEN=''" > ~/.config/.github/.login
 fi
 
 echo ·________________________________· |grep -E "_"  
