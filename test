@@ -1,0 +1,2 @@
+curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" 
+curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[] | select(.owner.login == "$GITHUB_USERNAME") | .name'

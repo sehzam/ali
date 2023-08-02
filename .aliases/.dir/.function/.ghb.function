@@ -170,9 +170,7 @@ repo_delete() {
     return 1
   fi
   
-  public_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[].name')
-  private_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=private" | jq -r '.[].name')
-
+  load_repos
   fn=$(echo $(echo "$public_repos"|grep -E "$1"))
   fn_private=$(echo $(echo "$private_repos"|grep -E "$1"))
   local repo_name="$1"
@@ -242,13 +240,16 @@ repo_list=$(cat ~/.config/.github/.repo)
 }
 
 ############################################################################
+load_repos(){
+    public_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[].name')
+    private_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=private" | jq -r '.[].name')
+}
+############################################################################
 
 # Define the function to delete a GitHub repository # ·e·
 repo_list() { # ·c·
   # Check if the repository name is provided as an argument # ·e·
-  public_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[].name')
-  private_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=private" | jq -r '.[].name')
-
+  load_repos
   echo "#######################################"
   echo "Check available Repositories: github.com/$GITHUB_USERNAME/"
   echo "#######################################"
@@ -276,9 +277,7 @@ git_setup_and_push() {
     return 1
   fi
 
-  public_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[].name')
-  private_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=private" | jq -r '.[].name')
-
+  load_repos
   fn=$(echo $(echo "$public_repos"|grep -E "$1"))
   fn_private=$(echo $(echo "$private_repos"|grep -E "$1"))
 
