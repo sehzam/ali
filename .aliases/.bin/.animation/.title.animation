@@ -90,11 +90,16 @@ title_animation() {
     for ((i = 0; i < 5; i++)); do
         echo
     done
+    while :; do
+        color_code=$((31 + RANDOM % 7)) # Generates a random color code between 31 and 37
+        echo -ne "\e[${color_code}m$((RANDOM % 2))\e[0m"
+        sleep 0.01
+    done & sleep 10; kill $!
+
+
 }
-if [ -f ~/.aliases/.ali.aliases ]; then
-    . ~/.aliases/.ali.aliases
-fi
 wai=$(whoami)
 echo "$wai"
-# Bash title animation for embedding in ~/.bashrc "s e h z a m i n a t i o n"
-title_animation "Welcome BACK ($wai)" "to the MATRIX" "ALI : Alias List Injection " "$avail_lists "
+# Bash title animation for embedding in ~/.bashrc
+title_animation 'Welcome ( $(wai^^) )' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '
+alias i="title_animation 'Welcome BACK ($wai)' 'to the MATRIX' 'ALI : Alias List Injection ' '$avail_lists '"
