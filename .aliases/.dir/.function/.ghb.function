@@ -281,8 +281,6 @@ git_setup_and_push() {
     return 1
   fi
 
-  load_repos
-
   public_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=public" | jq -r '.[].name')
   private_repos=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/user/repos?type=private" | jq -r '.[].name')
 }
@@ -291,7 +289,7 @@ git_setup_and_push() {
 
 
   if [[ "$fn" == "$1" ]] || [[ "$fn_private" == "$1" ]]; then
-    echo "-- ATTENTION -- $repo_name already available!"w
+    echo "-- ATTENTION -- $repo_name already available!"
     echo "-----------------------------------"
     echo "----- Available Repositories ------"
     repo_list
