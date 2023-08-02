@@ -3,6 +3,7 @@
 title_animation() {
     clear
     local text1="$1"
+    local text2="$2"
     local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
     local shadow_color="\e[90m"
     local shadow_delay=0.000005
