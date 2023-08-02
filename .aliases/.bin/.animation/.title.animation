@@ -12,7 +12,7 @@ title_animation() {
         ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
-    local y=$(( LINES / 10 ))
+    local y=$(( LINES / 8 ))
 
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
@@ -24,6 +24,27 @@ title_animation() {
 
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $y $((x + i))
+        echo -ne "${color}${char}\e[0m"
+        sleep $shadow_delay
+    done
+        ############################################################################
+
+    local x=$(( (COLUMNS - ${#text2}) / 2 ))
+    local y=$(( LINES / 4 ))
+
+    for ((i = 0; i < ${#text2}; i++)); do
+        local char="${text2:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $((y - 1)) $((x + i))
+        echo -ne "${shadow_color}${char}\e[0m"
+    done
+
+    for ((i = 0; i < ${#text2}; i++)); do
+        local char="${text2:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
         tput cup $y $((x + i))
@@ -145,5 +166,5 @@ title_animation() {
 # Bash title animation for embedding in ~/.bashrc
 # alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
 # title_animation "Welcome (=- $wai -=)" "to the M A T R I X " "ALI : Alias List Injection"  "$avail_lists"
-title_animation "$avail_lists"
-alias i="title_animation $avail_lists"
+title_animation "ALI : Alias List Injection" "$avail_lists"
+alias i="title_animation 'ALI : Alias List Injection' $avail_lists"
