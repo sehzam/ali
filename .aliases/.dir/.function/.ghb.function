@@ -245,7 +245,7 @@ repo_list() { # ·c·
   # Check if the repository name is provided as an argument # ·e·
     
   echo "#######################################"
-  echo "Check installed Tokens: ~/.config/.github"
+  echo "Check available Repositories: github.com/$GITHUB_USERNAME/"
   echo "###############w########################"
   curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/users/$GITHUB_USERNAME/repos" | grep -oP '(?<="name": ")[^"]*' | grep -vE '(Dload|upload)'  # ·c·
   echo "#######################################"
