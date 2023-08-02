@@ -320,13 +320,12 @@ git_setup_and_push() {
     "$api_url")
 
 
-  # Check if the repotiory exists. If true, aborting wirh message
     fn=$(echo $(echo "$public_repos"|grep -E "$1"))
     fn_private=$(echo $(echo "$private_repos"|grep -E "$1"))
     pd=$(pwd)
 
 
-  if [[ "$fn" == "$1" ]] || [[ "$fn_private" == "$1" ]]; then
+  if [[ "$fn" == "$1" ]] && [[ "$fn_private" == "$1" ]]; then
     echo "$1 = $pd/$1/" >> ~/.config/.github/.repo
     echo "-- INFO -- Repository path: : :  $pd/$1  : : : added to REPO INSTALL LIST: ~/.config/.github/.repo"
   fi
