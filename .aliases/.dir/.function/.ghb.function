@@ -181,7 +181,6 @@ repo_delete() {
   # Check if the repository exists
   if ! echo "$fn" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named PUBLIC repository NOT FOUND!"
-    return 1
   fi
   if ! echo "$fn_private" | grep -q "$repo_name"; then
     echo "-- ATTENTION -- $repo_name named PRIVATE repository NOT FOUND!"
