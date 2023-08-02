@@ -323,6 +323,7 @@ git_setup_and_push() {
   # Check if the repotiory exists. If true, aborting wirh message
     fn=$(echo $(echo "$public_repos"|grep -E "$1"))
     fn_private=$(echo $(echo "$private_repos"|grep -E "$1"))
+    pd=$(pwd)
 
 
   if [[ "$fn" == "$1" ]] || [[ "$fn_private" == "$1" ]]; then
