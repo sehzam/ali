@@ -26,38 +26,25 @@ sr() { # ·c·
     sed -i "s/$1/$2/g" "$3" # ·c· 
 } # ·c· 
 #
+
 function copy_create_folder() {
   local destination="${@: -1}"
+  local source_paths=("${@:1:$#-1}")
 
-  # Prüfen, ob der Zielordner bereits existiert
-  if [ -d "$destination" ]; then
-    # Absolute Pfade von Zielordnern auflösen
-    local destination_abs=$(realpath "$destination")
+  # Erstellen des Zielverzeichnisses, wenn es nicht existiert
+  mkdir -p "$destination"
 
-    for ((i = 1; i < $#; i++)); do
-      local source="${!i}"
-      local source_abs=$(realpath "$source")
-
-      # Überprüfen, ob der Quellordner ein Unterverzeichnis des Zielordners ist
-      if [[ "$source_abs" == "$destination_abs"* ]]; then
-        echo "Überspringe $source: Es ist ein Unterverzeichnis des Zielordners."
-      else
-        # Erstellen des vollständigen Ziel-Pfads basierend auf der Quellstruktur
-        local relative_path="${source#$PWD/}"
-        local destination_path="$destination/$relative_path"
-
-        # Kopieren von Dateien oder Ordnern zum Ziel-Pfad
-        mkdir -p "$(dirname "$destination_path")"
-        cp -r "$source" "$destination_path"
-      fi
-    done
-  else
-    # Zielordner erstellen und Dateien/Ordner kopieren
-    mkdir -p "$destination"
-    shift $(( $# - 1 ))
-    cp -r "$@" "$destination"
-  fi
+  for source in "${source_paths[@]}"; do
+    if [ -d "$source" ]; then
+      # Wenn die Quelle ein Verzeichnis ist, kopieren wir den gesamten Inhalt rekursiv
+      find "$source" -mindepth 1 -exec bash -c 'mkdir -p "$0/${1#"$PWD/"}" && cp -r "$1" "$0/${1#"$PWD/"}"' "$destination" '{}' \;
+    else
+      # Wenn die Quelle eine Datei ist, kopieren wir sie direkt in das Zielverzeichnis
+      cp "$source" "$destination"
+    fi
+  done
 }
+
 
 #
 # ·f· ------------------ Functions  ---------------- ·f· Directory Control System
