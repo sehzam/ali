@@ -187,7 +187,7 @@ if [ -s "$output_file_var" ]; then
 
     # Sortieren und die Ausgabe im endgültigen Datei speichern
     sort < "$output_file_final" > "$output_file_final_sorted"
-    mv "$output_file_final_sorted" "$output_file_final"
+    mv "$output_file_final_sorted" "$info"
 fi
 echo "
 # ·o· ______________________________________________ ·o· 
@@ -198,7 +198,7 @@ echo "
 # ·o·                                                ·o·
 # ·o· ______________________________________________ ·o·" >> ~/.aliases/.ali.aliases
 
-info=$(<$output_file_final)
+# info=$(<$output_file_final)
 
 echo -n "avail_lists='(| .ali $info|)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
