@@ -1,0 +1,35 @@
+countdown(){
+
+clear_screen() {
+    printf "\033c"
+}
+
+hide_cursor() {
+    printf "\033[?25l"
+}
+
+show_cursor() {
+    printf "\033[?25h"
+}
+
+display_timer() {
+    local time=$1
+    printf "\Available time : %02d:%02d" $((time / 60)) $((time % 60))
+}
+
+start_time=120
+
+hide_cursor
+
+for ((i = $start_time; i >= 0; i--)); do
+    clear_screen
+    display_timer $i
+    sleep 1
+done
+
+show_cursor
+echo -e "\nCountdown done!"
+bash
+
+
+}

@@ -1,3 +1,4 @@
+. ~/ali-main/.aliases/.bin/.countdown.function
 echo ______________________________________________________
 echo -
 echo ....................A..lias
@@ -195,5 +196,8 @@ echo "
 
 info=$(<$output_file_final)
 
-echo -n "avail_lists='(| .ali $info|)' # ·f·" | cat - ~/.aliases/.ali.aliases > ~/.temp
+echo -n "avail_lists='(| .ali $info|)' # ·f·
+" | cat - ~/.aliases/.ali.aliases > ~/.temp
 mv ~/.temp ~/.aliases/.ali.aliases
+sleep 3
+countdown
