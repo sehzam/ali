@@ -180,9 +180,6 @@ if [ -s "$output_file_var" ]; then
     done < "$output_file_var"
 fi
 
-# Sortieren und die Ausgabe im endgültigen Datei speichern
-sort "$output_file_final" -o "$output_file_final"
-
 echo "
 # ·o· ______________________________________________ ·o· 
 # ·o·                                                ·o·
@@ -193,6 +190,10 @@ echo "
 # ·o· ______________________________________________ ·o·" >> ~/.aliases/.ali.aliases
 
 info=$(<$output_file_final)
+
+# Sortieren und die Ausgabe im endgültigen Datei speichern
+sort "$output_file_final" -o "$info"
+
 echo -n "avail_lists='(| .ali $info|)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
 
