@@ -47,6 +47,11 @@ echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
 cp -Rp ./ali-main/.aliases/.bin/.animation/.title.animation ~/.aliases/.bin/.animation/
 echo ........... Title Animation : ~/.aliases/.bin/.animation/.title.animation
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
+##
+cp -Rp ./ali-main/.aliases/.bin/.animation/.title.solid.animation ~/.aliases/.bin/.animation/
+echo ........... Title Animation : ~/.aliases/.bin/.animation/.title.solid.animation
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 #
 echo ·________________________________· |grep -E "_" 
 echo "| copying files to directory:    |" ~/.aliases/.dir/ |grep -E "\|"
