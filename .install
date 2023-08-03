@@ -134,6 +134,8 @@ alias '.as'='.ali.setup' #-#-#
 #Alias Entry Point #-#-#
 if [ -f ~/.aliases/.ali.aliases ]; then #-#-#
 .  ~/.aliases/.ali.aliases #-#-# 
+.  ~/.aliases/.bin/.animation/title.animation #-#-# 
+.  ~/.aliases/.bin/.animation/title.solid.animation #-#-# 
 fi #-#-#
  #-#-#
 # Grep Custom Color #-#-#
@@ -191,10 +193,6 @@ echo "
 # ·o·              { I } = njection                  ·o·
 # ·o·                                                ·o·
 # ·o· ______________________________________________ ·o·" >> ~/.aliases/.ali.aliases
-
-
-echo ".  ~/.aliases/.bin/.animation/.title.solid.animation #-#-# " >> ~/.aliases/.ali.aliases
-echo -n " # ·f·" >> ~/.aliases/.ali.aliases
 
 info=$(<$output_file_final)
 
