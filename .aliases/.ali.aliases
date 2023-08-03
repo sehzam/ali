@@ -9,6 +9,8 @@
 # ·o· ______________________________________________ ·o·
 # ·o· ---------------- Loadings -------------------- ·o· Loadings
 . ~/.aliases/.bin/.function/.ali.function # ·c· 
+.  ~/.aliases/.bin/.animation/.title.solid.animation #-#-# 
+
 
 # ( c ): clears the terminal # ·e· 
 alias c='clear' # ·a· 

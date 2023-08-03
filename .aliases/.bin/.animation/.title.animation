@@ -105,5 +105,5 @@ title_animation() {
 }
 wai=$(whoami)
 alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
-
+i
 echo "title animation"

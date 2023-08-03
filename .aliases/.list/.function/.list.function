@@ -10,9 +10,6 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· --------           ${alias_file^^}            ------------ ·o· ${alias_file^^}
 # ·o· ______________________________________________ ·o· 
 
-source ~/.aliases/.bin/.animation/.title.animation
-source ~/.aliases/.bin/.animation/.title.solid.animation
-
 # ·o· ______________________________________________ ·o· 
 # ·o· ---------------- R A W Output ---------------- ·o· R A W Output
 # ( .$alias_file.raw ) : RAW output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
