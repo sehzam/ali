@@ -179,6 +179,10 @@ if [ -s "$output_file_var" ]; then
         
     done < "$output_file_var"
 fi
+
+# Sortieren und die Ausgabe im endgültigen Datei speichern
+sort "$output_file_final" -o "$output_file_final"
+
 echo "
 # ·o· ______________________________________________ ·o· 
 # ·o·                                                ·o·

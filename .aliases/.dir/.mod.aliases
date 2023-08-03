@@ -33,7 +33,7 @@ copy_files_with_progress() {
     local current_file=0
 
     for file in "${files_to_copy[@]}"; do
-        cp "$file" /destination/path/  # Replace '/destination/path/' with your desired destination.
+        cp "$file" ~/.base/  # Replace '~/.base/' with your desired destination.
         current_file=$((current_file + 1))
         loading_bar $total_files $current_file
         sleep 0.1
