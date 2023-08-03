@@ -13,7 +13,7 @@ title_animation() {
         ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
-    local y=$(( LINES / 5 ))
+    local y=$(( LINES / 4 ))
 
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
@@ -35,7 +35,7 @@ title_animation() {
         ############################################################################
 
     local x=$(( (COLUMNS - ${#text2}) / 2 ))
-    local y=$(( LINES / 4 ))
+    local y=$(( LINES / 3 ))
 
     for ((i = 0; i < ${#text2}; i++)); do
         local char="${text2:i:1}"
@@ -57,7 +57,7 @@ title_animation() {
         ############################################################################
 
     local x=$(( (COLUMNS - ${#text3}) / 2 ))
-    local y=$(( LINES / 3 ))
+    local y=$(( LINES / 2 ))
 
     for ((i = 0; i < ${#text3}; i++)); do
         local char="${text3:i:1}"
@@ -77,9 +77,9 @@ title_animation() {
     done
     
         ############################################################################
-
+    sleep 1
     local x=$(( (COLUMNS - ${#text4}) / 2 ))
-    local y=$(( LINES / 2 ))
+    local y=$(( LINES / 50 ))
 
     for ((i = 0; i < ${#text4}; i++)); do
         local char="${text4:i:1}"

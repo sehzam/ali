@@ -1,0 +1,45 @@
+#!/bin/bash
+# 
+title_animation() {
+    clear
+    local text1="$1"
+    local text2="$2"
+    local text3="$3"
+    local text4="$4"
+    local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
+    local shadow_color="\e[90m"
+    local shadow_delay=0.000005
+
+        ############################################################################
+
+    local x=$(( (COLUMNS - ${#text1}) / 2 ))
+    local y=$(( LINES / 50 ))
+
+    for ((i = 0; i < ${#text1}; i++)); do
+        local char="${text1:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $((y - 1)) $((x + i))
+        echo -ne "${shadow_color}${char}\e[0m"
+    done
+
+    for ((i = 0; i < ${#text1}; i++)); do
+        local char="${text1:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $y $((x + i))
+        echo -ne "${color}${char}\e[0m"
+        sleep $shadow_delay
+    done
+
+        ############################################################################
+
+    for ((i = 0; i < 1; i++)); do
+        echo
+    done
+}
+
+. ~/.aliases/.ali.aliases
+
+alias i.s="title_animation  '$avail_lists '"
+title_animation "$avail_lists"
