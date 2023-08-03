@@ -1,4 +1,3 @@
-# echo "list template"
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
 directory_to_save="$HOME/.aliases/.list/" # ·v· 
 output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
@@ -6,9 +5,6 @@ output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v·
 
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r alias_file; do # ·c· 
-      # ·e· Debugging: list all loaded *.aliases files
-        # echo "( .$alias_file.e )" # ·c· 
-        # echo "Directory : $directory_to_search.$alias_file.aliases" # ·c· 
         echo "# ·o· ______________________________________________ ·o· 
 # ·o· --------           ${alias_file^^}            ------------ ·o· ${alias_file^^}
 # ·o· ______________________________________________ ·o· 
@@ -16,11 +12,11 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· ---------------- R A W Output ---------------- ·o· R A W Output
 # ( .$alias_file.raw ) : RAW output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
-alias '.$alias_file.raw'='cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
+alias '.$alias_file.raw'='c && i.s &&cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ( .$alias_file.f ) : RAW output · ~/.aliases/.dir/.function/.$alias_file.function  # ·e·
-alias '.$alias_file.f'='cat ~/.aliases/.dir/.function/.$alias_file.function' # ·a·
+alias '.$alias_file.f'='c && i.s &&cat ~/.aliases/.dir/.function/.$alias_file.function' # ·a·
 # ( .$alias_file.l )   : RAW output · ~/.aliases/.list/.$alias_file.lists  # ·e·
-alias '.$alias_file.l'='cat ~/.aliases/.list/.$alias_file.lists' # ·a·
+alias '.$alias_file.l'='c && i.s &&cat ~/.aliases/.list/.$alias_file.lists' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
 # ·f· ______________________________________________ ·f· 
@@ -42,13 +38,13 @@ ${alias_file}_l() { # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------ Aliases-------------------- ·o· Aliases
 # ( .$alias_file )   : (ENTRY POINT) · lists ~/.aliases/.list/.$alias_file.lists # ·e·
-alias '.$alias_file'='${alias_file}_l' # ·a·
+alias '.$alias_file'='c && i.s &&${alias_file}_l' # ·a·
 # ( .$alias_file.a ) : ( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
-alias '.$alias_file.a'='${alias_file}_a' # ·a·
+alias '.$alias_file.a'='c && i.s &&${alias_file}_a' # ·a·
 # ( .$alias_file.e ) : ( explaination ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e· 
-alias '.$alias_file.e'='${alias_file}_e' # ·a·
+alias '.$alias_file.e'='c && i.s &&${alias_file}_e' # ·a·
 # ( .$alias_file.f ) : ( functions... ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
-alias '.$alias_file.f'='${alias_file}_f' # ·a·
+alias '.$alias_file.f'='c && i.s &&${alias_file}_f' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ______________________________________________ ·o· 
