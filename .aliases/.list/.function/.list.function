@@ -3,6 +3,9 @@ directory_to_save="$HOME/.aliases/.list/" # ·v·
 output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
 output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
 
+. ~/.aliases/.ali.aliases
+alias i.s="title_animation  '$avail_lists '"
+
 if [ -s "$output_file_var" ]; then # ·c·
     while read -r alias_file; do # ·c· 
         echo "# ·o· ______________________________________________ ·o· 
