@@ -195,5 +195,5 @@ echo "
 
 info=$(<$output_file_final)
 
-echo -n "avail_lists='(| .ali $info|)'" >> ~/.aliases/.ali.aliases
-echo -n " # ·f·" >> ~/.aliases/.ali.aliases
+echo -n "avail_lists='(| .ali $info|)' # ·f·" | cat - ~/.aliases/.ali.aliases > ~/.temp
+mv ~/.temp ~/.aliases/.ali.aliases
