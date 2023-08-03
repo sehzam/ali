@@ -189,6 +189,6 @@ echo "
 # ·o· ______________________________________________ ·o·" >> ~/.aliases/.ali.aliases
 
 info=$(<$output_file_final)
-echo -n "avail_lists='(@-| .ali $info|-@)'" >> ~/.aliases/.ali.aliases
+echo -n "avail_lists='(| .ali $info|)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
 
