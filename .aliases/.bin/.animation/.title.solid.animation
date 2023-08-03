@@ -39,6 +39,8 @@ title_solid_animation() {
     done
 }
 
+. ~/.aliases/.aliases
+
 alias ii="title_solid_animation  '$avail_lists '"
 
 echo "title solid animation"
