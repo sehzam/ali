@@ -34,20 +34,20 @@ alias ".ali.edit"='xdg-open ~/.aliases/.ali.aliases' # ·a·
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- R A W Output ------------------ ·o· R A W Output
 # ( .ali.raw ): RAW output · ~/.aliases/.ali.aliases  # ·e·
-alias ".ali.raw"='i.s &&cat ~/.aliases/.ali.aliases' # ·a·
+alias ".ali.raw"='ii && cat ~/.aliases/.ali.aliases' # ·a·
 # ( .ali.func ): RAW output · ~/.aliases/.bin/.ali.function  # ·e·
-alias ".ali.function"='i.s &&cat ~/.aliases/.bin/.ali.function' # ·a·
+alias ".ali.function"='ii && cat ~/.aliases/.bin/.ali.function' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Aliases
 
 # ( .ali )   : ( ENTRY POINT ) · ~/.aliases/.ali.aliases  # ·e·
-alias ".ali"='i.s &&ali' # ·a·
+alias ".ali"='ii && ali' # ·a·
 # ( .ali.a ) : ( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
-alias ".ali.a"='i.s &&ali_a' # ·a·
+alias ".ali.a"='ii && ali_a' # ·a·
 # ( .ali.e ) : ( explaination ) · lists ~/.aliases/.ali.aliases # ·e·
-alias ".ali.e"='i.s &&ali' # ·a·
+alias ".ali.e"='ii && ali' # ·a·
 # ( .ali.f ) : ( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
-alias ".ali.f"='i.s &&ali_f' # ·a·
+alias ".ali.f"='ii && ali_f' # ·a·
 

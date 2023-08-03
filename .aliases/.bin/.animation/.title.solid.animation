@@ -1,6 +1,6 @@
 #!/bin/bash
 # 
-title_animation() {
+title_solid_animation() {
     clear
     local text1="$1"
     local text2="$2"
@@ -40,4 +40,4 @@ title_animation() {
 }
 
 . ~/.aliases/.ali.aliases
-alias 'i.s'="title_animation  '$avail_lists '"
+alias ii="title_solid_animation  '$avail_lists '"
