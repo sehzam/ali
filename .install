@@ -175,6 +175,7 @@ echo ______________________________________________________
 #
 output_file_var="$HOME/.aliases/.bin/.ali.list.names"
 output_file_final="$HOME/.aliases/.bin/.ali.info"
+info="$HOME/.aliases/.bin/.ali.sorted"
 
 if [ -s "$output_file_var" ]; then
     while IFS= read -r line; do
@@ -187,7 +188,6 @@ if [ -s "$output_file_var" ]; then
 
     # Sortieren und die Ausgabe im endgültigen Datei speichern
     sort < "$output_file_final" > "$output_file_final_sorted"
-    mv "$output_file_final_sorted" "$info"
 fi
 echo "
 # ·o· ______________________________________________ ·o· 
@@ -198,7 +198,6 @@ echo "
 # ·o·                                                ·o·
 # ·o· ______________________________________________ ·o·" >> ~/.aliases/.ali.aliases
 
-# info=$(<$output_file_final)
 
 echo -n "avail_lists='(| .ali $info|)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
