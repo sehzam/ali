@@ -42,4 +42,3 @@ title_animation() {
 . ~/.aliases/.ali.aliases
 
 alias i.s="title_animation  '$avail_lists '"
-title_animation "$avail_lists"
