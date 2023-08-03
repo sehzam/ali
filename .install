@@ -133,9 +133,9 @@ alias '.as'='.ali.setup' #-#-#
 #-#-# 
 #Alias Entry Point #-#-#
 if [ -f ~/.aliases/.ali.aliases ]; then #-#-#
+.  ~/.aliases/.ali.aliases #-#-# 
 .  ~/.aliases/.bin/.animation/.title.animation #-#-# 
 .  ~/.aliases/.bin/.animation/.title.solid.animation #-#-# 
-.  ~/.aliases/.ali.aliases #-#-# 
 fi #-#-#
  #-#-#
 # Grep Custom Color #-#-#
@@ -175,16 +175,20 @@ echo ______________________________________________________
 #
 output_file_var="$HOME/.aliases/.bin/.ali.list.names"
 output_file_final="$HOME/.aliases/.bin/.ali.info"
-info=$(<$output_file_final)
 
 if [ -s "$output_file_var" ]; then
-    # Entfernen von Leerzeichen und Zeilenumbrüchen aus jeder Zeile und Hinzufügen der Punkte
-    awk '{gsub(/[[:space:]]/, ""); printf "| .%s ", $0}' "$output_file_var" > "$info"
+    while IFS= read -r line; do
+        # Entfernen von Leerzeichen und Zeilenumbrüchen aus der Zeile
+        cleaned_line=$(echo "$line" | tr -d '[:space:]')
+        # Hinzufügen der Punkte zwischen den Begriffen
+        echo -n "| .$cleaned_line " >> "$output_file_final"
+        
+    done < "$output_file_var"
 
-    # Sortieren der Ausgabe und im endgültigen Datei speichern
-    sort "$info" -o "$info"
+    # Sortieren und die Ausgabe im endgültigen Datei speichern
+    sort < "$output_file_final" > "$output_file_final_sorted"
+    mv "$output_file_final_sorted" "$output_file_final"
 fi
-
 echo "
 # ·o· ______________________________________________ ·o· 
 # ·o·                                                ·o·
@@ -194,7 +198,7 @@ echo "
 # ·o·                                                ·o·
 # ·o· ______________________________________________ ·o·" >> ~/.aliases/.ali.aliases
 
-# info=$(<$output_file_final)
+info=$(<$output_file_final)
 
 echo -n "avail_lists='(| .ali $info|)'" >> ~/.aliases/.ali.aliases
 echo -n " # ·f·" >> ~/.aliases/.ali.aliases
