@@ -104,7 +104,7 @@ title_animation() {
     done
 }
 
-. ~/.aliases/.aliases
+. ~/.aliases/.ali.aliases
 
 wai=$(whoami)
 alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
