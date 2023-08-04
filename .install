@@ -202,5 +202,5 @@ echo -n "avail_lists='(| .ali $info|)' # ·f·
 mv ~/.temp ~/.aliases/.ali.aliases
 
 sleep 2
-countdown
+echo "$countdown"
 sleep 2
