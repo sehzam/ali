@@ -43,7 +43,7 @@ alias ".ali.function"='cat ~/.aliases/.bin/.function/.ali.function' # ·a·
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Aliases ------------------ ·o· Aliases
 
-# ( .ali )   : ( ENTRY POINT ) · ~/.aliases/.ali.aliases  # ·e·
+# ( .ali )   : ( ENTRY POINTS ) · ~/.aliases/.ali.aliases  # ·e·
 alias ".ali"='ii && ali' # ·a·
 # ( .ali.a ) : ( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.a"='ii && ali_a' # ·a·
