@@ -40,8 +40,8 @@ ali_f() { # ·c·
 # ·f· ---------------------------------------------- ·f· 
 
 . ~/.aliases/.list/.function/.list.function #-#-# 
-. ~/.aliases/.bin/.animation/title.animation #-#-# 
-. ~/.aliases/.bin/.animation/title.solid.animation #-#-# 
+. ~/.aliases/.bin/.animation/.title.animation #-#-# 
+. ~/.aliases/.bin/.animation/.title.solid.animation #-#-# 
 
 # ·f· ______________________________________________ ·f· 
 # ·f· ------------------ Functions  ---------------- ·f· .ali Entry Point
