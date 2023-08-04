@@ -1,3 +1,6 @@
+. ~/.aliases/.bin/.countdown.function
+. ~/ali-main/.aliases/.bin/.countdown.function
+
 prompt () {
     if ! [ -d ~/ali-main ]; then
         wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && 
@@ -22,6 +25,7 @@ prompt () {
         . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__|<|>'
         . ~/ali-main/.install|grep -E ':|·|~|\.|-|__|<|>'
         rm -f  -r ~/ali-main/
+        count
         bash 
     # fi
     echo ______________________________________________________ |grep -E "_"
