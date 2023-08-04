@@ -8,7 +8,12 @@
  
 # ·o· ______________________________________________ ·o·
 # ·o· ---------------- Loadings -------------------- ·o· Loadings
-source ~/.aliases/.bin/.function/.ali.function # ·c·   
+. ~/.aliases/.bin/.function/.ali.function #-#-#  
+. ~/.aliases/.bin/.animation/.title.animation #-#-# 
+. ~/.aliases/.bin/.animation/.title.solid.animation #-#-#
+wai=$(whoami)
+alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
+alias ii="title_solid_animation  '$avail_lists '"
 
 # ( c ): clears the terminal # ·e· 
 alias c='clear' # ·a· 
