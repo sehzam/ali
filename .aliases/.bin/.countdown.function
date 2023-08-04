@@ -29,6 +29,6 @@ done
 
 show_cursor
 echo -e "\nStart ALI !"
-sleep 1
 }
+
 alias count="countdown"
