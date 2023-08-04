@@ -14,10 +14,10 @@ show_cursor() {
 
 display_timer() {
     local time=$1
-    printf "\Available time : %02d:%02d" $((time / 60)) $((time % 60))
+    printf "ALI starts in : %02d:%02d" $((time / 60)) $((time % 60))
 }
 
-start_time=$1
+start_time=5
 
 hide_cursor
 
@@ -30,4 +30,4 @@ done
 show_cursor
 echo -e "\nCountdown done!"
 }
-alias count="countdown '5'"
+alias count="countdown"
