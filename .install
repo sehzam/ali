@@ -208,4 +208,4 @@ mv ~/.temp ~/.aliases/.ali.aliases
 
 # countdown
 clear
-count
+count 5
