@@ -14,7 +14,6 @@
 wai=$(whoami)
 alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
 alias ii="title_solid_animation  '$avail_lists '"
-
 # ( c ): clears the terminal # ·e· 
 alias c='clear' # ·a· 
 
