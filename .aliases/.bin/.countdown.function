@@ -14,15 +14,15 @@ show_cursor() {
 
 display_timer() {
     local time=$1
-    printf "Installation complete - enter into Alias Listing System : %02d:%02d" $((time / 60)) $((time % 60))
+    printf "Application starts in : %02d:%02d" $((time / 60)) $((time % 60))
 }
 
-start_time=5
+start_time=$1
 
 hide_cursor
 
 for ((i = $start_time; i >= 0; i--)); do
-    # clear_screen
+    clear_screen
     display_timer $i
     sleep 1
 done

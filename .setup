@@ -25,7 +25,7 @@ prompt () {
         . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__|<|>'
         . ~/ali-main/.install|grep -E ':|·|~|\.|-|__|<|>'
         rm -f  -r ~/ali-main/
-        count
+        count 4
         sleep 1
         bash 
     # fi
