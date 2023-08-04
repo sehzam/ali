@@ -204,4 +204,5 @@ mv ~/.temp ~/.aliases/.ali.aliases
 sleep 2
 countdown
 echo "countdown $countdown"
+count
 sleep 2

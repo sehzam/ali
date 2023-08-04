@@ -17,7 +17,7 @@ display_timer() {
     printf "\Available time : %02d:%02d" $((time / 60)) $((time % 60))
 }
 
-start_time=120
+start_time=$1
 
 hide_cursor
 
@@ -29,7 +29,5 @@ done
 
 show_cursor
 echo -e "\nCountdown done!"
-bash
-
-
 }
+alias count="countdown '5'"
