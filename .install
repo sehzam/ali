@@ -198,6 +198,4 @@ info=$(<$output_file_final)
 echo -n "avail_lists='(| .ali $info|)' # ·f·
 " | cat - ~/.aliases/.ali.aliases > ~/.temp
 mv ~/.temp ~/.aliases/.ali.aliases
-
-sleep 1
-. ~/.aliases/.bin/.animation/.title.animation
+return 1
