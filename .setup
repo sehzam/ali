@@ -26,6 +26,7 @@ prompt () {
         . ~/ali-main/.install|grep -E ':|·|~|\.|-|__|<|>'
         rm -f  -r ~/ali-main/
         count
+        sleep 1
         bash 
     # fi
     echo ______________________________________________________ |grep -E "_"
