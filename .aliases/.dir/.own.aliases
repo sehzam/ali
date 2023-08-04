@@ -4,46 +4,46 @@
 
 # ·o· ------------ Personal Directories ------------ ·o· Personal Directories
 
-# ( x ) change directory : ~/projects/ & show content # ·e·
+# ( x ) change directory  : ~/projects/ & show content # ·e·
 alias 'x'='cd ~/projects/ && ls' # ·a·
 
-# ( w ) change directory : ~/projects/work & show content # ·e·
+# ( w ) change directory  : ~/projects/work & show content # ·e·
 alias 'w'='cd ~/projects/work/ && ls' # ·a·
 
-# ( p ) change directory : ~/projects/personal & show content # ·e·
+# ( p ) change directory  : ~/projects/personal & show content # ·e·
 alias 'p'='cd ~/projects/personal/ && ls' # ·a·
 
-# ( a ) change directory : current project & show (hidden) content # ·e·
+# ( a ) change directory  : current project & show (hidden) content # ·e·
 alias 'a'='cd ~/projects/personal/ali/ && ll' # ·a·
 
 # ( .a ) change directory : current project INSTALL PATH & show (hidden) content # ·e·
 alias '.a'='cd ~/.aliases/ && ll' # ·a·
 
-# ( e ) change directory : encounter notes & show content # ·e·
+# ( e ) change directory  : encounter notes & show content # ·e·
 alias 'e'='cd ~/projects/work/vectorized-vegeta-encounter-notes/ && ls' # ·a·
 
-# ( s ) change directory : students code & show content # ·e·
+# ( s ) change directory  : students code & show content # ·e·
 alias 's'='cd ~/projects/work/vectorized-vegeta-student-code/ && ls' # ·a·
 
 # ( dl ) change directory : ~/Downloads/ & show content # ·e·
 alias 'dl'='cd ~/Downloads/ && ls' # ·a·
 
-# ( d ) change directory : ~/Documents/ & show content # ·e·
+# ( d ) change directory  : ~/Documents/ & show content # ·e·
 alias 'd'='cd ~/Documents/ && ls' # ·a·
 
-# ( o ) change directory : ~/OneDrive/ & show content # ·e·
+# ( o ) change directory  : ~/OneDrive/ & show content # ·e·
 alias 'o'='cd ~/OneDrive/ && ls' # ·a·
 
-# ( v ) change directory : ~/Videos/ & show content # ·e·
+# ( v ) change directory  : ~/Videos/ & show content # ·e·
 alias 'v'='cd ~/Videos/ && ls' # ·a·
 
-# ( m ) change directory : ~/Music/ & show content # ·e·
+# ( m ) change directory  : ~/Music/ & show content # ·e·
 alias 'm'='cd ~/Music/ && ls' # ·a·
 
-# ( b ) change directory : ~/Pictures/ & show content # ·e·
+# ( b ) change directory  : ~/Pictures/ & show content # ·e·
 alias 'b'='cd ~/Pictures/ && ls' # ·a·
  
-# ( t ) change directory : ~/Desktop/ & show content # ·e·
+# ( t ) change directory  : ~/Desktop/ & show content # ·e·
 alias 't'='cd ~/Desktop/ && ls' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
