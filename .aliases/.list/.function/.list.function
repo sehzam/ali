@@ -9,7 +9,7 @@ if [ -s "$output_file_var" ]; then # ·c·
         echo "# ·o· ______________________________________________ ·o· 
 # ·o· --------           ${alias_file^^}            ------------ ·o· ${alias_file^^}
 # ·o· ______________________________________________ ·o· 
-.  ~/.aliases/.bin/.animation/.title.solid.animation # ·c· 
+# .  ~/.aliases/.bin/.animation/.title.solid.animation # ·c· 
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ---------------- R A W Output ---------------- ·o· R A W Output
