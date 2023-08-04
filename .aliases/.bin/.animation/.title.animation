@@ -107,4 +107,4 @@ title_animation() {
 . ~/.aliases/.ali.aliases
 
 wai=$(whoami)
-title_animation "Welcome BACK ($wai)" "to the " "ALI : Alias List Injection " "$avail_lists"
+alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
