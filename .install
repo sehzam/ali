@@ -207,4 +207,5 @@ echo -n "avail_lists='(| .ali $info|)' # ·f·
 mv ~/.temp ~/.aliases/.ali.aliases
 
 # countdown
+clear
 count
