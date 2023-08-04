@@ -24,7 +24,7 @@ fi # ·c·
 alias ".ali.raw"='cat ~/.aliases/.ali.aliases' # ·a·
 
 # ( .ali.func ): RAW output · ~/.aliases/.bin/.ali.function  # ·e·
-alias ".ali.function"='cat ~/.aliases/.bin/.ali.function' # ·a·
+alias ".ali.function"='cat ~/.aliases/.bin/.function/.ali.function' # ·a·
 
 ali() { # ·c·
   .ali.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
