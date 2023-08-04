@@ -40,6 +40,10 @@ echo ·________________________________· |grep -E "·"
 cp -Rp ./ali-main/.aliases/.bin/.function/.ali.function ~/.aliases/.bin/.function/
 echo ......Ali Function commands : ~/.aliases/.bin/.function/.ali.function
 echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
+#
+cp -Rp ./ali-main/.aliases/.bin/.countdown.function ~/.aliases/.bin/
+echo ......Countdown commands : ~/.aliases/.bin/.countdown.function
+echo __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ 
 ##
 cp -Rp ./ali-main/.aliases/.list/.function/.list.function ~/.aliases/.list/.function/
 echo .......... Listing Template : ~/.aliases/.list/.function/.list.function
