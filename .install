@@ -1,4 +1,4 @@
-. ~/ali-main/.aliases/.bin/.countdown.function
+. ~/.aliases/.bin/.countdown.function
 echo ______________________________________________________
 echo -
 echo ....................A..lias
