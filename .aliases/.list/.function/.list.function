@@ -9,8 +9,6 @@ if [ -s "$output_file_var" ]; then # ·c·
         echo "# ·o· ______________________________________________ ·o· 
 # ·o· --------           ${alias_file^^}            ------------ ·o· ${alias_file^^}
 # ·o· ______________________________________________ ·o· 
-source  ~/.aliases/.ali.aliases # ·c· 
-source  ~/.aliases/.bin/.animation/.title.solid.animation # ·c· 
 alias ii="title_solid_animation  '$avail_lists '" # ·c· 
 
 
