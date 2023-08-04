@@ -135,8 +135,7 @@ alias '.as'='.ali.setup' #-#-#
 #Alias Entry Point #-#-#
 if [ -f ~/.aliases/.ali.aliases ]; then #-#-#
 . ~/.aliases/.ali.aliases #-#-# 
-. ~/.aliases/.bin/.animation/.title.animation #-#-# 
-. ~/.aliases/.bin/.animation/.title.solid.animation #-#-#
+. ~/.aliases/.bin/.animation/.title.animation #-#-#
 fi #-#-#
  #-#-#
 # Grep Custom Color #-#-#
