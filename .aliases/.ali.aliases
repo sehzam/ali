@@ -36,7 +36,7 @@ alias ".ali.edit"='xdg-open ~/.aliases/.ali.aliases' # ·a·
 # ·o· -------------- R A W Output ------------------ ·o· R A W Output
 # ( .ali.raw ): RAW output · ~/.aliases/.ali.aliases  # ·e·
 alias ".ali.raw"='cat ~/.aliases/.ali.aliases' # ·a·
-# ( .ali.func ): RAW output · ~/.aliases/.bin/.ali.function  # ·e·
+# ( .ali.func ): RAW output · ~/.aliases/.bin/.function/.ali.function  # ·e·
 alias ".ali.function"='cat ~/.aliases/.bin/.function/.ali.function' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
