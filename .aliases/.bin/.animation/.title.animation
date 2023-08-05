@@ -27,7 +27,7 @@ title_animation() {
         local char="${text1:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $y $((x + i))
+        tput cup $y $((x + 1))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
@@ -49,7 +49,7 @@ title_animation() {
         local char="${text2:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $y $((x + i))
+        tput cup $y $((x + 1))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
@@ -71,7 +71,7 @@ title_animation() {
         local char="${text3:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $y $((x + i))
+        tput cup $y $((x + 1))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
@@ -94,7 +94,7 @@ title_animation() {
         local char="${text4:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $y $((x + i))
+        tput cup $y $((x + 1))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
