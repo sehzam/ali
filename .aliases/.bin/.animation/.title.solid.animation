@@ -44,4 +44,4 @@ title_solid_animation() {
 
 . ~/.aliases/.ali.aliases
 
-alias ii="title_solid_animation  '$avail_lists '"
+alias i="title_solid_animation  '$avail_lists '"
