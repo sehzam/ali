@@ -14,7 +14,10 @@ title_solid_animation() {
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
     local y=$(( LINES / 50 ))
-
+# Ensure y is greater than or equal to 2
+    if ((y <= 1)); then
+        y=2
+    fi
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
