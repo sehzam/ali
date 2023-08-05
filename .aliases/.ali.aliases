@@ -44,11 +44,11 @@ alias ".ali.function"='cat ~/.aliases/.bin/.function/.ali.function' # ·a·
 # ·o· ------------------  Aliases ------------------ ·o· Aliases
 
 # ( .ali )   : ( ENTRY POINTS ) · ~/.aliases/.ali.aliases  # ·e·
-alias ".ali"='ii && ali' # ·a·
+alias ".ali"='i && ali' # ·a·
 # ( .ali.a ) : ( only aliases ) · lists ~/.aliases/.ali.aliases # ·e·
-alias ".ali.a"='ii && ali_a' # ·a·
+alias ".ali.a"='i && ali_a' # ·a·
 # ( .ali.e ) : ( explaination ) · lists ~/.aliases/.ali.aliases # ·e·
-alias ".ali.e"='ii && ali' # ·a·
+alias ".ali.e"='i && ali' # ·a·
 # ( .ali.f ) : ( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
-alias ".ali.f"='ii && ali_f' # ·a·
+alias ".ali.f"='i && ali_f' # ·a·
 

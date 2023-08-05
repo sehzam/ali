@@ -39,13 +39,13 @@ ${alias_file}_l() { # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------ Aliases-------------------- ·o· Aliases
 # ( .$alias_file )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.$alias_file.lists # ·e·
-alias '.$alias_file'='ii && ${alias_file}_l' # ·a·
+alias '.$alias_file'='i && ${alias_file}_l' # ·a·
 # ( .$alias_file.a ) : ( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
-alias '.$alias_file.a'='ii && ${alias_file}_a' # ·a·
+alias '.$alias_file.a'='i && ${alias_file}_a' # ·a·
 # ( .$alias_file.e ) : ( explaination ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e· 
-alias '.$alias_file.e'='ii && ${alias_file}_e' # ·a·
+alias '.$alias_file.e'='i && ${alias_file}_e' # ·a·
 # ( .$alias_file.f ) : ( functions... ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
-alias '.$alias_file.f'='ii && ${alias_file}_f' # ·a·
+alias '.$alias_file.f'='i && ${alias_file}_f' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ______________________________________________ ·o· 
