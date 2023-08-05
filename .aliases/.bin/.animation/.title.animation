@@ -7,10 +7,10 @@ title_animation() {
     local text3="$3"
     local text4="$4"
     local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
-    local shadow_color="\e[30m"
+    local shadow_color="\e[90m"
     local shadow_delay=0.000005
 
-    ############################################################################
+        ############################################################################
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
     local y=$(( LINES / 4 ))
@@ -19,7 +19,7 @@ title_animation() {
         local char="${text1:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $((y - i)) $((x + i))
+        tput cup $((y - 1)) $((x + i))
         echo -ne "${shadow_color}${char}\e[0m"
     done
 
@@ -27,12 +27,12 @@ title_animation() {
         local char="${text1:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $y $((x + 1))
+        tput cup $y $((x + i))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
 
-    ############################################################################
+        ############################################################################
 
     local x=$(( (COLUMNS - ${#text2}) / 2 ))
     local y=$(( LINES / 3 ))
@@ -41,7 +41,7 @@ title_animation() {
         local char="${text2:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $((y - i)) $((x + i))
+        tput cup $((y - 1)) $((x + i))
         echo -ne "${shadow_color}${char}\e[0m"
     done
 
@@ -49,12 +49,12 @@ title_animation() {
         local char="${text2:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $y $((x + 1))
+        tput cup $y $((x + i))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
 
-    ############################################################################
+        ############################################################################
 
     local x=$(( (COLUMNS - ${#text3}) / 2 ))
     local y=$(( LINES / 2 ))
@@ -63,7 +63,7 @@ title_animation() {
         local char="${text3:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $((y - i)) $((x + i))
+        tput cup $((y - 1)) $((x + i))
         echo -ne "${shadow_color}${char}\e[0m"
     done
 
@@ -71,13 +71,12 @@ title_animation() {
         local char="${text3:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $y $((x + 1))
+        tput cup $y $((x + i))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
-
-    ############################################################################
-
+    
+        ############################################################################
     sleep 1
     local x=$(( (COLUMNS - ${#text4}) / 2 ))
     local y=$(( LINES / 50 ))
@@ -86,7 +85,7 @@ title_animation() {
         local char="${text4:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $((y - i)) $((x + i))
+        tput cup $((y - 1)) $((x + i))
         echo -ne "${shadow_color}${char}\e[0m"
     done
 
@@ -94,21 +93,19 @@ title_animation() {
         local char="${text4:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
 
-        tput cup $y $((x + 1))
+        tput cup $y $((x + i))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
 
     ############################################################################
-
     for ((i = 0; i < 5; i++)); do
         echo
     done
-    sleep 1
-    clear
-
 }
 
+. ~/.aliases/.ali.aliases
+
 wai=$(whoami)
-alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists'"
-title_animation "Welcome BACK ($wai)" "to the " "ALI : Alias List Injection " "$avail_lists"
+alias i="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
+title_animation "Welcome BACK ($wai)" "to the " "ALI : Alias List Injection " "$avail_lists "
