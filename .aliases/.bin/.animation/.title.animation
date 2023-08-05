@@ -1,6 +1,7 @@
 #!/bin/bash
 
 title_animation() {
+    clear
     local text1="$1"
     local text2="$2"
     local text3="$3"
@@ -103,6 +104,9 @@ title_animation() {
     for ((i = 0; i < 5; i++)); do
         echo
     done
+    sleep 1
+    clear
+
 }
 
 wai=$(whoami)
