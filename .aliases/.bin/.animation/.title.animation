@@ -1,5 +1,4 @@
 title_animation() {
-    clear
     local text1="$1"
     local text2="$2"
     local text3="$3"
