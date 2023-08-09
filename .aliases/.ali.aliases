@@ -22,8 +22,10 @@ alias "@"='code' # ·a·
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Installation ------------------ ·o· Installation
 # ( .ali.setup | .as ): UPDATE / UNINSTALL {ali} # ·e·
+# ( .ali.uninstall ): UNINSTALL {ali} # ·e·
 alias '.ali.setup'='cd ~ && wget https://github.com/sehzam/ali/archive/refs/heads/main.zip && unzip main.zip && rm main.zip* && . ~/ali-main/.setup && . ~/.bashrc' # ·a·
 alias '.as'='.ali.setup' # ·a·
+alias '.ali.uninstall'='. ~/.aliases/.ali.uninstall' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ______________________________________________ ·o· 

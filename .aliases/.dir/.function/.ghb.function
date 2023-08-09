@@ -45,14 +45,26 @@ token_setup() {
 add_ssh_github_setup() {
   setup add_ssh_github "$@"
 }
-repo_delete_setup() {
-  setup repo_delete "$@"
+delete_repo_setup() {
+  setup delete_repo "$@"
 }
-repo_list_setup() {
-  setup repo_list "$@"
+list_repo_setup() {
+  setup list_repo "$@"
 }
 git_setup_and_push_setup() {
   setup git_setup_and_push "$@"
+}
+add_collaborator_setup() {
+  setup add_collaborator "$@"
+}
+delete_collaborator_setup() {
+  setup delete_collaborator "$@"
+}
+list_collaborators_setup() {
+  setup list_collaborators "$@"
+}
+list_repositories_with_collaborators_setup() {
+  setup list_repositories_with_collaborators "$@"
 }
 
 ############################################################################
@@ -162,7 +174,7 @@ add_ssh_github(){ # ·c·
 ############################################################################
 
 # Define the function to delete a GitHub repository
-repo_delete() {
+delete_repo() {
 
   # Check if the repository name is provided as an argument
   if [ $# -ne 1 ]; then
@@ -229,7 +241,7 @@ repo_list=$(cat ~/.config/.github/.repo)
         fi
         echo "$repo_list" | grep -v "\/$repo_name\/" > ~/.config/.github/.repo
       else
-        echo "Repository was not deleted from the hard disk."
+        echo "Repository $repo_name was not deleted from the hard disk."
       fi
       
     fi
@@ -251,7 +263,7 @@ load_repos(){
 ############################################################################
 
 # Define the function to delete a GitHub repository # ·e·
-repo_list() { # ·c·
+list_repo() { # ·c·
   # Check if the repository name is provided as an argument # ·e·
   load_repos
   echo "#######################################"
@@ -307,7 +319,8 @@ git_setup_and_push() {
     local payload='{
     "name": "'"$repo_name"'",
     "private": false,
-    "auto_init": true
+    "auto_init": true,
+    "license": "MIT"
     }'
     echo "private: FALSE"
 
@@ -315,7 +328,8 @@ git_setup_and_push() {
     local payload='{
     "name": "'"$repo_name"'",
     "private": true,
-    "auto_init": true
+    "auto_init": true,
+    "license": "MIT"
     }'
     echo "private: TRUE"
 
@@ -398,7 +412,7 @@ EOF
 > M I T
 ---
 ## Contributors & Authors
-> Author: ${GITHUB_USERNAME} © ${current_year}
+> Author: ${current_year} © ${GITHUB_USERNAME}
 ---
 EOF
 
@@ -413,6 +427,102 @@ EOF
   git status
 
 }
+
+############################################################################
+
+
+############################################################################
+# function for listing collaborators in a reposirotry
+list_collaborators() {
+    REPO_NAME=$1
+
+    API_URL="https://api.github.com/repos/$GITHUB_USERNAME/$REPO_NAME/collaborators"
+    
+    curl -H "Authorization: Bearer $GITHUB_TOKEN" \
+         -H "Accept: application/vnd.github.v3+json" \
+         "$API_URL" | jq -r '.[] | .login'
+}
+
+# function for listing all repositories with all collaborators
+list_repositories_with_collaborators() {
+    API_URL="https://api.github.com/user/repos"
+    
+    repositories=$(curl -H "Authorization: Bearer $GITHUB_TOKEN" \
+                   -H "Accept: application/vnd.github.v3+json" \
+                   "$API_URL" | jq -r '.[] | .name')
+    
+    for repo in $repositories; do
+        echo "Repository: $repo"
+        echo "Collaboratoren:"
+        list_collaborators $repo
+        echo ""
+    done
+}
+############################################################################
+
+
+############################################################################
+
+# function for adding collaborators per username
+add_collaborator_by_username() {
+    REPO_NAME=$1
+    COLLABORATOR_USERNAME=$2
+
+    API_URL="https://api.github.com/repos/$GITHUB_USERNAME/$REPO_NAME/collaborators/$COLLABORATOR_USERNAME"
+    
+    curl -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" \
+         -H "Accept: application/vnd.github.v3+json" \
+         "$API_URL"
+
+    echo "The collaborator with the username $COLLABORATOR_USERNAME is successfully added to repository $REPO_NAME."
+}
+
+# function to adding collaborators per email
+add_collaborator_by_email() {
+    REPO_NAME=$1
+    COLLABORATOR_EMAIL=$2
+
+    API_URL="https://api.github.com/repos/$GITHUB_USERNAME/$REPO_NAME/collaborators/$COLLABORATOR_EMAIL"
+
+    curl -X PUT -H "Authorization: Bearer $GITHUB_TOKEN" \
+         -H "Accept: application/vnd.github.v3+json" \
+         "$API_URL"
+
+    echo "The collaborator with the email $COLLABORATOR_EMAIL is successfully added to repository $REPO_NAME."
+}
+
+# root function for adding collaborators depends on input
+add_collaborator() {
+    REPO_NAME=$1
+    COLLABORATOR_INPUT=$2
+    
+    if [[ $INPUT == *'@'* ]]; then
+        add_collaborator_by_email $REPO_NAME $COLLABORATOR_INPUT
+    else
+        add_collaborator_by_username $REPO_NAME $COLLABORATOR_INPUT
+    fi
+}
+
+############################################################################
+
+############################################################################
+# function for removing collaborators from repository
+delete_collaborator() {
+    REPO_NAME=$1
+    COLLABORATOR_USERNAME=$2
+    list_collaborators "$REPO_NAME"
+    
+    API_URL="https://api.github.com/repos/$GITHUB_USERNAME/$REPO_NAME/collaborators/$COLLABORATOR_USERNAME"
+    
+    curl -X DELETE -H "Authorization: Bearer $API_TOKEN" \
+         -H "Accept: application/vnd.github.v3+json" \
+         "$API_URL"
+
+    echo "The collaborator $COLLABORATOR_USERNAME was successfully removed from repository $REPO_NAME."
+    list_collaborators "$REPO_NAME"
+
+}
+
 
 ############################################################################
 
