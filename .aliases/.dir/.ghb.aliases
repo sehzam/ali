@@ -7,9 +7,8 @@
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------  Alias -------------------- ·o· Alias
 
-# ( .ghb.token | .token ) # ·e· 
+# ( .token ) # ·e· 
 #                           show installed API Token # ·e·
-alias ".ghb.token"="token_setup" # ·a·
 alias ".token"="token_setup" # ·a·
 
 # ( .token.setup ) # ·e· 
@@ -26,7 +25,7 @@ alias ".ghb.ssh.create"="add_ssh_github_setup" # ·a·
 
 # ( .repo ) # ·e·
 #                           show Repositories with API Token # ·e·
-alias ".repo"="repo_list_setup" # ·a·
+alias ".repo"="list_repo_setup" # ·a·
 
 # ( .repo.create ) <repo-name> # ·e·
 #                  create Repository via API Token # ·e·
@@ -34,11 +33,11 @@ alias ".repo.create"="git_setup_and_push_setup" # ·a·
 
 # ( .repo.delete) <repo-name> # ·e·
 #                 delete Repository via API Token # ·e·
-alias ".repo.delete"="repo_delete_setup" # ·a·
+alias ".repo.delete"="delete_repo_setup" # ·a·
 
 # ( .repo.collaborator) <repo-name> # ·e·
 #                       show Collaborator on Repository via API Token # ·e·
-alias ".repo.collaborator"="repo_collaborator_setup" # ·a·
+alias ".repo.collaborator"="list_collaborator_setup" # ·a·
 
 # ( .repo.collaborator.all) # ·e·
 #                       show Collaborator on Repository via API Token # ·e·
@@ -46,11 +45,11 @@ alias ".repo.collaborator.all"="list_repositories_with_collaborators_setup" # ·
 
 # ( .repo.collaborator.add) <repo-name> <collaborator-name> # ·e·
 #                           add Collaborator on Repository via API Token # ·e·
-alias ".repo.collaborator.add"="repo_collaborator_add_setup" # ·a·
+alias ".repo.collaborator.add"="add_collaborator_setup" # ·a·
 
 # ( .repo.collaborator.remove) <repo-name> <collaborator-name> # ·e·
 #                              remove Collaborator on Repository via API Token # ·e·
-alias ".repo.collaborator.remove"="repo_collaborator_remove_setup" # ·a·
+alias ".repo.collaborator.remove"="remove_collaborator_setup" # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
