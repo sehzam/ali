@@ -60,11 +60,11 @@ add_collaborator_setup() {
 delete_collaborator_setup() {
   setup delete_collaborator "$@"
 }
-list_collaborators_setup() {
-  setup list_collaborators "$@"
+list_collaborator_setup() {
+  setup list_collaborator "$@"
 }
-list_repositories_with_collaborators_setup() {
-  setup list_repositories_with_collaborators "$@"
+list_repo_with_collaborator_setup() {
+  setup list_repo_with_collaborator "$@"
 }
 
 ############################################################################
@@ -433,7 +433,7 @@ EOF
 
 ############################################################################
 # function for listing collaborators in a reposirotry
-list_collaborators() {
+list_collaborator() {
     REPO_NAME=$1
 
     API_URL="https://api.github.com/repos/$GITHUB_USERNAME/$REPO_NAME/collaborators"
@@ -444,7 +444,7 @@ list_collaborators() {
 }
 
 # function for listing all repositories with all collaborators
-list_repositories_with_collaborators() {
+list_repo_with_collaborator() {
     API_URL="https://api.github.com/user/repos"
     
     repositories=$(curl -H "Authorization: Bearer $GITHUB_TOKEN" \
