@@ -482,7 +482,6 @@ for repo in $repo_names; do
   repo_name=$(echo $repo | cut -d '/' -f 2)
 
   # ignoring own repositories
-  if [ "$repo_owner" != "$login" ]; then
     echo "Collaborators for $repo:"
     
     # API-Endpoint for the collaborators from a repository
@@ -495,7 +494,6 @@ for repo in $repo_names; do
     done
     
     echo ""
-  fi
 done
 }
 ############################################################################
