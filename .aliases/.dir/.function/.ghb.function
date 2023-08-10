@@ -434,41 +434,62 @@ EOF
 ############################################################################
 # function for listing collaborators in a reposirotry
 list_collaborator() {
-    REPO_NAME=$1
+    NAME=$1
+# API-Endpunkt for the list of repositories of the user
+repos=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos")
+repo_names=$(echo $repos | jq -r '.[].full_name')
 
-    API_URL="https://api.github.com/repos/$GITHUB_USERNAME/$REPO_NAME/collaborators"
+# loop throught the repositories
+for repo in $repo_names; do
+  # extracting repo owner and repo name
+  repo_owner=$(echo $repo | cut -d '/' -f 1)
+  repo_name=$(echo $repo | cut -d '/' -f 2)
+
+  # ignoring own repositories
+  if [ "$repo_name" == "$NAME" ]; then
+    echo "Collaborators for $repo:"
     
-    curl -H "Authorization: Bearer $GITHUB_TOKEN" \
-         -H "Accept: application/vnd.github.v3+json" \
-         "$API_URL" | jq -r '.[] | .login'
+    # API-Endpoint for the collaborators from a repository
+    collaborators=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$repo_owner/$repo_name/collaborators")
+    login_names=$(echo $collaborators | jq -r '.[].login')
+    
+    # output of the collaborators
+    for name in $login_names; do
+      echo "- $name"
+    done
+    
+    echo ""
+  fi
+done
 }
+############################################################################
 
 # function for listing all repositories with all collaborators
 list_repo_with_collaborator() {
 
-# API-Endpunkt für die aktuellen Benutzerinformationen
+# API-Endpoint for current user 
 user_info=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user")
 login=$(echo $user_info | jq -r '.login')
 
-# API-Endpunkt für die Liste der Repositories des Benutzers
+# API-Endpunkt for the list of repositories of the user
 repos=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos")
 repo_names=$(echo $repos | jq -r '.[].full_name')
 
-# Schleife durch die Repositories
+# loop throught the repositories
 for repo in $repo_names; do
-  # Extrahiere den Eigentümer und den Repository-Namen
+  # extracting repo owner and repo name
   repo_owner=$(echo $repo | cut -d '/' -f 1)
   repo_name=$(echo $repo | cut -d '/' -f 2)
 
-  # Ignoriere eigene Repositories
+  # ignoring own repositories
   if [ "$repo_owner" != "$login" ]; then
-    echo "Collaborators für $repo:"
+    echo "Collaborators for $repo:"
     
-    # API-Endpunkt für die Collaborators eines Repositories
+    # API-Endpoint for the collaborators from a repository
     collaborators=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$repo_owner/$repo_name/collaborators")
     login_names=$(echo $collaborators | jq -r '.[].login')
     
-    # Gib die Collaborators aus
+    # output of the collaborators
     for name in $login_names; do
       echo "- $name"
     done
