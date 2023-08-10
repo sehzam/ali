@@ -475,7 +475,7 @@ login=$(echo $user_info | jq -r '.login')
 repos=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos")
 repo_names=$(echo $repos | jq -r '.[].full_name')
 
-# loop throught the repositories
+# loop through the repositories
 for repo in $repo_names; do
   # extracting repo owner and repo name
   repo_owner=$(echo $repo | cut -d '/' -f 1)
@@ -487,15 +487,15 @@ for repo in $repo_names; do
     # API-Endpoint for the collaborators from a repository
     collaborators=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$repo_owner/$repo_name/collaborators")
 
-    # Check if the collaborators API call was successful (i.e., if you have access)
-    if [[ $(echo $collaborators | jq -r '.message') == "Not Found" ]]; then
-      echo "- Kein Zugriff auf dieses Repository."
-    else
+    # Check if the collaborators array is not empty
+    if [[ $(echo $collaborators | jq -e 'length > 0') == "true" ]]; then
       login_names=$(echo $collaborators | jq -r '.[].login')
       # output of the collaborators
       for name in $login_names; do
         echo "- $name"
       done
+    else
+      echo "- Kein Zugriff auf dieses Repository."
     fi
     
     echo ""
