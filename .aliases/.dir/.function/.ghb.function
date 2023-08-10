@@ -537,6 +537,10 @@ add_collaborator_by_email() {
 
 # root function for adding collaborators depends on input
 add_collaborator() {
+    if [ $# -ne 2 ] && [ $# -ne 1 ]; then
+      echo "Usage: add_collaborator <repository_name> <collaborator_name/email>"
+      return 1
+    fi
     REPO_NAME=$1
     COLLABORATOR_INPUT=$2
     
@@ -552,6 +556,10 @@ add_collaborator() {
 ############################################################################
 # function for removing collaborators from repository
 delete_collaborator() {
+    if [ $# -ne 2 ] && [ $# -ne 1 ]; then
+      echo "Usage: delete_collaborator <repository_name> <collaborator_name>"
+      return 1
+    fi
     REPO_NAME=$1
     COLLABORATOR_USERNAME=$2
     list_collaborators "$REPO_NAME"
