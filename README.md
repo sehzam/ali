@@ -62,13 +62,13 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 ---
 
 > #### Entry Points
-|        Entry Point         |         Explaination                   |
+|          Alias             |              Explaination              |
 |----------------------------|----------------------------------------|
-| __`. a l i`__              | cat ~/.bash_aliases                    |
+| __`. a l i`__              |        Alias Lists entry point         |
 |-|-|
-| __`. a l i . a`__          | cat ~/.bash_aliases (only alias)       |
-| __`. a l i . e`__          | cat ~/.bash_aliases (explaination)     |
-| __`. a l i . f`__          | cat ~/.bash_aliases (funtions)         |
+| __`. a l i . a`__          |              (only alias)              |
+| __`. a l i . e`__          |             (explaination)             |
+| __`. a l i . f`__          |               (functions)              |
 |-|-|
 
 ---
@@ -76,17 +76,18 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 > #### Alias Lists
 |        Lists               |            Explaination                  |
 |----------------------------|------------------------------------------|
-| __`. d i r`__              | cat ~/.aliases/.list/.dir.aliases              | 
-| __`. f s c`__              | cat ~/.aliases/.list/.fsc.aliases              | 
-| __`. g i t`__              | cat ~/.aliases/.list/.git.aliases              | 
-| __`. n e t`__              | cat ~/.aliases/.list/.net.aliases              | 
-| __`. o w n`__              | cat ~/.aliases/.list/.own.aliases              | 
-| __`. s y s`__              | cat ~/.aliases/.list/.sys.aliases              | 
-| __`. z i p`__              | cat ~/.aliases/.list/.zip.aliases              | 
+| __`. d i r`__              |         Directory Navigation             | 
+| __`. f s c`__              |         File System Control              | 
+| __`. g i t`__              |             Git Commands                 | 
+| __`. g h b`__              |          Github API Commands             | 
+| __`. n e t`__              |           Network Controls               | 
+| __`. o w n`__              |         Personal Directories             | 
+| __`. s y s`__              |           System Controls                | 
+| __`. z i p`__              |       Compression & Extraction           | 
 |-|-|
-| __`. *** . a`__          | cat ~/.aliases/.dir/.***.aliases (only alias)  |
-| __`. *** . e`__          | cat ~/.aliases/.dir/.***.aliases (explaination)|
-| __`. *** . f`__          | cat ~/.aliases/.dir/.***.aliases (functions)   |
+| __`. *** . a`__          |  (only alias)  |
+| __`. *** . e`__          | (explaination) |
+| __`. *** . f`__          |  (functions)   |
 
 ---
 ## Licence
@@ -95,5 +96,5 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 ---
 ## Contributors & Authors
 
-> 2023 © sehzam
+> © 2023 sehzam
 ---
