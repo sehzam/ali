@@ -495,7 +495,7 @@ for repo in $repo_names; do
         echo "- $name"
       done
     else
-      echo "- Kein Zugriff auf dieses Repository."
+      echo "- NO ACCESS - to repository $repo_name."
     fi
     
     echo ""
