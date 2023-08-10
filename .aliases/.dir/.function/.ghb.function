@@ -487,8 +487,8 @@ for repo in $repo_names; do
     # API-Endpoint for the collaborators from a repository
     collaborators=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$repo_owner/$repo_name/collaborators")
 
-    # Check if the collaborators array is not empty
-    if [[ $(echo $collaborators | jq -e 'length > 0') == "true" ]]; then
+    # Check if the response is in JSON format and contains "login" field
+    if echo $collaborators | jq -e '.[].login' >/dev/null 2>&1; then
       login_names=$(echo $collaborators | jq -r '.[].login')
       # output of the collaborators
       for name in $login_names; do
