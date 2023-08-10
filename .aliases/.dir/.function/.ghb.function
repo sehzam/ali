@@ -486,16 +486,22 @@ for repo in $repo_names; do
     
     # API-Endpoint for the collaborators from a repository
     collaborators=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$repo_owner/$repo_name/collaborators")
-    login_names=$(echo $collaborators | jq -r '.[].login')
-    
-    # output of the collaborators
-    for name in $login_names; do
-      echo "- $name"
-    done
+
+    # Check if the collaborators API call was successful (i.e., if you have access)
+    if [[ $(echo $collaborators | jq -r '.message') == "Not Found" ]]; then
+      echo "- Kein Zugriff auf dieses Repository."
+    else
+      login_names=$(echo $collaborators | jq -r '.[].login')
+      # output of the collaborators
+      for name in $login_names; do
+        echo "- $name"
+      done
+    fi
     
     echo ""
 done
 }
+
 ############################################################################
 
 
