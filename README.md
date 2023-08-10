@@ -95,5 +95,5 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 ---
 ## Contributors & Authors
 
-> © 2023 sehzam
+> 2023 © sehzam
 ---
