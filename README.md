@@ -15,13 +15,14 @@
 
 > __Self explaining__ alias entry point
 
-> Various __seperated__ alias lists such as 
+> Various __seperated__ alias lists with __Control Commands__ such for 
   
-  - __Directories__
-  - __File System Control__
-  - __Git Version Control__
-  - __Network Control__
-  - __System Control__
+  - __Directory__
+  - __File System__
+  - __Git Version__
+  - __GitHub API__
+  - __Network__
+  - __System__
   - __Compression Commands__
   - __Personal Commands__ 
 > Several time saving __logical alias__ es
