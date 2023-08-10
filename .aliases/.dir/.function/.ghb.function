@@ -458,6 +458,9 @@ EOF
 ############################################################################
 # function for listing collaborators in a reposirotry
 list_collaborator() {
+    if [ $# -ne 1 ]; then
+      echo "Usage: list_collaborator <repository_name>"
+    fi
     NAME=$1
 # API-Endpunkt for the list of repositories of the user
 repos=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/user/repos")
