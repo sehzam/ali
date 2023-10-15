@@ -25,6 +25,23 @@ prompt () {
         . ~/ali-main/.uninstall|grep -E ':|·|~|\.|-|__|<|>'
         . ~/ali-main/.install|grep -E ':|·|~|\.|-|__|<|>'
         rm -f  -r ~/ali-main/
+
+
+    pro () {
+
+        echo "______________________________________________________" |grep -E "_"
+        echo "_You need the the following SOFTWARE _________________" |grep -E "_|SOFTWARE" 
+        echo "______________________________     INSTALLATION      _" |grep -E "|_|INSTALLATION" 
+        echo "_________ JQ and CURL ? ______                       _" |grep -E "JQ|CURL|_" 
+        echo "______________________________ Just install now ____?_" |grep -E "_"
+        echo "______________________________________________________" |grep -E "_"
+        read -p "YES: ( Y/y ) | NO : ( N/n ) ? : " answer 
+        echo "______________________________________________________" |grep -E "_"
+        if [ "$answer" = "Y" ] || [ "$answer" = "y" ]; then
+            sudo apt-get install jq
+            sudo apt-get install curl
+        fi
+    }
         sleep 3
         # count 3
         bash 
