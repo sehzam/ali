@@ -619,20 +619,17 @@ change_repo_visibility() {
     if [ "$NEW_VISIBILITY" != "public" ] && [ "$NEW_VISIBILITY" != "private" ]; then
         echo "Invalid visibility selection. Use 'public' or 'private'."
         return
+    fi
 
     # Change visibility via the GitHub API
-    RESPONSE=$(curl -X PATCH -H 
-    "Authorization: token $GITHUB_TOKEN" 
-    "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME" -d 
-    "{\"private\": $([ "$NEW_VISIBILITY" == "private" ] && echo "true" || echo "false")}"
-    )
+    RESPONSE=$(curl -X PATCH -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME" -d "{\"private\": $([ "$NEW_VISIBILITY" == "private" ] && echo "true" || echo "false")}")
 
     if [ "$(echo $RESPONSE | jq -r '.message')" = "Not Found" ]; then
         echo "Repository not found. Make sure you have the right permissions and the correct repository name."
     else
         echo "Visibility of $REPO_OWNER/$REPO_NAME successfully changed to $NEW_VISIBILITY."
-    }
-    }
+    fi
+}
 
 
 ############################################################################
