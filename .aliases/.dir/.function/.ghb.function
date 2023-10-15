@@ -48,6 +48,9 @@ add_ssh_github_setup() {
 delete_repo_setup() {
   setup delete_repo "$@"
 }
+change_repo_setup() {
+  setup change_repo_visibility "$@"
+}
 list_repo_setup() {
   setup list_repo "$@"
 }
@@ -602,6 +605,29 @@ delete_collaborator() {
 
 }
 
+
+############################################################################
+
+############################################################################
+
+# Function to change repo visibility (private/public)
+change_repo_visibility() {
+    local REPO_OWNER="$1"
+    local REPO_NAME="$2"
+    local NEW_VISIBILITY="$3"  # 'public' or 'private'
+
+    if [ "$NEW_VISIBILITY" != "public" ] && [ "$NEW_VISIBILITY" != "private" ]; then
+        echo "Invalid visibility selection. Use 'public' or 'private'."
+        return
+    }
+
+    # Change visibility via the GitHub API
+    RESPONSE=$(curl -X PATCH -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME" -d "{\"private\": $([ "$NEW_VISIBILITY" == "private" ] && echo "true" || echo "false")}")
+
+    if [ "$(echo $RESPONSE | jq -r '.message')" = "Not Found" ]; then
+        echo "Repository not found. Make sure you have the right permissions and the correct repository name."
+    else
+        echo "Visibility of $REPO_OWNER/$REPO_NAME successfully changed to $NEW_VISIBILITY."
 
 ############################################################################
 
