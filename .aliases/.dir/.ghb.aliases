@@ -28,27 +28,31 @@ alias ".ghb.ssh.create"="add_ssh_github_setup" # ·a·
 alias ".repo"="list_repo_setup" # ·a·
 
 # ( .repo.create ) <repo-name> # ·e·
-# create Repository via API Token # ·e·
+# create repository via API Token # ·e·
 alias ".repo.create"="git_setup_and_push_setup" # ·a·
 
 # ( .repo.delete) <repo-name> # ·e·
-# delete Repository via API Token # ·e·
+# delete repository via API Token # ·e·
 alias ".repo.delete"="delete_repo_setup" # ·a·
 
+# ( .repo.change) <repo-owner> <repo-name> <public|private> # ·e·
+# change repository visibility between < public | private > via API Token # ·e·
+alias ".repo.change"="change_repo_setup" # ·a·
+
 # ( .repo.collaborator) <repo-name> # ·e·
-# show Collaborator on Repository via API Token # ·e·
+# show Collaborator on repository via API Token # ·e·
 alias ".repo.collaborator"="list_collaborator_setup" # ·a·
 
 # ( .repo.collaborator.all) # ·e·
-# show Collaborator on Repository via API Token # ·e·
+# show Collaborator on repository via API Token # ·e·
 alias ".repo.collaborator.all"="list_repo_with_collaborator_setup" # ·a·
 
 # ( .repo.collaborator.add) <repo-name> <collaborator-name> # ·e·
-# add Collaborator on Repository via API Token # ·e·
+# add Collaborator on repository via API Token # ·e·
 alias ".repo.collaborator.add"="add_collaborator_setup" # ·a·
 
 # ( .repo.collaborator.remove) <repo-name> <collaborator-name> # ·e·
-# remove Collaborator on Repository via API Token # ·e·
+# remove Collaborator on repository via API Token # ·e·
 alias ".repo.collaborator.remove"="remove_collaborator_setup" # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
