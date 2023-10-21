@@ -1,0 +1,15 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- Video Editing --------------- ·o· Video Editing
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ------------------  VID ---------------------- ·o· VID options
+
+# ( .vid.frame) <mp4-file> <interval-second> <max-pic-in-directory> # ·e·
+# split and organize mp4 video files into frame pictures in directories  # ·e·
+    alias ".vid.frame"="divide_frames" # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- Video Editing --------------- ·o· Video Editing
+# ·o· ______________________________________________ ·o· 

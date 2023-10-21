@@ -1,0 +1,28 @@
+
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ Functions  ---------------- ·f· Directory Control System
+# ·f· ______________________________________________ ·f· 
+#
+
+function divide_frames() {
+    input_video="$1"
+    output_dir="${input_video}_output_images"
+    interval="${2:-3}"  # Zeitintervall in Sekunden (default: 3 Sekunden)
+    total_frames="${3:-5000}"  # Gesamtanzahl der Bilder (default: 5000 Bilder)
+
+    # Erstelle das Hauptverzeichnis, in dem die Ordner gespeichert werden
+    mkdir -p "$output_dir"
+
+    for ((i = 0; i < total_frames; i++)); do
+        output_subdir="${output_dir}/ordner_$((i / ${total_frames} + 1))"
+        mkdir -p "$output_subdir"
+        output_file="${output_subdir}/bild_$((i % ${total_frames} + 1)).jpg"
+
+        ffmpeg -ss "$((i * interval))" -i "$input_video" -vframes 1 -q:v 2 "$output_file"
+    done
+}
+
+#
+# ·f· ______________________________________________ ·f· 
+# ·f· ------------------ Functions  ---------------- ·f· Directory Control System
+# ·f· ______________________________________________ ·f· 
