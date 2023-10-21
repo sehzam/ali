@@ -18,7 +18,8 @@ function divide_frames() {
         mkdir -p "$output_subdir"
         output_file="${output_subdir}/bild_$((i % ${total_frames} + 1)).jpg"
 
-        ffmpeg -ss "$((i * interval))" -i "$input_video" -vframes 1 -q:v 2 "$output_file" 2>&1 | grep -Eo "frame=[0-9]+|time=[0-9:.]+"
+        ffmpeg -ss "$((i * interval))" -i "$input_video" -vframes 1 -q:v 2 "$output_file" 2>&1 | grep -o "frame=[0-9]*"
+
     done
 }
 
