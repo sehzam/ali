@@ -46,4 +46,3 @@ title_animation() {
 . ~/.aliases/.ali.aliases 2>/dev/null || true
 wai=$(whoami)
 alias intro="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
-intro
