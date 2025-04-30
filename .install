@@ -142,7 +142,7 @@ if [ -f ~/.aliases/.ali.aliases ]; then #-#-#
 . ~/.aliases/.ali.aliases #-#-# 
 sleep 0.5
 . ~/.aliases/.bin/.animation/.title.animation #-#-#
-# . ~/.aliases/.bin/.animation/.title.solid.animation #-#-#
+. ~/.aliases/.bin/.animation/.title.solid.animation #-#-#
 fi #-#-#
  #-#-#
 # Grep Custom Color #-#-#
