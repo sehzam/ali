@@ -1,0 +1,39 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· ----------- CI / CD Automation Tools -------- ·o· .cic Module
+# ·o· ______________________________________________ ·o· 
+
+# ·o· --------------- GitHub Actions --------------- ·o·
+
+# ( .cic.gh.runs ) → List last 10 GitHub Actions runs # ·e·
+alias '.cic.gh.runs'='gh run list --limit 10' # ·a·
+
+# ( .cic.gh.view ) <run-id> → View details of a specific GH run # ·e·
+alias '.cic.gh.view'='gh run view' # ·a·
+
+# ( .cic.gh.logs ) <run-id> → Download logs of a specific GH Action # ·e·
+alias '.cic.gh.logs'='gh run download' # ·a·
+
+# ·o· --------------- GitLab Pipelines ------------- ·o·
+
+# ( .cic.gitlab.pipelines ) → List pipelines (GitLab API token required) # ·e·
+alias '.cic.gitlab.pipelines'='curl --header "PRIVATE-TOKEN: $GITLAB_TOKEN" https://gitlab.com/api/v4/projects/$GITLAB_PROJECT_ID/pipelines' # ·a·
+
+# ( .cic.gitlab.jobs ) <pipeline-id> → List jobs of a pipeline # ·e·
+alias '.cic.gitlab.jobs'='curl --header "PRIVATE-TOKEN: $GITLAB_TOKEN" https://gitlab.com/api/v4/projects/$GITLAB_PROJECT_ID/pipelines/$1/jobs' # ·a·
+
+# ·o· --------------- Cron & Timer Control --------- ·o·
+
+# ( .cic.cron.list ) → List all user cron jobs # ·e·
+alias '.cic.cron.list'='crontab -l' # ·a·
+
+# ( .cic.cron.edit ) → Edit current user's cron jobs # ·e·
+alias '.cic.cron.edit'='crontab -e' # ·a·
+
+# ( .cic.cron.clear ) → Remove all user cron jobs # ·e·
+alias '.cic.cron.clear'='crontab -r' # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ----------- CI / CD Automation Tools -------- ·o· .cic Module
+# ·o· ______________________________________________ ·o· 

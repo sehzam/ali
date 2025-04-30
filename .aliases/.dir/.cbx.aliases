@@ -1,0 +1,32 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------- Clipboard Control -------------- ·o· .cbx Module
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ---------------- Copy & Paste ---------------- ·o·
+
+# ( .cbx.copy ) → Copies standard input to system clipboard (X11) # ·e·
+alias '.cbx.copy'='xclip -selection clipboard' # ·a·
+
+# ( .cbx.paste ) → Outputs clipboard content to terminal # ·e·
+alias '.cbx.paste'='xclip -o -selection clipboard' # ·a·
+
+# ( .cbx.copy.f ) <file> → Copies file content to clipboard # ·e·
+alias '.cbx.copy.f'='xclip -selection clipboard -i' # ·a·
+
+# ( .cbx.clear ) → Clears current clipboard content # ·e·
+alias '.cbx.clear'='echo -n "" | xclip -selection clipboard' # ·a·
+
+# ( .cbx.save ) → Saves clipboard content to clipboard.txt # ·e·
+alias '.cbx.save'='xclip -o -selection clipboard > ~/clipboard.txt' # ·a·
+
+# ( .cbx.load ) → Loads clipboard.txt content into clipboard # ·e·
+alias '.cbx.load'='xclip -selection clipboard < ~/clipboard.txt' # ·a·
+
+# ( .cbx.gui ) → Opens clipboard GUI viewer (if installed) # ·e·
+alias '.cbx.gui'='clipit &' # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------- Clipboard Control -------------- ·o· .cbx Module
+# ·o· ______________________________________________ ·o· 

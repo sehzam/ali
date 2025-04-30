@@ -1,0 +1,48 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· -------------- Docker Control --------------- ·o· .dkr Module
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ---------------- Containers ----------------- ·o·
+
+# ( .dkr.ps ) → List running containers # ·e·
+alias '.dkr.ps'='docker ps --format "table {{.Names}}\t{{.Status}}"' # ·a·
+
+# ( .dkr.psa ) → List all containers # ·e·
+alias '.dkr.psa'='docker ps -a' # ·a·
+
+# ( .dkr.rm ) <container> → Remove container # ·e·
+alias '.dkr.rm'='docker rm -f' # ·a·
+
+# ( .dkr.exec ) <container> <cmd> → Execute command in container # ·e·
+alias '.dkr.exec'='docker exec -it' # ·a·
+
+# ·o· ---------------- Images ---------------------- ·o·
+
+# ( .dkr.img ) → List all images # ·e·
+alias '.dkr.img'='docker images' # ·a·
+
+# ( .dkr.rmi ) <image> → Remove image # ·e·
+alias '.dkr.rmi'='docker rmi -f' # ·a·
+
+# ( .dkr.build ) <dir> <tag> → Build image from Dockerfile # ·e·
+alias '.dkr.build'='docker build -t' # ·a·
+
+# ·o· -------------- Compose Control --------------- ·o·
+
+# ( .dkr.up ) → Start services defined in docker-compose.yml # ·e·
+alias '.dkr.up'='docker-compose up -d' # ·a·
+
+# ( .dkr.down ) → Stop and remove containers, networks, volumes # ·e·
+alias '.dkr.down'='docker-compose down' # ·a·
+
+# ( .dkr.logs ) → Show logs for all services # ·e·
+alias '.dkr.logs'='docker-compose logs -f' # ·a·
+
+# ( .dkr.restart ) → Restart services # ·e·
+alias '.dkr.restart'='docker-compose restart' # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· -------------- Docker Control --------------- ·o· .dkr Module
+# ·o· ______________________________________________ ·o· 

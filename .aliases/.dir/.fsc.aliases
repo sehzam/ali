@@ -1,51 +1,63 @@
 # ·o· ______________________________________________ ·o· 
-# ·o· ---------- File System Control  -------------- ·o· File System Control
+# ·o· ---------- File System Control  -------------- ·o· 
 # ·o· ______________________________________________ ·o· 
 
-# ·o· ---------------------------------------------- ·o· 
+# ( f.n ) find by file name
+# USE: f.n myfile.txt
+alias f.n='find . -type f -name' # ·a·
 
-# ( f.n ) finds files with a specific name # ·e·
-# = USE = f.n myfile.txt # ·e·
-alias 'f.n'='find . -type f -name' # ·a·
+# ( f.d ) find by directory name
+# USE: f.d mydir
+alias f.d='find . -type d -name' # ·a·
 
-# ( f.s ) finds directories with a specific name # ·e·
-# USE = f.s mydir # ·e·
-alias 'f.s'='find . -type d -name' # ·a·
+# ( f.ext ) find by file extension
+# USE: f.ext "*.jpg"
+alias f.ext='find . -type f -name' # ·a·
 
-# ( f.x ) finds files with a specific extension # ·e·
-# USE = f.x *.jpg # ·e·
-alias 'f.x'='find . -type f -name' # ·a·
+# ( f.size ) find by file size
+# USE: f.size +1M
+alias f.size='find . -type f -size' # ·a·
 
-# ( f.s ) finds files with a specific size # ·e·
-# USE = f.s +1M # ·e·
-alias 'f.s'='find . -type f -size' # ·a·
+# ( f.date ) find modified after given date
+# USE: f.date "2023-01-01"
+alias f.date='find . -type f -newermt' # ·a·
 
-# ( f.m ) finds files modified after a specific date and time # ·e·
-# USE = f.m "2023-01-01 00:00:00" # ·e·
-alias 'f.m'='find . -type f -newermt' # ·a·
+# ( f.min ) find modified in last N minutes
+# USE: f.min -60
+alias f.min='find . -type f -mmin' # ·a·
 
-# ( f.min ) finds files modified within a specific number of minutes # ·e·
-# USE = f.min -60 # ·e·
-alias 'f.min'='find . -type f -mmin' # ·a·
+# ( f.str ) search inside files for string
+# USE: f.str "hello world"
+alias f.str='grep -r --color=always' # ·a·
 
-# ( f.str ) finds files containing a specific string # ·e·
-# ( i.e.) = f.str 'search_string' # ·e·
-alias 'f.str'='grep -r' # ·a·
+# ( f.user ) find files owned by user
+# USE: f.user username
+alias f.user='find . -type f -user' # ·a·
 
-# ( f.user ) finds files owned by a specific user # ·e·
-# ( i.e.) = f.user username # ·e·
-alias 'f.user'='find . -type f -user' # ·a·
+# ( f.perm ) find by permission
+# USE: f.perm 644
+alias f.perm='find . -type f -perm' # ·a·
 
-# ( f.perm ) finds files with specific permissions # ·e·
-# ( i.e.) = f.user 644 # ·e·
-alias 'f.user'='find . -type f -perm' # ·a·
+# ( f.empty ) find empty directories
+# USE: f.empty
+alias f.empty='find . -type d -empty' # ·a·
 
-# ( f.user ) finds empty directories # ·e·
-# USE = f.user # ·e·
-alias 'f.user'='find . -type d -empty' # ·a·
+# ( f.exec ) find files and execute command
+# USE: f.exec "*.log" rm -v
+alias f.exec='function _fexec() { pattern=$1; shift; find . -type f -name "$pattern" -exec "$@" {} \;; }; _fexec' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
+# ( f.count ) count files by pattern
+# USE: f.count "*.sh"
+alias f.count='function _fcount() { find . -type f -name "$1" | wc -l; }; _fcount' # ·a·
 
-# ·a· ______________________________________________ ·o· 
-# ·o· ---------- File System Control  -------------- ·o· File System Control
+# ( f.old ) find files older than N days
+# USE: f.old +30
+alias f.old='find . -type f -mtime' # ·a·
+
+# ( f.recent ) find files modified in last N days
+# USE: f.recent -7
+alias f.recent='find . -type f -mtime' # ·a·
+
+# ·o· ______________________________________________ ·o· 
+# ·o· -------- End of File System Control ---------- ·o· 
 # ·o· ______________________________________________ ·o· 

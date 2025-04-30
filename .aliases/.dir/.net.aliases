@@ -24,6 +24,37 @@ alias 'i.n'='netstat -tuln ' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
+# ( i.ns ) check DNS resolution for a domain # ·e·
+alias 'i.ns'='nslookup' # ·a·
+
+# ( i.mx ) show mail servers for domain # ·e·
+alias 'i.mx'='dig mx' # ·a·
+
+# ( i.dig ) perform DNS lookup with dig # ·e·
+alias 'i.dig'='dig +short' # ·a·
+
+# ( i.tr ) trace route to google.com # ·e·
+alias 'i.tr'='traceroute google.com' # ·a·
+
+# ( i.p.l ) list all listening ports with process info # ·e·
+alias 'i.p.l'='ss -tuln' # ·a·
+
+# ( i.nm ) network manager status # ·e·
+alias 'i.nm'='nmcli device status' # ·a·
+
+# ( i.ss ) show socket statistics (like netstat) # ·e·
+alias 'i.ss'='ss -s' # ·a·
+
+# ( i.nm.l ) list all available wifi networks (Linux) # ·e·
+alias 'i.nm.l'='nmcli device wifi list' # ·a·
+
+# ( i.sv ) check if port is open via nc # ·e·
+# Usage: i.sv example.com 22
+alias 'i.sv'='nc -zv' # ·a·
+
+
+# ·o· ---------------------------------------------- ·o· 
+
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Network Control  -------------- ·o· Network Control
 # ·o· ______________________________________________ ·o· 

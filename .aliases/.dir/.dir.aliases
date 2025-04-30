@@ -1,88 +1,112 @@
-. ~/.aliases/.dir/.function/.dir.function
 # ·o· ______________________________________________ ·o· 
-# ·o· -------- Directory Control System ------------ ·o· Directory Control System
+# ·o· -------- Directory Control System ------------ ·o· 
 # ·o· ______________________________________________ ·o· 
 
-# ·o· ---------------------------------------------- ·o· 
-
-# ( c ) clears the terminal # ·e· 
+# ( c ) clears the terminal
 alias c='clear; ls' # ·a·
 
-# ( bak ) create a backup of a file with timestamp by giving the path # ·e·
-alias 'bak'='bk' # ·a·
+# ( bak ) create a backup of a file with timestamp
+alias bak='bk' # ·a·
 
-# ( cf ) create recursively folders # ·e· 
-#       : by give one string parameter with path and enter # ·e·
-alias 'cf'='cf' # ·a·
+# ( cf ) create folders recursively
+alias cf='cf' # ·a·
 
-# ( ccf ) create recursively folders # ·e· 
-#        : by give one string parameter with path and enter # ·e·
-alias 'ccf'='copy_create_folder' # ·a·
+# ( ccf ) copy + create folders
+alias ccf='copy_create_folder' # ·a·
 
-# ( s.dd ) delete recursively folders and files # ·e· 
-alias "s.dd"="sudo rm -rf" # ·a·
+# ( s.dd ) delete recursively with sudo
+alias s.dd='sudo rm -rf' # ·a·
 
-# ( dd ) delete folder or file recursively # ·e·
-alias 'dd'='rm -rf' # ·a·
+# ( dd ) delete file/folder recursively
+alias dd='rm -rf' # ·a·
 
-# ( rep ) search replace sed command capsulated in a function call # ·e·
-alias 'rep'='sr' # ·a·
+# ( rep ) search/replace
+alias rep='sr' # ·a·
 
-# ( .. ) xdg-open following parameter in GUI # ·e·
-alias '..'='xdg-open' # ·a·
+# ( .. ) open with GUI file manager
+alias ..='xdg-open' # ·a·
 
-# ( h ) changes the directory to the user's home directory and lists its contents # ·e·
+# ( h ) go home
 alias h='cd ~ && ls' # ·a·
 
-# ( pr ) changes the directory to the previous one and lists its contents # ·e·
+# ( pr ) previous directory
 alias pr='cd - && ls' # ·a·
 
-# ( r ) changes the directory to the parent directory and lists its contents # ·e·
+# ( r ) parent directory
 alias r='cd .. && ls' # ·a·
 
-# ( rr ) changes the directory to the grandparent directory and lists its contents # ·e·
+# ( rr ) grandparent directory
 alias rr='cd ../.. && ls' # ·a·
 
-# ( rrr ) changes the directory to the great-grandparent directory and lists its contents # ·e·
+# ( rrr ) great-grandparent directory
 alias rrr='cd ../../.. && ls' # ·a·
 
-# ( rrrr ) changes the directory to the great-great-greatparent directory and lists its contents # ·e·
+# ( rrrr ) very deep up
 alias rrrr='cd ../../../.. && ls' # ·a·
 
-# ( l ) lists files and diredctories in long format, # ·e·
-#     : sorted by modification time # ·e·
-alias l='ls -lrt ' # ·a·
+# ( l ) list by time
+alias l='ls -lrt' # ·a·
 
-# ( ll ) lists all files and directories in long format # ·e·
-#      : with human-readable sizes # ·e·
-alias ll='ls -alh ' # ·a·
+# ( ll ) list all with human size
+alias ll='ls -alh' # ·a·
 
-# ( lll ) lists all files and directories in long format # ·e·
-#       : with human-readable sizes, # ·e·
-#       : and opens the output in a pager (less) # ·e·
-alias lll='ls -alh|less ' # ·a·
+# ( lll ) list all paged
+alias lll='ls -alh | less' # ·a·
 
-# ( t ) shows the last lines of a file and continues # ·e·
-#     : to display new lines as they are added # ·e·
-alias t='tail -f ' # ·a·
+# ( t ) tail follow
+alias t='tail -f' # ·a·
 
-# ( tt ) shows the last n lines of a file # ·e·
+# ( tt ) tail n lines
 alias tt='tail -n' # ·a·
 
-# ( ttt ) shows the last 10 lines of a file # ·e·
+# ( ttt ) tail 10 lines
 alias ttt='tail -n 10' # ·a·
 
-# ( tttt ) shows the last 100 lines of a file # ·e·
+# ( tttt ) tail 100 lines
 alias tttt='tail -n 100' # ·a·
 
-# ( terr ) shows the last lines of the error log file # ·e·
+# ( terr ) error log tail
 alias terr='tail -f /var/log/error.log' # ·a·
 
-# ( tsys ) shows the last lines of the system log file # ·e·
+# ( tsys ) syslog tail
 alias tsys='tail -f /var/log/syslog' # ·a·
 
-# ·o· ---------------------------------------------- ·o· 
+# ·o· --------- EXPANDED ALIASES BELOW ------------- ·o· 
 
-# ·o· ______________________________________________ ·o· 
-# ·o· -------- Directory Control System ------------ ·o· Directory Control System
-# ·o· ______________________________________________ ·o· 
+# ( e ) create & edit file
+alias e='touch "$1" && ${EDITOR:-nano} "$1"' # ·a·
+
+# ( md ) make and enter directory
+alias md='mkdir -p "$1" && cd "$1" && ls' # ·a·
+
+# ( op ) open current dir in GUI
+alias op='xdg-open .' # ·a·
+
+# ( ff ) find file in current tree
+alias ff='find . -name' # ·a·
+
+# ( dfh ) disk usage of current mount
+alias dfh='df -h .' # ·a·
+
+# ( duh ) folder size human
+alias duh='du -sh .' # ·a·
+
+# ( bakall ) backup current dir to ~/backup/yyyyMMdd_HHmm
+alias bakall='tgt=~/backups/$(date +%Y%m%d_%H%M); mkdir -p "$tgt"; cp -a * "$tgt"' # ·a·
+
+# ( rd ) safe directory delete with confirm
+alias rd='read -p "Delete directory $1 ? (y/n): " ans && [[ $ans == y* ]] && rm -rf "$1"' # ·a·
+
+# ( here ) print current directory
+alias here='pwd' # ·a·
+
+# ( goto ) go to any path
+alias goto='cd' # ·a·
+
+# ( hdir ) show hidden dirs only
+alias hdir='ls -d .*/' # ·a·
+
+# ( empty ) show empty folders
+alias empty='find . -type d -empty' # ·a·
+
+# ·o· ---------------------------------------------- ·o· 

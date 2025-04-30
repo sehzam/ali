@@ -1,0 +1,47 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------- Development Tools ------------- ·o· .dev Module
+# ·o· ______________________________________________ ·o· 
+
+# ·o· -------------- Python / Venv ----------------- ·o·
+
+# ( .dev.venv ) → Create & activate virtualenv in current dir # ·e·
+alias '.dev.venv'='python3 -m venv venv && source venv/bin/activate' # ·a·
+
+# ( .dev.pip.up ) → Upgrade pip & install wheel/setuptools # ·e·
+alias '.dev.pip.up'='python3 -m pip install --upgrade pip wheel setuptools' # ·a·
+
+# ·o· -------------- JavaScript / Node ------------- ·o·
+
+# ( .dev.npm.i ) → Install NPM packages # ·e·
+alias '.dev.npm.i'='npm install' # ·a·
+
+# ( .dev.npm.r ) → Run default script from package.json # ·e·
+alias '.dev.npm.r'='npm run start' # ·a·
+
+# ( .dev.npx ) → Execute local project command via NPX # ·e·
+alias '.dev.npx'='npx' # ·a·
+
+# ·o· ---------------- Compilers ------------------- ·o·
+
+# ( .dev.gcc ) <file.c> → Compile C file with gcc # ·e·
+alias '.dev.gcc'='gcc -Wall -o main' # ·a·
+
+# ( .dev.gpp ) <file.cpp> → Compile C++ file with g++ # ·e·
+alias '.dev.gpp'='g++ -Wall -o main' # ·a·
+
+# ( .dev.tsc ) <file.ts> → Compile TypeScript to JS # ·e·
+alias '.dev.tsc'='tsc' # ·a·
+
+# ·o· ---------------- Tools / Builders ------------ ·o·
+
+# ( .dev.make ) → Run make in current directory # ·e·
+alias '.dev.make'='make' # ·a·
+
+# ( .dev.cmake ) → Run cmake in current directory # ·e·
+alias '.dev.cmake'='cmake .' # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------- Development Tools ------------- ·o· .dev Module
+# ·o· ______________________________________________ ·o· 

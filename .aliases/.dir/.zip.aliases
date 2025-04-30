@@ -85,6 +85,37 @@ alias 'x.tarbz2.c'='tar -cjf' # ·a·
 alias 'x.tarbz2.e'='tar -xjf' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
+# ·o· ------------------ RAR ----------------------- ·o· RAR options
+
+# ( x.rar.c ) compress : RAR archive (if installed) # ·e·
+# = USE = x.rar.c archive.rar file1 file2 dir/ # ·e·
+alias 'x.rar.c'='rar a' # ·a·
+
+# ( x.rar.e ) extract : RAR archive # ·e·
+# = USE = x.rar.e archive.rar # ·e·
+alias 'x.rar.e'='unrar x' # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ------------------ DEB ----------------------- ·o· DEB options
+
+# ( x.deb.e ) extract content of .deb package # ·e·
+# = USE = x.deb.e package.deb # ·e·
+alias 'x.deb.e'='dpkg-deb -x' # ·a·
+
+# ( x.deb.i ) install .deb package # ·e·
+# = USE = x.deb.i package.deb # ·e·
+alias 'x.deb.i'='sudo dpkg -i' # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ----------------  RPM ------------------------ ·o· RPM options
+
+# ( x.rpm.e ) extract .rpm file to folder # ·e·
+# = USE = x.rpm.e package.rpm # ·e·
+alias 'x.rpm.e'='rpm2cpio' # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------ Package extracting -------------- ·o· Package extracting

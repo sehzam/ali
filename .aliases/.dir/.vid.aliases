@@ -3,14 +3,32 @@
 # ·o· ______________________________________________ ·o· 
 # ·o· ---------------- Video Editing --------------- ·o· Video Editing
 # ·o· ______________________________________________ ·o· 
-
 # ·o· ------------------  VID ---------------------- ·o· VID options
 
 # ( .vid.frame) <mp4-file> <interval-second> <max-pic-in-directory> # ·e·
 # split and organize mp4 video files into frame pictures in directories  # ·e·
     alias ".vid.frame"="divide_frames" # ·a·
 
+# ( .vid.to.mp3 ) <video.mp4> → extract audio as mp3 # ·e·
+alias ".vid.to.mp3"='ffmpeg -i' # ·a·
+
+# ( .vid.compress ) <video.mp4> → compress with default settings # ·e·
+alias ".vid.compress"='ffmpeg -i' # ·a·
+
+# ( .vid.resize ) <video.mp4> <width>x<height> → rescale video # ·e·
+alias ".vid.resize"='ffmpeg -i' # ·a·
+
+# ( .vid.concat ) merges all .mp4 in current dir into one file # ·e·
+alias ".vid.concat"='ffmpeg -f concat -safe 0 -i <(for f in *.mp4; do echo "file '\''$f'\''"; done) -c copy output.mp4' # ·a·
+
+# ( .vid.gif ) <video.mp4> → extract short gif # ·e·
+alias ".vid.gif"='ffmpeg -t 5 -ss 00:00:02 -i' # ·a·
+
+# ( .vid.cut ) cut part of a video: input, start, duration, output # ·e·
+alias ".vid.cut"='ffmpeg -ss 00:00:10 -i' # ·a·
+
 # ·o· ---------------------------------------------- ·o· 
+
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ---------------- Video Editing --------------- ·o· Video Editing

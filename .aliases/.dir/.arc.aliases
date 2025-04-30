@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· ------- Archive Inspection & Navigation ------ ·o· .arc Module
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ---------------- Archive Listing ------------- ·o·
+
+# ( .arc.tar.list ) → Lists contents of a .tar archive # ·e·
+alias '.arc.tar.list'='tar -tf' # ·a·
+
+# ( .arc.zip.list ) → Lists contents of a .zip archive # ·e·
+alias '.arc.zip.list'='zipinfo' # ·a·
+
+# ( .arc.7z.list ) → Lists contents of a .7z archive # ·e·
+alias '.arc.7z.list'='7z l' # ·a·
+
+# ( .arc.gz.list ) → Lists contents of a .gz archive # ·e·
+alias '.arc.gz.list'='gzip -l' # ·a·
+
+# ·o· ---------------- Archive Search -------------- ·o·
+
+# ( .arc.str.find ) <string> <archive> → Search string in uncompressed archive content # ·e·
+alias '.arc.str.find'='zgrep' # ·a·
+
+# ( .arc.tar.find ) <file> <tar> → Find specific file inside tar # ·e·
+alias '.arc.tar.find'='tar -tf | grep' # ·a·
+
+# ·o· ---------------- Structure View -------------- ·o·
+
+# ( .arc.tree ) → Show folder structure visually (if available) # ·e·
+alias '.arc.tree'='tree -C' # ·a·
+
+# ( .arc.hex ) <file> → View binary/hex content of a file # ·e·
+alias '.arc.hex'='xxd' # ·a·
+
+# ·o· ---------------- Inspection Tools ------------ ·o·
+
+# ( .arc.view ) <file> → Preview content of a compressed file (head) # ·e·
+alias '.arc.view'='zcat | head' # ·a·
+
+# ( .arc.cat ) <file> → Decompress and print content (cat) # ·e·
+alias '.arc.cat'='zcat' # ·a·
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ----------- End of Archive Tools ------------- ·o· 
+# ·o· ______________________________________________ ·o· 
