@@ -1,27 +1,19 @@
 #!/bin/bash
-# 
+# Basit ama etkili başlık animasyonu
+
 title_solid_animation() {
     clear
     local text1="$1"
-    local text2="$2"
-    local text3="$3"
-    local text4="$4"
-    local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
-    local shadow_color="\e[90m"
-    local shadow_delay=0.000005
-
-        ############################################################################
+    local colors=("\e[97m" "\e[37m" "\e[96m" "\e[90m" "\e[94m")
+    local shadow_color="\e[30m"
+    local shadow_delay=0.008
 
     local x=$(( (COLUMNS - ${#text1}) / 2 ))
-    local y=$(( LINES / 50 ))
-# Ensure y is greater than or equal to 2
-    if ((y <= 1)); then
-        y=2
-    fi
+    local y=$(( LINES / 10 ))
+    (( y <= 1 )) && y=2
+
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
-        local color="${colors[i % ${#colors[@]}]}"
-
         tput cup $((y - 1)) $((x + i))
         echo -ne "${shadow_color}${char}\e[0m"
     done
@@ -29,19 +21,19 @@ title_solid_animation() {
     for ((i = 0; i < ${#text1}; i++)); do
         local char="${text1:i:1}"
         local color="${colors[i % ${#colors[@]}]}"
-
         tput cup $y $((x + i))
         echo -ne "${color}${char}\e[0m"
         sleep $shadow_delay
     done
 
-        ############################################################################
-
-    for ((i = 0; i < 1; i++)); do
-        echo
-    done
+    echo -e "\n"
 }
 
-. ~/.aliases/.ali.aliases
+# Opsiyonel alias yükleyici
+[ -f ~/.aliases/.ali.aliases ] && . ~/.aliases/.ali.aliases
 
-alias i="title_solid_animation  '$avail_lists '"
+# Alias sayısını hesapla
+avail_lists=$(alias | wc -l)
+
+# Kullanım: i → başlık animasyonu çalıştırır
+alias i="title_solid_animation \"\$avail_lists aliases registered\""
