@@ -1,7 +1,7 @@
 directory_to_search="$HOME/.aliases/.dir/" # ·v· 
 directory_to_save="$HOME/.aliases/.list/" # ·v· 
 output_file="$HOME/.aliases/.bin/.ali.list" # ·v· 
-# output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
+output_file_var="$HOME/.aliases/.bin/.ali.list.names" # ·v· 
 
 
 if [ -s "$output_file_var" ]; then # ·c·
