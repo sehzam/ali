@@ -83,6 +83,16 @@ __*__ ____DON'T__ copy / paste the aliases because it have spaces between for be
 | __`. o w n`__              | cat ~/.aliases/.list/.own.aliases              | 
 | __`. s y s`__              | cat ~/.aliases/.list/.sys.aliases              | 
 | __`. z i p`__              | cat ~/.aliases/.list/.zip.aliases              | 
+| __`. t x t`__              | cat ~/.aliases/.list/.txt.aliases              | 
+| __`. v i d`__              | cat ~/.aliases/.list/.vid.aliases              | 
+| __`. p s x`__              | cat ~/.aliases/.list/.psx.aliases              | 
+| __`. s v c`__              | cat ~/.aliases/.list/.svc.aliases              | 
+| __`. u r l`__              | cat ~/.aliases/.list/.url.aliases              | 
+| __`. d k r`__              | cat ~/.aliases/.list/.dkr.aliases              | 
+| __`. a r c`__              | cat ~/.aliases/.list/.arc.aliases              | 
+| __`. d e v`__              | cat ~/.aliases/.list/.dev.aliases              | 
+| __`. g b h`__              | cat ~/.aliases/.list/.gbh.aliases              | 
+| __`. c i c`__              | cat ~/.aliases/.list/.cic.aliases              | 
 |-|-|
 | __`. *** . a`__          | cat ~/.aliases/.dir/.***.aliases (only alias)  |
 | __`. *** . e`__          | cat ~/.aliases/.dir/.***.aliases (explaination)|
