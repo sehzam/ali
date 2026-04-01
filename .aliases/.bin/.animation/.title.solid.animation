@@ -72,7 +72,7 @@ title_solid_animation() {
         done
     done
 
-    echo -e "\n"
+    echo -e "\n\n"
 }
 
 # Aliases laden
