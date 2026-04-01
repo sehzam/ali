@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           GHB            ------------ ·o· GHB
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .ghb.raw ) : RAW output · ~/.aliases/.dir/.ghb.aliases  # ·e·
+alias '.ghb.raw'='cat ~/.aliases/.dir/.ghb.aliases' # ·a·
+# ( .ghb.f )   : RAW output · ~/.aliases/.dir/.function/.ghb.function  # ·e·
+alias '.ghb.f'='cat ~/.aliases/.dir/.function/.ghb.function' # ·a·
+# ( .ghb.l )   : RAW output · ~/.aliases/.list/.ghb.lists  # ·e·
+alias '.ghb.l'='cat ~/.aliases/.list/.ghb.lists' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· -------------- GHB Functions ----------------- ·f· GHB Functions
+ghb_a() { # ·c·
+  .ghb.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+ghb_e() { # ·c·
+  .ghb.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+ghb_f() { # ·c· 
+  .ghb.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+} # ·c·
+ghb_l() { # ·c·
+  .ghb.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
+# ( .ghb )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.ghb.lists # ·e·
+alias '.ghb'='i && ghb_l' # ·a·
+# ( .ghb.a ) : ( only aliases ) · lists ~/.aliases/.dir/.ghb.aliases # ·e·
+alias '.ghb.a'='i && ghb_a' # ·a·
+# ( .ghb.e ) : ( explaination ) · lists ~/.aliases/.dir/.ghb.aliases # ·e· 
+alias '.ghb.e'='i && ghb_e' # ·a·
+# ( .ghb.f ) : ( functions... ) · lists ~/.aliases/.dir/.ghb.aliases # ·e·
+alias '.ghb.f'='i && ghb_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           GHB            ------------ ·o· GHB
+# ·o· ______________________________________________ ·o·

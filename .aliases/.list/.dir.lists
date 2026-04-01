@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           DIR            ------------ ·o· DIR
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .dir.raw ) : RAW output · ~/.aliases/.dir/.dir.aliases  # ·e·
+alias '.dir.raw'='cat ~/.aliases/.dir/.dir.aliases' # ·a·
+# ( .dir.f )   : RAW output · ~/.aliases/.dir/.function/.dir.function  # ·e·
+alias '.dir.f'='cat ~/.aliases/.dir/.function/.dir.function' # ·a·
+# ( .dir.l )   : RAW output · ~/.aliases/.list/.dir.lists  # ·e·
+alias '.dir.l'='cat ~/.aliases/.list/.dir.lists' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· -------------- DIR Functions ----------------- ·f· DIR Functions
+dir_a() { # ·c·
+  .dir.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+dir_e() { # ·c·
+  .dir.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+dir_f() { # ·c· 
+  .dir.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+} # ·c·
+dir_l() { # ·c·
+  .dir.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
+# ( .dir )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.dir.lists # ·e·
+alias '.dir'='i && dir_l' # ·a·
+# ( .dir.a ) : ( only aliases ) · lists ~/.aliases/.dir/.dir.aliases # ·e·
+alias '.dir.a'='i && dir_a' # ·a·
+# ( .dir.e ) : ( explaination ) · lists ~/.aliases/.dir/.dir.aliases # ·e· 
+alias '.dir.e'='i && dir_e' # ·a·
+# ( .dir.f ) : ( functions... ) · lists ~/.aliases/.dir/.dir.aliases # ·e·
+alias '.dir.f'='i && dir_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           DIR            ------------ ·o· DIR
+# ·o· ______________________________________________ ·o·

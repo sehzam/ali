@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           ZIP            ------------ ·o· ZIP
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .zip.raw ) : RAW output · ~/.aliases/.dir/.zip.aliases  # ·e·
+alias '.zip.raw'='cat ~/.aliases/.dir/.zip.aliases' # ·a·
+# ( .zip.f )   : RAW output · ~/.aliases/.dir/.function/.zip.function  # ·e·
+alias '.zip.f'='cat ~/.aliases/.dir/.function/.zip.function' # ·a·
+# ( .zip.l )   : RAW output · ~/.aliases/.list/.zip.lists  # ·e·
+alias '.zip.l'='cat ~/.aliases/.list/.zip.lists' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· -------------- ZIP Functions ----------------- ·f· ZIP Functions
+zip_a() { # ·c·
+  .zip.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+zip_e() { # ·c·
+  .zip.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+zip_f() { # ·c· 
+  .zip.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+} # ·c·
+zip_l() { # ·c·
+  .zip.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
+# ( .zip )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.zip.lists # ·e·
+alias '.zip'='i && zip_l' # ·a·
+# ( .zip.a ) : ( only aliases ) · lists ~/.aliases/.dir/.zip.aliases # ·e·
+alias '.zip.a'='i && zip_a' # ·a·
+# ( .zip.e ) : ( explaination ) · lists ~/.aliases/.dir/.zip.aliases # ·e· 
+alias '.zip.e'='i && zip_e' # ·a·
+# ( .zip.f ) : ( functions... ) · lists ~/.aliases/.dir/.zip.aliases # ·e·
+alias '.zip.f'='i && zip_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           ZIP            ------------ ·o· ZIP
+# ·o· ______________________________________________ ·o·

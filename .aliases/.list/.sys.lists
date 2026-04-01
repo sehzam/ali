@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           SYS            ------------ ·o· SYS
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .sys.raw ) : RAW output · ~/.aliases/.dir/.sys.aliases  # ·e·
+alias '.sys.raw'='cat ~/.aliases/.dir/.sys.aliases' # ·a·
+# ( .sys.f )   : RAW output · ~/.aliases/.dir/.function/.sys.function  # ·e·
+alias '.sys.f'='cat ~/.aliases/.dir/.function/.sys.function' # ·a·
+# ( .sys.l )   : RAW output · ~/.aliases/.list/.sys.lists  # ·e·
+alias '.sys.l'='cat ~/.aliases/.list/.sys.lists' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· -------------- SYS Functions ----------------- ·f· SYS Functions
+sys_a() { # ·c·
+  .sys.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+sys_e() { # ·c·
+  .sys.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+sys_f() { # ·c· 
+  .sys.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+} # ·c·
+sys_l() { # ·c·
+  .sys.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
+# ( .sys )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.sys.lists # ·e·
+alias '.sys'='i && sys_l' # ·a·
+# ( .sys.a ) : ( only aliases ) · lists ~/.aliases/.dir/.sys.aliases # ·e·
+alias '.sys.a'='i && sys_a' # ·a·
+# ( .sys.e ) : ( explaination ) · lists ~/.aliases/.dir/.sys.aliases # ·e· 
+alias '.sys.e'='i && sys_e' # ·a·
+# ( .sys.f ) : ( functions... ) · lists ~/.aliases/.dir/.sys.aliases # ·e·
+alias '.sys.f'='i && sys_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           SYS            ------------ ·o· SYS
+# ·o· ______________________________________________ ·o·

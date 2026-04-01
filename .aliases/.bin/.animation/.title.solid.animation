@@ -1,98 +1,47 @@
-##!/bin/bash
-# Her çözünürlükte çalışan, dar ekranlara uyumlu, tput-hatasız animasyon
-
-# Güvenli tput cup
-safe_tput_cup() {
-  local row="$1"
-  local col="$2"
-
-  # Boş ya da sayı değilse sıfırla
-  [[ "$row" =~ ^[0-9]+$ ]] || row=0
-  [[ "$col" =~ ^[0-9]+$ ]] || col=0
-
-  # Negatifse sıfırla
-  (( row < 0 )) && row=0
-  (( col < 0 )) && col=0
-
-  # Terminal sınırını aşmasın
-  local max_row=$(($(tput lines) - 1))
-  local max_col=$(($(tput cols) - 1))
-
-  (( row > max_row )) && row=$max_row
-  (( col > max_col )) && col=$max_col
-
-  # Sonuç: garantili geçerli pozisyon
-  tput cup "$row" "$col"
-}
-
-
-
+#!/bin/bash
+# 
 title_solid_animation() {
-  clear
-  local text1="$1"
-  local text2="$2"
-  local text3="$3"
-  local text4="$4"
+    clear
+    local text1="$1"
+    local text2="$2"
+    local text3="$3"
+    local text4="$4"
+    local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
+    local shadow_color="\e[90m"
+    local shadow_delay=0.000005
 
-  local colors=("\e[97m" "\e[37m" "\e[96m" "\e[90m" "\e[94m")
-  local shadow_color="\e[30m"
-  local shadow_delay=0.008
+        ############################################################################
 
-  local screen_width=$(tput cols)
-  local screen_height=$(tput lines)
-
-  # Eğer ekran 20 karakterden küçükse, minimum sınır mesajı
-  if (( screen_width < 20 || screen_height < 6 )); then
-    echo "⛔ Terminal çözünürlüğü çok düşük. Lütfen büyütün."
-    return
-  fi
-
-  local lines=("$text1" "$text2" "$text3" "$text4")
-  local heights=($((screen_height / 10)) $((screen_height / 6)) $((screen_height / 3)) $((screen_height / 2)))
-
-  for idx in {0..3}; do
-    local raw="${lines[$idx]}"
-    local text="$raw"
-
-    # Metin ekranı aşmasın
-    if [ ${#text} -ge $((screen_width - 4)) ]; then
-      text="${text:0:$((screen_width - 4))}"
+    local x=$(( (COLUMNS - ${#text1}) / 2 ))
+    local y=$(( LINES / 50 ))
+# Ensure y is greater than or equal to 2
+    if ((y <= 1)); then
+        y=2
     fi
+    for ((i = 0; i < ${#text1}; i++)); do
+        local char="${text1:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
 
-    local len=${#text}
-    local y=${heights[$idx]}
-    (( y < 1 )) && y=1
-    local x=$(( (screen_width - len) / 2 ))
-    (( x < 0 )) && x=0
-
-    # Gölge
-    for ((i = 0; i < len; i++)); do
-      local char="${text:i:1}"
-      safe_tput_cup $((y - 1)) $((x + i))
-      echo -ne "${shadow_color}${char}\e[0m"
+        tput cup $((y - 1)) $((x + i))
+        echo -ne "${shadow_color}${char}\e[0m"
     done
 
-    # Asıl metin
-    for ((i = 0; i < len; i++)); do
-      local char="${text:i:1}"
-      local color="${colors[i % ${#colors[@]}]}"
-      safe_tput_cup $y $((x + i))
-      echo -ne "${color}${char}\e[0m"
-      sleep $shadow_delay
+    for ((i = 0; i < ${#text1}; i++)); do
+        local char="${text1:i:1}"
+        local color="${colors[i % ${#colors[@]}]}"
+
+        tput cup $y $((x + i))
+        echo -ne "${color}${char}\e[0m"
+        sleep $shadow_delay
     done
 
-    echo
-    sleep 0.1
-  done
+        ############################################################################
 
-  echo -e "\n"
+    for ((i = 0; i < 1; i++)); do
+        echo
+    done
 }
 
-# Opsiyonel alias dosyası
-[ -f ~/.aliases/.ali.aliases ] && . ~/.aliases/.ali.aliases
+. ~/.aliases/.ali.aliases
 
-avail_lists=$(alias | wc -l)
-
-# Komut: i → başlık animasyonunu başlat
 alias i="title_solid_animation  '$avail_lists '"
-

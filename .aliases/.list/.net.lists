@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           NET            ------------ ·o· NET
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .net.raw ) : RAW output · ~/.aliases/.dir/.net.aliases  # ·e·
+alias '.net.raw'='cat ~/.aliases/.dir/.net.aliases' # ·a·
+# ( .net.f )   : RAW output · ~/.aliases/.dir/.function/.net.function  # ·e·
+alias '.net.f'='cat ~/.aliases/.dir/.function/.net.function' # ·a·
+# ( .net.l )   : RAW output · ~/.aliases/.list/.net.lists  # ·e·
+alias '.net.l'='cat ~/.aliases/.list/.net.lists' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· -------------- NET Functions ----------------- ·f· NET Functions
+net_a() { # ·c·
+  .net.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+net_e() { # ·c·
+  .net.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+net_f() { # ·c· 
+  .net.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+} # ·c·
+net_l() { # ·c·
+  .net.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
+# ( .net )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.net.lists # ·e·
+alias '.net'='i && net_l' # ·a·
+# ( .net.a ) : ( only aliases ) · lists ~/.aliases/.dir/.net.aliases # ·e·
+alias '.net.a'='i && net_a' # ·a·
+# ( .net.e ) : ( explaination ) · lists ~/.aliases/.dir/.net.aliases # ·e· 
+alias '.net.e'='i && net_e' # ·a·
+# ( .net.f ) : ( functions... ) · lists ~/.aliases/.dir/.net.aliases # ·e·
+alias '.net.f'='i && net_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           NET            ------------ ·o· NET
+# ·o· ______________________________________________ ·o·

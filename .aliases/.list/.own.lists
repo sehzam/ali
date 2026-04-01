@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           OWN            ------------ ·o· OWN
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .own.raw ) : RAW output · ~/.aliases/.dir/.own.aliases  # ·e·
+alias '.own.raw'='cat ~/.aliases/.dir/.own.aliases' # ·a·
+# ( .own.f )   : RAW output · ~/.aliases/.dir/.function/.own.function  # ·e·
+alias '.own.f'='cat ~/.aliases/.dir/.function/.own.function' # ·a·
+# ( .own.l )   : RAW output · ~/.aliases/.list/.own.lists  # ·e·
+alias '.own.l'='cat ~/.aliases/.list/.own.lists' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· -------------- OWN Functions ----------------- ·f· OWN Functions
+own_a() { # ·c·
+  .own.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+own_e() { # ·c·
+  .own.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+own_f() { # ·c· 
+  .own.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+} # ·c·
+own_l() { # ·c·
+  .own.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
+# ( .own )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.own.lists # ·e·
+alias '.own'='i && own_l' # ·a·
+# ( .own.a ) : ( only aliases ) · lists ~/.aliases/.dir/.own.aliases # ·e·
+alias '.own.a'='i && own_a' # ·a·
+# ( .own.e ) : ( explaination ) · lists ~/.aliases/.dir/.own.aliases # ·e· 
+alias '.own.e'='i && own_e' # ·a·
+# ( .own.f ) : ( functions... ) · lists ~/.aliases/.dir/.own.aliases # ·e·
+alias '.own.f'='i && own_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           OWN            ------------ ·o· OWN
+# ·o· ______________________________________________ ·o·

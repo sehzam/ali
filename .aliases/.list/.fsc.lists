@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           FSC            ------------ ·o· FSC
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .fsc.raw ) : RAW output · ~/.aliases/.dir/.fsc.aliases  # ·e·
+alias '.fsc.raw'='cat ~/.aliases/.dir/.fsc.aliases' # ·a·
+# ( .fsc.f )   : RAW output · ~/.aliases/.dir/.function/.fsc.function  # ·e·
+alias '.fsc.f'='cat ~/.aliases/.dir/.function/.fsc.function' # ·a·
+# ( .fsc.l )   : RAW output · ~/.aliases/.list/.fsc.lists  # ·e·
+alias '.fsc.l'='cat ~/.aliases/.list/.fsc.lists' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· -------------- FSC Functions ----------------- ·f· FSC Functions
+fsc_a() { # ·c·
+  .fsc.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+fsc_e() { # ·c·
+  .fsc.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+fsc_f() { # ·c· 
+  .fsc.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+} # ·c·
+fsc_l() { # ·c·
+  .fsc.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
+# ( .fsc )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.fsc.lists # ·e·
+alias '.fsc'='i && fsc_l' # ·a·
+# ( .fsc.a ) : ( only aliases ) · lists ~/.aliases/.dir/.fsc.aliases # ·e·
+alias '.fsc.a'='i && fsc_a' # ·a·
+# ( .fsc.e ) : ( explaination ) · lists ~/.aliases/.dir/.fsc.aliases # ·e· 
+alias '.fsc.e'='i && fsc_e' # ·a·
+# ( .fsc.f ) : ( functions... ) · lists ~/.aliases/.dir/.fsc.aliases # ·e·
+alias '.fsc.f'='i && fsc_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           FSC            ------------ ·o· FSC
+# ·o· ______________________________________________ ·o·

@@ -1,53 +1,62 @@
+. ~/.config/.github/.login # ·c·
+. ~/.aliases/.dir/.function/.ghb.function # ·c·
 # ·o· ______________________________________________ ·o· 
-# ·o· ------------------  GitHub Control ----------- ·o· 
+# ·o· ------------------  GitHub  ------------------ ·o· GitHub 
 # ·o· ______________________________________________ ·o· 
-. ~/.config/.github/.login # File containing stored GitHub API token credentials
-. ~/.aliases/.dir/.function/.ghb.function # File containing GitHub interaction functions
-
-# ·o· --------------- GitHub Token Control ---------- ·o· 
-
-# ( .token ) → Display the currently configured GitHub API token
-alias .token="token_setup" # ·a·
-
-# ( .token.setup ) → Prompt to define or update GitHub API token
-alias .token.setup="update_login" # ·a·
-
-# ·o· ---------------- SSH Key Management ----------- ·o·
-
-# ( .ssh ) → List available SSH keys on your machine
-alias .ssh="show_ssh" # ·a·
-
-# ( .ghb.ssh.create ) <key-name> → Generate and send SSH key to GitHub
-alias .ghb.ssh.create="add_ssh_github_setup" # ·a·
-
-# ·o· ---------------- Repository Operations -------- ·o·
-
-# ( .repo ) → List repositories using the GitHub API token
-alias .repo="list_repo_setup" # ·a·
-
-# ( .repo.create ) <repo-name> → Create a new GitHub repository and push local project
-alias .repo.create="git_setup_and_push_setup" # ·a·
-
-# ( .repo.delete ) <repo-name> → Delete the given repository
-alias .repo.delete="delete_repo_setup" # ·a·
-
-# ( .repo.change ) <owner> <repo> <public|private> → Toggle repository visibility
-alias .repo.change="change_repo_setup" # ·a·
-
-# ·o· --------------- Collaborator Management ------- ·o·
-
-# ( .repo.collaborator ) <repo-name> → Show collaborators for given repository
-alias .repo.collaborator="list_collaborator_setup" # ·a·
-
-# ( .repo.collaborator.all ) → Show collaborators for all repositories
-alias .repo.collaborator.all="list_repo_with_collaborator_setup" # ·a·
-
-# ( .repo.collaborator.add ) <repo> <user> → Add user as collaborator to repo
-alias .repo.collaborator.add="add_collaborator_setup" # ·a·
-
-# ( .repo.collaborator.remove ) <repo> <user> → Remove collaborator from repo
-alias .repo.collaborator.remove="remove_collaborator_setup" # ·a·
 
 # ·o· ______________________________________________ ·o· 
-# ·o· ----------- End of GitHub Control ------------ ·o· 
+# ·o· ------------------  Alias -------------------- ·o· Alias
+
+# ( .token ) # ·e· 
+# show installed API Token # ·e·
+alias ".token"="token_setup" # ·a·
+
+# ( .token.setup ) # ·e· 
+# PROMPT to add API Token # ·e·
+alias ".token.setup"="update_login" # ·a·
+
+# ( .ssh )  # ·e·
+# show available ssh keys # ·e·
+alias ".ssh"="show_ssh" # ·a·
+
+# ( .ghb.ssh.create ) <ssh-key-name> # ·e·
+# send ssh keys to GitHub via API Token # ·e·
+alias ".ghb.ssh.create"="add_ssh_github_setup" # ·a·
+
+# ( .repo ) # ·e·
+# show Repositories with API Token # ·e·
+alias ".repo"="list_repo_setup" # ·a·
+
+# ( .repo.create ) <repo-name> # ·e·
+# create repository via API Token # ·e·
+alias ".repo.create"="git_setup_and_push_setup" # ·a·
+
+# ( .repo.delete) <repo-name> # ·e·
+# delete repository via API Token # ·e·
+alias ".repo.delete"="delete_repo_setup" # ·a·
+
+# ( .repo.change) <repo-owner> <repo-name> <public|private> # ·e·
+# change repository visibility between < public | private > via API Token # ·e·
+alias ".repo.change"="change_repo_setup" # ·a·
+
+# ( .repo.collaborator) <repo-name> # ·e·
+# show Collaborator on repository via API Token # ·e·
+alias ".repo.collaborator"="list_collaborator_setup" # ·a·
+
+# ( .repo.collaborator.all) # ·e·
+# show Collaborator on repository via API Token # ·e·
+alias ".repo.collaborator.all"="list_repo_with_collaborator_setup" # ·a·
+
+# ( .repo.collaborator.add) <repo-name> <collaborator-name> # ·e·
+# add Collaborator on repository via API Token # ·e·
+alias ".repo.collaborator.add"="add_collaborator_setup" # ·a·
+
+# ( .repo.collaborator.remove) <repo-name> <collaborator-name> # ·e·
+# remove Collaborator on repository via API Token # ·e·
+alias ".repo.collaborator.remove"="remove_collaborator_setup" # ·a·
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------  GitHub  ------------------ ·o· GitHub 
 # ·o· ______________________________________________ ·o· 

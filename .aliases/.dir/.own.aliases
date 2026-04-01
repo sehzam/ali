@@ -48,67 +48,6 @@ alias 't'='cd ~/Desktop/ && ls' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
-# ( p.n ) open personal notes with default editor # ·e·
-alias 'p.n'='cd ~/projects/personal/notes/ && nvim .' # ·a·
-
-# ( j ) quick jump to journal folder # ·e·
-alias 'j'='cd ~/projects/personal/journal/ && ls' # ·a·
-
-# ( z ) open zettelkasten or knowledge base # ·e·
-alias 'z'='cd ~/projects/personal/knowledge/ && ll' # ·a·
-
-# ( r ) open research dir # ·e·
-alias 'r'='cd ~/projects/work/research/ && ll' # ·a·
-
-# ( proj ) go to projects root and list all # ·e·
-alias 'proj'='cd ~/projects/ && tree -L 2' # ·a·
-
-# ( dev ) open development space # ·e·
-alias 'dev'='cd ~/projects/dev/ && ll' # ·a·
-
-# ( tmp ) open temp scratch directory # ·e·
-alias 'tmp'='cd ~/temp/ && ls' # ·a·
-
-# ( todo ) open todo list with nvim # ·e·
-alias 'todo'='nvim ~/projects/personal/todo.md' # ·a·
-
-# ( meet ) open meeting notes directory # ·e·
-alias 'meet'='cd ~/projects/work/meetings/ && ll' # ·a·
-
-# ( read ) open reading folder for PDFs/articles # ·e·
-alias 'read'='cd ~/Documents/Reading/ && ls' # ·a·
-
-
-# ·o· -------------- User Tools & Scripts ---------- ·o· User Scripts
-
-# ( .own.sync ) → Synchronizes custom scripts to remote or local repo # ·e·
-alias '.own.sync'='bash ~/.mytools/sync-custom.sh' # ·a·
-
-# ( .own.update ) → Updates custom scripts from remote # ·e·
-alias '.own.update'='bash ~/.mytools/update-tools.sh' # ·a·
-
-# ( .own.clean ) → Removes temporary files in scripts folder # ·e·
-alias '.own.clean'='find ~/.mytools/tmp -type f -delete' # ·a·
-
-# ( .own.run ) <script-name> → Runs a specific custom script # ·e·
-alias '.own.run'='bash ~/.mytools/scripts/' # ·a·
-
-# ( .own.list ) → Lists available custom tools in ~/.mytools/scripts # ·e·
-alias '.own.list'='ls ~/.mytools/scripts/' # ·a·
-
-# ( .own.edit ) <script-name> → Opens a script in editor # ·e·
-alias '.own.edit'='nvim ~/.mytools/scripts/' # ·a·
-
-# ·o· -------------- Session Management ------------ ·o· Optional
-
-# ( .own.ses.save ) → Saves current session state to file # ·e·
-alias '.own.ses.save'='bash ~/.mytools/save-session.sh' # ·a·
-
-# ( .own.ses.load ) → Loads last saved session state # ·e·
-alias '.own.ses.load'='bash ~/.mytools/load-session.sh' # ·a·
-
-# ·o· ---------------------------------------------- ·o· 
-
 # ·o· ______________________________________________ ·o· 
 # ·o· ----------------  Personal  ------------------ ·o· Personal Aliases
 # ·o· ______________________________________________ ·o· 

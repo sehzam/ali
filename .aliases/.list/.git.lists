@@ -1,0 +1,45 @@
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           GIT            ------------ ·o· GIT
+# ·o· ______________________________________________ ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ---------------- R A W Output ---------------- ·o· R A W Output
+# ( .git.raw ) : RAW output · ~/.aliases/.dir/.git.aliases  # ·e·
+alias '.git.raw'='cat ~/.aliases/.dir/.git.aliases' # ·a·
+# ( .git.f )   : RAW output · ~/.aliases/.dir/.function/.git.function  # ·e·
+alias '.git.f'='cat ~/.aliases/.dir/.function/.git.function' # ·a·
+# ( .git.l )   : RAW output · ~/.aliases/.list/.git.lists  # ·e·
+alias '.git.l'='cat ~/.aliases/.list/.git.lists' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·f· ______________________________________________ ·f· 
+# ·f· -------------- GIT Functions ----------------- ·f· GIT Functions
+git_a() { # ·c·
+  .git.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+} # ·c·
+git_e() { # ·c·
+  .git.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+} # ·c·
+git_f() { # ·c· 
+  .git.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+} # ·c·
+git_l() { # ·c·
+  .git.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+} # ·c·
+# ·f· ---------------------------------------------- ·f· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· ------------------ Aliases-------------------- ·o· Aliases
+# ( .git )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.git.lists # ·e·
+alias '.git'='i && git_l' # ·a·
+# ( .git.a ) : ( only aliases ) · lists ~/.aliases/.dir/.git.aliases # ·e·
+alias '.git.a'='i && git_a' # ·a·
+# ( .git.e ) : ( explaination ) · lists ~/.aliases/.dir/.git.aliases # ·e· 
+alias '.git.e'='i && git_e' # ·a·
+# ( .git.f ) : ( functions... ) · lists ~/.aliases/.dir/.git.aliases # ·e·
+alias '.git.f'='i && git_f' # ·a·
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o· --------           GIT            ------------ ·o· GIT
+# ·o· ______________________________________________ ·o·

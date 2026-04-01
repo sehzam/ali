@@ -98,39 +98,6 @@ alias du='du -sh *|sort -rh' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
-# ( s.top ) shows a dynamic real-time view of running processes # ·e·
-alias 's.top'='htop' # ·a·
-
-# ( s.uptime ) shows how long the system has been running # ·e·
-alias 's.uptime'='uptime' # ·a·
-
-# ( s.ports ) lists all open ports with process info # ·e·
-alias 's.ports'='sudo lsof -i -P -n | grep LISTEN' # ·a·
-
-# ( s.watch ) watches CPU and memory in real-time # ·e·
-alias 's.watch'='watch -n 1 "free -h && echo && top -b -n1 | head -15"' # ·a·
-
-# ( s.firewall ) status of UFW firewall # ·e·
-alias 's.firewall'='sudo ufw status verbose' # ·a·
-
-# ( s.kill ) kill a process by name # ·e·
-alias 's.kill'='pkill -f' # ·a·
-
-# ( s.pgrep ) search PID of process by name # ·e·
-alias 's.pgrep'='pgrep -laf' # ·a·
-
-# ( s.reload ) reloads .bashrc to apply changes # ·e·
-alias 's.reload'='source ~/.bashrc' # ·a·
-
-# ( s.disk ) analyze disk usage using ncdu (must be installed) # ·e·
-alias 's.disk'='ncdu' # ·a·
-
-# ( s.temp ) check CPU temperature (may need sensors) # ·e·
-alias 's.temp'='sensors' # ·a·
-
-
-# ·o· ---------------------------------------------- ·o· 
-
 # ·o· ______________________________________________ ·o· 
 # ·o· -------------- Systen Control ---------------- ·o· System Control
 # ·o· ______________________________________________ ·o· 

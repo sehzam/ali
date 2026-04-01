@@ -1,3 +1,4 @@
+avail_lists='(.ali .sys .dir .fsc .ghb .git .own .net .vid .zip)' # ·f·
 # ·o· ______________________________________________ ·o· 
 # ·o·                                                ·o·
 # ·o·              { A } = lias                      ·o·
@@ -54,3 +55,32 @@ alias ".ali.e"='i && ali' # ·a·
 # ( .ali.f ) : ( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='i && ali_f' # ·a·
 
+
+# ·o· ---------------------------------------------- ·o· 
+
+# ( .sys )   : ( ENTRY POINT: SYS ) · ~/.aliases/.list/.sys.lists # ·e· 
+
+# ( .dir )   : ( ENTRY POINT: DIR ) · ~/.aliases/.list/.dir.lists # ·e· 
+
+# ( .fsc )   : ( ENTRY POINT: FSC ) · ~/.aliases/.list/.fsc.lists # ·e· 
+
+# ( .ghb )   : ( ENTRY POINT: GHB ) · ~/.aliases/.list/.ghb.lists # ·e· 
+
+# ( .git )   : ( ENTRY POINT: GIT ) · ~/.aliases/.list/.git.lists # ·e· 
+
+# ( .own )   : ( ENTRY POINT: OWN ) · ~/.aliases/.list/.own.lists # ·e· 
+
+# ( .net )   : ( ENTRY POINT: NET ) · ~/.aliases/.list/.net.lists # ·e· 
+
+# ( .vid )   : ( ENTRY POINT: VID ) · ~/.aliases/.list/.vid.lists # ·e· 
+
+# ( .zip )   : ( ENTRY POINT: ZIP ) · ~/.aliases/.list/.zip.lists # ·e· 
+# ·o· ---------------------------------------------- ·o· 
+
+# ·o· ______________________________________________ ·o· 
+# ·o·                                                ·o·
+# ·o·              { A } = lias                      ·o·
+# ·o·              { L } = ists                      ·o·
+# ·o·              { I } = njection                  ·o·
+# ·o·                                                ·o·
+# ·o· ______________________________________________ ·o·

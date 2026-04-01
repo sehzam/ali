@@ -172,39 +172,6 @@ alias "g.r"='git revert' # ·a·
 
 # ·o· ---------------------------------------------- ·o· 
 
-# ( g.st.l ) list all stash entries with index and message # ·e·
-alias "g.st.l"='git stash list' # ·a·
-
-# ( g.st.a ) apply last stash without deleting it # ·e·
-alias "g.st.a"='git stash apply' # ·a·
-
-# ( g.st.c ) create stash with custom message # ·e·
-#        : usage → g.st.c "fix before experiment" # ·e·
-alias "g.st.c"='git stash push -m' # ·a·
-
-# ( g.amend ) amend last commit without changing message # ·e·
-alias "g.amend"='git commit --amend --no-edit' # ·a·
-
-# ( g.graph ) show concise commit graph with branches # ·e·
-alias "g.graph"='git log --oneline --decorate --graph --all' # ·a·
-
-# ( g.undo.add ) unstage all staged files # ·e·
-alias "g.undo.add"='git reset HEAD' # ·a·
-
-# ( g.last ) show last commit log in detail # ·e·
-alias "g.last"='git log -1 HEAD' # ·a·
-
-# ( g.rm.c ) remove file from git index but keep local # ·e·
-alias "g.rm.c"='git rm --cached' # ·a·
-
-# ( g.aliases ) list all git configured aliases # ·e·
-alias "g.aliases"="git config --get-regexp '^alias\\.'" # ·a·
-
-# ( g.clean.preview ) preview what git clean would delete # ·e·
-alias "g.clean.preview"='git clean -n -d' # ·a·
-
-# ·o· ---------------------------------------------- ·o· 
-
 # ·o· ________________ LESSER USED _________________ ·o· LESSER
 
 # ·o· ______________________________________________ ·o· 
