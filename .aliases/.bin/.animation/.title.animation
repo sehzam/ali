@@ -138,5 +138,5 @@ local colors=(
 . ~/.aliases/.ali.aliases
 
 wai=$(whoami)
-alias intro="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' '$avail_lists '"
-title_animation "Welcome BACK ( $wai )" "to the " "ALI : Alias List Injection " "$avail_lists "
+alias intro="title_animation 'Welcome BACK ($wai)' 'to the ' 'ALI : Alias List Injection ' "
+title_animation "Welcome BACK ( $wai )" "to the " "ALI : Alias List Injection " 
