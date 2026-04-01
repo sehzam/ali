@@ -1,67 +1,82 @@
 #!/bin/bash
-# 
+
 title_solid_animation() {
     clear
-    local text1="$1"
-    local text2="$2"
-    local text3="$3"
-    local text4="$4"
+
+    local text="$1"
+
     local colors=(
-"\e[31m" "\e[31m"  "\e[31m"  
-"\e[91m" "\e[91m"  "\e[91m"  
-"\e[33m" "\e[33m"  "\e[33m"  
-"\e[93m" "\e[93m"  "\e[93m"  
-"\e[32m" "\e[32m"  "\e[32m"  
-"\e[92m" "\e[92m"  "\e[92m"  
-"\e[36m" "\e[36m"  "\e[36m"  
-"\e[96m" "\e[96m"  "\e[96m"  
-"\e[34m" "\e[34m"  "\e[34m"  
-"\e[94m" "\e[94m"  "\e[94m"  
-"\e[35m" "\e[35m"  "\e[35m"  
-"\e[95m" "\e[95m"  "\e[95m"  
-"\e[37m" "\e[37m"  "\e[37m"  
-"\e[97m" "\e[97m"  "\e[97m"  
-)
+"\e[31m" "\e[31m"  "\e[31m"  "\e[31m"  
+"\e[91m" "\e[91m"  "\e[91m"  "\e[91m"  
+"\e[33m" "\e[33m"  "\e[33m"  "\e[33m"  
+"\e[93m" "\e[93m"  "\e[93m"  "\e[93m"  
+"\e[32m" "\e[32m"  "\e[32m"  "\e[32m"  
+"\e[92m" "\e[92m"  "\e[92m"  "\e[92m"  
+"\e[36m" "\e[36m"  "\e[36m"  "\e[36m"  
+"\e[96m" "\e[96m"  "\e[96m"  "\e[96m"  
+"\e[34m" "\e[34m"  "\e[34m"  "\e[34m"  
+"\e[94m" "\e[94m"  "\e[94m"  "\e[94m"  
+"\e[35m" "\e[35m"  "\e[35m"  "\e[35m"  
+"\e[95m" "\e[95m"  "\e[95m"  "\e[95m"  
+"\e[37m" "\e[37m"  "\e[37m"  "\e[37m"  
+"\e[97m" "\e[97m"  "\e[97m"  "\e[97m"  
+    )
+
     local shadow_color="\e[90m"
-    local shadow_delay=0.000005
+    local shadow_delay=0.0005
 
-        ############################################################################
+    # Terminalgröße holen (falls nicht gesetzt)
+    local cols=$(tput cols)
+    local lines_term=$(tput lines)
 
-    local x=$(( (COLUMNS - ${#text1}) / 2 ))
-    local y=$(( LINES / 50 ))
-# Ensure y is greater than or equal to 2
-    if ((y <= 1)); then
-        y=2
-    fi
-    for ((i = 0; i < ${#text1}; i++)); do
-        local char="${text1:i:1}"
-        local color="${colors[i % ${#colors[@]}]}"
+    # Sicherheitsabstand (Padding links/rechts)
+    local max_width=$((cols - 10))
+    ((max_width < 20)) && max_width=20
 
-        tput cup $((y - 1)) $((x + i))
-        echo -ne "${shadow_color}${char}\e[0m"
+    # Dynamisches Word-Wrapping
+    local wrapped_text
+    wrapped_text=$(echo "$text" | fold -s -w "$max_width")
+
+    # In Array nach Zeilen splitten
+    IFS=$'\n' read -rd '' -a lines <<< "$wrapped_text"
+
+    # Vertikal zentrieren
+    local start_y=$(( (lines_term - ${#lines[@]}) / 2 ))
+    ((start_y < 2)) && start_y=2
+
+    # Jede Zeile zeichnen
+    for line_index in "${!lines[@]}"; do
+        local line="${lines[$line_index]}"
+
+        # Horizontal zentrieren
+        local x=$(( (cols - ${#line}) / 2 ))
+        ((x < 0)) && x=0
+
+        local y=$((start_y + line_index))
+
+        # Schatten zeichnen
+        for ((i = 0; i < ${#line}; i++)); do
+            local char="${line:i:1}"
+            tput cup $((y - 1)) $((x + i))
+            echo -ne "${shadow_color}${char}\e[0m"
+        done
+
+        # Haupttext (animiert)
+        for ((i = 0; i < ${#line}; i++)); do
+            local char="${line:i:1}"
+            local color="${colors[i % ${#colors[@]}]}"
+
+            tput cup $y $((x + i))
+            echo -ne "${color}${char}\e[0m"
+            sleep $shadow_delay
+        done
     done
 
-    for ((i = 0; i < ${#text1}; i++)); do
-        local char="${text1:i:1}"
-        local color="${colors[i % ${#colors[@]}]}"
-
-        tput cup $y $((x + i))
-        echo -ne "${color}${char}\e[0m"
-        sleep $shadow_delay
-    done
-
-        ############################################################################
-
-    for ((i = 0; i < 1; i++)); do
-        echo
-    done
+    echo -e "\n"
 }
-formatted_lists=$(echo "$avail_lists" | awk '{
-    for (i=1; i<=NF; i++) {
-        printf "%s ", $i;
-        if (i % 5 == 0) printf "\n";
-    }
-}')
+
+# Aliases laden
 . ~/.aliases/.ali.aliases
 
-alias i="title_solid_animation  '$formatted_lists '"
+# Aufruf
+alias i='title_solid_animation "$avail_lists"'
