@@ -56,7 +56,12 @@ title_solid_animation() {
         echo
     done
 }
-
+formatted_lists=$(echo "$avail_lists" | awk '{
+    for (i=1; i<=NF; i++) {
+        printf "%s ", $i;
+        if (i % 5 == 0) printf "\n";
+    }
+}')
 . ~/.aliases/.ali.aliases
 
-alias i="title_solid_animation  '$avail_lists '"
+alias i="title_solid_animation  '$formatted_lists '"
