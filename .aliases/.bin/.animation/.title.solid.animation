@@ -6,62 +6,53 @@ title_solid_animation() {
     local text="$1"
 
     local colors=(
-"\e[31m" "\e[31m"  "\e[31m"  "\e[31m"  
-"\e[91m" "\e[91m"  "\e[91m"  "\e[91m"  
-"\e[33m" "\e[33m"  "\e[33m"  "\e[33m"  
-"\e[93m" "\e[93m"  "\e[93m"  "\e[93m"  
-"\e[32m" "\e[32m"  "\e[32m"  "\e[32m"  
-"\e[92m" "\e[92m"  "\e[92m"  "\e[92m"  
-"\e[36m" "\e[36m"  "\e[36m"  "\e[36m"  
-"\e[96m" "\e[96m"  "\e[96m"  "\e[96m"  
-"\e[34m" "\e[34m"  "\e[34m"  "\e[34m"  
-"\e[94m" "\e[94m"  "\e[94m"  "\e[94m"  
-"\e[35m" "\e[35m"  "\e[35m"  "\e[35m"  
-"\e[95m" "\e[95m"  "\e[95m"  "\e[95m"  
-"\e[37m" "\e[37m"  "\e[37m"  "\e[37m"  
-"\e[97m" "\e[97m"  "\e[97m"  "\e[97m"  
+        "\e[31m" "\e[91m"
+        "\e[33m" "\e[93m"
+        "\e[32m" "\e[92m"
+        "\e[36m" "\e[96m"
+        "\e[34m" "\e[94m"
+        "\e[35m" "\e[95m"
+        "\e[37m" "\e[97m"
     )
 
     local shadow_color="\e[90m"
     local shadow_delay=0.0005
 
-    # Terminalgröße holen (falls nicht gesetzt)
     local cols=$(tput cols)
     local lines_term=$(tput lines)
 
-    # Sicherheitsabstand (Padding links/rechts)
     local max_width=$((cols - 10))
     ((max_width < 20)) && max_width=20
 
-    # Dynamisches Word-Wrapping
+    # Word wrapping
     local wrapped_text
     wrapped_text=$(echo "$text" | fold -s -w "$max_width")
 
-    # In Array nach Zeilen splitten
     IFS=$'\n' read -rd '' -a lines <<< "$wrapped_text"
 
-    # Vertikal zentrieren
-    local start_y=$(( (lines_term - ${#lines[@]}) / 2 ))
+    # Jetzt mehr Platz einplanen (jede Zeile braucht 2 Reihen)
+    local total_height=$(( ${#lines[@]} * 2 ))
+
+    local start_y=$(( (lines_term - total_height) / 2 ))
     ((start_y < 2)) && start_y=2
 
-    # Jede Zeile zeichnen
     for line_index in "${!lines[@]}"; do
         local line="${lines[$line_index]}"
 
-        # Horizontal zentrieren
         local x=$(( (cols - ${#line}) / 2 ))
         ((x < 0)) && x=0
 
-        local y=$((start_y + line_index))
+        # 🔥 WICHTIG: *2 für Abstand
+        local y=$((start_y + line_index * 2))
 
-        # Schatten zeichnen
+        # Schatten (eine Zeile drüber)
         for ((i = 0; i < ${#line}; i++)); do
             local char="${line:i:1}"
             tput cup $((y - 1)) $((x + i))
             echo -ne "${shadow_color}${char}\e[0m"
         done
 
-        # Haupttext (animiert)
+        # Text
         for ((i = 0; i < ${#line}; i++)); do
             local char="${line:i:1}"
             local color="${colors[i % ${#colors[@]}]}"
@@ -72,11 +63,9 @@ title_solid_animation() {
         done
     done
 
-    echo -e "\n\n"
+    echo -e "\n"
 }
 
-# Aliases laden
 . ~/.aliases/.ali.aliases
 
-# Aufruf
 alias i='title_solid_animation "$avail_lists"'
