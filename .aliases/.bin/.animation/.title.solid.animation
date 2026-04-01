@@ -6,7 +6,22 @@ title_solid_animation() {
     local text2="$2"
     local text3="$3"
     local text4="$4"
-    local colors=("\e[31m" "\e[91m" "\e[93m" "\e[32m" "\e[36m" "\e[34m" "\e[35m" "\e[95m")
+    local colors=(
+"\e[31m" "\e[31m"  "\e[31m"  
+"\e[91m" "\e[91m"  "\e[91m"  
+"\e[33m" "\e[33m"  "\e[33m"  
+"\e[93m" "\e[93m"  "\e[93m"  
+"\e[32m" "\e[32m"  "\e[32m"  
+"\e[92m" "\e[92m"  "\e[92m"  
+"\e[36m" "\e[36m"  "\e[36m"  
+"\e[96m" "\e[96m"  "\e[96m"  
+"\e[34m" "\e[34m"  "\e[34m"  
+"\e[94m" "\e[94m"  "\e[94m"  
+"\e[35m" "\e[35m"  "\e[35m"  
+"\e[95m" "\e[95m"  "\e[95m"  
+"\e[37m" "\e[37m"  "\e[37m"  
+"\e[97m" "\e[97m"  "\e[97m"  
+)
     local shadow_color="\e[90m"
     local shadow_delay=0.000005
 
