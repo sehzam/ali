@@ -185,7 +185,7 @@ output_file_final="$HOME/.aliases/.bin/.ali.info"
 if [ -s "$output_file_var" ]; then
     while IFS= read -r line; do
         # Entfernen von Leerzeichen und Zeilenumbrüchen aus der Zeile
-        cleaned_line=$(echo "$line" | tr -d '[:space:]')
+        cleaned_line=$(echo "$line"  tr -d '[:space:]')
         # Hinzufügen der Punkte zwischen den Begriffen
         echo -n "| .$cleaned_line " >> "$output_file_final"
         
