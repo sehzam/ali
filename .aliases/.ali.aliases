@@ -55,45 +55,6 @@ alias ".ali.e"='i && ali | colorize_dir' # ·a·
 # ( .ali.f ) : ( functions... ) · lists ~/.aliases/.ali.aliases # ·e·
 alias ".ali.f"='i && ali_f | colorize_dir' # ·a·
 
-
-# ·o· ---------------------------------------------- ·o· 
-
-# ( .txt )   : ( ENTRY POINT: TXT ) · ~/.aliases/.list/.txt.lists # ·e· 
-
-# ( .vid )   : ( ENTRY POINT: VID ) · ~/.aliases/.list/.vid.lists # ·e· 
-
-# ( .psx )   : ( ENTRY POINT: PSX ) · ~/.aliases/.list/.psx.lists # ·e· 
-
-# ( .dir )   : ( ENTRY POINT: DIR ) · ~/.aliases/.list/.dir.lists # ·e· 
-
-# ( .svc )   : ( ENTRY POINT: SVC ) · ~/.aliases/.list/.svc.lists # ·e· 
-
-# ( .sys )   : ( ENTRY POINT: SYS ) · ~/.aliases/.list/.sys.lists # ·e· 
-
-# ( .url )   : ( ENTRY POINT: URL ) · ~/.aliases/.list/.url.lists # ·e· 
-
-# ( .git )   : ( ENTRY POINT: GIT ) · ~/.aliases/.list/.git.lists # ·e· 
-
-# ( .dkr )   : ( ENTRY POINT: DKR ) · ~/.aliases/.list/.dkr.lists # ·e· 
-
-# ( .arc )   : ( ENTRY POINT: ARC ) · ~/.aliases/.list/.arc.lists # ·e· 
-
-# ( .fsc )   : ( ENTRY POINT: FSC ) · ~/.aliases/.list/.fsc.lists # ·e· 
-
-# ( .dev )   : ( ENTRY POINT: DEV ) · ~/.aliases/.list/.dev.lists # ·e· 
-
-# ( .ghb )   : ( ENTRY POINT: GHB ) · ~/.aliases/.list/.ghb.lists # ·e· 
-
-# ( .zip )   : ( ENTRY POINT: ZIP ) · ~/.aliases/.list/.zip.lists # ·e· 
-
-# ( .cic )   : ( ENTRY POINT: CIC ) · ~/.aliases/.list/.cic.lists # ·e· 
-
-# ( .cbx )   : ( ENTRY POINT: CBX ) · ~/.aliases/.list/.cbx.lists # ·e· 
-
-# ( .net )   : ( ENTRY POINT: NET ) · ~/.aliases/.list/.net.lists # ·e· 
-
-# ( .own )   : ( ENTRY POINT: OWN ) · ~/.aliases/.list/.own.lists # ·e· 
-
 # ·o· ---------------------------------------------- ·o· 
 
 # ·o· ______________________________________________ ·o· 
