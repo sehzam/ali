@@ -51,11 +51,11 @@ function copy_create_folder() {
 
 colorize_dir() {
   awk '{
-    gsub(/·e·/, "\033[31m&\033[0m"); # rot
-    gsub(/·a·/, "\033[32m&\033[0m"); # grün
-    gsub(/·o·/, "\033[34m&\033[0m"); # blau
-    gsub(/·c·/, "\033[35m&\033[0m"); # magenta
-    gsub(/·f·/, "\033[36m&\033[0m"); # cyan
+    gsub(/# ·e·/, "\033[31m&\033[0m"); # rot
+    gsub(/# ·a·/, "\033[32m&\033[0m"); # grün
+    gsub(/# ·o·/, "\033[34m&\033[0m"); # blau
+    gsub(/# ·c·/, "\033[35m&\033[0m"); # magenta
+    gsub(/# ·f·/, "\033[36m&\033[0m"); # cyan
 
     gsub(/[#]/, "\033[90m&\033[0m");     # Kommentare (grau)
     gsub(/[-_=]/, "\033[36m&\033[0m");   # Linien / Trenner (cyan)
