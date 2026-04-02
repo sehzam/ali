@@ -16,9 +16,6 @@ alias 'i.pi'='curl ipinfo.io/ip' # ·a·
 # ( i.p ) pings google.com five times # ·e·
 alias 'i.p'='ping -c 5 google.com' # ·a·
 
-# ( i.wr ) downloads a file using wget and resumes partial downloads # ·e·
-alias 'i.wr'='wget -c' # ·a·
-
 # ( net ) shows active network connections # ·e·
 alias 'i.n'='netstat -tuln ' # ·a·
 

@@ -14,12 +14,6 @@ alias 's.rr'='sudo shutdown now' # ·a·
 
 # ·o· -------------- System Information ------------ ·o· Sytem Information
 
-# ( neo ) displays system information using the neofetch command # ·e·
-alias neo='neofetch ' # ·a·
-
-# ( calc ) invokes the calculator (bc) in interactive mode # ·e·
-alias calc='bc -l' # ·a·
-
 # ( now ) displays the current date and time # ·e·
 alias now='date +"%Y-%m-%d %H:%M:%S"' # ·a·
 
@@ -57,14 +51,15 @@ alias 's.i'='sudo apt-get install' # ·a·
 # ( s.pi ) install a pyhon package # ·e·
 alias 's.pi'='sudo pipx install' # ·a·
 
-# ( s.si ) installs a package using snap # ·e·
-alias 's.si'='sudo snap install' # ·a·
 
 # ( s.ud ) updates the package lists # ·e·
 alias 's.ud'='sudo apt-get update' # ·a·
 
 # ( s.ug ) upgrades installed packages # ·e·
 alias 's.ug'='sudo apt-get upgrade' # ·a·
+
+# ( s.udg ) updates & upgrades installed packages # ·e·
+alias 's.udg'='sudo apt-get update && sudo apt-get upgrade' # ·a·
 
 # ( s.arc ) removes automatically installed packages # ·e·
 #          : that are no longer needed # ·e·

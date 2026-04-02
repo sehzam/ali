@@ -8,9 +8,6 @@
 # ( c ) clears the terminal # ·e· 
 alias c='clear; ls' # ·a·
 
-# ( bak ) create a backup of a file with timestamp by giving the path # ·e·
-alias 'bak'='bk' # ·a·
-
 # ( cf ) create recursively folders # ·e· 
 #       : by give one string parameter with path and enter # ·e·
 alias 'cf'='cf' # ·a·
