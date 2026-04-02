@@ -13,33 +13,33 @@ if [ -s "$output_file_var" ]; then # ·c·
 # ·o· ______________________________________________ ·o· 
 # ·o· ---------------- R A W Output ---------------- ·o· R A W Output
 # ( .$alias_file.raw ) : RAW output · ~/.aliases/.dir/.$alias_file.aliases  # ·e·
-alias '.$alias_file.raw'='cat ~/.aliases/.dir/.$alias_file.aliases | colorize_dir' # ·a·
+alias '.$alias_file.raw'='cat ~/.aliases/.dir/.$alias_file.aliases' # ·a·
 # ( .$alias_file.f )   : RAW output · ~/.aliases/.dir/.function/.$alias_file.function  # ·e·
-alias '.$alias_file.f'='cat ~/.aliases/.dir/.function/.$alias_file.function | colorize_dir' # ·a·
+alias '.$alias_file.f'='cat ~/.aliases/.dir/.function/.$alias_file.function' # ·a·
 # ( .$alias_file.l )   : RAW output · ~/.aliases/.list/.$alias_file.lists  # ·e·
-alias '.$alias_file.l'='cat ~/.aliases/.list/.$alias_file.lists | colorize_dir' # ·a·
+alias '.$alias_file.l'='cat ~/.aliases/.list/.$alias_file.lists' # ·a·
 # ·o· ---------------------------------------------- ·o· 
 
 # ·f· ______________________________________________ ·f· 
 # ·f· -------------- ${alias_file^^} Functions ----------------- ·f· ${alias_file^^} Functions
 ${alias_file}_a() { # ·c·
-  .$alias_file.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·' # ·c·
+  .$alias_file.raw | grep -v '# ·e·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# ·a·|# ·o·|--|\(|\)|=|:|alias |·o·'  | colorize_dir # ·c·
 } # ·c·
 ${alias_file}_e() { # ·c·
-  .$alias_file.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' # ·c·
+  .$alias_file.raw | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|--|\(|\)|=|\{|\}|\#|:|·o·' | colorize_dir # ·c·
 } # ·c·
 ${alias_file}_f() { # ·c· 
-  .$alias_file.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' # ·c·
+  .$alias_file.f | grep -v '# ·a·' | grep -v '·e·'| grep -E '\{|\}|\(|\)|# ·f·|·f·|# ·o·|·o·|# ·c·|# ·v·|--|echo |\|' | colorize_dir # ·c·
 } # ·c·
 ${alias_file}_l() { # ·c·
-  .$alias_file.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' # ·c·
+  .$alias_file.l | grep -v '# ·a·' | grep -v '# ·c·' | grep -v '# ·f·' | grep -E '# \(|# ·e·|# ·o·|__|--|\(|\)|:|·o·|\#|alias |=' | colorize_dir # ·c·
 } # ·c·
 # ·f· ---------------------------------------------- ·f· 
 
 # ·o· ______________________________________________ ·o· 
 # ·o· ------------------ Aliases-------------------- ·o· Aliases
 # ( .$alias_file )   : ( ENTRY POINTS ) · lists ~/.aliases/.list/.$alias_file.lists # ·e·
-alias '.$alias_file'='i && ${alias_file}_l | colorize_dir' # ·a·
+alias '.$alias_file'='i && ${alias_file}_l  | colorize_dir' # ·a·
 # ( .$alias_file.a ) : ( only aliases ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e·
 alias '.$alias_file.a'='i && ${alias_file}_a | colorize_dir' # ·a·
 # ( .$alias_file.e ) : ( explaination ) · lists ~/.aliases/.dir/.$alias_file.aliases # ·e· 
